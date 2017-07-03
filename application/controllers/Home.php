@@ -78,13 +78,13 @@ class Home extends CI_Controller
     }
     public function returns($page = 'returns')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'IT']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function tds($page = 'tds')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'IT']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }

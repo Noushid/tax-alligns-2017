@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="title-section style1">
-                            <h3 class="title">Our Blogs</h3>
+                            <h3 class="title">Our Latest Updates/News</h3>
                         </div>
                     </div>
                     <div class="col-md-12">

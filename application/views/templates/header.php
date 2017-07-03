@@ -97,10 +97,10 @@
 
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu"> 
-                                    <li class="home"><a href="home">Home</a></li>
-                                    <li><a href="about">About Us</a></li> 
-                                    <li><a href="services">Our Services</a></li>
-                                    <li><a href="GST">GST</a>
+                                    <li class="<?php echo ($current == 'Home' ? 'home' : '') ?>"><a href="home">Home</a></li>
+                                    <li class="<?php echo ($current == 'About Us' ? 'home' : '') ?>"><a href="about">About Us</a></li> 
+                                    <li class="<?php echo ($current == 'Our Services' ? 'home' : '') ?>"><a href="services">Our Services</a></li>
+                                    <li class="<?php echo ($current == 'GST' ? 'home' : '') ?>"><a href="GST">GST</a>
                                         <ul class="submenu">
                                             <li><a href="WhatIsGST">What is GST</a></li>
                                             <li><a href="GSTfiling">GST Filing</a></li>
@@ -114,14 +114,14 @@
                                             <li><a href="GSTinvoice">GST Invoice</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>
-                                    <li><a href="#">Income Tax</a>
+                                    <li class="<?php echo ($current == 'IT' ? 'home' : '') ?>"><a href="#">Income Tax</a>
                                         <ul class="submenu">
                                             <li><a href="ITreturns">IT Returns</a></li>
                                             <li><a href="TDS">TDS</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>
-                                    <li><a href="blog">News</a></li>
-                                    <li><a href="contact">Contact Us</a></li>
+                                    <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="blog">latest updates</a></li>
+                                    <li class="<?php echo ($current == 'Contact Us' ? 'home' : '') ?>"><a href="contact">Contact Us</a></li>
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->
