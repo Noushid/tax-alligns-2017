@@ -52,9 +52,9 @@ class Dashboard extends Check_Logged
         $this->load->view('admin/dashboard');
     }
 
-    public function gallery()
+    public function testimonial()
     {
-        $this->load->view('admin/gallery');
+        $this->load->view('admin/testimonial');
     }
 
 

@@ -12,9 +12,17 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'dashboard',
             controller: 'dashboardController'
         })
-        .when('/gallery', {
-            templateUrl: 'gallery',
-            controller: 'galleryController'
+        .when('/testimonial', {
+            templateUrl: 'testimonial',
+            controller: 'testimonialController'
+        })
+        .when('/blog', {
+            templateUrl: 'blog',
+            controller: 'blogController'
+        })
+        .when('/document', {
+            templateUrl: 'document',
+            controller: 'documentController'
         })
         .when('/user-profile',{
             templateUrl: 'change'
