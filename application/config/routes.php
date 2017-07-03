@@ -66,6 +66,7 @@ $route['ITreturns'] = 'Home/returns';
 $route['TDS'] = 'Home/tds';
 
 $route['blog'] = 'Home/blog';
+$route['blogView'] = 'Home/blogView';
 $route['contact'] = 'Home/contact';
 /*_______ public route End _______*/
 

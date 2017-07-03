@@ -92,7 +92,14 @@ class Home extends CI_Controller
 
     public function blog($page = 'blog')
     {
-        $this->load->view($this->header,['current' => 'blog']);
+        $this->load->view($this->header,['current' => 'Our Blog']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+
+    public function blogView($page = 'blogView')
+    {
+        $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
