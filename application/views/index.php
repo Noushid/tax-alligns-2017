@@ -332,12 +332,15 @@
                                         <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
                                             <select name="style cars">
                                                 <option value="1" selected="">How can we help?</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
+                                                <option value="GST & IT CONSULTING">GST & IT CONSULTING</option>
+                                                <option value="ACCOUNTING & TAXATION">ACCOUNTING & TAXATION</option>
+                                                <option value="FORMATION SERVICES">FORMATION SERVICES</option>
+                                                <option value="REGISTRATION SERVICES">REGISTRATION SERVICES</option>
+                                                <option value="AUXILARY SERVICES">AUXILARY SERVICES</option>
+                                                <option value="TRAINING & PLACEMENT SERVICES">TRAINING & PLACEMENT SERVICES</option>
                                             </select>
                                             <fieldset class="style phone-container">
-                                                <input type="text" id="phone-footer" placeholder="Your phone or email" class="tb-my-input" name="phone" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="text" id="phone-footer" placeholder="Your Contact Number" class="tb-my-input" name="phone" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
                                         </form>
                                     </div>
@@ -347,7 +350,7 @@
                                     <div class="form-v2">
                                         <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
                                             <fieldset class="style name-container">
-                                                <input type="text" id="author-footer" placeholder="You name*" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="text" id="author-footer" placeholder="You Name*" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style">submit <i class="fa fa-chevron-right"></i></button>
