@@ -73,13 +73,22 @@ $route['contact'] = 'Home/contact';
 
 $route['admin'] = 'Dashboard';
 
-$route['admin/testimonial'] = 'Dashboard/Testimonial';
+$route['admin/testimonial'] = 'Dashboard/testimonial';
 $route['admin/testimonial/upload'] = 'Testimonial_Controller/upload';
 $route['admin/testimonial/get']['get'] = 'Testimonial_Controller/get_all';
 $route['admin/testimonial/add']['post'] = 'Testimonial_Controller/store';
 $route['admin/testimonial/edit/(:num)']['post'] = 'Testimonial_Controller/update/$1';
 $route['admin/testimonial/delete-image/(:num)']['delete'] = 'Testimonial_Controller/delete_image/$1';
 $route['admin/testimonial/delete/(:num)']['delete'] = 'Testimonial_Controller/delete/$1';
+
+
+$route['admin/blog'] = 'Dashboard/blog';
+$route['admin/blog/upload'] = 'Blog_Controller/upload';
+$route['admin/blog/get']['get'] = 'Blog_Controller/get_all';
+$route['admin/blog/add']['post'] = 'Blog_Controller/store';
+$route['admin/blog/edit/(:num)']['post'] = 'Blog_Controller/update/$1';
+$route['admin/blog/delete-image/(:num)']['delete'] = 'Blog_Controller/delete_image/$1';
+$route['admin/blog/delete/(:num)']['delete'] = 'Blog_Controller/delete/$1';
 
 /*_______ admin route end _______*/
 

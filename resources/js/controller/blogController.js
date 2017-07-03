@@ -1,12 +1,12 @@
 /**
- * Created by psybo-03 on 1/7/17.
+ * Created by psybo-03 on 3/7/17.
  */
 
-app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document) {
+app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document) {
 
-    $scope.testimonials = [];
-    $scope.newtestimonial = {};
-    $scope.curtestimonial = {};
+    $scope.blogs = [];
+    $scope.newblog = {};
+    $scope.curblog = {};
     $scope.files = [];
     $scope.errFiles = [];
     $scope.showform = false;
@@ -16,13 +16,13 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     $scope.fileValidation = {};
 
 
-    loadTestimonial();
+    loadBlog();
 
-    function loadTestimonial() {
-        $http.get($rootScope.base_url + 'admin/testimonial/get').then(function (response) {
+    function loadBlog() {
+        $http.get($rootScope.base_url + 'admin/blog/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
-                $scope.testimonials = response.data;
+                $scope.blogs = response.data;
                 $scope.showtable = true;
             } else {
                 console.log('No data Found');
@@ -32,8 +32,8 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         });
     }
 
-    $scope.newTestimonial = function () {
-        $scope.newtestimonial = {};
+    $scope.newBlog = function () {
+        $scope.newblog = {};
         $scope.filespre = [];
         $scope.uploaded = [];
         $scope.files = [];
@@ -42,11 +42,11 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         $scope.item_files = false;
     };
 
-    $scope.editTestimonial = function (item) {
+    $scope.editBlog = function (item) {
         console.log(item);
         $scope.showform = true;
-        $scope.curtestimonial = item;
-        $scope.newtestimonial = angular.copy(item);
+        $scope.curblog = item;
+        $scope.newblog = angular.copy(item);
         $scope.item_files = item.file;
         $scope.files = [];
     };
@@ -56,26 +56,27 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         $scope.showform = false;
     };
 
-    $scope.addTestimonial = function () {
+    $scope.addBlog = function () {
         $rootScope.loading = true;
 
+        $scope.newblog.date = $filter('date')($scope.date, "yyyy-MM-dd");
         var fd = new FormData();
 
-        angular.forEach($scope.newtestimonial, function (item, key) {
+        angular.forEach($scope.newblog, function (item, key) {
             fd.append(key, item);
         });
 
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
-        if ($scope.newtestimonial['id']) {
-            var url = $rootScope.base_url + 'admin/testimonial/edit/' + $scope.newtestimonial.id;
+        if ($scope.newblog['id']) {
+            var url = $rootScope.base_url + 'admin/blog/edit/' + $scope.newblog.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
             })
                 .then(function onSuccess(response) {
-                    loadTestimonial();
-                    $scope.newtestimonial = {};
+                    loadBlog();
+                    $scope.newblog = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
                     $scope.files = '';
@@ -85,15 +86,15 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/testimonial/add';
+            var url = $rootScope.base_url + 'admin/blog/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
             })
                 .then(function onSuccess(response) {
-                    loadTestimonial();
-                    $scope.newtestimonial = {};
+                    loadBlog();
+                    $scope.newblog = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
                     $scope.files = '';
@@ -112,15 +113,15 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         }
     };
 
-    $scope.deleteTestimonial = function (item) {
+    $scope.deleteBlog = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete/' + item['id'];
+        var url = $rootScope.base_url + 'admin/blog/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
-                var index = $scope.testimonials.indexOf(item);
-                $scope.testimonials.splice(index, 1);
+                var index = $scope.blogs.indexOf(item);
+                $scope.blogs.splice(index, 1);
                 alert(response.data.msg);
-                loadTestimonial();
+                loadBlog();
                 $rootScope.loading = false;
             },function onError(response) {
                 console.log('Delete Error :- Status :' + response.status + 'data : ' + response.data);
@@ -137,7 +138,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/testimonial/upload',
+                url: $rootScope.base_url + 'admin/blog/upload',
                 data: {file: file}
             });
 
@@ -159,7 +160,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'admin/blog/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');
@@ -172,9 +173,9 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
             });
     };
 
-    $scope.showTestimonialFiles = function (item) {
+    $scope.showBlogFiles = function (item) {
         console.log(item);
-        $scope.testimonialfiles = item;
+        $scope.blogfiles = item;
     };
 
 
@@ -183,7 +184,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
 
     $scope.animationsEnabled = true;
 
-    $scope.open = function (testimonial,size, parentSelector) {
+    $scope.open = function (blog,size, parentSelector) {
         var parentElem = parentSelector ?
             angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
         var modalInstance = $uibModal.open({
@@ -197,7 +198,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
             appendTo: parentElem,
             resolve: {
                 items: function () {
-                    return testimonial;
+                    return blog;
                 }
             }
         });

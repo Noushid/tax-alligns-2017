@@ -10,15 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //
 require_once(APPPATH . 'core/Check_Logged.php');
 
-class Testimonial_Controller extends Check_Logged
+class Blog_Controller extends Check_Logged
 {
 
     //        public $delete_cache_on_save = TRUE;
     function __construct()
     {
         parent::__construct();
-        $this->load->model('Testimonial_model', 'testimonial');
-//        $this->load->model('Gallery_Files_Model', 'testimonial_files');
+        $this->load->model('Blog_model', 'blog');
+//        $this->load->model('Gallery_Files_Model', 'blog_files');
         $this->load->model('File_model', 'file');
 
         $this->load->library(['upload', 'image_lib']);
@@ -31,7 +31,7 @@ class Testimonial_Controller extends Check_Logged
 
     function index()
     {
-        $data = $this->testimonial->with_file()->get_all();
+        $data = $this->blog->with_file()->get_all();
         var_dump($data);
 //        $this->output->set_content_type('application/json')->set_output(json_encode($data));
 
@@ -39,13 +39,13 @@ class Testimonial_Controller extends Check_Logged
 
     function get_all()
     {
-        $data = $this->testimonial->with_file()->get_all();
+        $data = $this->blog->with_file()->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
     function store()
     {
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('heading', 'Name', 'required');
         if ($this->form_validation->run() === FALSE) {
             $this->output->set_status_header(400, 'Validation Error');
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
@@ -66,9 +66,9 @@ class Testimonial_Controller extends Check_Logged
 
                     $post_data['file_id'] = $file_id;
 
-                    $testimonial_id = $this->testimonial->insert($post_data);
+                    $blog_id = $this->blog->insert($post_data);
 
-                    if ($testimonial_id) {
+                    if ($blog_id) {
                         /*****Create Thumb Image****/
                         $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
                         $img_cfg['maintain_ratio'] = TRUE;
@@ -112,17 +112,14 @@ class Testimonial_Controller extends Check_Logged
                     }
                 }
             } else {
-                if ($this->testimonial->insert($post_data)) {
-                    $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
-                }
-//                $this->output->set_status_header(400, 'Validation Error');
-//                $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
+                $this->output->set_status_header(400, 'Validation Error');
+                $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
             }
         }
     }
 
     function update($id){
-        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('heading', 'Heading', 'required');
         if ($this->form_validation->run() === FALSE) {
             $this->output->set_status_header(400, 'Validation Error');
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
@@ -144,7 +141,7 @@ class Testimonial_Controller extends Check_Logged
 
                     $post_data['file_id'] = $file_id;
 
-                    if ($this->testimonial->update($post_data,$id)) {
+                    if ($this->blog->update($post_data,$id)) {
                         /*****Create Thumb Image****/
                         $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
                         $img_cfg['maintain_ratio'] = TRUE;
@@ -186,8 +183,6 @@ class Testimonial_Controller extends Check_Logged
                         $this->output->set_content_type('application/json')->set_output(json_encode($resize_error));
                     }
                 }
-            } elseif($this->testimonial->update($post_data,$id)) {
-                $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
             }else {
                 $this->output->set_status_header(500, 'Server Down');
                 $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
@@ -198,12 +193,12 @@ class Testimonial_Controller extends Check_Logged
 
     function delete_image($id)
     {
-        $testimonial = $this->testimonial->with_file()->where('file_id',$id)->get();
-        if ($testimonial->file != null and $this->file->delete($testimonial->file->id)) {
-            if (file_exists(getwdir() . 'uploads/' . $testimonial->file->file_name)) {
-                unlink(getwdir() . 'uploads/' . $testimonial->file->file_name);
+        $blog = $this->blog->with_file()->where('file_id',$id)->get();
+        if ($blog->file != null and $this->file->delete($blog->file->id)) {
+            if (file_exists(getwdir() . 'uploads/' . $blog->file->file_name)) {
+                unlink(getwdir() . 'uploads/' . $blog->file->file_name);
             }
-            $this->testimonial->update(['file_id' => null], $testimonial->id);
+            $this->blog->update(['file_id' => null], $blog->id);
             $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Image Delete']));
         }else{
             $this->output->set_status_header(400, 'Server Down');
@@ -216,7 +211,7 @@ class Testimonial_Controller extends Check_Logged
         $config['upload_path'] = getwdir() . 'uploads';
         $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG';
         $config['max_size'] = 4096;
-        $config['file_name'] = 'T_' . rand();
+        $config['file_name'] = 'B_' . rand();
         $config['multi'] = 'ignore';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {
@@ -231,13 +226,13 @@ class Testimonial_Controller extends Check_Logged
 
     public function delete($id)
     {
-        $testimonial = $this->testimonial->with_file()->where('id', $id)->get();
-        if ($testimonial) {
-            if ($testimonial->file != null) {
-                if ($this->file->delete($testimonial->file->id)) {
-                    if (file_exists(getwdir() . 'uploads/' . $testimonial->file->file_name)) {
-                        unlink(getwdir() . 'uploads/' . $testimonial->file->file_name);
-                        if ($this->testimonial->delete($id)) {
+        $blog = $this->blog->with_file()->where('id', $id)->get();
+        if ($blog) {
+            if ($blog->file != null) {
+                if ($this->file->delete($blog->file->id)) {
+                    if (file_exists(getwdir() . 'uploads/' . $blog->file->file_name)) {
+                        unlink(getwdir() . 'uploads/' . $blog->file->file_name);
+                        if ($this->blog->delete($id)) {
                             $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery Deleted']));
                         } else {
                             $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery not deleted but some files are deleted']));
@@ -247,7 +242,7 @@ class Testimonial_Controller extends Check_Logged
                     }
                 }
             } else {
-                $this->testimonial->delete($id);
+                $this->blog->delete($id);
                 $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery Deleted']));
             }
         } else {
