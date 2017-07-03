@@ -365,7 +365,10 @@
             </div><!-- container -->
         </div><!-- page-title -->
         <!-- REQUEST CALL BACK END -->
+<?php
+//var_dump($testimonial);
 
+?>
         <!-- TESTIMONIAL START -->
         <section id="testimonial" class="flat-row">
             <div class="container">
@@ -381,46 +384,62 @@
                                         <img src="images/1.png" alt="image">
                                     </div>
                                     <div class="testimonial-text">
-                                        <div class="fade-text">
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad 
-                                        </div>
-                                        <div class="fade-text">
+                                        <?php
+                                        if (isset($testimonial) and $testimonial != FALSE) {
+                                            foreach ($testimonial as $value) {
+                                                ?>
+                                                <div class="fade-text">
+                                                    <?php echo $value->description; ?>
+                                                </div>
+                                            <?php
+                                            }
+                                        }
+                                        ?>
+                                        <!--<div class="fade-text">
                                             velit esse dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
                                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                                         </div>
                                         <div class="fade-text">
                                             minim veniam, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                                             consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                                        </div>
+                                        </div>-->
                                     </div>
 
                                     <div id="bx-pager" class="testimonial-avatar orches-animation" data-animation="pulse" data-animation-delay="0" data-animation-offset="75%">
-                                        <a data-slide-index="0" href="">
-                                            <img src="images/bg/t1.jpg" alt="image">
-                                        </a>
-                                        <a data-slide-index="1" href="">
+                                        <?php
+
+                                            if (isset($testimonial) and $testimonial != FALSE) {
+                                                foreach ($testimonial as $value1) {
+                                                    ?>
+                                                    <a data-slide-index="0" href="">
+                                                        <img src="<?php echo base_url('uploads/'.$value1->file->file_name)?>" alt="image">
+                                                    </a>
+                                                <?php
+                                                }
+                                            }
+                                        ?>
+                                        <!--<a data-slide-index="1" href="">
                                             <img src="images/bg/t2.jpg" alt="image">
                                         </a>
                                         <a data-slide-index="2" href="">
                                             <img src="images/bg/t3.jpg" alt="image">
-                                        </a>
+                                        </a>-->
                                     </div>
 
                                     <div class="testimonial-text v1">
-                                        <div class="fade-text">
-                                            <h5 class="name">George Johanson</h5>
-                                            <p>Founder & CEO, Psybo Technologies</p>
-                                        </div>
+                                        <?php
+                                            if (isset($testimonial) and $testimonial != FALSE) {
+                                                foreach ($testimonial as $value2) {
+                                                    ?>
+                                                    <div class="fade-text">
+                                                        <h5 class="name"><?php echo $value2->name ?></h5>
 
-                                        <div class="fade-text">
-                                            <h5 class="name">George Johanson</h5>
-                                            <p>Founder & CEO, Psybo Technologies</p>
-                                        </div>
-                                        <div class="fade-text">
-                                            <h5 class="name">George Johanson</h5>
-                                            <p>Founder & CEO, Psybo Technologies</p>
-                                        </div>
+                                                        <p><?php echo $value2->name ?></p>
+                                                    </div>
+                                                <?php
+                                                }
+                                            }
+                                        ?>
                                     </div><!-- /.testimonial-text -->
                                 </div><!-- /.testimonials -->
                             </div><!-- /.span12 -->
@@ -445,44 +464,53 @@
 
                                 <div class="post-us v3">
                                     <div class="blog-home v3">
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <img src="images/bg/1.jpg" alt="image">
-                                                <div class="overlay"></div>
-                                            </div>
-                                            <div class="post-v1">
-                                                <div class="meta-post">
-                                                    <a href="#">15 November 2016</a>
-                                                </div>
-                                                <h4 class="title"><a href="#">Hire a Branding Consultant With a Similar Aesthetic to Your Own</a></h4>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        if (isset($blog) and $blog != FALSE) {
+                                            foreach ($blog as $value3) {
+                                                $date = date_create($value3->date);
+                                                ?>
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <img src="<?php echo base_url() . 'uploads/' . $value3->file->file_name;?>" alt="image">
 
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <img src="images/bg/2.jpg" alt="image">
-                                                <div class="overlay"></div>
-                                            </div>
-                                            <div class="post-v1">
-                                                <div class="meta-post">
-                                                    <a href="#">15 November 2016</a>
+                                                        <div class="overlay"></div>
+                                                    </div>
+                                                    <div class="post-v1">
+                                                        <div class="meta-post">
+                                                            <a href="#"><?php echo date_format($date,"d F Y")?></a>
+                                                        </div>
+                                                        <h4 class="title"><a href="#"><?php echo $value3->heading?></a></h4>
+                                                    </div>
                                                 </div>
-                                                <h4 class="title"><a href="#">Hire a Branding Consultant With a Similar Aesthetic to Your Own</a></h4>
-                                            </div>
-                                        </div>
+                                            <?php
+                                            }
+                                        } ?>
 
-                                        <div class="item">
-                                            <div class="thumb">
-                                                <img src="images/bg/1.jpg" alt="image">
-                                                <div class="overlay"></div>
-                                            </div>
-                                            <div class="post-v1">
-                                                <div class="meta-post">
-                                                    <a href="#">15 November 2016</a>
-                                                </div>
-                                                <h4 class="title"><a href="#">Hire a Branding Consultant With a Similar Aesthetic to Your Own</a></h4>
-                                            </div>
-                                        </div>
+<!--                                        <div class="item">-->
+<!--                                            <div class="thumb">-->
+<!--                                                <img src="images/bg/2.jpg" alt="image">-->
+<!--                                                <div class="overlay"></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="post-v1">-->
+<!--                                                <div class="meta-post">-->
+<!--                                                    <a href="#">15 November 2016</a>-->
+<!--                                                </div>-->
+<!--                                                <h4 class="title"><a href="#">Hire a Branding Consultant With a Similar Aesthetic to Your Own</a></h4>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+
+<!--                                        <div class="item">-->
+<!--                                            <div class="thumb">-->
+<!--                                                <img src="images/bg/1.jpg" alt="image">-->
+<!--                                                <div class="overlay"></div>-->
+<!--                                            </div>-->
+<!--                                            <div class="post-v1">-->
+<!--                                                <div class="meta-post">-->
+<!--                                                    <a href="#">15 November 2016</a>-->
+<!--                                                </div>-->
+<!--                                                <h4 class="title"><a href="#">Hire a Branding Consultant With a Similar Aesthetic to Your Own</a></h4>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                             </div>
