@@ -62,6 +62,11 @@ class Dashboard extends Check_Logged
         $this->load->view('admin/blog');
     }
 
+    public function document()
+    {
+        $this->load->view('admin/document');
+    }
+
 
     public function verify()
     {

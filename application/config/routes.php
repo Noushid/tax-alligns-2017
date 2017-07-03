@@ -90,6 +90,15 @@ $route['admin/blog/edit/(:num)']['post'] = 'Blog_Controller/update/$1';
 $route['admin/blog/delete-image/(:num)']['delete'] = 'Blog_Controller/delete_image/$1';
 $route['admin/blog/delete/(:num)']['delete'] = 'Blog_Controller/delete/$1';
 
+
+$route['admin/document'] = 'Dashboard/document';
+$route['admin/document/upload'] = 'Document_Controller/upload';
+$route['admin/document/get']['get'] = 'Document_Controller/get_all';
+$route['admin/document/add']['post'] = 'Document_Controller/store';
+$route['admin/document/edit/(:num)']['post'] = 'Document_Controller/update/$1';
+$route['admin/document/delete-image/(:num)']['delete'] = 'Document_Controller/delete_image/$1';
+$route['admin/document/delete/(:num)']['delete'] = 'Document_Controller/delete/$1';
+
 /*_______ admin route end _______*/
 
 
