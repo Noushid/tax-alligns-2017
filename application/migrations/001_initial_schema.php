@@ -76,6 +76,8 @@ class Migration_initial_schema extends CI_Migration
         ]);
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('files');
+        $this->load->model('user_model');
+        $this->user_model->insert_dummy();
 
 
       /*///////////////////////////////////////////////////////////////////

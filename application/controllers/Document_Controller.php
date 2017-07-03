@@ -24,9 +24,9 @@ class Document_Controller extends Check_Logged
         $this->load->library(['upload', 'image_lib']);
 
 
-//        if (!$this->logged) {
-//            redirect(base_url('login'));
-//        }
+        if (!$this->logged) {
+            redirect(base_url('login'));
+        }
     }
 
     function index()

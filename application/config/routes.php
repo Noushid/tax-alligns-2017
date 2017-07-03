@@ -56,6 +56,10 @@ $route['home'] = 'Home/index';
 $route['about'] = 'Home/about';
 $route['services'] = 'Home/services';
 
+$route['login'] = 'Home/login';
+$route['login/verify'] = 'Dashboard/verify';
+$route['logout'] = 'Dashboard/logout';
+
 $route['GST'] = 'Home/gst';
 $route['WhatIsGST'] = 'Home/whatisgst';
 $route['GSTfiling'] = 'Home/gstfiling';
@@ -66,7 +70,7 @@ $route['ITreturns'] = 'Home/returns';
 $route['TDS'] = 'Home/tds';
 
 $route['blog'] = 'Home/blog';
-$route['blogView'] = 'Home/blogView';
+$route['blogView/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 /*_______ public route End _______*/
 

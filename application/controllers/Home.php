@@ -20,11 +20,20 @@ class Home extends CI_Controller
         $this->load->model('Blog_model', 'blog');
     }
 
+    public function login($page = 'login')
+    {
+        if ($this->session->userdata('logged_in') == TRUE) {
+            redirect(base_url('admin/#/'));
+            return FALSE;
+        }
+
+        $this->load->view($page);
+    }
 
     public function index($page = 'index')
     {
         $data['testimonial'] = $this->_load_testimonial();
-        $data['blog'] = $this->_load_blog();
+        $data['blog'] = $this->_load_blog(3);
         $this->load->view($this->header,['current' => 'Home']);
         $this->load->view($this->slider);
         $this->load->view($page, $data);
@@ -92,15 +101,18 @@ class Home extends CI_Controller
 
     public function blog($page = 'blog')
     {
+        $data['blog'] = $this->_load_blog();
         $this->load->view($this->header,['current' => 'Our Blog']);
-        $this->load->view($page);
+        $this->load->view($page, $data);
         $this->load->view($this->footer);
     }
 
-    public function blogView($page = 'blogView')
+    public function blogView($id)
     {
+        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get_all();
+        $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->get_all();
         $this->load->view($this->header,['current' => 'Our Blog']);
-        $this->load->view($page);
+        $this->load->view("blogView", $data);
         $this->load->view($this->footer);
     }
 
@@ -116,9 +128,13 @@ class Home extends CI_Controller
         return $this->testimonial->with_file()->get_all();
     }
 
-    public function _load_blog()
+    public function _load_blog($limit ="")
     {
-        return $this->blog->with_file()->get_all();
+        if ($limit != "") {
+            return $this->blog->with_file()->with_document()->limit($limit)->get_all();
+        } else {
+            return $this->blog->with_file()->with_document()->get_all();
+        }
     }
 
 }

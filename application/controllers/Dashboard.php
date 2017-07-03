@@ -18,20 +18,20 @@ class Dashboard extends Check_Logged
         /*
          * Check loin and logout
          * */
-//        $this->load->model('Users_Model', 'user');
+        $this->load->model('User_model', 'user');
 
 
-//        if ( ! $this->logged)
-//        {
-//            // Allow some methods?
-//            $allowed = array(
-//                'verify'
-//            );
-//            if ( ! in_array($this->router->fetch_method(), $allowed))
-//            {
-//                redirect(base_url('login'));
-//            }
-//        }
+        if ( ! $this->logged)
+        {
+            // Allow some methods?
+            $allowed = array(
+                'verify'
+            );
+            if ( ! in_array($this->router->fetch_method(), $allowed))
+            {
+                redirect(base_url('login'));
+            }
+        }
     }
 
 
@@ -82,7 +82,7 @@ class Dashboard extends Check_Logged
                 'username' => $username,
                 'password' => $password
             ];
-            $result = $this->user->get($where);
+            $result = $this->user->where($where)->get_all();
             if ($result) {
                 $login_data = [
                     'username' => $result[0]->username,
