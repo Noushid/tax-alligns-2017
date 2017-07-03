@@ -34,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="control-label col-lg-2">Photo</label>
+                                <label for="" class="control-label col-lg-2">File</label>
                                 <div class="col-md-4">
                                     <button ngf-select="uploadFiles($files, $invalidFiles)"
                                             accept="application/pdf"

@@ -31,7 +31,7 @@ class Blog_Controller extends Check_Logged
 
     function index()
     {
-        $data = $this->blog->with_file()->get_all();
+        $data = $this->blog->with_file()->with_document()->get_all();
         var_dump($data);
 //        $this->output->set_content_type('application/json')->set_output(json_encode($data));
 
@@ -39,7 +39,7 @@ class Blog_Controller extends Check_Logged
 
     function get_all()
     {
-        $data = $this->blog->with_file()->get_all();
+        $data = $this->blog->with_file()->with_document()->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
@@ -52,10 +52,13 @@ class Blog_Controller extends Check_Logged
         } else {
             $post_data = $this->input->post();
             $uploaded = json_decode($post_data['uploaded']);
+            $uploaded1 = json_decode($post_data['uploaded1']);
 
             unset($post_data['uploaded']);
+            unset($post_data['uploaded1']);
 
             if (!empty($uploaded)) {
+
                 /*INSERT FILE DATA TO DB*/
                 foreach ($uploaded as $value) {
                     $file_data['file_name'] = $value->file_name;
@@ -66,9 +69,6 @@ class Blog_Controller extends Check_Logged
 
                     $post_data['file_id'] = $file_id;
 
-                    $blog_id = $this->blog->insert($post_data);
-
-                    if ($blog_id) {
                         /*****Create Thumb Image****/
                         $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
                         $img_cfg['maintain_ratio'] = TRUE;
@@ -102,7 +102,6 @@ class Blog_Controller extends Check_Logged
 
                             /********End resize*********/
                         }
-                    }
                     $resize_error = [];
                     if (empty($resize_error)) {
                         $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
@@ -111,6 +110,22 @@ class Blog_Controller extends Check_Logged
                         $this->output->set_content_type('application/json')->set_output(json_encode($resize_error));
                     }
                 }
+                if ($uploaded1) {
+                    foreach ($uploaded1 as $value) {
+                        $file_data = [];
+                        $file_data['file_name'] = $value->file_name;
+                        $file_data['file_type'] = $value->file_type;
+                        $file_data['size'] = $value->file_size;
+                        $file_data['date'] = date('Y-m-d');
+                        $doc_id = $this->file->insert($file_data);
+
+                        $post_data['document_id'] = $doc_id;
+                        if ($this->blog->insert($post_data)) {
+                            $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
+                        }
+                    }
+                }
+
             } else {
                 $this->output->set_status_header(400, 'Validation Error');
                 $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
@@ -209,7 +224,7 @@ class Blog_Controller extends Check_Logged
     function upload()
     {
         $config['upload_path'] = getwdir() . 'uploads';
-        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG';
+        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf';
         $config['max_size'] = 4096;
         $config['file_name'] = 'B_' . rand();
         $config['multi'] = 'ignore';

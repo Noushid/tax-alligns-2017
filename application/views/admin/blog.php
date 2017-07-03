@@ -52,7 +52,7 @@
                                             accept="image/*"
                                             ngf-max-height="5000"
                                             ngf-max-size="5MB"
-                                            ngf-multiple="true" type="button">
+                                            ngf-multiple="false" type="button">
                                         Select Files
                                     </button>
                                     <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
@@ -99,7 +99,60 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--                                <span class="alert alert-warning">Image should be 100*100</span>-->
+
+
+
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-lg-2">File</label>
+                                <div class="col-md-4">
+                                    <button ngf-select="uploadFiles1($files, $invalidFiles)"
+                                            accept="application/pdf"
+                                            ngf-max-size="15MB"
+                                            ngf-multiple="false" type="button">
+                                        Select Files
+                                    </button>
+                                    <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <ul class="list-group">
+                                        <li ng-repeat="f in files1" style="font:smaller" class="list-group-item">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="col-sm-2">
+                                                        <img ngf-src="f.$ngfBlobUrl" class="thumbnail" width="100px" ngf-no-object-url="true">
+                                                        <span>{{f.name}} {{f.$errorParam}}</span>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="row">
+                                                            <div class="col-sm-8">
+                                                                <div class="progress progress-striped active" ng-show="f.progress >= 0" ng-class="{cancel: uploadstatus == 1}">
+                                                                    <div ng-show="uploadstatus == 1">{{f.progressmsg}}</div>
+                                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+                                                                         aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%" ng-show="uploadstatus != 1">
+                                                                        {{f.progress}}% Complete
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--                                                            <div class="col-sm-4">-->
+                                                            <!--                                                                <button class="btn btn-danger" type="button" ng-click="abort()">cancel</button>-->
+                                                            <!--                                                            </div>-->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="bg-danger" ng-repeat="f in errFiles" style="font:smaller" class="list-group-item">{{f.name}} {{f.$error}} {{f.$errorParam}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
 
                             <!----for existing image----->
                             <div class="clearfix"></div>
@@ -178,6 +231,7 @@
                             <th>Date</th>
                             <th>Heading</th>
                             <th>Content</th>
+                            <th>document</th>
                             <th>Photo</th>
                             <th>Action</th>
                         </tr>
@@ -188,6 +242,7 @@
                             <td>{{blog.date |date:'dd-MMM-yyyy'}}</td>
                             <td>{{blog.heading}}</td>
                             <td>{{blog.content}}</td>
+                            <td><a href="{{base_url + 'uploads/' + blog.document.file_name}}"><img src="{{base_url + 'adm/assets/img/pdf_icon.png'}}" alt="Thumbnail" width="25px" height="25px"/></a></td>
                             <td><a href="{{base_url + 'uploads/' + blog.file.file_name}}"><img src="{{base_url + 'uploads/' + blog.file.file_name}}" alt="Thumbnail" width="25px" height="25px"/></a></td>
                             <td>
                                 <div  class="btn-group btn-group-xs" role="group">

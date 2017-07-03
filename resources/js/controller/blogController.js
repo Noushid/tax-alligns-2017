@@ -8,11 +8,13 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.newblog = {};
     $scope.curblog = {};
     $scope.files = [];
+    $scope.files1 = [];
     $scope.errFiles = [];
     $scope.showform = false;
     $scope.message = {};
     $rootScope.url = $location.path().replace('/', '');
     $scope.uploaded = [];
+    $scope.uploaded1 = [];
     $scope.fileValidation = {};
 
 
@@ -36,7 +38,9 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.newblog = {};
         $scope.filespre = [];
         $scope.uploaded = [];
+        $scope.uploaded1 = [];
         $scope.files = [];
+        $scope.files1 = [];
         $scope.errFiles = [];
         $scope.showform = true;
         $scope.item_files = false;
@@ -67,6 +71,8 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         });
 
         fd.append('uploaded', JSON.stringify($scope.uploaded));
+        fd.append('uploaded1', JSON.stringify($scope.uploaded1));
+
 
         if ($scope.newblog['id']) {
             var url = $rootScope.base_url + 'admin/blog/edit/' + $scope.newblog.id;
@@ -150,6 +156,32 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
             }, function (response) {
                 if (response.status > 0)
                     $scope.errorMsg = response.status + ': ' + response.data;
+            }, function (evt) {
+                file.progress = Math.min(100, parseInt(100.0 *
+                evt.loaded / evt.total));
+            });
+        });
+    };
+
+    $scope.uploadFiles1 = function (files, errFiles) {
+        angular.forEach(errFiles, function (errFile) {
+            $scope.errFiles1.push(errFile);
+        });
+        angular.forEach(files, function (file) {
+            $scope.files1.push(file);
+            file.upload = Upload.upload({
+                url: $rootScope.base_url + 'admin/blog/upload',
+                data: {file: file}
+            });
+
+            file.upload.then(function (response) {
+                $timeout(function () {
+                    $scope.uploaded1.push(response.data);
+                    file.result1 = response.data;
+                });
+            }, function (response) {
+                if (response.status > 0)
+                    $scope.errorMsg1 = response.status + ': ' + response.data;
             }, function (evt) {
                 file.progress = Math.min(100, parseInt(100.0 *
                 evt.loaded / evt.total));

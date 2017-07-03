@@ -16,14 +16,18 @@ class Home extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Testimonial_model', 'testimonial');
+        $this->load->model('Blog_model', 'blog');
     }
 
 
     public function index($page = 'index')
     {
+        $data['testimonial'] = $this->_load_testimonial();
+        $data['blog'] = $this->_load_blog();
         $this->load->view($this->header,['current' => 'Home']);
         $this->load->view($this->slider);
-        $this->load->view($page);
+        $this->load->view($page, $data);
         $this->load->view($this->footer);
     }
 
@@ -105,6 +109,16 @@ class Home extends CI_Controller
         $this->load->view($this->header,['current' => 'Contact Us']);
         $this->load->view($page);
         // $this->load->view($this->footer);
+    }
+
+    public function _load_testimonial()
+    {
+        return $this->testimonial->with_file()->get_all();
+    }
+
+    public function _load_blog()
+    {
+        return $this->blog->with_file()->get_all();
     }
 
 }
