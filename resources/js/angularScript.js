@@ -20,7 +20,7 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'blog',
             controller: 'blogController'
         })
-        .when('/document', {
+        .when('/documents', {
             templateUrl: 'document',
             controller: 'documentController'
         })
