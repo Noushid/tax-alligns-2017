@@ -27,7 +27,7 @@
                                         </ul>
                                     </div>
                                     <h4 class="title-post">
-                                        <a href="#">Responsive layout</a>
+                                        <a href="blogView">Responsive layout</a>
                                     </h4>
                                     <div class="entry-post">
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type [...]</p>
@@ -54,7 +54,7 @@
                                         </ul>
                                     </div>
                                     <h4 class="title-post">
-                                        <a href="#">Heading into Monday</a>
+                                        <a href="blogView">Heading into Monday</a>
                                     </h4>
                                     <div class="entry-post">
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type [...]</p>
@@ -81,61 +81,7 @@
                                         </ul>
                                     </div>
                                     <h4 class="title-post">
-                                        <a href="#">Let's go</a>
-                                    </h4>
-                                    <div class="entry-post">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type [...]</p>
-                                    </div>
-                                    <div class="submit-wrap">
-                                        <button class="flat-button button-style">Read More <i class="fa fa-chevron-right"></i></button>
-                                    </div>
-                                </div>
-                            </article><!-- /entry -->
-
-                            <article class="entry clearfix">
-                                <div class="feature-post v2">
-                                    <a href="#"><img src="images/bg/b4.jpg" alt="image"></a>
-                                </div>
-                                <div class="content-post">
-                                    <div class="entry-meta">
-                                        <ul class="meta-post clearfix">
-                                            <li class="day">
-                                                <a href="#">15 November 2016</a>
-                                            </li>
-                                            <li class="author">
-                                                <a href="#">By admin</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h4 class="title-post">
-                                        <a href="#">Everything is included</a>
-                                    </h4>
-                                    <div class="entry-post">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type [...]</p>
-                                    </div>
-                                    <div class="submit-wrap">
-                                        <button class="flat-button button-style">Read More <i class="fa fa-chevron-right"></i></button>
-                                    </div>
-                                </div>
-                            </article><!-- /entry -->
-
-                            <article class="entry clearfix">
-                                <div class="feature-post v2">
-                                    <a href="#"><img src="images/bg/b5.jpg" alt="image"></a>
-                                </div>
-                                <div class="content-post">
-                                    <div class="entry-meta">
-                                        <ul class="meta-post clearfix">
-                                            <li class="day">
-                                                <a href="#">15 November 2016</a>
-                                            </li>
-                                            <li class="author">
-                                                <a href="#">By admin</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <h4 class="title-post">
-                                        <a href="#">There you go</a>
+                                        <a href="blogView">Let's go</a>
                                     </h4>
                                     <div class="entry-post">
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type [...]</p>
