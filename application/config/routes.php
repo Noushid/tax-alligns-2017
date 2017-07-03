@@ -73,10 +73,13 @@ $route['contact'] = 'Home/contact';
 
 $route['admin'] = 'Dashboard';
 
-$route['admin/gallery'] = 'Dashboard/gallery';
-$route['admin/gallery/upload'] = 'gallery_Controller/upload';
-$route['admin/gallery/get']['get'] = 'gallery_Controller/get_all';
-$route['admin/gallery/add'] = 'gallery_Controller/store';
+$route['admin/testimonial'] = 'Dashboard/Testimonial';
+$route['admin/testimonial/upload'] = 'Testimonial_Controller/upload';
+$route['admin/testimonial/get']['get'] = 'Testimonial_Controller/get_all';
+$route['admin/testimonial/add']['post'] = 'Testimonial_Controller/store';
+$route['admin/testimonial/edit/(:num)']['post'] = 'Testimonial_Controller/update/$1';
+$route['admin/testimonial/delete-image/(:num)']['delete'] = 'Testimonial_Controller/delete_image/$1';
+$route['admin/testimonial/delete/(:num)']['delete'] = 'Testimonial_Controller/delete/$1';
 
 /*_______ admin route end _______*/
 

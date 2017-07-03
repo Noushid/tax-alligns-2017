@@ -14,15 +14,20 @@ function dashboard_menu()
             'icon' => 'fa-tachometer',
             'link' => 'dashboard'
         ],
-        'gallery' => [
-            'title' => 'gallery',
+        'testimonial' => [
+            'title' => 'testimonial',
             'icon' => 'fa-picture-o',
-            'link' => 'gallery'
+            'link' => 'testimonial'
         ],
-        'portfolio' => [
-            'title' => 'portfolio',
+        'blog' => [
+            'title' => 'blog',
             'icon' => 'fa-picture-o',
-            'link' => 'portfolio'
+            'link' => 'blog'
+        ],
+        'documents' => [
+            'title' => 'documents',
+            'icon' => 'fa-picture-o',
+            'link' => 'documents'
         ]
     ];
 

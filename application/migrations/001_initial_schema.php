@@ -8,7 +8,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class MIgration_initial_schema extends CI_Migration
+class Migration_initial_schema extends CI_Migration
 {
     public function up()
     {
@@ -80,7 +80,7 @@ class MIgration_initial_schema extends CI_Migration
 
       /*///////////////////////////////////////////////////////////////////
       |                                                                   |
-      |               Gallery                                             |
+      |               testimonial                                         |
       |                                                                   |
       ///////////////////////////////////////////////////////////////////*/
 
@@ -93,13 +93,15 @@ class MIgration_initial_schema extends CI_Migration
                 'auto_increment' => TRUE
             ],
             'name' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
+                'type' => 'LONGTEXT',
+                'null' => TRUE
+            ],
+            'organisation' => [
+                'type' => 'LONGTEXT',
                 'null' => TRUE
             ],
             'description' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
+                'type' => 'LONGTEXT',
                 'null' => TRUE
             ],
             'file_id' => [
@@ -109,11 +111,11 @@ class MIgration_initial_schema extends CI_Migration
             ]
         ]);
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('galleries');
+        $this->dbforge->create_table('testimonials');
 
         /*///////////////////////////////////////////////////////////////////
         |                                                                   |
-        |               portfolios                                          |
+        |               Blog                                                |
         |                                                                   |
         ///////////////////////////////////////////////////////////////////*/
 
@@ -125,25 +127,33 @@ class MIgration_initial_schema extends CI_Migration
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ],
-            'name' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
+            'heading' => [
+                'type' => 'LONGTEXT',
                 'null' => TRUE
             ],
-            'description' => [
-                'type' => 'VARCHAR',
-                'constraint' => '100',
+            'content' => [
+                'type' => 'LONGTEXT',
                 'null' => TRUE
+            ],
+            'date' => [
+                'type' => 'DATE',
+                'null' => TRUE
+            ],
+            'file_id' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'null' => TRUE,
             ]
+
         ]);
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('portfolios');
+        $this->dbforge->create_table('blogs');
 
 
 
        /*///////////////////////////////////////////////////////////////////
        |                                                                   |
-       |               portfolio files                                     |
+       |               Documents                                           |
        |                                                                   |
        ///////////////////////////////////////////////////////////////////*/
 
@@ -155,9 +165,12 @@ class MIgration_initial_schema extends CI_Migration
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ],
-            'portfolio_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
+            'name' => [
+                'type' => 'LONGTEXT',
+                'null' => TRUE,
+            ],
+            'description' => [
+                'type' => 'LONGTEXT',
                 'null' => TRUE,
             ],
             'file_id' => [
@@ -167,7 +180,15 @@ class MIgration_initial_schema extends CI_Migration
             ]
         ]);
         $this->dbforge->add_key('id', TRUE);
-        $this->dbforge->create_table('portfolio_files');
+        $this->dbforge->create_table('documents');
     }
 
+    public function down()
+    {
+        $this->dbforge->drop_table('users');
+        $this->dbforge->drop_table('files');
+        $this->dbforge->drop_table('testimonils');
+        $this->dbforge->drop_table('blogs');
+        $this->dbforge->drop_table('documents');
+    }
 }

@@ -1,11 +1,11 @@
 <div class="header">
     <h1 class="page-header">
-        Gallery <a href="" ng-click="newGallery()" ng-show="showform != true"><i class="fa fa-plus" aria-hidden="true"></i></a>
+        Testimonial <a href="" ng-click="newTestimonial()" ng-show="showform != true"><i class="fa fa-plus" aria-hidden="true"></i></a>
         <a href="" ng-click="hideForm()" ng-show="showform != false"><i class="fa fa-minus" aria-hidden="true"></i></a>
     </h1>
     <ol class="breadcrumb">
         <li><a href="#dashboard">Home</a></li>
-        <li><a href="#gallery">gallery</a></li>
+        <li><a href="#testimonial">testimonial</a></li>
     </ol>
 </div>
 
@@ -15,22 +15,28 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Add Gallery
+                    Add Testimonial
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-10">
-                            <form class="form-horizontal" method="POST" ng-submit="addGallery()" id="formgal">
+                            <form class="form-horizontal" method="POST" ng-submit="addTestimonial()" id="formgal">
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">Name</label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="name" class="form-control" ng-model="newgallery.name" required=""/>
+                                        <input type="text" name="name" class="form-control" ng-model="newtestimonial.name" required=""/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="control-label col-lg-2">Organisation</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" name="name" class="form-control" ng-model="newtestimonial.organisation" required=""/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">Description</label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="description" class="form-control" ng-model="newgallery.description"/>
+                                        <textarea name="description" class="form-control" ng-model="newtestimonial.description"></textarea>
                                     </div>
                                 </div>
 
@@ -98,15 +104,15 @@
                                             Images<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
                                         </uib-accordion-heading>
                                         <div class="row">
-                                            <div class="col-md-2" ng-repeat="(key,preview) in item_files">
+                                            <div class="col-md-2">
                                                 <div class="thumbnail cus-thumb" ng-mouseover="showcaption=true" ng-mouseleave="showcaption=false" style="max-height: 142px;">
                                                     <div class="caption" ng-show="showcaption">
                                                         <div id="content">
                                                             <a href="" class="label label-warning" rel="tooltip" title="Show">Show</a>
-                                                            <a href="" class="label label-danger" rel="tooltip" title="Delete" confirmed-click="deleteImage(preview)" ng-confirm-click="Would you like to delete this item?!">Delete</a>
+                                                            <a href="" class="label label-danger" rel="tooltip" title="Delete" confirmed-click="deleteImage(item_files)" ng-confirm-click="Would you like to delete this item?!">Delete</a>
                                                         </div>
                                                     </div>
-                                                    <img src="{{preview.thumbImgUrl}}" alt="thumbnails">
+                                                    <img src="{{base_url+'uploads/'+item_files.file_name}}" alt="thumbnails">
                                                 </div>
                                             </div>
                                         </div>
@@ -130,25 +136,75 @@
         </div>
     </div>
 
-    <!--View Gallery-->
+    <!--View Testimonial-->
     <div class="row">
-        <div class="col-lg-3" dir-paginate="gallery in galleries | filter:serach | limitTo:pageSize | itemsPerPage:numPerPage">
-            <div class="cuadro_intro_hover thumbnail" style="background-color:#cccccc;">
-                <p style="text-align:center;">
-                    <img class="img-responsive" style="cursor:pointer;" src="{{base_url+'uploads/'+gallery.file.file_name}}" alt="{{gallery.name}}" />
-                </p>
-                <div class="caption">
-                    <div class="blur"></div>
-                    <div class="caption-text">
-                        <h3 style="border-top:2px solid white; border-bottom:2px solid white; padding:10px;">{{gallery.name}}</h3>
-                        <p>{{gallery.description}}</p>
-                        <button type="button" style="color: initial;" class="btn btn-default" ng-click="open(gallery)">Open</button>
-                        <button type="button" style="color: initial;" class="btn btn-default" ng-click="showForm(gallery)">edit</button>
-                        <button type="button" style="color: initial;" class="btn btn-default" confirmed-click="deleteGallery(gallery)" ng-confirm-click="Would you like to delete this item?!">delete</button>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Result testimonial list
+            </div>
+            <div class="panel-body">
+                <div class="table-responsive">
+                    <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                        <div class="row" style="max-width: 100%;">
+                            <div class="col-sm-6">
+                                <div class="dataTables_length" id="dataTables-example_length">
+                                    <label>
+                                        <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm" ng-model="numPerPage"
+                                                ng-options="num for num in paginations">{{num}}
+                                        </select>
+                                        records per page
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="dataTables-example_filter" class="dataTables_filter">
+                                    <label>
+                                        Search:
+                                        <input class="form-control input-sm" aria-controls="dataTables-example" type="search" ng-model="search">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>name</th>
+                                <th>Organisation</th>
+                                <th>Description</th>
+                                <th>Photo</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr dir-paginate="testimonial in testimonials | filter:search | limitTo:pageSize | itemsPerPage:numPerPage">
+                                <td>{{$index+1}}</td>
+                                <td>{{testimonial.name}}</td>
+                                <td>{{testimonial.organisation}}</td>
+                                <td>{{testimonial.description}}</td>
+                                <td><a href="{{base_url + 'uploads/' + testimonial.file.file_name}}"><img src="{{base_url + 'uploads/' + testimonial.file.file_name}}" alt="Thumbnail" width="25px" height="25px"/></a></td>
+                                <td>
+                                    <div  class="btn-group btn-group-xs" role="group">
+                                        <button type="button" class="btn btn-info" ng-click="editTestimonial(testimonial)">
+                                            <i class="fa fa-pencil"></i>
+                                        </button>
+                                        <button  type="button" class="btn btn-danger" confirmed-click="deleteTestimonial(testimonial)" ng-confirm-click="Would you like to delete this item?!">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <dir-pagination-controls
+                            max-size="10"
+                            direction-links="true"
+                            boundary-links="true">
+                        </dir-pagination-controls>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
