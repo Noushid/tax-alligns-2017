@@ -1,0 +1,36 @@
+{
+  "name": "quality-builders",
+  "version": "1.0.0",
+  "description": "portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShammasPk/QualityBuilders.git"
+  },
+  "keywords": [
+    "builders",
+    "construction"
+  ],
+  "author": "psybo Technologies",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShammasPk/QualityBuilders/issues"
+  },
+  "homepage": "https://github.com/ShammasPk/QualityBuilders#readme",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-ui-bootstrap": "^2.5.0",
+    "angular-utils-pagination": "^0.11.1",
+    "ng-file-upload": "^12.2.13"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}
