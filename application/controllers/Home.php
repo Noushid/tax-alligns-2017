@@ -34,23 +34,9 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
 
-    public function portfolio($page = 'portfolio')
+    public function blog($page = 'blog')
     {
-        $this->load->view($this->header,['current' => 'Portfolio']);
-        $this->load->view($page);
-        $this->load->view($this->footer);
-    }
-
-    public function portfolioDetails($page = 'portfolioDetails')
-    {
-        $this->load->view($this->header,['current' => 'Portfolio']);
-        $this->load->view($page);
-        $this->load->view($this->footer);
-    }
-
-    public function moments($page = 'moments')
-    {
-        $this->load->view($this->header,['current' => 'Moments']);
+        $this->load->view($this->header,['current' => 'blog']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }

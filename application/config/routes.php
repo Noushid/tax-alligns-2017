@@ -54,9 +54,7 @@ $route['default_controller'] = 'Home';
 /*_______ public route start _______*/
 $route['home'] = 'Home/index';
 $route['about'] = 'Home/about';
-$route['portfolio'] = 'Home/portfolio';
-$route['portfolioDetails'] = 'Home/portfolioDetails';
-$route['moments'] = 'Home/moments';
+$route['blog'] = 'Home/blog';
 $route['contact'] = 'Home/contact';
 /*_______ public route End _______*/
 
