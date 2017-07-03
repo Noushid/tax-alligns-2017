@@ -9,7 +9,7 @@
                                 <h5 class="title">We have over 15 years of experience</h5>
                                 <p>Our suppoer available to help you 24 hours a day, seven days week</p>
                                 <div class="map">
-                                    <a href="#"><i class="fa fa-map-marker"></i> Go to Google Maps</a>
+                                    <!-- <a href="#"><i class="fa fa-map-marker"></i> Go to Google Maps</a> -->
                                 </div>
                             </div>
                         </div><!-- footer-logo -->
@@ -21,11 +21,11 @@
                                 <h5 class="widget-title">Quick Links</h5>
                             </div>
                             <ul class="our_services">
-                                <li class="facebook"><a href="index.html#offer"> What We Offer</a></li>
-                                <li class="twitch"><a href="index.html#choos"> Why Choose Us</a></li>
-                                <li class="google"><a href="index.html#call"> Request Call Back</a></li>
-                                <li class="linkedIn"><a href="index.html#testimonial"> What Our Clients Say</a></li>
-                                <li class="youtube"><a href="index.html#blog"> Latest News</a></li>
+                                <li class="facebook"><a href="home#offer"> What We Offer</a></li>
+                                <li class="twitch"><a href="home#choos"> Why Choose Us</a></li>
+                                <li class="google"><a href="home#call"> Request Call Back</a></li>
+                                <li class="linkedIn"><a href="home#testimonial"> What Our Clients Say</a></li>
+                                <li class="youtube"><a href="home#blog"> Latest News</a></li>
                             </ul>
                         </div>
                     </div><!-- col-md-3 -->
@@ -36,11 +36,11 @@
                                 <h5 class="widget-title">Our Services</h5>
                             </div>
                             <ul class="our_services">
-                                <li class="facebook"><a href="about.html"> About Us</a></li>
-                                <li class="twitch"><a href="services.html"> Our Services</a></li>
-                                <li class="google"><a href="blog.html"> Our Service News</a></li>
-                                <li class="linkedIn"><a href="#"> Get An Appointment</a></li>
-                                <li class="youtube"><a href="contact.html"> Contact Us</a></li>
+                                <li class="facebook"><a href="about"> About Us</a></li>
+                                <li class="twitch"><a href="services"> Our Services</a></li>
+                                <li class="google"><a href="blog"> Our Service News</a></li>
+                                <li class="linkedIn"><a href="home#appointment"> Get An Appointment</a></li>
+                                <li class="youtube"><a href="contact"> Contact Us</a></li>
                             </ul>
                         </div>
                     </div><!-- col-md-3 -->

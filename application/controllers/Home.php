@@ -97,7 +97,7 @@ class Home extends CI_Controller
     {
         $this->load->view($this->header,['current' => 'Contact Us']);
         $this->load->view($page);
-        $this->load->view($this->footer);
+        // $this->load->view($this->footer);
     }
 
 }
