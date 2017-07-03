@@ -54,6 +54,17 @@ $route['default_controller'] = 'Home';
 /*_______ public route start _______*/
 $route['home'] = 'Home/index';
 $route['about'] = 'Home/about';
+$route['services'] = 'Home/services';
+
+$route['GST'] = 'Home/gst';
+$route['WhatIsGST'] = 'Home/whatisgst';
+$route['GSTfiling'] = 'Home/gstfiling';
+$route['GSTaccounting'] = 'Home/gstaccounting';
+$route['GSTinvoice'] = 'Home/gstinvoice';
+
+$route['ITreturns'] = 'Home/returns';
+$route['TDS'] = 'Home/tds';
+
 $route['blog'] = 'Home/blog';
 $route['contact'] = 'Home/contact';
 /*_______ public route End _______*/

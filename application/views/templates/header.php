@@ -99,29 +99,29 @@
                                 <ul class="menu"> 
                                     <li class="home"><a href="home">Home</a></li>
                                     <li><a href="about">About Us</a></li> 
-                                    <li><a href="services.html">Our Services</a></li>
-                                    <li><a href="gst.html">GST</a>
+                                    <li><a href="services">Our Services</a></li>
+                                    <li><a href="GST">GST</a>
                                         <ul class="submenu">
-                                            <li><a href="whatisgst.html">What is GST</a></li>
-                                            <li><a href="filing.html">GST Filing</a></li>
-                                            <li><a href="gstAccounting.html">GST Accounting</a>
+                                            <li><a href="WhatIsGST">What is GST</a></li>
+                                            <li><a href="GSTfiling">GST Filing</a></li>
+                                            <li><a href="GSTaccounting">GST Accounting</a>
                                                 <ul class="submenu">
-                                                    <li><a href="gstAccounting.html#tally">In Tally ERP</a></li>
-                                                    <li><a href="gstAccounting.html#mallu">In Malayalam</a></li>
-                                                    <li><a href="gstAccounting.html#council">GST Council</a></li>
+                                                    <li><a href="GSTaccounting#tally">In Tally ERP</a></li>
+                                                    <li><a href="GSTaccounting#mallu">In Malayalam</a></li>
+                                                    <li><a href="GSTaccounting#council">GST Council</a></li>
                                                 </ul><!-- /.submenu -->
                                             </li>
-                                            <li><a href="invoice.html">GST Invoice</a></li>
+                                            <li><a href="GSTinvoice">GST Invoice</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>
                                     <li><a href="#">Income Tax</a>
                                         <ul class="submenu">
-                                            <li><a href="returns.html">IT Returns</a></li>
-                                            <li><a href="tds.html">TDS</a></li>
+                                            <li><a href="ITreturns">IT Returns</a></li>
+                                            <li><a href="TDS">TDS</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>
                                     <li><a href="blog">News</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="contact">Contact Us</a></li>
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->

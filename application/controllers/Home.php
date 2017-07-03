@@ -34,6 +34,58 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
 
+    public function services($page = 'services')
+    {
+        $this->load->view($this->header,['current' => 'Our Services']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+
+    /*gst sub-menu start*/
+    public function gst($page = 'gst')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function whatisgst($page = 'whatisgst')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gstaccounting($page = 'gstaccounting')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gstfiling($page = 'gstfiling')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gstinvoice($page = 'gstinvoice')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function returns($page = 'returns')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function tds($page = 'tds')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    /*gst sub-menu end*/
+
     public function blog($page = 'blog')
     {
         $this->load->view($this->header,['current' => 'blog']);
