@@ -257,7 +257,7 @@
         });
     }; 
 
-    var ajaxContactForm = function() {  
+    var ajaxContactForm = function() {
         $('#contactform').each(function() {
             $(this).validate({
                 submitHandler: function( form ) {
@@ -273,9 +273,10 @@
                             $form.find('.submit-wrap').append(loading);
                         },
                         success: function( msg ) {
+                            console.log(msg);
                             var result, cls;                            
-                            if ( msg == 'Success' ) {                                
-                                result = 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
+                            if ( msg == 'success' ) {
+                                result = 'Message Sent Successfully To Email Administrator.';
                                 cls = 'msg-success';
                             } else {
                                 result = 'Error sending email.';
