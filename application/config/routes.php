@@ -72,6 +72,7 @@ $route['TDS'] = 'Home/tds';
 $route['blog'] = 'Home/blog';
 $route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
+$route['send-message'] = 'Home/send_message';
 /*_______ public route End _______*/
 
 /*_______ admin route start _______*/

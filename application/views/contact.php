@@ -49,7 +49,7 @@
                    <div class="title-section style1">
                      <h3 class="title">Leave a Message</h3>
                     </div>
-                    <form id="contactform" class="flat-contact-form style2 bg-dark height-small" method="post" action="./contact/contact-process.php">
+                    <form id="contactform" class="flat-contact-form style2 bg-dark height-small" method="POST" action="<?php echo base_url('send-message');?>">
                         <div class="field clearfix">      
                             <div class="wrap-type-input">                    
                                 <div class="input-wrap name">
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="submit-wrap">
-                            <button class="flat-button bg-orange">Send Your Message</button>
+                            <button class="flat-button bg-orange" type="submit">Send Your Message</button>
                         </div>
                     </form><!-- /.comment-form -->                     
                 </div><!-- /#respond -->
@@ -187,6 +187,13 @@
         <script type="text/javascript" src="javascript/jquery.bxslider.js"></script> 
         <script type="text/javascript" src="javascript/main.js"></script>
 
+
+        <script>
+//            $('#contactform').submit(function(event) {
+//                event.preventDefault();
+//                console.log('kjk');
+//            })
+        </script>
 
     </div> <!-- /.boxed -->
 </body>

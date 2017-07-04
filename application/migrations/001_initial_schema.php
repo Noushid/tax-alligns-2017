@@ -76,8 +76,6 @@ class Migration_initial_schema extends CI_Migration
         ]);
         $this->dbforge->add_key('id', TRUE);
         $this->dbforge->create_table('files');
-        $this->load->model('user_model');
-        $this->user_model->insert_dummy();
 
 
       /*///////////////////////////////////////////////////////////////////
@@ -142,6 +140,11 @@ class Migration_initial_schema extends CI_Migration
                 'null' => TRUE
             ],
             'file_id' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'null' => TRUE,
+            ],
+            'document_id' => [
                 'type' => 'INT',
                 'constraint' => 5,
                 'null' => TRUE,

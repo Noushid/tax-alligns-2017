@@ -35,7 +35,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html"><strong>bluebox</strong></a>
+            <a class="navbar-brand" href=""><strong>Accounts and tax</strong></a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
