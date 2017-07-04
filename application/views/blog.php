@@ -38,7 +38,7 @@
                                             <div class="entry-post">
                                                 <p><?php echo $value->content;?></p>
                                             </div>
-                                            <div class="submit-wrap">
+                                            <div class="submit-wrap" style="float: right;">
                                                 <button onclick="document.location='<?php echo base_url('gst/' . $value->id); ?>'" class="flat-button button-style">Read More <i
                                                         class="fa fa-chevron-right"></i></button>
                                             </div>
