@@ -1270,6 +1270,9 @@ input[type="color"],
 	height: 0;
 	line-height: 0;
 	padding-left: 0;
+	height: 30px;
+	cursor: pointer;
+
 }
 
 .post-wrap.blog-v2 .entry .content-post .submit-wrap button i {

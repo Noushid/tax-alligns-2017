@@ -39,7 +39,7 @@
                                                 <p><?php echo $value->content;?></p>
                                             </div>
                                             <div class="submit-wrap">
-                                                <button class="flat-button button-style">Read More <i
+                                                <button onclick="document.location='<?php echo base_url('blogView/' . $value->id); ?>'" class="flat-button button-style">Read More <i
                                                         class="fa fa-chevron-right"></i></button>
                                             </div>
                                         </div>
