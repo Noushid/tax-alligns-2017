@@ -70,7 +70,7 @@ $route['ITreturns'] = 'Home/returns';
 $route['TDS'] = 'Home/tds';
 
 $route['blog'] = 'Home/blog';
-$route['blogView/(:num)'] = 'Home/blogView/$1';
+$route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 /*_______ public route End _______*/
 

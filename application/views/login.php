@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
-    <title>ICA -login</title>
+    <title>Accounts & TaxAlliance -login</title>
     <script src="<?php echo public_url() . 'adm/assets/js/angular-bootstrap.min.js' ?>"></script>
     <script src="<?php echo public_url() . 'adm/assets/js/angularApp.min.js' ?>"></script>
     <style>

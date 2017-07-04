@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ICA -Dashboard</title>
+    <title>Accounts & TaxAlliance -Dashboard</title>
     <!-- Bootstrap Styles-->
     <link href="<?php echo base_url();?>adm/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->

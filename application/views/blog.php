@@ -32,14 +32,14 @@
                                                 </ul>
                                             </div>
                                             <h4 class="title-post">
-                                                <a href="<?php echo base_url('blogView/' . $value->id); ?>"><?php echo $value->heading?></a>
+                                                <a href="<?php echo base_url('gst/' . $value->id); ?>"><?php echo $value->heading?></a>
                                             </h4>
 
                                             <div class="entry-post">
                                                 <p><?php echo $value->content;?></p>
                                             </div>
                                             <div class="submit-wrap">
-                                                <button onclick="document.location='<?php echo base_url('blogView/' . $value->id); ?>'" class="flat-button button-style">Read More <i
+                                                <button onclick="document.location='<?php echo base_url('gst/' . $value->id); ?>'" class="flat-button button-style">Read More <i
                                                         class="fa fa-chevron-right"></i></button>
                                             </div>
                                         </div>
