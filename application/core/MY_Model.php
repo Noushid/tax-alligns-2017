@@ -1844,7 +1844,10 @@ class MY_Model extends CI_Model
 
         if($page_number == 1)
         {
-            $this->previous_page = $this->pagination_delimiters[0].$this->pagination_arrows[0].$this->pagination_delimiters[1];
+//            $this->previous_page = $this->pagination_delimiters[0].$this->pagination_arrows[0].$this->pagination_delimiters[1];
+            /*page number equal to 1  which mean nothing to previous page*/
+            $this->previous_page = '';
+
         }
         else
         {
@@ -1856,7 +1859,9 @@ class MY_Model extends CI_Model
         $uri_string = implode('/',$uri_array);
         if(isset($total_rows) && (ceil($total_rows/$rows_per_page) == $page_number))
         {
-            $this->next_page = $this->pagination_delimiters[0].$this->pagination_arrows[1].$this->pagination_delimiters[1];
+//            $this->next_page = $this->pagination_delimiters[0].$this->pagination_arrows[1].$this->pagination_delimiters[1];
+            /*last page nothing to next page*/
+            $this->next_page = "";
         }
         else
         {
@@ -1874,9 +1879,11 @@ class MY_Model extends CI_Model
                 for ($i = 1; $i <= $number_of_pages; $i++) {
                     unset($uri_array[$segments]);
                     $uri_string = implode('/', $uri_array);
-                    $links .= $this->pagination_delimiters[0];
-                    $links .= (($page_number == $i) ? anchor($uri_string, $i) : anchor($uri_string . '/' . $i, $i));
+                    $links .= ($page_number == $i ? $this->pagination_delimiters[2] : $this->pagination_delimiters[0]);
+//                    $links .= $this->pagination_delimiters[0];
+                    $links .= (($page_number == $i) ? anchor($uri_string.'/'.$i, $i) : anchor($uri_string . '/' . $i, $i));
                     $links .= $this->pagination_delimiters[1];
+
                 }
                 $links .= $this->next_page;
                 $this->all_pages = $links;
