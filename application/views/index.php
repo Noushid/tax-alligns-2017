@@ -320,7 +320,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-request">
-                                <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+                                <form action="<?php echo base_url('send-comment')?>" method="post" id="commentform" class="comment-form">
                                     <div class="post style-v1">
                                         <div class="text-form">
                                             <h2 class="title">Request Call Back.</h2>
@@ -329,8 +329,8 @@
                                     </div>
                                     <div class="post">
                                         <div class="form-v1">
-                                            <select name="style cars">
-                                                <option value="1" selected="">How can we help?</option>
+                                            <select name="service">
+                                                <option value="" disabled selected="">How can we help?</option>
                                                 <option value="GST & IT CONSULTING">GST & IT CONSULTING</option>
                                                 <option value="ACCOUNTING & TAXATION">ACCOUNTING & TAXATION</option>
                                                 <option value="FORMATION SERVICES">FORMATION SERVICES</option>
@@ -339,17 +339,25 @@
                                                 <option value="TRAINING & PLACEMENT SERVICES">TRAINING & PLACEMENT SERVICES</option>
                                             </select>
                                             <fieldset class="style phone-container">
-                                                <input type="text" id="phone-footer" placeholder="Your Contact Number" class="tb-my-input" name="phone" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="text" id="phone-footer" placeholder="Your Contact Number" class="tb-my-input" name="phone" tabindex="2" value="" size="32" required="">
                                             </fieldset>
                                         </div>
                                     </div>
                                     <div class="post">
                                         <div class="form-v2">
                                             <fieldset class="style name-container">
-                                                <input type="text" id="author-footer" placeholder="You Name*" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="text" placeholder="You Name*" class="tb-my-input" name="name" tabindex="1" value="" size="32" required="">
                                             </fieldset>
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style">submit <i class="fa fa-chevron-right"></i></button>
+                                                <div class="alert alert-success hide" id="comment-alert-success">
+                                                    <i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i>
+                                                    We will get you shortly! Thank you
+                                                </div>
+                                                <div class="alert alert-danger hide" id="comment-alert-error">
+                                                    <i class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                                                    Sorry! Something went wrong
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -549,5 +557,3 @@
             </div>
         </section>
         <!-- NEED HELP END -->
-
-        

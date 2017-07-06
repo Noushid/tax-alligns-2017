@@ -177,5 +177,39 @@ class Home extends CI_Controller
         }
     }
 
+    function send_comment()
+    {
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('phone', 'Email', 'required');
+
+        if ($this->form_validation->run() === FALSE) {
+            $this->output->set_status_header(400, 'Validation error');
+        } else {
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $service = $this->input->post('service');
+
+            $service = wordwrap($service, 70, "<br>");
+            $subject = 'Comments from : ' . $name;
+
+            $message = 'name  :  ' . $name . PHP_EOL . PHP_EOL;
+            $message .= 'Request from  :   ' . $phone . PHP_EOL . PHP_EOL;
+            $message .= 'Requested Service   :   ' . $service . PHP_EOL . PHP_EOL;
+
+            $message = str_replace("\n.", "\n..", $message);
+
+            $to = 'info@accountsandtax.in';
+
+            $headers = 'From: comments@accountsandtax.in';
+
+            if (mail($to, $subject, $message, $headers)) {
+                $this->output->set_output('success');
+            } else {
+                $this->output->set_status_header(101, 'Mail server connect error');
+                $this->output->set_output('error');
+            }
+        }
+    }
+
 
 }
