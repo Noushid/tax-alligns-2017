@@ -99,9 +99,13 @@ class Home extends CI_Controller
     }
     /*gst sub-menu end*/
 
-    public function blog($page = 'blog')
+    public function blog($pagnate="")
     {
-        $data['blog'] = $this->_load_blog();
+        $page = 'blog';
+        $total_post = $this->blog->count_rows();
+        $data['blog'] = $this->blog->with_file()->with_document()->paginate(5, $total_post);
+        $data['all_pages'] = $this->blog->all_pages;
+
         $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view($page, $data);
         $this->load->view($this->footer);
