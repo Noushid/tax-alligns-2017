@@ -320,16 +320,15 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-request">
-                                <div class="post style-v1">
-                                    <div class="text-form">
-                                        <h2 class="title">Request Call Back.</h2>
-                                        <p>Would you like to speak to one of our financial advisers over the phone? Just submit your details and we'll be in touch shortly. You can also email us if you would prefer.</p>
+                                <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+                                    <div class="post style-v1">
+                                        <div class="text-form">
+                                            <h2 class="title">Request Call Back.</h2>
+                                            <p>Would you like to speak to one of our financial advisers over the phone? Just submit your details and we'll be in touch shortly. You can also email us if you would prefer.</p>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="post">
-                                    <div class="form-v1">
-                                        <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+                                    <div class="post">
+                                        <div class="form-v1">
                                             <select name="style cars">
                                                 <option value="1" selected="">How can we help?</option>
                                                 <option value="GST & IT CONSULTING">GST & IT CONSULTING</option>
@@ -342,22 +341,19 @@
                                             <fieldset class="style phone-container">
                                                 <input type="text" id="phone-footer" placeholder="Your Contact Number" class="tb-my-input" name="phone" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="post">
-                                    <div class="form-v2">
-                                        <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+                                    <div class="post">
+                                        <div class="form-v2">
                                             <fieldset class="style name-container">
                                                 <input type="text" id="author-footer" placeholder="You Name*" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style">submit <i class="fa fa-chevron-right"></i></button>
                                             </div>
-                                        </form>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div><!-- row -->
