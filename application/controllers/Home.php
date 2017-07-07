@@ -99,11 +99,11 @@ class Home extends CI_Controller
     }
     /*gst sub-menu end*/
 
-    public function blog($pagnate="")
+    public function blog()
     {
         $page = 'blog';
         $total_post = $this->blog->count_rows();
-        $data['blog'] = $this->blog->with_file()->with_document()->paginate(5, $total_post);
+        $data['blog'] = $this->blog->with_file()->with_document()->order_by('id','desc')->paginate(5, $total_post);
         $data['all_pages'] = $this->blog->all_pages;
 
         $this->load->view($this->header,['current' => 'Our Blog']);
@@ -129,15 +129,15 @@ class Home extends CI_Controller
 
     public function _load_testimonial()
     {
-        return $this->testimonial->with_file()->get_all();
+        return $this->testimonial->with_file()->order_by('id','desc')->get_all();
     }
 
     public function _load_blog($limit ="")
     {
         if ($limit != "") {
-            return $this->blog->with_file()->with_document()->limit($limit)->get_all();
+            return $this->blog->with_file()->with_document()->limit($limit)->order_by('id','DESC')->get_all();
         } else {
-            return $this->blog->with_file()->with_document()->get_all();
+            return $this->blog->with_file()->with_document()->order_by('id','desc')->get_all();
         }
     }
 
