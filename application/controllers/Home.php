@@ -103,7 +103,7 @@ class Home extends CI_Controller
     {
         $page = 'blog';
         $total_post = $this->blog->count_rows();
-        $data['blog'] = $this->blog->with_file()->with_document()->order_by('id','desc')->paginate(5, $total_post);
+        $data['blog'] = $this->blog->order_by('id','desc')->paginate(5, $total_post);
         $data['all_pages'] = $this->blog->all_pages;
 
         $this->load->view($this->header,['current' => 'Our Blog']);

@@ -17,11 +17,10 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.uploaded1 = [];
     $scope.fileValidation = {};
 
-
     loadBlog();
 
     function loadBlog() {
-        $http.get($rootScope.base_url + 'admin/blog/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/blog/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.blogs = response.data;
@@ -75,7 +74,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
 
 
         if ($scope.newblog['id']) {
-            var url = $rootScope.base_url + 'admin/blog/edit/' + $scope.newblog.id;
+            var url = $rootScope.base_url + 'dashboard/blog/edit/' + $scope.newblog.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -92,7 +91,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/blog/add';
+            var url = $rootScope.base_url + 'dashboard/blog/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
@@ -103,13 +102,13 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
                     $scope.newblog = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $scope.files = [];
 
                 }, function onError(response) {
                     console.log('addError :- Status :' + response.status + 'data : ' + response.data);
                     console.log(response.data);
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $scope.files = [];
 
                     if (response.status == 403) {
                         $scope.fileValidation.status = true;
@@ -121,7 +120,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
 
     $scope.deleteBlog = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/blog/delete/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/blog/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 var index = $scope.blogs.indexOf(item);
@@ -144,14 +143,15 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/blog/upload',
+                url: $rootScope.base_url + 'dashboard/blog/upload',
                 data: {file: file}
             });
 
             file.upload.then(function (response) {
                 $timeout(function () {
-                    $scope.uploaded.push(response.data);
+                    //$scope.uploaded.push(response.data);
                     file.result = response.data;
+                    $scope.fileUrl = response.data.url;
                 });
             }, function (response) {
                 if (response.status > 0)
@@ -170,7 +170,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         angular.forEach(files, function (file) {
             $scope.files1.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/blog/upload',
+                url: $rootScope.base_url + 'dashboard/blog/upload',
                 data: {file: file}
             });
 
@@ -192,7 +192,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/blog/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/blog/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');

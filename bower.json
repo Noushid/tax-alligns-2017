@@ -1,0 +1,24 @@
+{
+  "name": "quality-builders",
+  "description": "portfolio",
+  "main": "index.js",
+  "authors": [
+    "psybo Technologies"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "builders",
+    "construction"
+  ],
+  "homepage": "https://github.com/Noushid/tax-alligns-2017",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ng-ckeditor": "^0.2.1"
+  }
+}

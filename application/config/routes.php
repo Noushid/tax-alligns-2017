@@ -56,9 +56,8 @@ $route['home'] = 'Home/index';
 $route['about'] = 'Home/about';
 $route['services'] = 'Home/services';
 
-$route['login'] = 'Home/login';
-$route['login/verify'] = 'Dashboard/verify';
-$route['logout'] = 'Dashboard/logout';
+$route['login'] = 'Auth/login';
+$route['logout'] = 'Auth/logout';
 
 $route['GST'] = 'Home/gst';
 $route['WhatIsGST'] = 'Home/whatisgst';
@@ -79,33 +78,33 @@ $route['send-comment'] = 'Home/send_comment';
 
 /*_______ admin route start _______*/
 
-$route['admin'] = 'Dashboard';
+$route['dashboard'] = 'Dashboard';
 
-$route['admin/testimonial'] = 'Dashboard/testimonial';
-$route['admin/testimonial/upload'] = 'Testimonial_Controller/upload';
-$route['admin/testimonial/get']['get'] = 'Testimonial_Controller/get_all';
-$route['admin/testimonial/add']['post'] = 'Testimonial_Controller/store';
-$route['admin/testimonial/edit/(:num)']['post'] = 'Testimonial_Controller/update/$1';
-$route['admin/testimonial/delete-image/(:num)']['delete'] = 'Testimonial_Controller/delete_image/$1';
-$route['admin/testimonial/delete/(:num)']['delete'] = 'Testimonial_Controller/delete/$1';
-
-
-$route['admin/blog'] = 'Dashboard/blog';
-$route['admin/blog/upload'] = 'Blog_Controller/upload';
-$route['admin/blog/get']['get'] = 'Blog_Controller/get_all';
-$route['admin/blog/add']['post'] = 'Blog_Controller/store';
-$route['admin/blog/edit/(:num)']['post'] = 'Blog_Controller/update/$1';
-$route['admin/blog/delete-image/(:num)']['delete'] = 'Blog_Controller/delete_image/$1';
-$route['admin/blog/delete/(:num)']['delete'] = 'Blog_Controller/delete/$1';
+$route['dashboard/testimonial'] = 'Dashboard/testimonial';
+$route['dashboard/testimonial/upload'] = 'Testimonial_Controller/upload';
+$route['dashboard/testimonial/get']['get'] = 'Testimonial_Controller/get_all';
+$route['dashboard/testimonial/add']['post'] = 'Testimonial_Controller/store';
+$route['dashboard/testimonial/edit/(:num)']['post'] = 'Testimonial_Controller/update/$1';
+$route['dashboard/testimonial/delete-image/(:num)']['delete'] = 'Testimonial_Controller/delete_image/$1';
+$route['dashboard/testimonial/delete/(:num)']['delete'] = 'Testimonial_Controller/delete/$1';
 
 
-$route['admin/document'] = 'Dashboard/document';
-$route['admin/document/upload'] = 'Document_Controller/upload';
-$route['admin/document/get']['get'] = 'Document_Controller/get_all';
-$route['admin/document/add']['post'] = 'Document_Controller/store';
-$route['admin/document/edit/(:num)']['post'] = 'Document_Controller/update/$1';
-$route['admin/document/delete-image/(:num)']['delete'] = 'Document_Controller/delete_image/$1';
-$route['admin/document/delete/(:num)']['delete'] = 'Document_Controller/delete/$1';
+$route['dashboard/blog'] = 'Dashboard/blog';
+$route['dashboard/blog/upload'] = 'Blog_Controller/upload';
+$route['dashboard/blog/get']['get'] = 'Blog_Controller/get_all';
+$route['dashboard/blog/add']['post'] = 'Blog_Controller/store';
+$route['dashboard/blog/edit/(:num)']['post'] = 'Blog_Controller/update/$1';
+$route['dashboard/blog/delete-image/(:num)']['delete'] = 'Blog_Controller/delete_image/$1';
+$route['dashboard/blog/delete/(:num)']['delete'] = 'Blog_Controller/delete/$1';
+
+
+$route['dashboard/document'] = 'Dashboard/document';
+$route['dashboard/document/upload'] = 'Document_Controller/upload';
+$route['dashboard/document/get']['get'] = 'Document_Controller/get_all';
+$route['dashboard/document/add']['post'] = 'Document_Controller/store';
+$route['dashboard/document/edit/(:num)']['post'] = 'Document_Controller/update/$1';
+$route['dashboard/document/delete-image/(:num)']['delete'] = 'Document_Controller/delete_image/$1';
+$route['dashboard/document/delete/(:num)']['delete'] = 'Document_Controller/delete/$1';
 
 /*_______ admin route end _______*/
 

@@ -7,30 +7,23 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
-require_once(APPPATH.'core/Check_Logged.php');
 
-class Dashboard extends Check_Logged
+class Dashboard extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
 
-        /*
-         * Check loin and logout
-         * */
-        $this->load->model('User_model', 'user');
+        $this->load->library(['ion_auth']);
 
-
-        if ( ! $this->logged)
+        /**
+         * Check loin
+         *
+         */
+        if (!$this->ion_auth->logged_in())
         {
-            // Allow some methods?
-            $allowed = array(
-                'verify'
-            );
-            if ( ! in_array($this->router->fetch_method(), $allowed))
-            {
-                redirect(base_url('login'));
-            }
+            // redirect them to the login page
+            redirect('login', 'refresh');
         }
     }
 

@@ -17,10 +17,8 @@
                                         </div>
                                         <div class="content-post">
                                             <div class="entry-post">
-                                                <p><?php echo $blog[0]->content;?></p>
+                                                <?php echo $blog[0]->content;?>
                                             </div>
-                                            <object class="bt-solid-1" data="<?php echo base_url('uploads/') . $blog[0]->document->file_name;?>" type="application/pdf" style="height: 600px;" width="100%">
-                                            </object>
 
                                         </div>
                                     </div><!-- /.entry-border -->
