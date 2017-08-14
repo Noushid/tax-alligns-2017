@@ -226,13 +226,13 @@ class Home extends CI_Controller
         $this->form_validation->set_rules('last_name', 'Last name','trim|required');
         $this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
         $this->form_validation->set_rules('email','Email','trim|valid_email|required');
-        $this->form_validation->set_rules('password','Password','trim|min_length[8]|max_length[20]|required');
+        $this->form_validation->set_rules('password','Password','trim|min_length[2]|max_length[20]|required');
         $this->form_validation->set_rules('confirm_password','Confirm password','trim|matches[password]|required');
 
         if($this->form_validation->run()===FALSE)
         {
             $this->load->helper('form');
-            $this->render('register/index_view');
+            $this->view('register');
         }
         else
         {
