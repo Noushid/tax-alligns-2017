@@ -113,7 +113,7 @@ class Home extends CI_Controller
 
     public function blogView($id)
     {
-        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get_all();
+        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get();
         $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->get_all();
         $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view("blogView", $data);

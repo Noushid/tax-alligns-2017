@@ -2801,3 +2801,10 @@ article .comment.style1 {
 	height: 230px;
 
 }
+.categories .text{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

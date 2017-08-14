@@ -33,15 +33,14 @@ class Blog_Controller extends CI_Controller
 
     function index()
     {
-        $data = $this->blog->with_file()->get_all();
-        var_dump($data);
-//        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+        $data = $this->blog->get_all();
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
 
     }
 
     function get_all()
     {
-        $data = $this->blog->with_file()->get_all();
+        $data = $this->blog->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
@@ -53,84 +52,12 @@ class Blog_Controller extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
             $post_data = $this->input->post();
-            $uploaded = json_decode($post_data['uploaded']);
-            $uploaded1 = json_decode($post_data['uploaded1']);
-
-            unset($post_data['uploaded']);
-            unset($post_data['uploaded1']);
-
-//            if (!empty($uploaded)) {
-//
-//                /*INSERT FILE DATA TO DB*/
-//                foreach ($uploaded as $value) {
-//                    $file_data['file_name'] = $value->file_name;
-//                    $file_data['file_type'] = $value->file_type;
-//                    $file_data['size'] = $value->file_size;
-//                    $file_data['date'] = date('Y-m-d');
-//                    $file_id = $this->file->insert($file_data);
-//
-//                    $post_data['file_id'] = $file_id;
-//
-//                        /*****Create Thumb Image****/
-//                        $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
-//                        $img_cfg['maintain_ratio'] = TRUE;
-//                        $img_cfg['new_image'] = getwdir() . 'uploads/thumb/thumb_' . $value->file_name;
-//                        $img_cfg['quality'] = 99;
-//                        $img_cfg['master_dim'] = 'height';
-//
-//                        $this->image_lib->initialize($img_cfg);
-//                        if (!$this->image_lib->resize()) {
-//                            $resize_error[] = $this->image_lib->display_errors();
-//                        }
-//                        $this->image_lib->clear();
-//
-//                        /********End Thumb*********/
-//
-//                        /*resize and create thumbnail image*/
-//                        if ($value->file_size > 1024) {
-//                            $img_cfg['image_library'] = 'gd2';
-//                            $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
-//                            $img_cfg['maintain_ratio'] = TRUE;
-//                            $img_cfg['new_image'] = getwdir() . 'uploads/' . $value->file_name;
-//                            $img_cfg['height'] = 500;
-//                            $img_cfg['quality'] = 100;
-//                            $img_cfg['master_dim'] = 'height';
-//
-//                            $this->image_lib->initialize($img_cfg);
-//                            if (!$this->image_lib->resize()) {
-//                                $resize_error[] = $this->image_lib->display_errors();
-//                            }
-//                            $this->image_lib->clear();
-//
-//                            /********End resize*********/
-//                        }
-//                    $resize_error = [];
-//                    if (empty($resize_error)) {
-//                        $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
-//                    } else {
-////                            $this->output->set_status_header(402, 'Server Down');
-//                        $this->output->set_content_type('application/json')->set_output(json_encode($resize_error));
-//                    }
-//                }
-//                if ($uploaded1) {
-//                    foreach ($uploaded1 as $value) {
-//                        $file_data = [];
-//                        $file_data['file_name'] = $value->file_name;
-//                        $file_data['file_type'] = $value->file_type;
-//                        $file_data['size'] = $value->file_size;
-//                        $file_data['date'] = date('Y-m-d');
-//                        $doc_id = $this->file->insert($file_data);
-//
-//                    }
-//                }
-
-//            } else {
-//                $this->output->set_status_header(400, 'Validation Error');
-//                $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
-//            }
-        }
-        if ($this->blog->insert($post_data)) {
-            $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
+            if ($this->blog->insert($post_data)) {
+                $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
+            } else {
+                $this->output->set_status_header(500, 'Server Down');
+                $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Add Error.']));
+            }
         }
     }
 
@@ -141,67 +68,11 @@ class Blog_Controller extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
             $post_data = $this->input->post();
-            $uploaded = json_decode($post_data['uploaded']);
-
-            unset($post_data['uploaded']);
-            unset($post_data['file']);
-
-            if (!empty($uploaded)) {
-                /*INSERT FILE DATA TO DB*/
-                foreach ($uploaded as $value) {
-                    $file_data['file_name'] = $value->file_name;
-                    $file_data['file_type'] = $value->file_type;
-                    $file_data['size'] = $value->file_size;
-                    $file_data['date'] = $this->input->post('date');
-                    $file_id = $this->file->insert($file_data);
-
-                    $post_data['file_id'] = $file_id;
-
-                    if ($this->blog->update($post_data,$id)) {
-                        /*****Create Thumb Image****/
-                        $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
-                        $img_cfg['maintain_ratio'] = TRUE;
-                        $img_cfg['new_image'] = getwdir() . 'uploads/thumb/thumb_' . $value->file_name;
-                        $img_cfg['quality'] = 99;
-                        $img_cfg['master_dim'] = 'height';
-
-                        $this->image_lib->initialize($img_cfg);
-                        if (!$this->image_lib->resize()) {
-                            $resize_error[] = $this->image_lib->display_errors();
-                        }
-                        $this->image_lib->clear();
-
-                        /********End Thumb*********/
-
-                        /*resize and create thumbnail image*/
-                        if ($value->file_size > 1024) {
-                            $img_cfg['image_library'] = 'gd2';
-                            $img_cfg['source_image'] = getwdir() . 'uploads/' . $value->file_name;
-                            $img_cfg['maintain_ratio'] = TRUE;
-                            $img_cfg['new_image'] = getwdir() . 'uploads/' . $value->file_name;
-                            $img_cfg['height'] = 500;
-                            $img_cfg['quality'] = 100;
-                            $img_cfg['master_dim'] = 'height';
-
-                            $this->image_lib->initialize($img_cfg);
-                            if (!$this->image_lib->resize()) {
-                                $resize_error[] = $this->image_lib->display_errors();
-                            }
-                            $this->image_lib->clear();
-
-                            /********End resize*********/
-                        }
-                    }
-                    $resize_error = [];
-                    if (empty($resize_error)) {
-                        $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
-                    } else {
-                        $this->output->set_content_type('application/json')->set_output(json_encode($resize_error));
-                    }
-                }
-            }else {
+            if ($this->blog->update($post_data,$id)) {
+                $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
+            } else {
                 $this->output->set_status_header(500, 'Server Down');
-                $this->output->set_content_type('application/json')->set_output(json_encode(['validation_error' => 'Please select images.']));
+                $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Update error.']));
             }
         }
     }
@@ -231,7 +102,7 @@ class Blog_Controller extends CI_Controller
         $config['multi'] = 'ignore';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {
-            $data['url'] = base_url() . '/uploads/' . $this->upload->data('file_name');
+            $data['url'] = base_url() . 'uploads/' . $this->upload->data('file_name');
 
             $this->output->set_content_type('application/json')->set_output(json_encode($data));
         }else{

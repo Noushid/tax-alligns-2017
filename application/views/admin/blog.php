@@ -21,7 +21,15 @@
                 <div class="row">
                     <div class="col-lg-10">
                         <form class="form-horizontal" method="POST" ng-submit="addBlog()">
-                            <textarea ckeditor="options" ng-model="newblog.content"></textarea>
+                            <div class="form-group">
+<!--                                <label for="" class="control-label col-lg-2">Heading</label>-->
+                                <div class="col-md-8">
+                                    <input type="text" name="heading" id="heading" ng-model="newblog.heading" class="form-control" placeholder="Type your heading"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <textarea ckeditor="options" ng-model="newblog.content" class="form-control"></textarea>
+                            </div>
                             <div class="form-group">
                                 <label for="" class="control-label col-lg-2">Date</label>
                                 <div class="col-lg-6">
@@ -48,9 +56,6 @@
                                 </div>
 
                             </div>
-                            <div class="form-group">
-                                <span>Image Url : {{fileUrl}}</span>
-                            </div>
                             <div class="clearfix"></div>
 
                             <div class="col-md-12">
@@ -61,7 +66,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="col-sm-2">
                                                         <img ngf-src="f.$ngfBlobUrl" class="thumbnail" width="100px" ngf-no-object-url="true">
-                                                        <span>{{f.name}} {{f.$errorParam}}</span>
+                                                        <span>{{f.$errorParam}}</span>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="row">
@@ -70,13 +75,18 @@
                                                                     <div ng-show="uploadstatus == 1">{{f.progressmsg}}</div>
                                                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
                                                                          aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%" ng-show="uploadstatus != 1">
-                                                                        {{f.progress}}% Complete
+                                                                        {{f.progress}}% {{f.name}}
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!--                                                            <div class="col-sm-4">-->
-                                                            <!--                                                                <button class="btn btn-danger" type="button" ng-click="abort()">cancel</button>-->
-                                                            <!--                                                            </div>-->
+                                                            <div class="form-group">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" readonly ng-model="uploaded[$index].url" class="form-control"/>
+                                                                </div>
+                                                            </div>
+<!--                                                            <div class="col-sm-4">-->
+<!--                                                                <button class="btn btn-danger" type="button" ng-click="cancelUpload()">cancel</button>-->
+<!--                                                            </div>-->
                                                         </div>
                                                     </div>
                                                 </div>

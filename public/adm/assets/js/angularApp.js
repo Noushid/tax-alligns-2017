@@ -347,22 +347,16 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
 
     $scope.newBlog = function () {
         $scope.newblog = {};
-        $scope.filespre = [];
-        $scope.uploaded = [];
-        $scope.uploaded1 = [];
         $scope.files = [];
-        $scope.files1 = [];
         $scope.errFiles = [];
         $scope.showform = true;
         $scope.item_files = false;
     };
 
     $scope.editBlog = function (item) {
-        console.log(item);
         $scope.showform = true;
         $scope.curblog = item;
         $scope.newblog = angular.copy(item);
-        $scope.item_files = item.file;
         $scope.files = [];
     };
 
@@ -381,10 +375,6 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
             fd.append(key, item);
         });
 
-        fd.append('uploaded', JSON.stringify($scope.uploaded));
-        fd.append('uploaded1', JSON.stringify($scope.uploaded1));
-
-
         if ($scope.newblog['id']) {
             var url = $rootScope.base_url + 'dashboard/blog/edit/' + $scope.newblog.id;
             $http.post(url, fd, {
@@ -396,11 +386,11 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
                     $scope.newblog = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $scope.files = [];
                 },function onError(response) {
                     console.log('edit Error :- Status :' + response.status + 'data : ' + response.data);
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $scope.files = [];
                 });
         } else {
             var url = $rootScope.base_url + 'dashboard/blog/add';
@@ -461,9 +451,8 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
 
             file.upload.then(function (response) {
                 $timeout(function () {
-                    //$scope.uploaded.push(response.data);
-                    file.result = response.data;
-                    $scope.fileUrl = response.data.url;
+                    $scope.uploaded.push(response.data);
+                    console.log($scope.uploaded);
                 });
             }, function (response) {
                 if (response.status > 0)
@@ -475,32 +464,9 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         });
     };
 
-    $scope.uploadFiles1 = function (files, errFiles) {
-        angular.forEach(errFiles, function (errFile) {
-            $scope.errFiles1.push(errFile);
-        });
-        angular.forEach(files, function (file) {
-            $scope.files1.push(file);
-            file.upload = Upload.upload({
-                url: $rootScope.base_url + 'dashboard/blog/upload',
-                data: {file: file}
-            });
-
-            file.upload.then(function (response) {
-                $timeout(function () {
-                    $scope.uploaded1.push(response.data);
-                    file.result1 = response.data;
-                });
-            }, function (response) {
-                if (response.status > 0)
-                    $scope.errorMsg1 = response.status + ': ' + response.data;
-            }, function (evt) {
-                file.progress = Math.min(100, parseInt(100.0 *
-                evt.loaded / evt.total));
-            });
-        });
+    $scope.cancelUpload=function() {
+        Upload.upload.abort();
     };
-
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
