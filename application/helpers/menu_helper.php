@@ -14,6 +14,11 @@ function dashboard_menu()
             'icon' => 'fa-tachometer',
             'link' => 'dashboard'
         ],
+        'users' => [
+            'title' => 'users',
+            'icon' => 'fa-users',
+            'link' => 'users'
+        ],
         'testimonial' => [
             'title' => 'testimonial',
             'icon' => 'fa-picture-o',
