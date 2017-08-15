@@ -12,7 +12,7 @@
     echo form_label('Last name:','last_name').'<br />';
     echo form_error('last_name');
     echo form_input('last_name',set_value('last_name')).'<br />';
-    echo form_label('Username:','username').'<br />';
+//    echo form_label('Username:','username').'<br />';
 //    echo form_error('username');
 //    echo form_input('username',set_value('username')).'<br />';
     echo form_label('Email:','email').'<br />';

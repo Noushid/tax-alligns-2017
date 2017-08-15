@@ -24,6 +24,10 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
             templateUrl: 'document',
             controller: 'documentController'
         })
+        .when('/users', {
+            templateUrl: 'user',
+            controller: 'testController'
+        })
         .when('/user-profile',{
             templateUrl: 'change'
         })

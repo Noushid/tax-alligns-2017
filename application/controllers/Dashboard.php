@@ -60,6 +60,12 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/document');
     }
 
+    public function users()
+    {
+        $this->load->view('admin/users');
+    }
+
+
 
     public function verify()
     {

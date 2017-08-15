@@ -28,4 +28,5 @@ class User_Model extends MY_Model
         );
         $this->db->insert($this->table, $insert_data);
     }
+
 }

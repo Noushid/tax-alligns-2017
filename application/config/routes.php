@@ -106,6 +106,12 @@ $route['dashboard/document/edit/(:num)']['post'] = 'Document_Controller/update/$
 $route['dashboard/document/delete-image/(:num)']['delete'] = 'Document_Controller/delete_image/$1';
 $route['dashboard/document/delete/(:num)']['delete'] = 'Document_Controller/delete/$1';
 
+
+$route['dashboard/user'] = 'Dashboard/users';
+$route['dashboard/user/get']['get'] = 'User_Controller/get_all';
+$route['dashboard/user/add']['post'] = 'User_Controller/store';
+$route['dashboard/user/delete/(:num)']['delete'] = 'User_Controller/delete/$1';
+
 /*_______ admin route end _______*/
 
 
