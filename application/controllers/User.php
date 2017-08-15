@@ -14,54 +14,83 @@ class User extends CI_Controller {
         $this->load->view('welcome_message');
     }
 
-    public function login()
+    public function create_user()
     {
-            $this->data['title'] = "Login";
+        $this->form_validation->set_rules('first_name', 'First name','trim|required');
+        $this->form_validation->set_rules('last_name', 'Last name','trim|required');
+//        $this->form_validation->set_rules('username','Username','trim|required|is_unique[users.username]');
+        $this->form_validation->set_rules('email','Email','trim|valid_email|required|is_unique[users.email]');
+        $this->form_validation->set_rules('password','Password','trim|min_length[2]|max_length[20]|required');
+        $this->form_validation->set_rules('confirm_password','Confirm password','trim|matches[password]|required');
 
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('username', 'Username', 'trim|required');
-            $this->form_validation->set_rules('password', 'Password', 'trim|required');
-            $this->form_validation->set_rules('ajax', 'AJAX', 'trim|is_natural');
-            if ($this->form_validation->run() === FALSE) {
-                if ($this->input->post('ajax')) {
-                    $response['username_error'] = form_error('username');
-                    $response['password_error'] = form_error('password');
-                    header("content-type:application/json");
-                    echo json_encode($response);
-                    exit;
-                }
-                $this->load->helper('form');
-                $this->load->view('user/login');
-            } else {
-                $remember = (bool)$this->input->post('remember');
-                $username = $this->input->post('username');
-                $password = $this->input->post('password');
-                $this->ion_auth->set_hook('post_login_successful', 'get_gravatar_hash', $this, '_gravatar', array());
+        if($this->form_validation->run()===FALSE)
+        {
+            var_dump(validation_errors());
+//            $this->view('register');
+        }
+        else
+        {
+            $first_name = $this->input->post('first_name');
+            $last_name = $this->input->post('last_name');
+            $username = $this->input->post('username');
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
 
-                if ($this->ion_auth->login($username, $password, $remember)) {
-                    if ($this->input->post('ajax')) {
-                        $response['logged_in'] = 1;
-                        header("content-type:application/json");
-                        echo json_encode($response);
-                        exit;
-                    }
-                    redirect('dashboard');
-                } else {
-                    if ($this->input->post('ajax')) {
-                        $response['username'] = $username;
-                        $response['password'] = $password;
-                        $response['error'] = $this->ion_auth->errors();
-                        header("content-type:application/json");
-                        echo json_encode($response);
-                        exit;
-                    }
-                    $_SESSION['auth_message'] = $this->ion_auth->errors();
-                    $this->session->mark_as_flash('auth_message');
-                    redirect('user/login');
-                }
+            $additional_data = array(
+                'first_name' => $first_name,
+                'last_name' => $last_name
+            );
+
+            if($this->ion_auth->register($username,$password,$email,$additional_data))
+            {
+                $_SESSION['auth_message'] = 'The account has been created. You may now login.';
+                $this->session->mark_as_flash('auth_message');
+                redirect('user/login');
             }
+            else
+            {
+                $_SESSION['auth_message'] = $this->ion_auth->errors();
+                $this->session->mark_as_flash('auth_message');
+                redirect('register');
+            }
+        }
     }
 
+    public function register()
+    {
+        $this->load->view('register');
+    }
+
+    public function login()
+    {
+        if($this->input->post())
+        {
+            $this->form_validation->set_rules('email', 'Email', 'required');
+            $this->form_validation->set_rules('password', 'Password', 'required');
+//            $this->form_validation->set_rules('remember','Remember me','integer');
+            if($this->form_validation->run() === TRUE)
+            {
+                $remember = (bool) $this->input->post('remember');
+                if ($this->ion_auth->login($this->input->post('email'), $this->input->post('password'), $remember))
+                {
+                    if (!$this->ion_auth->is_admin()) {
+                        redirect('user_dash', 'refresh');
+                    } else {
+                        $this->session->set_flashdata('message', 'Incorrect Login');
+                        redirect('user/login', 'refresh');
+                    }
+                }
+                else
+                {
+                    $this->session->set_flashdata('message',$this->ion_auth->errors());
+                    redirect('user/login', 'refresh');
+                }
+            }
+        }else{
+            $data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->load->view('user/login',$data);
+        }
+    }
 
     public function logout()
     {

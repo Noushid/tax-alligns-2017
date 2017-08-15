@@ -5,7 +5,7 @@
     ?>
     <h1>Register</h1>
     <?php
-    echo form_open('home/create_user');
+    echo form_open('User/create_user');
     echo form_label('First name:','first_name').'<br />';
     echo form_error('first_name');
     echo form_input('first_name',set_value('first_name')).'<br />';
@@ -13,8 +13,8 @@
     echo form_error('last_name');
     echo form_input('last_name',set_value('last_name')).'<br />';
     echo form_label('Username:','username').'<br />';
-    echo form_error('username');
-    echo form_input('username',set_value('username')).'<br />';
+//    echo form_error('username');
+//    echo form_input('username',set_value('username')).'<br />';
     echo form_label('Email:','email').'<br />';
     echo form_error('email');
     echo form_input('email',set_value('email')).'<br />';

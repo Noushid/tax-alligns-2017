@@ -1,13 +1,13 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 <div class="row">
     <h1>Login</h1>
     <div class="col-lg-4 col-lg-offset-4">
         <div class="login-message"></div>
         <?php echo form_open('user/login',array('class'=>'login-form form-horizontal'));?>
+        <div id="infoMessage"><?php echo $message;?></div>
         <div class="form-group">
-            <?php echo form_label('Username','username');?>
+            <?php echo form_label('Email','Email');?>
             <div class="username_error"></div>
-            <?php echo form_input('username','','class="form-control" id="username"');?>
+            <?php echo form_input('email','','class="form-control" id="email"');?>
         </div>
         <div class="form-group">
             <?php echo form_label('Password','password');?>
