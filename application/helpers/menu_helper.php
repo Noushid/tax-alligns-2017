@@ -33,6 +33,11 @@ function dashboard_menu()
             'title' => 'documents',
             'icon' => 'fa-picture-o',
             'link' => 'documents'
+        ],
+        'messages' => [
+            'title' => 'messages',
+            'icon' => 'fa-envelope',
+            'link' => 'messages'
         ]
     ];
 

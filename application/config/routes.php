@@ -109,8 +109,17 @@ $route['dashboard/document/delete/(:num)']['delete'] = 'Document_Controller/dele
 
 $route['dashboard/user'] = 'Dashboard/users';
 $route['dashboard/user/get']['get'] = 'User_Controller/get_all';
+$route['dashboard/user/activate/(:num)']['post'] = 'User_Controller/activate/$1';
+$route['dashboard/user/de-activate/(:num)']['post'] = 'User_Controller/de_activate/$1';
+
 $route['dashboard/user/add']['post'] = 'User_Controller/store';
 $route['dashboard/user/delete/(:num)']['delete'] = 'User_Controller/delete/$1';
+
+$route['dashboard/messages'] = 'Dashboard/message';
+$route['dashboard/message/get/(:num)'] = 'Message_Controller/get/$1';
+//$route['dashboard/message/get']['get'] = 'User_Controller/get_all';
+//$route['dashboard/message/activate/(:num)']['post'] = 'User_Controller/activate/$1';
+//$route['dashboard/message/de-activate/(:num)']['post'] = 'User_Controller/de_activate/$1';
 
 /*_______ admin route end _______*/
 

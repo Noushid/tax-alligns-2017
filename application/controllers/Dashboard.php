@@ -65,6 +65,11 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/users');
     }
 
+    public function message()
+    {
+        $this->load->view('admin/messages');
+    }
+
 
 
     public function verify()

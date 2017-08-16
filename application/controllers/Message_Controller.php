@@ -8,7 +8,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User_Controller extends CI_Controller
+class Message_Controller extends CI_Controller
 {
 
     //        public $delete_cache_on_save = TRUE;
@@ -17,6 +17,7 @@ class User_Controller extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('File_model', 'file');
+        $this->load->model('Message_model', 'message');
 
         $this->load->library(['upload', 'image_lib','ion_auth']);
 
@@ -38,9 +39,9 @@ class User_Controller extends CI_Controller
 
     }
 
-    function get_all()
+    function get($id)
     {
-        $data = $this->db->where('`company` IS NULL')->get('users')->result();
+        $data = $this->message->with_file()->with_user()->where('user_id', $id)->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 

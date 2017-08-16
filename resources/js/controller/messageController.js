@@ -3,11 +3,11 @@
  */
 
 
-app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document) {
+app.controller('messageController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document) {
 
-    $scope.users = [];
-    $scope.newuser = {};
-    $scope.curuser = {};
+    $scope.messages = [];
+    $scope.newmessage = {};
+    $scope.curmessage = {};
     $scope.files = [];
     $scope.errFiles = [];
     $scope.showform = false;
@@ -16,14 +16,17 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.uploaded = [];
     $scope.fileValidation = {};
 
+    $scope.users = [];
 
+
+    //loadMessage();
     loadUser();
 
-    function loadUser() {
-        $http.get($rootScope.base_url + 'dashboard/user/get').then(function (response) {
+    function loadMessage() {
+        $http.get($rootScope.base_url + 'dashboard/message/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
-                $scope.users = response.data;
+                $scope.messages = response.data;
                 $scope.showtable = true;
             } else {
                 console.log('No data Found');
@@ -33,8 +36,17 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         });
     }
 
-    $scope.newUser = function () {
-        $scope.newuser = {};
+    function loadUser() {
+        $http.get($rootScope.base_url + 'dashboard/user/get').then(function (response) {
+            console.log(response.data);
+            if (response.data) {
+                $scope.users = response.data;
+            }
+        });
+    }
+
+    $scope.newMessage = function () {
+        $scope.newmessage = {};
         $scope.filespre = [];
         $scope.uploaded = [];
         $scope.files = [];
@@ -43,11 +55,11 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.item_files = false;
     };
 
-    $scope.editUser = function (item) {
+    $scope.editMessage = function (item) {
         console.log(item);
         $scope.showform = true;
-        $scope.curuser = item;
-        $scope.newuser = angular.copy(item);
+        $scope.curmessage = item;
+        $scope.newmessage = angular.copy(item);
         $scope.item_files = item.file;
         $scope.files = [];
     };
@@ -57,26 +69,26 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.showform = false;
     };
 
-    $scope.addUser = function () {
+    $scope.addMessage = function () {
         $rootScope.loading = true;
 
         var fd = new FormData();
 
-        angular.forEach($scope.newuser, function (item, key) {
+        angular.forEach($scope.newmessage, function (item, key) {
             fd.append(key, item);
         });
 
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
-        if ($scope.newuser['id']) {
-            var url = $rootScope.base_url + 'dashboard/user/edit/' + $scope.newuser.id;
+        if ($scope.newmessage['id']) {
+            var url = $rootScope.base_url + 'dashboard/message/edit/' + $scope.newmessage.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
             })
                 .then(function onSuccess(response) {
-                    loadUser();
-                    $scope.newuser = {};
+                    loadMessage();
+                    $scope.newmessage = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
                     $scope.files = '';
@@ -86,15 +98,15 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'dashboard/user/add';
+            var url = $rootScope.base_url + 'dashboard/message/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
             })
                 .then(function onSuccess(response) {
-                    loadUser();
-                    $scope.newuser = {};
+                    loadMessage();
+                    $scope.newmessage = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
                     $scope.files = '';
@@ -113,13 +125,13 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         }
     };
 
-    $scope.deleteUser = function (item) {
+    $scope.deleteMessage = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'dashboard/user/delete/' + item.id;
+        var url = $rootScope.base_url + 'dashboard/message/delete/' + item.id;
         $http.delete(url)
             .then(function onSuccess(response) {
-                var index = $scope.users.indexOf(item);
-                $scope.users.splice(index, 1);
+                var index = $scope.messages.indexOf(item);
+                $scope.messages.splice(index, 1);
                 $rootScope.loading = false;
             },function onError(response) {
                 console.log('Delete Error :- Status :' + response.status + 'data : ' + response.data);
@@ -136,7 +148,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'dashboard/user/upload',
+                url: $rootScope.base_url + 'dashboard/message/upload',
                 data: {file: file}
             });
 
@@ -158,7 +170,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'dashboard/user/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/message/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');
@@ -171,9 +183,9 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
             });
     };
 
-    $scope.showUserFiles = function (item) {
+    $scope.showMessageFiles = function (item) {
         console.log(item);
-        $scope.userfiles = item;
+        $scope.messagefiles = item;
     };
 
     /****Modal start***/
@@ -209,38 +221,19 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     /****Modal start***/
 
 
-    $scope.activateUser = function (item) {
-        $rootScope.loading = true;
-        $http.post($rootScope.base_url + 'dashboard/user/activate/' + item.id, {
-            transformRequest: angular.identity,
-            headers: {'Content-Type': undefined, 'Process-Data': false}
-        })
-            .then(function onSuccess(response) {
-                loadUser();
-                $rootScope.loading = false;
-            }, function onError(response) {
-                console.log('addError :- Status :' + response.status + 'data : ' + response.data);
-                console.log(response.data);
-                $rootScope.loading = false;
-            });
+    $scope.getMessages = function (item) {
+        $http.get($rootScope.base_url + 'dashboard/message/get/' + item).then(function (response) {
+            console.log(response.data);            if (response.data) {
+                $scope.messages = response.data;
+                console.log($scope.messages);
+                $scope.showtable = true;
+            } else {
+                console.log('No data Found');
+                $scope.showtable = false;
+                $scope.message = 'No data found';
+            }
+        });
     };
-
-    $scope.deActivateUser = function (item) {
-        $rootScope.loading = true;
-        $http.post($rootScope.base_url + 'dashboard/user/de-activate/' + item.id, {
-            transformRequest: angular.identity,
-            headers: {'Content-Type': undefined, 'Process-Data': false}
-        })
-            .then(function onSuccess(response) {
-                loadUser();
-                $rootScope.loading = false;
-            }, function onError(response) {
-                console.log('addError :- Status :' + response.status + 'data : ' + response.data);
-                console.log(response.data);
-                $rootScope.loading = false;
-            });
-    };
-
 }]);
 
 

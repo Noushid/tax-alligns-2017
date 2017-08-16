@@ -173,7 +173,7 @@
                                 <td>{{$index+1}}</td>
                                 <td>{{user.first_name + '  ' + user.last_name}}</td>
                                 <td>{{user.email}}</td>
-                                <td>{{user.active}}</td>
+                                <td>{{(user.active == 1 ? 'active' : 'Inactive')}}</td>
 <!--                                <td>-->
 <!--                                    <div  class="btn-group btn-group-xs" role="group">-->
 <!--                                        <button type="button" class="btn btn-info" ng-click="editUser(user)">-->
@@ -192,8 +192,8 @@
                                             <span class="sr-only">Split button!</span>
                                         </button>
                                         <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="split-button">
-                                            <li role="menuitem" ng-show="user.active == 0"><a confirmed-click="activeUser(user)" ng-confirm-click="Would you like to activate this user?!">active</a></li>
-                                            <li role="menuitem" class="bg-danger" ng-show="user.active == 1"><a confirmed-click="deActiveUser(user)" ng-confirm-click="Would you like to De-Activate this user?!">De-activate</a></li>
+                                            <li role="menuitem" ng-show="user.active == 0"><a confirmed-click="activateUser(user)" ng-confirm-click="Would you like to activate this user?!">active</a></li>
+                                            <li role="menuitem" ng-show="user.active == 1"><a confirmed-click="deActivateUser(user)" ng-confirm-click="Would you like to De-Activate this user?!">De-activate</a></li>
                                             <li role="menuitem"><a confirmed-click="deleteUser(user)" ng-confirm-click="Would you like to Delete this user?!">Delete</a></li>
                                         </ul>
                                     </div>
