@@ -14,8 +14,17 @@ class Message_Model extends MY_Model
 
     function __construct()
     {
-        $this->has_one['file'] = array('foreign_model' => 'File_model', 'foreign_table' => 'files', 'foreign_key' => 'id', 'local_key' => 'file_id');
         $this->has_one['user'] = array('foreign_model' => 'User_model', 'foreign_table' => 'users', 'foreign_key' => 'id', 'local_key' => 'user_id');
+
+        $this->has_many_pivot['files'] = [
+            'foreign_model' => 'File_model',
+            'pivot_table' => 'message_files',
+            'local_key' => 'id',
+            'pivot_local_key' => 'message_id',
+            'pivot_foreign_key' => 'file_id',
+            'foreign_key' => 'id',
+            'get_relate' => TRUE
+        ];
         parent::__construct();
         $this->timestamps = FALSE;
     }

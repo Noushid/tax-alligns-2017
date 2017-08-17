@@ -117,9 +117,8 @@ $route['dashboard/user/delete/(:num)']['delete'] = 'User_Controller/delete/$1';
 
 $route['dashboard/messages'] = 'Dashboard/message';
 $route['dashboard/message/get/(:num)'] = 'Message_Controller/get/$1';
-//$route['dashboard/message/get']['get'] = 'User_Controller/get_all';
-//$route['dashboard/message/activate/(:num)']['post'] = 'User_Controller/activate/$1';
-//$route['dashboard/message/de-activate/(:num)']['post'] = 'User_Controller/de_activate/$1';
+$route['dashboard/message/upload'] = 'Message_Controller/upload';
+$route['dashboard/message/send/(:num)'] = 'Message_Controller/send/$1';
 
 /*_______ admin route end _______*/
 

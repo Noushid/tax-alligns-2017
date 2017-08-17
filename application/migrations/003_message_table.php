@@ -8,13 +8,13 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_user_file_table extends CI_Migration
+class Migration_message_table extends CI_Migration
 {
     public function up()
     {
 
         /**
-         * user_file
+         * messages
          *
          * */
 
@@ -29,9 +29,9 @@ class Migration_user_file_table extends CI_Migration
                 'type' => 'INT',
                 'constraint' => 5,
             ],
-            'file_id' => [
-                'type' => 'INT',
-                'constraint' => 5,
+            'subject' => [
+                'type' => 'LONGTEXT',
+                'null' => TRUE
             ],
             'message' => [
                 'type' => 'LONGTEXT',

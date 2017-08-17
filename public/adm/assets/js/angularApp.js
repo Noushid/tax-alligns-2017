@@ -2,7 +2,8 @@
  * Created by psybo-03 on 1/7/17.
  */
 
-var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload', 'ngCkeditor']);
+var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload']);
+//var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload', 'ngCkeditor']);
 app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.hashPrefix('');
     $routeProvider
@@ -825,9 +826,8 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
         $scope.showform = false;
     };
 
-    $scope.addMessage = function () {
+    $scope.sendMessage = function (user_id) {
         $rootScope.loading = true;
-
         var fd = new FormData();
 
         angular.forEach($scope.newmessage, function (item, key) {
@@ -836,49 +836,29 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
 
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
-        if ($scope.newmessage['id']) {
-            var url = $rootScope.base_url + 'dashboard/message/edit/' + $scope.newmessage.id;
-            $http.post(url, fd, {
-                transformRequest: angular.identity,
-                headers: {'Content-Type': undefined, 'Process-Data': false}
-            })
-                .then(function onSuccess(response) {
-                    loadMessage();
-                    $scope.newmessage = {};
-                    $scope.showform = false;
-                    $rootScope.loading = false;
-                    $scope.files = '';
-                },function onError(response) {
-                    console.log('edit Error :- Status :' + response.status + 'data : ' + response.data);
-                    $rootScope.loading = false;
-                    $scope.files = '';
-                });
-        } else {
-            var url = $rootScope.base_url + 'dashboard/message/add';
+        var url = $rootScope.base_url + 'dashboard/message/send/' + user_id;
+        $http.post(url, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined, 'Process-Data': false}
+        })
+            .then(function onSuccess(response) {
+                //loadMessage();
+                //$scope.newmessage = {};
+                //$scope.showform = false;
+                $rootScope.loading = false;
+                //$scope.files = '';
 
-            $http.post(url, fd, {
-                transformRequest: angular.identity,
-                headers: {'Content-Type': undefined, 'Process-Data': false}
-            })
-                .then(function onSuccess(response) {
-                    loadMessage();
-                    $scope.newmessage = {};
-                    $scope.showform = false;
-                    $rootScope.loading = false;
-                    $scope.files = '';
-
-                }, function onError(response) {
-                    console.log('addError :- Status :' + response.status + 'data : ' + response.data);
-                    console.log(response.data);
-                    $rootScope.loading = false;
-                    $scope.files = '';
-
-                    if (response.status == 403) {
-                        $scope.fileValidation.status = true;
-                        $scope.fileValidation.msg = response.data.validation_error;
-                    }
-                });
-        }
+            }, function onError(response) {
+                //console.log('addError :- Status :' + response.status + 'data : ' + response.data);
+                //console.log(response.data);
+                $rootScope.loading = false;
+                //$scope.files = '';
+                //
+                //if (response.status == 403) {
+                //    $scope.fileValidation.status = true;
+                //    $scope.fileValidation.msg = response.data.validation_error;
+                //}
+            });
     };
 
     $scope.deleteMessage = function (item) {

@@ -72,6 +72,16 @@ class Migration_initial_schema extends CI_Migration
             'date' => [
                 'type' => 'DATE',
                 'null' => TRUE
+            ],
+            'path' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => TRUE
+            ],
+            'url' => [
+                'type' => 'VARCHAR',
+                'constraint' => '100',
+                'null' => TRUE
             ]
         ]);
         $this->dbforge->add_key('id', TRUE);
