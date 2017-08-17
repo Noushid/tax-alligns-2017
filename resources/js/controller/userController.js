@@ -181,13 +181,14 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.animationsEnabled = true;
 
     $scope.open = function (document,size, parentSelector) {
+        console.log('test');
         var parentElem = parentSelector ?
             angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'myModalContent.html',
+            templateUrl: 'userModal.html',
             controller: 'ModalInstanceCtrl',
             controllerAs: '$scope',
             size: size,

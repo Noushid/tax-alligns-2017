@@ -171,7 +171,9 @@
                             <tbody>
                             <tr dir-paginate="user in users | filter:search | limitTo:pageSize | itemsPerPage:numPerPage">
                                 <td>{{$index+1}}</td>
-                                <td>{{user.first_name + '  ' + user.last_name}}</td>
+                                <td>
+                                    <a ng-click="open(user)" href="">{{user.first_name + '  ' + user.last_name}}</a>
+                                </td>
                                 <td>{{user.email}}</td>
                                 <td>{{(user.active == 1 ? 'active' : 'Inactive')}}</td>
 <!--                                <td>-->
@@ -218,5 +220,45 @@
             <h4>Please wait...</h4>
         </div>
     </div>
+
+    <script type="text/ng-template" id="userModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">{{galleryfiles.gallery_name}}</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <tr>
+                                <th>First Name</th>
+                                <td>{{items.first_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>{{items.last_name}}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{items.email}}</td>
+                            </tr>
+                            <tr>
+                                <th>Last login</th>
+                                <td>{{items.last_login}}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>{{items.phone}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
 
 

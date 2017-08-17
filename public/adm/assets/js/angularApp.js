@@ -842,22 +842,15 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
             headers: {'Content-Type': undefined, 'Process-Data': false}
         })
             .then(function onSuccess(response) {
-                //loadMessage();
-                //$scope.newmessage = {};
-                //$scope.showform = false;
+                loadMessage();
+                $scope.newmessage = {};
                 $rootScope.loading = false;
-                //$scope.files = '';
-
+                $scope.files = [];
             }, function onError(response) {
-                //console.log('addError :- Status :' + response.status + 'data : ' + response.data);
-                //console.log(response.data);
+                console.log('addError :- Status :' + response.status + 'data : ' + response.data);
+                console.log(response.data);
                 $rootScope.loading = false;
-                //$scope.files = '';
-                //
-                //if (response.status == 403) {
-                //    $scope.fileValidation.status = true;
-                //    $scope.fileValidation.msg = response.data.validation_error;
-                //}
+                $scope.files = [];
             });
     };
 
@@ -976,6 +969,23 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
 
 
 
+
+/**
+ * Created by psybo-03 on 24/7/17.
+ */
+
+app.controller('ModalInstanceCtrl', function ($uibModalInstance, items,$scope) {
+    $scope.items = items;
+    console.log($scope.items);
+
+    $scope.ok = function () {
+        $uibModalInstance.close($scope.items);
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+});
 
 /**
  * Created by psybo-03 on 1/7/17.
@@ -1378,13 +1388,14 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.animationsEnabled = true;
 
     $scope.open = function (document,size, parentSelector) {
+        console.log('test');
         var parentElem = parentSelector ?
             angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
         var modalInstance = $uibModal.open({
             animation: $scope.animationsEnabled,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
-            templateUrl: 'myModalContent.html',
+            templateUrl: 'userModal.html',
             controller: 'ModalInstanceCtrl',
             controllerAs: '$scope',
             size: size,
