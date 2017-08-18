@@ -52,6 +52,7 @@ class Blog_Controller extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
             $post_data = $this->input->post();
+            $post_data['content'] = str_replace("pre>", "p>", $post_data['content']);
             if ($this->blog->insert($post_data)) {
                 $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
             } else {
@@ -68,6 +69,7 @@ class Blog_Controller extends CI_Controller
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
             $post_data = $this->input->post();
+            $post_data['content'] = str_replace("pre>", "p>", $post_data['content']);
             if ($this->blog->update($post_data,$id)) {
                 $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
             } else {
