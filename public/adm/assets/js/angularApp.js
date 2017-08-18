@@ -2,9 +2,9 @@
  * Created by psybo-03 on 1/7/17.
  */
 
-var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload']);
-//var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload', 'ngCkeditor']);
-app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+var app = angular.module('myApp', ['ngRoute', 'ui.bootstrap', 'angularUtils.directives.dirPagination', 'ngFileUpload', 'ngCkeditor', 'yaru22.angular-timeago']);
+app.config(['$routeProvider', '$locationProvider', 'timeAgoSettings', function ($routeProvider, $locationProvider, timeAgoSettings) {
+    timeAgoSettings.allowFuture = true;
     $locationProvider.hashPrefix('');
     $routeProvider
         .when('/', {
@@ -764,17 +764,22 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
 
     $scope.messages = [];
     $scope.newmessage = {};
-    $scope.curmessage = {};
     $scope.files = [];
     $scope.errFiles = [];
-    $scope.showform = false;
     $scope.message = {};
     $rootScope.url = $location.path().replace('/', '');
     $scope.uploaded = [];
     $scope.fileValidation = {};
 
     $scope.users = [];
-
+    $scope.successMessage = false;
+    $scope.errorMessage = false;
+    $scope.sentItem = [];
+    $scope.receivedMessages = [];
+    $scope.user = {};
+    $scope.showMessages = false;
+    $scope.receivedPerPage = 5;
+    $scope.sendPerPage = 5;
 
     //loadMessage();
     loadUser();
@@ -808,22 +813,6 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
         $scope.uploaded = [];
         $scope.files = [];
         $scope.errFiles = [];
-        $scope.showform = true;
-        $scope.item_files = false;
-    };
-
-    $scope.editMessage = function (item) {
-        console.log(item);
-        $scope.showform = true;
-        $scope.curmessage = item;
-        $scope.newmessage = angular.copy(item);
-        $scope.item_files = item.file;
-        $scope.files = [];
-    };
-
-    $scope.hideForm = function () {
-        $scope.errFiles = '';
-        $scope.showform = false;
     };
 
     $scope.sendMessage = function (user_id) {
@@ -842,15 +831,22 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
             headers: {'Content-Type': undefined, 'Process-Data': false}
         })
             .then(function onSuccess(response) {
-                loadMessage();
                 $scope.newmessage = {};
                 $rootScope.loading = false;
                 $scope.files = [];
+                $scope.successMessage = true;
+                $timeout(function () {
+                    $scope.successMessage = false;
+                }, 5000);
             }, function onError(response) {
-                console.log('addError :- Status :' + response.status + 'data : ' + response.data);
+                console.log('Send Error :- Status :' + response.status + 'data : ' + response.data);
                 console.log(response.data);
                 $rootScope.loading = false;
                 $scope.files = [];
+                $scope.errorMessage = true;
+                $timeout(function () {
+                    $scope.errorMessage = false;
+                }, 5000);
             });
     };
 
@@ -951,14 +947,49 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
 
 
     $scope.getMessages = function (item) {
-        $http.get($rootScope.base_url + 'dashboard/message/get/' + item).then(function (response) {
-            console.log(response.data);            if (response.data) {
+        console.log(item);
+        /*$http.get($rootScope.base_url + 'dashboard/message/get/' + item).then(function (response) {
+            if (response.data) {
                 $scope.messages = response.data;
+                angular.forEach($scope.messages, function (item, key) {
+                    item.dateago = new Date(item.datetime * 1000).toISOString();
+                });
                 console.log($scope.messages);
-                $scope.showtable = true;
             } else {
                 console.log('No data Found');
-                $scope.showtable = false;
+                $scope.message = 'No data found';
+            }
+        });*/
+        $scope.user = item;
+        $scope.loadInbox(item.id);
+        $scope.loadSentItem(item.id);
+        $scope.showMessages = true;
+    };
+
+    $scope.loadSentItem = function (user_id) {
+        $http.get($rootScope.base_url + 'dashboard/message/sent-item/' + user_id).then(function (response) {
+            console.log(response.data);
+            if (response.data) {
+                $scope.sentItem = response.data;
+                angular.forEach($scope.sentItem, function (item, key) {
+                    item.dateago = new Date(item.datetime * 1000).toISOString();
+                });
+            } else {
+                console.log('No data Found');
+                $scope.message = 'No data found';
+            }
+        });
+    };
+
+    $scope.loadInbox = function (user_id) {
+        $http.get($rootScope.base_url + 'dashboard/message/inbox/' + user_id).then(function (response) {
+            if (response.data) {
+                $scope.receivedMessages = response.data;
+                angular.forEach($scope.receivedMessages, function (item, key) {
+                    item.dateago = new Date(item.datetime * 1000).toISOString();
+                });
+            } else {
+                console.log('No data Found');
                 $scope.message = 'No data found';
             }
         });

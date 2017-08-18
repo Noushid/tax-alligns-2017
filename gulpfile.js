@@ -36,7 +36,9 @@ gulp.task('mix', function () {
         config.nodeDir + 'ng-file-upload/dist/ng-file-upload.js',
         config.nodeDir + 'ng-file-upload/dist/ng-file-upload-shim.js',
         config.bowerDir + 'ng-ckeditor/ng-ckeditor.js',
-        config.bowerDir + 'ng-ckeditor/libs/ckeditor.js'
+        config.bowerDir + 'ng-ckeditor/libs/ckeditor.js',
+        config.bowerDir + 'angular-timeago/dist/angular-timeago.js'
+        //config.bowerDir + 'angular-timeago/dist/angular-timeago-core.js'
     ])
         .pipe(concat('angular-bootstrap.js'))
         .pipe(gulp.dest(config.adminJsDir))

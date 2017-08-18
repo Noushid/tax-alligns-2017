@@ -43,7 +43,13 @@ class Message_Controller extends CI_Controller
 
     function get($id)
     {
-        $data = $this->message->with_files()->with_user()->where('user_id', $id)->get_all();
+        $data = $this->message->with_files()->with_user()->where('user_id', $id)->order_by('id','DESC')->get_all();
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    }
+
+    public function get_where($id,$param1)
+    {
+        $data = $this->message->with_files()->with_user()->where('user_id', $id)->where('type', $param1)->order_by('id','DESC')->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
@@ -120,5 +126,16 @@ class Message_Controller extends CI_Controller
             $this->output->set_status_header(400, 'Server Down');
             $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Something Went wrong']));
         }
+    }
+
+    public function viewed($id)
+    {
+        if ($this->message->update(['received' => 1],$id)) {
+            $this->output->set_content_type('application/json')->set_output(true);
+        } else {
+            $this->output->set_status_header(400, 'Server Down');
+            $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Something Went wrong']));
+        }
+
     }
 }

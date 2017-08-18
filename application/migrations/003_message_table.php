@@ -47,7 +47,7 @@ class Migration_message_table extends CI_Migration
             ],
             'received' => [
                 'type' => 'INT',
-                'default' => 1
+                'default' => 0
             ],
             'received_time'=>[
                 'type' => 'INT',
