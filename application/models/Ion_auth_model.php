@@ -879,7 +879,7 @@ class Ion_auth_model extends CI_Model
 	{
 		$this->trigger_events('pre_register');
 
-		$manual_activation = $this->config->item('manual_activation', 'ion_auth');
+		$manual_activation = ($additional_data['active'] ? FALSE : $this->config->item('manual_activation', 'ion_auth'));
 
 		if ($this->identity_check($identity))
 		{

@@ -214,13 +214,4 @@ class Home extends CI_Controller
             }
         }
     }
-
-    public function test()
-    {
-        $str = '<pre>Lorem ipsum dolor sit amet, </pre><pre>consectetur adipisicing elit. Architecto aspernatur beatae debitis dolorem eius neque non! Dolor, ea illo laborum nihil officia officiis porro quo reprehenderit sit voluptate? Culpa, magnam.</pre>';
-        var_dump(str_replace("pre>", "p>", $str));
-
-    }
-
-
 }

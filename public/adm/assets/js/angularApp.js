@@ -1253,6 +1253,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $rootScope.url = $location.path().replace('/', '');
     $scope.uploaded = [];
     $scope.fileValidation = {};
+    $scope.mailData = {};
 
 
     loadUser();
@@ -1335,17 +1336,17 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
                     $scope.newuser = {};
                     $scope.showform = false;
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $scope.files = [];
 
                 }, function onError(response) {
                     console.log('addError :- Status :' + response.status + 'data : ' + response.data);
                     console.log(response.data);
                     $rootScope.loading = false;
-                    $scope.files = '';
+                    $rootScope.showform = false;
+                    $scope.files = [];
 
-                    if (response.status == 403) {
-                        $scope.fileValidation.status = true;
-                        $scope.fileValidation.msg = response.data.validation_error;
+                    if (response.status == 400) {
+                        $scope.newuser = {};
                     }
                 });
         }
@@ -1480,9 +1481,11 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
             });
     };
 
+    $scope.generatePassword= function () {
+        $scope.newuser.password = Math.random().toString(36).slice(-8);
+    };
+
 }]);
-
-
 
 
 

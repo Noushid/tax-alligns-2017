@@ -116,12 +116,12 @@ $route['dashboard/user/add']['post'] = 'User_Controller/store';
 $route['dashboard/user/delete/(:num)']['delete'] = 'User_Controller/delete/$1';
 
 $route['dashboard/messages'] = 'Dashboard/message';
-$route['dashboard/message/get/(:num)'] = 'Message_Controller/get/$1';
-$route['dashboard/message/upload'] = 'Message_Controller/upload';
-$route['dashboard/message/send/(:num)'] = 'Message_Controller/send/$1';
-$route['dashboard/message/viewed/(:num)'] = 'Message_Controller/viewed/$1';
-$route['dashboard/message/sent-item/(:num)'] = 'Message_Controller/get_where/$1/sent';
-$route['dashboard/message/inbox/(:num)'] = 'Message_Controller/get_where/$1/received';
+$route['dashboard/message/get/(:num)']['get'] = 'Message_Controller/get/$1';
+$route['dashboard/message/upload']['post'] = 'Message_Controller/upload';
+$route['dashboard/message/send/(:num)']['post'] = 'Message_Controller/send/$1';
+//$route['dashboard/message/viewed/(:num)'] = 'Message_Controller/viewed/$1';
+$route['dashboard/message/sent-item/(:num)']['get'] = 'Message_Controller/get_where/$1/sent';
+$route['dashboard/message/inbox/(:num)']['get'] = 'Message_Controller/get_where/$1/received';
 
 /*_______ admin route end _______*/
 

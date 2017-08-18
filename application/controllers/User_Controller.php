@@ -17,6 +17,7 @@ class User_Controller extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('File_model', 'file');
+        $this->config->load('ion_auth', TRUE);
 
         $this->load->library(['upload', 'image_lib','ion_auth']);
 
@@ -46,17 +47,55 @@ class User_Controller extends CI_Controller
 
     function store()
     {
-        $this->form_validation->set_rules('content', 'Content', 'required');
+        $this->form_validation->set_rules('first_name', 'First name', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required|is_unique[users.email]');
+        $this->form_validation->set_rules('password', 'Password', 'trim|min_length[2]|max_length[20]|required');
+
         if ($this->form_validation->run() === FALSE) {
             $this->output->set_status_header(400, 'Validation Error');
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
-            $post_data = $this->input->post();
-            if ($this->user->insert($post_data)) {
-                $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
+            $first_name = $this->input->post('first_name', TRUE);
+            $last_name = $this->input->post('last_name', TRUE);
+            $username = $this->input->post('email', TRUE);
+            $email = $this->input->post('email', TRUE);
+            $phone = $this->input->post('phone', TRUE);
+            $password = $this->input->post('password', TRUE);
+
+            $additional_data = array(
+                'first_name' => $first_name,
+                'last_name' => $last_name,
+                'phone' => $phone,
+                'temp_password' => $password,
+                'active' => TRUE
+            );
+
+            if ($this->ion_auth->register($username, $password, $email, $additional_data)) {
+                $name = $first_name . '  ' . $last_name;
+
+                $subject = 'Account Details: ' ;
+
+                $message = 'Hi ' . $name . PHP_EOL . PHP_EOL;
+                $message .= 'Username  :  ' . $name . PHP_EOL . PHP_EOL;
+                $message .= 'Password  :  ' . $password . PHP_EOL . PHP_EOL;
+
+                $to = $email;
+
+                $headers  = 'MIME-Version: 1.0' . "\r\n";
+
+                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+                $headers .= 'From: info@accountsandtax.in';
+
+                if (mail($to, $subject, $message, $headers)) {
+                    $this->output->set_content_type('application/json')->set_output(json_encode($this->input->post(NULL, TRUE)));
+                } else {
+                    $this->output->set_status_header(400, 'Mail server error');
+                    $this->output->set_content_type('application/json')->set_output(json_encode($this->input->post(NULL, TRUE)));
+                }
             } else {
                 $this->output->set_status_header(500, 'Server Down');
-                $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Add Error.']));
+                $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'user Create Error']));
             }
         }
     }

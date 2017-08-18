@@ -131,7 +131,7 @@
                                 <label for="" class="control-label col-lg-2">File</label>
                                 <div class="col-md-4">
                                     <button ngf-select="uploadFiles($files, $invalidFiles)"
-                                            accept="application/pdf"
+                                            accept="application/pdf,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,text/plain,application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,application/vnd.oasis.opendocument.text"
                                             ngf-max-size="15MB"
                                             ngf-multiple="true" type="button">
                                         Select Files

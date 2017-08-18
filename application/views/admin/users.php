@@ -22,101 +22,48 @@
                         <div class="col-lg-10">
                             <form class="form-horizontal" method="POST" ng-submit="addUser()">
                                 <div class="form-group">
-                                    <label for="" class="control-label col-lg-2">name</label>
+                                    <label for="" class="control-label col-lg-2">First name</label>
                                     <div class="col-lg-6">
-                                        <input type="text" name="name" class="form-control" ng-model="newuser.name"/>
+                                        <input type="text" name="first_name" class="form-control" ng-model="newuser.first_name" placeholder="First Name" required/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="control-label col-lg-2">Description</label>
+                                    <label for="" class="control-label col-lg-2">Last name</label>
                                     <div class="col-lg-6">
-                                        <textarea name="heading" class="form-control" ng-model="newuser.description"></textarea>
+                                        <input type="text" name="last_name" class="form-control" ng-model="newuser.last_name" placeholder="Last Name" required/>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="" class="control-label col-lg-2">File</label>
-                                    <div class="col-md-4">
-                                        <button ngf-select="uploadFiles($files, $invalidFiles)"
-                                                accept="application/pdf"
-                                                ngf-max-size="15MB"
-                                                ngf-multiple="true" type="button">
-                                            Select Files
-                                        </button>
-                                        <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
+                                    <label for="" class="control-label col-lg-2">Email</label>
+                                    <div class="col-lg-6">
+                                        <input type="email" name="email" class="form-control" ng-model="newuser.email" placeholder="Email" required/>
                                     </div>
                                 </div>
-                                <div class="clearfix"></div>
-
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <ul class="list-group">
-                                            <li ng-repeat="f in files" style="font:smaller" class="list-group-item">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <div class="col-sm-2">
-                                                            <img ngf-src="f.$ngfBlobUrl" class="thumbnail" width="100px" ngf-no-object-url="true">
-                                                            <span>{{f.name}} {{f.$errorParam}}</span>
-                                                        </div>
-                                                        <div class="col-sm-6">
-                                                            <div class="row">
-                                                                <div class="col-sm-8">
-                                                                    <div class="progress progress-striped active" ng-show="f.progress >= 0" ng-class="{cancel: uploadstatus == 1}">
-                                                                        <div ng-show="uploadstatus == 1">{{f.progressmsg}}</div>
-                                                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                                                             aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%" ng-show="uploadstatus != 1">
-                                                                            {{f.progress}}% Complete
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <!--                                                            <div class="col-sm-4">-->
-                                                                <!--                                                                <button class="btn btn-danger" type="button" ng-click="abort()">cancel</button>-->
-                                                                <!--                                                            </div>-->
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="bg-danger" ng-repeat="f in errFiles" style="font:smaller" class="list-group-item">{{f.name}} {{f.$error}} {{f.$errorParam}}
-                                            </li>
-                                        </ul>
+                                <div class="form-group">
+                                    <label for="" class="control-label col-lg-2">Phone</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" name="phone" class="form-control" ng-model="newuser.phone" placeholder="Phone"/>
                                     </div>
-                                    <div class="row" ng-show="errorMsg">
-                                        <div class="alert alert-danger">
-                                            {{errorMsg}}
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-2">Password</label>
+                                    <div class="col-lg-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" ng-model="newuser.password" name="password" placeholder="Password required">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-block" type="button" ng-click="generatePassword()">Generate</button>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
-                                <!--                                <span class="alert alert-warning">Image should be 100*100</span>-->
-
-                                <!----for existing image----->
-                                <div class="clearfix"></div>
-                                <uib-accordion ng-show="item_files">
-                                    <div uib-accordion-group class="panel-default" is-open="open" >
-                                        <uib-accordion-heading>
-                                            Images<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
-                                        </uib-accordion-heading>
-                                        <div class="row">
-                                            <div class="col-md-2">
-                                                <div class="thumbnail cus-thumb" ng-mouseover="showcaption=true" ng-mouseleave="showcaption=false" style="max-height: 142px;">
-                                                    <div class="caption" ng-show="showcaption">
-                                                        <div id="content">
-                                                            <a href="{{base_url+'uploads/'+item_files.file_name}}" class="label label-warning" rel="tooltip" title="Show">Show</a>
-                                                            <!--                                                        <a href="" class="label label-danger" rel="tooltip" title="Delete" confirmed-click="deleteImage(item_files)" ng-confirm-click="Would you like to delete this item?!">Delete</a>-->
-                                                        </div>
-                                                    </div>
-                                                    <img src="<?php echo base_url()?>adm/assets/img/pdf_icon.png" alt="thumbnails">
-                                                </div>
-                                            </div>
-                                        </div>
+                                <!--<div class="form-group">
+                                    <div class="checkbox col-lg-offset-2">
+                                        <label><input type="checkbox" ng-model="newuser.send_mail">Send details to registered email.</label>
                                     </div>
-                                </uib-accordion>
-
-
-                                <div class="clearfix"></div>
-
+                                </div>-->
                                 <div class="form-group">
-                                    <div class="col-lg-8 text-center">
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    <div class="col-lg- text-center">
+                                        <button class="btn btn-primary" type="submit">Submit and send mail</button>
                                         <button class="btn btn-danger" type="button" ng-click="hideForm()">Cancel</button>
                                     </div>
                                 </div>
