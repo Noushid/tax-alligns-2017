@@ -131,3 +131,59 @@
         min-height: 447px;
     }
 }
+
+/*a{*/
+    /*text-transform: capitalize;*/
+/*}*/
+.dropdown-menu a {
+    cursor: pointer !important;
+}
+
+.tab-content {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+
+/*BADGE*/
+.badge-error {
+    background-color: #b94a48;
+}
+.badge-error:hover {
+    background-color: #953b39;
+}
+.badge-warning {
+    background-color: #f89406;
+}
+.badge-warning:hover {
+    background-color: #c67605;
+}
+.badge-success {
+    background-color: #468847;
+}
+.badge-success:hover {
+    background-color: #356635;
+}
+.badge-info {
+    background-color: #3a87ad;
+}
+.badge-info:hover {
+    background-color: #2d6987;
+}
+.badge-inverse {
+    background-color: #777;
+}
+.badge-inverse:hover {
+    background-color: #1a1a1a;
+}
+
+.tab-style {
+    font-weight: 600;
+    cursor: default;
+}

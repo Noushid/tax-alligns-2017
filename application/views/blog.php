@@ -17,27 +17,24 @@
                                     $date = date_create($value->date);
                                     ?>
                                     <article class="entry clearfix">
-                                        <div class="feature-post v2">
-                                            <a href="#"><img class="upimg" src="<?php echo base_url('uploads/' . $value->file->file_name);?>" alt="image"></a>
-                                        </div>
+<!--                                        <div class="feature-post v2">-->
+<!--                                            <a href="#"><img class="upimg" src="--><?php //echo base_url('uploads/' . $value->file->file_name);?><!--" alt="image"></a>-->
+<!--                                        </div>-->
                                         <div class="content-post">
                                             <div class="entry-meta">
                                                 <ul class="meta-post clearfix">
                                                     <li class="day">
-                                                        <a href="#"><?php echo date_format($date,"d F Y")?></a>
+                                                        <span><?php echo date_format($date,"d F Y")?></span>
                                                     </li>
                                                     <li class="author">
                                                         <a href="#">By admin</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <h4 class="title-post">
-                                                <a href="<?php echo base_url('gst/' . $value->id); ?>"><?php echo $value->heading?></a>
-                                            </h4>
-
                                             <div class="entry-post">
-                                                <p><?php echo $value->content;?></p>
+                                                <?php echo $value->content;?>
                                             </div>
+
                                             <div class="submit-wrap" style="float: right;">
                                                 <button onclick="document.location='<?php echo base_url('gst/' . $value->id); ?>'" class="flat-button button-style">Read More <i
                                                         class="fa fa-chevron-right"></i></button>

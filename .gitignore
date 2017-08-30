@@ -20,3 +20,5 @@ application/logs/*
 node_modules/
 readme.rst
 user_guide/
+public/uploads/*
+bower_components/

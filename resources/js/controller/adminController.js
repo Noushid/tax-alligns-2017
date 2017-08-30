@@ -29,6 +29,18 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
 
     //load_user();
 
+    // Editor options.
+    $scope.options = {
+        language: 'en',
+        allowedContent: true,
+        entities: false
+    };
+
+    // Called when the editor is completely ready.
+    $scope.onReady = function () {
+        console.log('test');
+    };
+
     function load_user() {
         var url = $rootScope.base_url + 'admin/user';
         $http.get(url).then(function (response) {

@@ -22,16 +22,13 @@
                     <div class="col-lg-10">
                         <form class="form-horizontal" method="POST" ng-submit="addBlog()">
                             <div class="form-group">
-                                <label for="" class="control-label col-lg-2">Heading</label>
-                                <div class="col-lg-6">
-                                    <textarea name="heading" class="form-control" ng-model="newblog.heading"></textarea>
+<!--                                <label for="" class="control-label col-lg-2">Heading</label>-->
+                                <div class="col-md-8">
+                                    <input type="text" name="heading" id="heading" ng-model="newblog.heading" class="form-control" placeholder="Type your heading"/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="" class="control-label col-lg-2">Content</label>
-                                <div class="col-lg-6">
-                                    <textarea name="heading" class="form-control" ng-model="newblog.content"></textarea>
-                                </div>
+                                <textarea ckeditor="options" ng-model="newblog.content" class="form-control"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="" class="control-label col-lg-2">Date</label>
@@ -57,6 +54,7 @@
                                     </button>
                                     <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
                                 </div>
+
                             </div>
                             <div class="clearfix"></div>
 
@@ -68,7 +66,7 @@
                                                 <div class="col-sm-12">
                                                     <div class="col-sm-2">
                                                         <img ngf-src="f.$ngfBlobUrl" class="thumbnail" width="100px" ngf-no-object-url="true">
-                                                        <span>{{f.name}} {{f.$errorParam}}</span>
+                                                        <span>{{f.$errorParam}}</span>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         <div class="row">
@@ -77,13 +75,18 @@
                                                                     <div ng-show="uploadstatus == 1">{{f.progressmsg}}</div>
                                                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
                                                                          aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%" ng-show="uploadstatus != 1">
-                                                                        {{f.progress}}% Complete
+                                                                        {{f.progress}}% {{f.name}}
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <!--                                                            <div class="col-sm-4">-->
-                                                            <!--                                                                <button class="btn btn-danger" type="button" ng-click="abort()">cancel</button>-->
-                                                            <!--                                                            </div>-->
+                                                            <div class="form-group">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" readonly ng-model="uploaded[$index].url" class="form-control"/>
+                                                                </div>
+                                                            </div>
+<!--                                                            <div class="col-sm-4">-->
+<!--                                                                <button class="btn btn-danger" type="button" ng-click="cancelUpload()">cancel</button>-->
+<!--                                                            </div>-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,59 +102,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-                            <div class="form-group">
-                                <label for="" class="control-label col-lg-2">File</label>
-                                <div class="col-md-4">
-                                    <button ngf-select="uploadFiles1($files, $invalidFiles)"
-                                            accept="application/pdf"
-                                            ngf-max-size="15MB"
-                                            ngf-multiple="false" type="button">
-                                        Select Files
-                                    </button>
-                                    <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-
-                            <div class="col-md-12">
-                                <div class="row">
-                                    <ul class="list-group">
-                                        <li ng-repeat="f in files1" style="font:smaller" class="list-group-item">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <div class="col-sm-2">
-                                                        <img ngf-src="f.$ngfBlobUrl" class="thumbnail" width="100px" ngf-no-object-url="true">
-                                                        <span>{{f.name}} {{f.$errorParam}}</span>
-                                                    </div>
-                                                    <div class="col-sm-6">
-                                                        <div class="row">
-                                                            <div class="col-sm-8">
-                                                                <div class="progress progress-striped active" ng-show="f.progress >= 0" ng-class="{cancel: uploadstatus == 1}">
-                                                                    <div ng-show="uploadstatus == 1">{{f.progressmsg}}</div>
-                                                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
-                                                                         aria-valuemin="0" aria-valuemax="100" style="width:{{f.progress}}%" ng-show="uploadstatus != 1">
-                                                                        {{f.progress}}% Complete
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <!--                                                            <div class="col-sm-4">-->
-                                                            <!--                                                                <button class="btn btn-danger" type="button" ng-click="abort()">cancel</button>-->
-                                                            <!--                                                            </div>-->
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="bg-danger" ng-repeat="f in errFiles" style="font:smaller" class="list-group-item">{{f.name}} {{f.$error}} {{f.$errorParam}}
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
 
 
                             <!----for existing image----->
@@ -229,9 +179,7 @@
                         <tr>
                             <th>#</th>
                             <th>Date</th>
-                            <th>Heading</th>
                             <th>Content</th>
-                            <th>document</th>
                             <th>Photo</th>
                             <th>Action</th>
                         </tr>
@@ -240,10 +188,7 @@
                         <tr dir-paginate="blog in blogs | filter:search | limitTo:pageSize | itemsPerPage:numPerPage">
                             <td>{{$index+1}}</td>
                             <td>{{blog.date |date:'dd-MMM-yyyy'}}</td>
-                            <td>{{blog.heading}}</td>
                             <td>{{blog.content}}</td>
-                            <td><a href="{{base_url + 'uploads/' + blog.document.file_name}}"><img src="{{base_url + 'adm/assets/img/pdf_icon.png'}}" alt="Thumbnail" width="25px" height="25px"/></a></td>
-                            <td><a href="{{base_url + 'uploads/' + blog.file.file_name}}"><img src="{{base_url + 'uploads/' + blog.file.file_name}}" alt="Thumbnail" width="25px" height="25px"/></a></td>
                             <td>
                                 <div  class="btn-group btn-group-xs" role="group">
                                     <button type="button" class="btn btn-info" ng-click="editBlog(blog)">

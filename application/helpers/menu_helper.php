@@ -14,6 +14,11 @@ function dashboard_menu()
             'icon' => 'fa-tachometer',
             'link' => 'dashboard'
         ],
+        'users' => [
+            'title' => 'users',
+            'icon' => 'fa-users',
+            'link' => 'users'
+        ],
         'testimonial' => [
             'title' => 'testimonial',
             'icon' => 'fa-picture-o',
@@ -28,6 +33,11 @@ function dashboard_menu()
             'title' => 'documents',
             'icon' => 'fa-picture-o',
             'link' => 'documents'
+        ],
+        'messages' => [
+            'title' => 'messages',
+            'icon' => 'fa-envelope',
+            'link' => 'messages'
         ]
     ];
 
@@ -36,7 +46,7 @@ function dashboard_menu()
     foreach ($menu as $key => $value) {
 //        $html .= '<li><a href="' . base_url('admin/#'.$value['link']) . '" ng-class="{active : url == \'' . $value['link'] . '\'}"> '.ucfirst($value['title']).' &nbsp;<i class="menu-icon fa '.$value['icon'].' pull-right"></i></a></li>';
         $html .= '<li>' .
-            '<a ng-class="{\'active-menu\' : url == \'' . $value['link'] . '\'}" href="' . base_url('admin/#' . $value['link']) . '"><i class="fa ' . $value['icon'] . '"></i> ' . ucfirst($value['title']) . '</a>' . PHP_EOL .
+            '<a ng-class="{\'active-menu\' : url == \'' . $value['link'] . '\'}" href="' . base_url('dashboard/#' . $value['link']) . '"><i class="fa ' . $value['icon'] . '"></i> ' . ucfirst($value['title']) . '</a>' . PHP_EOL .
             '</li>';
     }
 

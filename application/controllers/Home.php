@@ -18,6 +18,10 @@ class Home extends CI_Controller
         parent::__construct();
         $this->load->model('Testimonial_model', 'testimonial');
         $this->load->model('Blog_model', 'blog');
+        $this->load->library(['ion_auth']);
+        $this->load->helper(['language']);
+
+        $this->lang->load('auth');
     }
 
     public function login($page = 'login')
@@ -99,11 +103,11 @@ class Home extends CI_Controller
     }
     /*gst sub-menu end*/
 
-    public function blog($pagnate="")
+    public function blog()
     {
         $page = 'blog';
         $total_post = $this->blog->count_rows();
-        $data['blog'] = $this->blog->with_file()->with_document()->paginate(5, $total_post);
+        $data['blog'] = $this->blog->order_by('id','desc')->paginate(5, $total_post);
         $data['all_pages'] = $this->blog->all_pages;
 
         $this->load->view($this->header,['current' => 'Our Blog']);
@@ -113,7 +117,7 @@ class Home extends CI_Controller
 
     public function blogView($id)
     {
-        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get_all();
+        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get();
         $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->get_all();
         $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view("blogView", $data);
@@ -129,15 +133,15 @@ class Home extends CI_Controller
 
     public function _load_testimonial()
     {
-        return $this->testimonial->with_file()->get_all();
+        return $this->testimonial->with_file()->order_by('id','desc')->get_all();
     }
 
     public function _load_blog($limit ="")
     {
         if ($limit != "") {
-            return $this->blog->with_file()->with_document()->limit($limit)->get_all();
+            return $this->blog->with_file()->with_document()->limit($limit)->order_by('id','DESC')->get_all();
         } else {
-            return $this->blog->with_file()->with_document()->get_all();
+            return $this->blog->with_file()->with_document()->order_by('id','desc')->get_all();
         }
     }
 
@@ -177,5 +181,37 @@ class Home extends CI_Controller
         }
     }
 
+    function send_comment()
+    {
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('phone', 'Email', 'required');
 
+        if ($this->form_validation->run() === FALSE) {
+            $this->output->set_status_header(400, 'Validation error');
+        } else {
+            $name = $this->input->post('name');
+            $phone = $this->input->post('phone');
+            $service = $this->input->post('service');
+
+            $service = wordwrap($service, 70, "<br>");
+            $subject = 'Comments from : ' . $name;
+
+            $message = 'name  :  ' . $name . PHP_EOL . PHP_EOL;
+            $message .= 'Request from  :   ' . $phone . PHP_EOL . PHP_EOL;
+            $message .= 'Requested Service   :   ' . $service . PHP_EOL . PHP_EOL;
+
+            $message = str_replace("\n.", "\n..", $message);
+
+            $to = 'info@accountsandtax.in';
+
+            $headers = 'From: comments@accountsandtax.in';
+
+            if (mail($to, $subject, $message, $headers)) {
+                $this->output->set_output('success');
+            } else {
+                $this->output->set_status_header(101, 'Mail server connect error');
+                $this->output->set_output('error');
+            }
+        }
+    }
 }

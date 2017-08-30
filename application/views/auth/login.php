@@ -1,10 +1,8 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Accounts & TaxAlliance -login</title>
-    <script src="<?php echo public_url() . 'adm/assets/js/angular-bootstrap.min.js' ?>"></script>
-    <script src="<?php echo public_url() . 'adm/assets/js/angularApp.min.js' ?>"></script>
+    <title>Quality builders -login</title>
     <style>
 
         /* 'Open Sans' font from Google Fonts */
@@ -99,21 +97,40 @@
         }
     </style>
 </head>
-<body ng-controller="adminController">
+<!--<body ng-controller="adminController">-->
+<body>
 
 <div class="login">
     <div class="login-triangle"></div>
 
-    <h2 class="login-header">Log in</h2>
+    <h2 class="login-header"><?php echo lang('login_heading');?></h2>
+    <!--    <p>--><?php //echo lang('login_subheading');?><!--</p>-->
 
-    <form class="login-container" name="loginform" method="POST" ng-submit="login()">
-        <p><input type="text" placeholder="Username" name="username" ng-model="user.username"></p>
-        <p><input type="password" placeholder="Password" name="password" ng-model="user.password"></p>
-        <p><input type="submit" value="Log in"></p>
-        <div class="error" ng-show="showerror">
-            {{error.error}}
-        </div>
-    </form>
+
+    <?php echo form_open("auth/login",['class' => 'login-container']);?>
+    <div id="infoMessage"><?php echo $message;?></div>
+
+    <p>
+        <!--        --><?php //echo lang('login_identity_label', 'identity');?>
+        <?php echo form_input($identity);?>
+    </p>
+
+    <p>
+        <!--        --><?php //echo lang('login_password_label', 'password');?>
+        <?php echo form_input($password);?>
+    </p>
+
+    <p>
+        <?php echo lang('login_remember_label', 'remember');?>
+        <?php echo form_checkbox('remember', '1', FALSE, 'id="remember"');?>
+    </p>
+
+
+    <p><?php echo form_submit('submit', lang('login_submit_btn'));?></p>
+
+    <?php echo form_close();?>
+
+    <p><a href="forgot_password"><?php echo lang('login_forgot_password');?></a></p>
 </div>
 
 </body>

@@ -546,3 +546,20 @@
    	});
 
 })(jQuery);
+
+$('#commentform').submit(function (e) {
+    e.preventDefault();
+    $.post($(this).prop('action'),$(this).serialize())
+        .done(function(response) {
+            $('#commentform')[0].reset();
+            $('#comment-alert-success').removeClass('hide');
+            $("#comment-alert-success").delay(4).fadeIn();
+            $("#comment-alert-success").delay(4000).fadeOut();
+        })
+        .fail(function(response) {
+            $('#commentform')[0].reset();
+            $('#comment-alert-error').removeClass('hide');
+            $("#comment-alert-error").delay(4).fadeIn();
+            $("#comment-alert-error").delay(4000).fadeOut();
+        })
+});

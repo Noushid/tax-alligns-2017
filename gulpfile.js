@@ -11,7 +11,8 @@ var config = {
     publicDir: 'public/',
     adminJsDir: 'public/adm/assets/js/',
     jsResource: 'resources/js/',
-    nodeDir: 'node_modules/'
+    nodeDir: 'node_modules/',
+    bowerDir: 'bower_components/'
 };
 
 gulp.task('scripts', function () {
@@ -33,7 +34,11 @@ gulp.task('mix', function () {
         config.nodeDir + 'angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
         config.nodeDir + 'angular-utils-pagination/dirPagination.js',
         config.nodeDir + 'ng-file-upload/dist/ng-file-upload.js',
-        config.nodeDir + 'ng-file-upload/dist/ng-file-upload-shim.js'
+        config.nodeDir + 'ng-file-upload/dist/ng-file-upload-shim.js',
+        config.bowerDir + 'ng-ckeditor/ng-ckeditor.js',
+        config.bowerDir + 'ng-ckeditor/libs/ckeditor.js',
+        config.bowerDir + 'angular-timeago/dist/angular-timeago.js'
+        //config.bowerDir + 'angular-timeago/dist/angular-timeago-core.js'
     ])
         .pipe(concat('angular-bootstrap.js'))
         .pipe(gulp.dest(config.adminJsDir))
