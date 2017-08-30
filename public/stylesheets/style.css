@@ -809,7 +809,7 @@ input[type="color"],
    position: absolute;
    left: 0;
    top: 150%;
-   width: 300px;
+   width: 200px;
    text-align: left;
    background-color: #222222;
    z-index: 9999;
@@ -844,7 +844,7 @@ input[type="color"],
 
 #mainnav ul.submenu li ul {
    position: absolute;
-   left: 300px;
+   left: 200px;
    top: 0 !important;
 }
 
@@ -2807,4 +2807,10 @@ article .comment.style1 {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+.my-pad{
+	padding: 10px 0px;
+}
+.ml-183{
+	margin-left: 183px;
 }

@@ -37,11 +37,11 @@
                                 </div>
                                 <div class="widget widget-categories team">
                                     <ul class="categories">
-                                        <li><a href="gst.html">GST</a></li>
-                                        <li><a href="whatisgst.html">What is GST</a></li>
-                                        <li><a href="filing.html">GST Filing</a></li>
-                                        <li><a href="gstAccounting.html">GST Accounting</a></li>
-                                        <li><a href="invoice.html">GST Invoice</a></li>
+                                        <li><a href="GST">GST</a></li>
+                                        <li><a href="WhatIsGST">What is GST</a></li>
+                                        <li><a href="GSTFiling">GST Filing</a></li>
+                                        <li><a href="GSTaccounting">GST Accounting</a></li>
+                                        <li><a href="GSTinvoice">GST Invoice</a></li>
                                     </ul>
                                 </div><!-- /widget-archives -->
                             </div><!-- /widget-archives -->

@@ -100,28 +100,33 @@
                                 <ul class="menu"> 
                                     <li class="<?php echo ($current == 'Home' ? 'home' : '') ?>"><a href="<?php echo base_url();?>home">Home</a></li>
                                     <li class="<?php echo ($current == 'About Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>about">About Us</a></li>
-                                    <li class="<?php echo ($current == 'Our Services' ? 'home' : '') ?>"><a href="<?php echo base_url();?>services">Our Services</a></li>
-                                    <li class="<?php echo ($current == 'GST' ? 'home' : '') ?>"><a href="<?php echo base_url();?>GST">GST</a>
+                                    <li class="<?php echo ($current == 'Services' ? 'home' : '') ?>"><a href="<?php echo base_url();?>services">Services</a></li>
+                                    <li class="">
+                                        <a href="#">Taxation</a>
                                         <ul class="submenu">
-                                            <li><a href="<?php echo base_url();?>WhatIsGST">What is GST</a></li>
-                                            <li><a href="<?php echo base_url();?>GSTfiling">GST Filing</a></li>
-                                            <li><a href="<?php echo base_url();?>GSTaccounting">GST Accounting</a>
+                                            <li class="<?php echo ($current == 'GST' ? 'home' : '') ?>"><a href="<?php echo base_url();?>GST">GST</a>
                                                 <ul class="submenu">
-                                                    <li><a href="<?php echo base_url();?>GSTaccounting#tally">In Tally ERP</a></li>
-                                                    <li><a href="<?php echo base_url();?>GSTaccounting#mallu">In Malayalam</a></li>
-                                                    <li><a href="<?php echo base_url();?>GSTaccounting#council">GST Council</a></li>
+                                                    <li><a href="<?php echo base_url();?>WhatIsGST">What is GST</a></li>
+                                                    <li><a href="<?php echo base_url();?>GSTfiling">GST Filing</a></li>
+                                                    <li><a href="<?php echo base_url();?>GSTaccounting">GST Accounting</a>
+                                                        <ul class="submenu">
+                                                            <li><a href="<?php echo base_url();?>GSTaccounting#tally">In Tally ERP</a></li>
+                                                            <li><a href="<?php echo base_url();?>GSTaccounting#mallu">In Malayalam</a></li>
+                                                            <li><a href="<?php echo base_url();?>GSTaccounting#council">GST Council</a></li>
+                                                        </ul><!-- /.submenu -->
+                                                    </li>
+                                                    <li><a href="<?php echo base_url();?>GSTinvoice">GST Invoice</a></li>
                                                 </ul><!-- /.submenu -->
                                             </li>
-                                            <li><a href="<?php echo base_url();?>GSTinvoice">GST Invoice</a></li>
-                                        </ul><!-- /.submenu -->
+                                            <li class="<?php echo ($current == 'IT' ? 'home' : '') ?>"><a href="<?php echo base_url();?>#">Income Tax</a>
+                                                <ul class="submenu">
+                                                    <li><a href="<?php echo base_url();?>ITreturns">IT Returns</a></li>
+                                                    <li><a href="<?php echo base_url();?>TDS">TDS</a></li>
+                                                </ul><!-- /.submenu -->
+                                            </li>
+                                        </ul>
                                     </li>
-                                    <li class="<?php echo ($current == 'IT' ? 'home' : '') ?>"><a href="<?php echo base_url();?>#">Income Tax</a>
-                                        <ul class="submenu">
-                                            <li><a href="<?php echo base_url();?>ITreturns">IT Returns</a></li>
-                                            <li><a href="<?php echo base_url();?>TDS">TDS</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>
-                                    <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">latest updates</a></li>
+                                    <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">uae clients</a></li>
                                     <li class="<?php echo ($current == 'Contact Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Contact Us</a></li>
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->

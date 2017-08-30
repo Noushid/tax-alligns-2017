@@ -420,8 +420,8 @@ body.style-color {
 }
 
 .flat-choose-us.v1 .box {
-    margin-right: 50px;
-    padding: 63px 45px;
+    /*margin-right: 50px;*/
+    padding: 20px;
 }
 
 .flat-choose-us .box .title-v1 .title {

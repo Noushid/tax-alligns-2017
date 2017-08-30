@@ -76,6 +76,10 @@ $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';
 /*_______ public route End _______*/
 
+/*shammas designing testing routes*/
+$route['test'] = 'Home/test';
+/*shammas designing testing routes*/
+
 /*_______ admin route start _______*/
 
 $route['dashboard'] = 'Dashboard';

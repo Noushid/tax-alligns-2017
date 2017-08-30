@@ -5811,10 +5811,15 @@ tp-caption.Team-Thumb,
 .tp-caption.title-slide {	
 	color: #222;
 	letter-spacing: 1.1px!important;	
-	text-transform: uppercase;	
+	/*text-transform: uppercase;	*/
 	font-family: "Poppins", sans-serif;
 }
-
+.tp-caption.title-slide.white{
+	color: #fff;
+}
+.tp-caption.sub-title.white{
+	color: #fff;
+}
 /* Sub title */
 .tp-caption.sub-title {
 	font-family: "Poppins", sans-serif;

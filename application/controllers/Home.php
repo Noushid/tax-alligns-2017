@@ -51,6 +51,13 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
 
+    public function test($page = 'test')
+    {
+        $this->load->view($this->header,['current' => 'About Us']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+
     public function services($page = 'services')
     {
         $this->load->view($this->header,['current' => 'Our Services']);

@@ -15,9 +15,9 @@
                         <!-- LAYER NR. 12 -->
                         <div class="tp-caption title-slide" 
                             id="slide-3047-layer-1" 
-                            data-x="['center','center','center','center']" data-hoffset="['-208','-100','0','0']" 
+                            data-x="['center','center','center','center']" data-hoffset="['-212','-100','0','0']" 
                             data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-60']" 
-                            data-fontsize="['60','60','45','30']"
+                            data-fontsize="['55','55','45','30']"
                             data-lineheight="['60','60','45','35']"
                             data-fontweight="['700','700','700','700']"
                             data-width="none"
@@ -35,17 +35,17 @@
                             data-paddingbottom="[0,0,0,0"
                             data-paddingleft="[0,0,0,0]"
 
-                            style="z-index: 16; white-space: nowrap;text-transform:left;">WEAK ACCOUNTING IS <br />YOUR PROBLEM ?
+                            style="z-index: 16; white-space: nowrap;text-transform:left;">We do your accounting <br />at your office
                         </div>
 
                         <!-- LAYER NR. 13 -->
                         <div class="tp-caption sub-title" 
                             id="slide-3047-layer-4" 
-                            data-x="['center','center','center','center']" data-hoffset="['-220','-120','0','0']" 
+                            data-x="['center','center','center','center']" data-hoffset="['-200','-120','0','0']" 
                             data-y="['middle','middle','middle','middle']" data-voffset="['29','29','29','0']"
                             data-fontsize="['16',16','16','14']" 
                             data-fontweight="['600','600','600','600']"
-                            data-width="660"
+                            data-width="none"
                             data-height="none"
                             data-whitespace="nowrap"
                  
@@ -62,16 +62,16 @@
                             style="z-index: 17; white-space: nowrap;text-transform:left;">We are ACCOUNTS & TAX ALLIANCE We delivering more times Let A&T do your accounts..
                         </div>
 
-                        <a href="about.html" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
 
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
-                        data-x="['center','center','center','center']" data-hoffset="['-453','-353','0','0']" 
+                        data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
                         data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
                         data-hoffset="-75" 
                         data-voffset="83" 
                         data-width="['210']"
-                        data-height="['55']">First First<i class="fa fa-chevron-right"></i>
+                        data-height="['55']">Contact Now<i class="fa fa-chevron-right"></i>
                         </a><!-- END LAYER LINK -->
 
                     </li>
@@ -86,7 +86,7 @@
                         <!-- LAYER NR. 12 -->
                         <div class="tp-caption title-slide" 
                             id="slide-3047-layer-1" 
-                            data-x="['center','center','center','center']" data-hoffset="['-208','-100','0','0']" 
+                            data-x="['center','center','center','center']" data-hoffset="['-290','-100','0','0']" 
                             data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-60']" 
                             data-fontsize="['60','60','45','30']"
                             data-lineheight="['60','60','45','35']"
@@ -106,7 +106,7 @@
                             data-paddingbottom="[0,0,0,0"
                             data-paddingleft="[0,0,0,0]"
 
-                            style="z-index: 16; white-space: nowrap;text-transform:left;">Have you growth<br />in business?
+                            style="z-index: 16; white-space: nowrap;text-transform:left;">Let Professionals<br />Work for You
                         </div>
 
                         <!-- LAYER NR. 13 -->
@@ -154,11 +154,11 @@
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 12 -->
-                        <div class="tp-caption title-slide" 
+                        <div class="tp-caption title-slide white" 
                             id="slide-3047-layer-1" 
-                            data-x="['center','center','center','center']" data-hoffset="['-208','-100','0','0']" 
+                            data-x="['center','center','center','center']" data-hoffset="['-243','-100','0','0']" 
                             data-y="['middle','middle','middle','middle']" data-voffset="['-70','-70','-70','-60']" 
-                            data-fontsize="['60','60','45','30']"
+                            data-fontsize="['55','55','45','30']"
                             data-lineheight="['60','60','45','35']"
                             data-fontweight="['700','700','700','700']"
                             data-width="none"
@@ -176,11 +176,11 @@
                             data-paddingbottom="[0,0,0,0"
                             data-paddingleft="[0,0,0,0]"
 
-                            style="z-index: 16; white-space: nowrap;text-transform:left;">Are you okay with<br /> your planning?
+                            style="z-index: 16; white-space: nowrap;text-transform:left;">Why do you Pay more<br />Unfinished work
                         </div>
 
                         <!-- LAYER NR. 13 -->
-                        <div class="tp-caption sub-title" 
+                        <div class="tp-caption sub-title white" 
                             id="slide-3047-layer-4" 
                             data-x="['center','center','center','center']" data-hoffset="['-220','-120','0','0']" 
                             data-y="['middle','middle','middle','middle']" data-voffset="['29','29','29','0']"
