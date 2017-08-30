@@ -3,9 +3,10 @@
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
+    <meta name="description" content="ACCOUNTS AND TAX ALLIANCE (A&T) is a growing accounts and tax service firm. We are aimed to assist business man in setting and maintaining a venture with strong accounting and taxation department. A&T is ready for GST accounting and filing, because we are skilled and flexible to adopt any big changes in statutory and government rules and policies. We are simplifying the areas of complication. Our services are highly professional at an affordable cost. ">
+    <meta name="keywords" content="gst return filing, gst news, gst updates, gst rates, ACCOUNTS AND TAX ALLIANCE, kerala gst services">
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title><?php echo ucfirst($current)?> | Accounts & TaxAlliance</title>
-
     <meta name="author" content="psybotechnologies.com">
 
     <!-- Mobile Specific Metas -->
@@ -85,7 +86,7 @@
                 <div class="container">
                     <div class="header-wrap clearfix">
                         <div id="logo" class="logo">
-                            <a href="<?php echo base_url();?>index.html" rel="home">
+                            <a href="<?php echo base_url();?>home" rel="home">
                                 <img src="<?php echo base_url();?>images/logo.png" alt="image">
                             </a>
                         </div><!-- /.logo -->

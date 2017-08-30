@@ -25,7 +25,8 @@ class Dashboard extends Check_Logged
         {
             // Allow some methods?
             $allowed = array(
-                'verify'
+                'verify',
+                'generate_key'
             );
             if ( ! in_array($this->router->fetch_method(), $allowed))
             {

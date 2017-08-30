@@ -19,9 +19,7 @@
                                             <div class="entry-post">
                                                 <p><?php echo $blog[0]->content;?></p>
                                             </div>
-                                            <object class="bt-solid-1" data="<?php echo base_url('uploads/') . $blog[0]->document->file_name;?>" type="application/pdf" style="height: 600px;" width="100%">
-                                            </object>
-
+                                            <iframe src="<?php echo base_url('uploads/') . $blog[0]->document->file_name;?>" style="height: 600px; width: 100%;"></iframe>
                                         </div>
                                     </div><!-- /.entry-border -->
                                 </article><!-- /.entry -->
@@ -40,7 +38,7 @@
                                             foreach ($recent as $value) {
                                                 ?>
                                                 <li>
-                                                    <a href="<?php echo base_url('blogView/' . $value->id);?>"><?php echo $value->heading; ?></a>
+                                                    <a href="<?php echo base_url('gst/' . $value->id);?>"><?php echo $value->heading; ?></a>
                                                 </li>
                                             <?php
                                             }
