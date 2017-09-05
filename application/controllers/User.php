@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+    protected $header = 'templates/header';
+    protected $footer = 'templates/footer';
+
     function __construct()
     {
         parent::__construct();
@@ -50,7 +53,9 @@ class User extends CI_Controller {
                 }
             }
         } else {
-            $this->load->view('register');
+            $this->load->view($this->header,['current' => 'login']);
+            $this->load->view('user/register');
+            $this->load->view($this->footer);
         }
     }
 

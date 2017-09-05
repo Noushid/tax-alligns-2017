@@ -15,6 +15,7 @@ class Dashboard extends CI_Controller
         parent::__construct();
 
         $this->load->library(['ion_auth']);
+        $this->load->helper(['url', 'language']);
 
         /**
          * Check loin
@@ -116,40 +117,111 @@ class Dashboard extends CI_Controller
 
     public function change_profile()
     {
-        $data['username'] = $this->session->logged_in['username'];
+        $data['user_id'] = $this->session->user_id;
         $this->load->view('admin/user_profile',$data);
     }
 
-    public function edit_profile()
+    public function edit_user($id="")
     {
+
+        if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
+        {
+            var_dump('error 1');
+//            redirect('auth', 'refresh');
+        }
+
+        $user = $this->ion_auth->user($id)->row();
+        $groups=$this->ion_auth->groups()->result_array();
+        $currentGroups = $this->ion_auth->get_users_groups($id)->result();
+
+        // validate form input
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('curpassword', 'Current password', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('confirmpassword', 'Password', 'required|matches[password]');
-        if ($this->form_validation->run() === FALSE) {
-            $this->output->set_status_header(400, 'Validation error');
-            $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
-        } else {
-            $cur_user = $this->session->logged_in['username'];
-            $cur_pass = hash('sha256', $this->input->post('curpassword'));
+        $this->form_validation->set_rules('confirmpassword', 'Confirm password', 'required');
 
-            $data['username'] = $this->input->post('username');
-            $data['password'] = hash('sha256', $this->input->post('password'));
-            $where = [
-                'username' => $cur_user,
-                'password' => $cur_pass,
-            ];
-            if ($result = $this->user->get($where)) {
-                $id = $result[0]->id;
-                if ($edit = $this->user->edit($data, $id)) {
-                    $_SESSION['logged_in']['username'] = $data['username'];
-                    $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Username and password changed']));
+        if (isset($_POST) && !empty($_POST))
+        {
+            /*// do we have a valid request?
+            if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id'))
+            {
+                var_dump('csrf error');
+//                show_error($this->lang->line('error_csrf'));
+            }else{
+                var_dump('csrf ssuce');
+                exit;
+            }*/
+
+
+
+            // update the password if it was posted
+            if ($this->input->post('password'))
+            {
+                $this->form_validation->set_rules('password', 'Password', 'required|matches[confirmpassword]');
+                $this->form_validation->set_rules('confirmpassword', 'Password', 'required');
+            }
+
+            if ($this->form_validation->run() === TRUE)
+            {
+                if ($this->ion_auth->hash_password_db($user->id,$this->input->post('curpassword')) == FALSE) {
+                    $this->output->set_status_header(400, 'Validation error');
+                    $json_data['cur_password'] = 0;
+                    $json_data['error'] = 'Current password can\'t match!';
+
+                    $this->output->set_content_type('application/json')->set_output(json_encode($json_data));
+                }else {
+
+                    $data = array(
+                        'email' => $this->input->post('username'),
+                        'username' => $this->input->post('username'),
+                    );
+
+                    // update the password if it was posted
+                    if ($this->input->post('password')) {
+                        $data['password'] = $this->input->post('password');
+                    }
+
+                    // check to see if we are updating the user
+                    if ($this->ion_auth->update($id, $data)) {
+                        // redirect them back to the admin page if admin, or to the base url if non admin
+                        $this->session->set_flashdata('message', $this->ion_auth->messages());
+
+
+                        if ($this->ion_auth->is_admin()) {
+                            $this->session->set_userdata('identity', $user->username);
+                            $this->session->set_userdata('email', $user->email);
+                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Username and password changed']));
+                        } else {
+                            $this->session->set_userdata('identity', $user->username);
+                            $this->session->set_userdata('email', $user->email);
+                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Username and password changed']));
+                        }
+                    } else {
+                        // redirect them back to the admin page if admin, or to the base url if non admin
+                        $this->session->set_flashdata('message', $this->ion_auth->errors());
+                        $this->output->set_status_header(400, 'Server Down');
+                        $this->output->set_content_type('application/json')->set_output(json_encode(['error' => $this->ion_auth->errors()]));
+                    }
                 }
             }else{
                 $this->output->set_status_header(400, 'Validation error');
-                $error['msg'] = 'Current username and password did not match';
-                $this->output->set_content_type('application/json')->set_output(json_encode($error));
+                $this->output->set_content_type('application/json')->set_output(json_encode(['hierror' => validation_errors()]));
             }
+
+        }else {
+
+            // display the edit user form
+            $this->data['csrf'] = $this->_get_csrf_nonce();
+
+            // set the flash data error message if there is one
+            $this->data['message'] = (validation_errors() ? validation_errors() : ($this->ion_auth->errors() ? $this->ion_auth->errors() : $this->session->flashdata('message')));
+
+            // pass the user to the view
+            $this->data['user'] = $user;
+            $this->data['groups'] = $groups;
+            $this->data['currentGroups'] = $currentGroups;
+
+            $this->data['user_id'] = $this->session->user_id;
+            $this->load->view('admin/user_profile', $this->data);
         }
     }
 
@@ -252,4 +324,27 @@ class Dashboard extends CI_Controller
         }
     }
 
+    public function _get_csrf_nonce()
+    {
+        $this->load->helper('string');
+        $key   = random_string('alnum', 8);
+        $value = random_string('alnum', 20);
+        $this->session->set_tempdata('csrfkey', $key, 300);
+        $this->session->set_tempdata('csrfvalue', $value, 300);
+
+        return array($key => $value);
+    }
+
+    public function _valid_csrf_nonce()
+    {
+        $csrfkey = $this->input->post($this->session->tempdata('csrfkey'));
+        if ($csrfkey && $csrfkey == $this->session->tempdata('csrfvalue'))
+        {
+            return TRUE;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 }
