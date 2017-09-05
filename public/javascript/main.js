@@ -68,7 +68,7 @@
                         injectSpace.hide();
                     }
 
-                    if ( $(window).scrollTop() > 500 ) {
+                    if ( $(window).scrollTop() > 50 ) {
                         $('.header').addClass('header-small upscrolled');
                     } else {
                         $('.header').removeClass('upscrolled');

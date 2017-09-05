@@ -64,13 +64,13 @@
                                         <a href="<?php echo base_url();?>#"><i class="fa fa-wifi"></i></a>
                                     </li>
                                 </ul>
-                                <div onclick="document.location='contact'" class="question">
+                                <div onclick="document.location='home#call'" class="question">
                                     <div>
                                         <i class="fa fa-question-circle-o"></i><p class="text">Have any questions</p>
                                     </div>
                                 </div>
-                                <div onclick="document.location='home#call'" class="box-text text-right">
-                                    <p>Get An Appointment</p>
+                                <div class="box-text text-right">
+                                    <p>Register Now</p>
                                 </div>   
                             </div>
                         </div><!-- col-md-12 -->

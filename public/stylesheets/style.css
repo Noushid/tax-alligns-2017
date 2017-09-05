@@ -286,8 +286,26 @@ input[type="color"] {
 			transition: all 0.3s ease-in-out;
 }
 
+input[type="file"] {	
+	border: 1px solid #898989;
+    background-color: #fff;
+  	height: 50px;
+    padding: 0px; 	
+  	font-size: 13px;
+  	line-height: 25px;
+  	color: #222;
+  	width: 100%;
+  	margin-bottom: 20px;
+  	-webkit-transition: all 0.3s ease-in-out;
+	   -moz-transition: all 0.3s ease-in-out;
+		-ms-transition: all 0.3s ease-in-out;
+		 -o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+}
+
 textarea:focus,
 input[type="text"]:focus,
+input[type="file"]:focus,
 input[type="password"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
@@ -404,6 +422,7 @@ input::-webkit-input-placeholder {
 
 textarea, 
 input[type="text"],
+input[type="file"],
 input[type="submit"],
 input[type="password"], 
 input[type="datetime"], 
@@ -585,7 +604,7 @@ input[type="color"],
 -------------------------------------------------------------- */
 .wrap-slider {
 	position: relative;
-	z-index: 9999;
+	z-index: 999;
 }
 
 .wrap-slider .style-color {
@@ -601,7 +620,7 @@ input[type="color"],
 }
 
 .wrap-slider .header {
-	z-index: 9999;
+	z-index: 999;
 	width: 100%;
 	-webkit-transition: all 0.3s ease-in-out;
 	   -moz-transition: all 0.3s ease-in-out;
@@ -1474,11 +1493,19 @@ article .comment.style1 {
 .blog-single .comment-post .comment-detail .comment-reply:hover {
 	color: #a9a9a9;
 }
+/* my view-more */
+.my-reply {
+	color: #18ba60;
+}
+
+.my-reply:hover {
+	color: #a9a9a9;
+}
 
 /* Comment form */
 .comment-post .comment-respond {
 	background-color: #eee;
-	padding: 60px 50px;
+	padding: 20px 50px;
 }
 
 .post-wrap.single-v1 .entry {
@@ -1503,13 +1530,14 @@ article .comment.style1 {
 .comment-form .comment-form-email,
 .comment-form .comment-form-url {
 	display: inline-block;
-	width: 32.5%;
+	width: 49%;
 	float: left;
 	margin-right: 1%;	
 }
 
 .comment-form .comment-form-url {
 	margin-right: 0;
+	width: 50%;
 }
 
 .blog-single .comment-respond .form-submit input[type="submit"] {
@@ -1634,7 +1662,7 @@ article .comment.style1 {
     font-size: 18px;
     margin-bottom: 11px;
     font-weight: 600;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 /* widget-search */
@@ -1802,7 +1830,7 @@ article .comment.style1 {
 /* widget-brochures */
 .widget-brochures .title-link.v6 .widget-title {
 	font-size: 17px;
-	margin-bottom: 17px;
+	margin: 17px 0px;
 }
 
 .sidebar .widget.widget-brochures ul li {
@@ -1818,13 +1846,13 @@ article .comment.style1 {
 .widget .title-link.v6:after {
 	position: absolute;
 	top: 13px;
-	left: 154px;
+	left: 240px;
 }
 
 .widget .title-link.v6:before {
 	position: absolute;
 	top: 10px;
-	left: 154px;
+	left: 240px;
 } 
 
 .widget-brochures ul li {
@@ -1833,6 +1861,7 @@ article .comment.style1 {
 	padding: 11px 0 9px 26px;
 	border-radius: 3px;
 	width: 230px;
+	margin-bottom: 10px;
 }
 
 .widget-brochures ul li:before {
@@ -2813,4 +2842,26 @@ article .comment.style1 {
 }
 .ml-183{
 	margin-left: 183px;
+}
+.pt20{
+	padding-top: 20px;
+}
+.pt0{
+	padding-top: 0px;
+}
+.not{
+	color: #f25e2d;
+	font-size: 20px;
+}
+.fixed-msgbar{
+	position: fixed;
+	width: 86.5%;
+	z-index: 999;
+	top: 80px;
+	transition: all 0.3s ease-in-out;
+}
+.my-head{
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 20px;
 }

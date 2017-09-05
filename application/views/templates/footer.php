@@ -125,6 +125,19 @@
             var myDiv = $('#tag');
             myDiv.text(myDiv.text().substring(0,280))
         </script>
+        <script type="text/javascript">
+            $(window).scroll(function() {
+
+                var scroll = $(window).scrollTop();
+
+                if (scroll >= 50) {
+                    $(".portfolio-filter").addClass("fixed-msgbar");
+                }
+                if (scroll < 50) {
+                    $(".portfolio-filter").removeClass("fixed-msgbar");
+                }
+            });
+        </script>
     </div>
 </body>
 </html>

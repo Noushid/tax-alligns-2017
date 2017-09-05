@@ -5788,9 +5788,11 @@ button.close {
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  font-weight: 600;
+  font-size: 15px;
 }
 .modal-header .close {
-  margin-top: -2px;
+  margin-top: -13px;
 }
 .modal-title {
   margin: 0;
@@ -5824,8 +5826,9 @@ button.close {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
+    width: 900px;
     margin: 30px auto;
+    z-index: 9999;
   }
   .modal-content {
     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
