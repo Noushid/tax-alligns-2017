@@ -83,6 +83,8 @@ $route['test'] = 'Home/test';
 /*_______ admin route start _______*/
 
 $route['dashboard'] = 'Dashboard';
+$route['dashboard/edit-profile'] = 'Dashboard/edit_user';
+$route['dashboard/edit-profile/submit/(:num)'] = 'Dashboard/edit_user/$1';
 
 $route['dashboard/testimonial'] = 'Dashboard/testimonial';
 $route['dashboard/testimonial/upload'] = 'Testimonial_Controller/upload';

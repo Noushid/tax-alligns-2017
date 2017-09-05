@@ -34,7 +34,7 @@ app.config(['$routeProvider', '$locationProvider', 'timeAgoSettings', function (
             controller: 'messageController'
         })
         .when('/user-profile',{
-            templateUrl: 'change'
+            templateUrl: 'edit-profile'
         })
 
 }]);

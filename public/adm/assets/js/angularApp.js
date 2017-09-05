@@ -34,7 +34,7 @@ app.config(['$routeProvider', '$locationProvider', 'timeAgoSettings', function (
             controller: 'messageController'
         })
         .when('/user-profile',{
-            templateUrl: 'change'
+            templateUrl: 'edit-profile'
         })
 
 }]);
@@ -92,6 +92,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
     $rootScope.loading = false;
 
     $scope.format = 'yyyy/MM/dd';
+    $scope.validationError = {};
     //$scope.date = new Date();
 
     //check_thumb();
@@ -111,7 +112,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
     };
 
     function load_user() {
-        var url = $rootScope.base_url + 'admin/user';
+        var url = $rootScope.base_url + 'dashboard/user';
         $http.get(url).then(function (response) {
             if (response.data) {
                 $scope.curuser = response.data.username;
@@ -133,7 +134,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
             headers: {'Content-Type': undefined, 'Process-Data': false}
         })
             .then(function onSuccess(response) {
-                $window.location.href = base_url + 'admin/#/';
+                $window.location.href = base_url + 'dashboard/#/';
             }, function onError(response) {
                 console.log('login error');
                 console.log(response.data);
@@ -144,7 +145,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
 
     function check_thumb() {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/check-thumb';
+        var url = $rootScope.base_url + 'dashboard/check-thumb';
         $http.post(url, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -161,11 +162,12 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
     $scope.changeProfile = function () {
         $rootScope.loading = true;
         var fd = new FormData();
+        var userid = angular.element(document.getElementsByName('userid')[0]).val();
 
         angular.forEach($scope.newuser, function (item, key) {
             fd.append(key, item);
         });
-        var url = $rootScope.base_url + 'admin/change/submit';
+        var url = $rootScope.base_url + 'dashboard/edit-profile/submit/' + userid;
         $http.post(url, fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -180,13 +182,19 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
                 load_user();
                 $scope.newuser.username = $scope.curuser;
                 $scope.formdisable = false;
+                $scope.validationError = {};
             }, function onError(response) {
                 $rootScope.loading = false;
                 $scope.showerror = true;
-                openModal('Try again later.', 'sm');
-                $scope.newuser = {};
-                load_user();
-                $scope.newuser.username = $scope.curuser;
+                console.log(response);
+                if (response.data.cur_password == 0) {
+                    $scope.validationError.curPassword = true;
+                }else{
+                    openModal('Try again later.', 'sm');
+                    $scope.newuser = {};
+                    $scope.newuser.username = $scope.curuser;
+                    load_user();
+                }
                 $scope.formdisable = false;
             });
     };

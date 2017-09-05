@@ -22,33 +22,36 @@
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">Username</label>
                                     <div class="col-lg-4">
-                                        <input type="text" class="form-control" name="username" ng-model="newuser.username" placeholder="New Username" required=""/>
+                                        <input type="text" class="form-control" name="username" ng-model="newuser.username" placeholder="New Username" required="" tabindex="1"/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" ng-class="{'has-error' : validationError.curPassword == true}">
                                     <label for="" class="control-label col-lg-2">Current Password</label>
                                     <div class="col-lg-4">
                                         <!--For disable auto complete--><input type="text" style="display: none"/>
-                                        <input type="password" class="form-control" name="curPassword" ng-model="newuser.curpassword" placeholder="Current Password" required="" autocomplete="off" />
+                                        <input type="password" class="form-control" name="curPassword" ng-model="newuser.curpassword" placeholder="Current Password" required="" autocomplete="off" tabindex="2"/>
+                                        <span class="help-block" ng-show="validationError.curPassword">current password can't match</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">New Password</label>
                                     <div class="col-lg-4">
-                                        <input type="password" class="form-control" name="password" ng-model="newuser.password" placeholder="New Password" required="" autocomplete="off"/>
+                                        <input type="password" class="form-control" name="password" ng-model="newuser.password" placeholder="New Password" required="" autocomplete="off" tabindex="3"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">Confirm Password</label>
                                     <div class="col-lg-4">
-                                        <input type="password" class="form-control" name="confirmPassword" ng-model="newuser.confirmpassword" ng-match="newuser.password" placeholder="Re-Type Password" required="" autocomplete="off"/>
+                                        <input type="password" class="form-control" name="confirmPassword" ng-model="newuser.confirmpassword" ng-match="newuser.password" placeholder="Re-Type Password" required="" autocomplete="off" tabindex="4"/>
                                     </div>
                                     <span ng-show="newuser.password != newuser.confirmpassword">Password do not match</span>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button class="btn btn-primary" ng-disabled="newuser.password != newuser.confirmpassword" type="submit">Save</button>
+                                    <button class="btn btn-primary" ng-disabled="newuser.password != newuser.confirmpassword" type="submit" tabindex="5">Save</button>
                                     <a href="#dashboard" class="btn btn-danger">Cancel</a>
                                 </div>
+                                <input type="hidden" value="<?php echo(isset($user_id) ? $user_id : '');?>" id="userid" name="userid"/>
+                                <?php echo form_hidden($csrf); ?>
                             </form>
                         </div>
                     </div>
