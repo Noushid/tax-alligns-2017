@@ -39,7 +39,8 @@ class User extends CI_Controller {
 
                 $additional_data = array(
                     'first_name' => $first_name,
-                    'last_name' => $last_name
+                    'last_name' => $last_name,
+                    'phone' => $this->input->post('phone')
                 );
 
                 if ($this->ion_auth->register($username, $password, $email, $additional_data)) {
