@@ -120,6 +120,11 @@
         <script type="text/javascript" src="<?php echo base_url();?>revolution/js/extensions/revolution.extension.parallax.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+        <script type="text/javascript">
+            var myDiv = $('#tag');
+            myDiv.text(myDiv.text().substring(0,280))
+        </script>
     </div>
 </body>
 </html>
