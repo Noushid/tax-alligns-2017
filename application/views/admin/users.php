@@ -191,7 +191,7 @@
                             </tr>
                             <tr>
                                 <th>Last login</th>
-                                <td>{{items.last_login}}</td>
+                                <td>{{items.last_login * 1000 | date:'dd-MM-yyyy'}}</td>
                             </tr>
                             <tr>
                                 <th>Phone</th>
