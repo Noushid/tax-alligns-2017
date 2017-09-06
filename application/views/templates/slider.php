@@ -165,16 +165,48 @@
                             style="z-index: 17; white-space: nowrap;text-transform:left;">How you quote for one share in your businessCan’t answer yet….? We promise you free mind..
                         </div>
 
-                        <a href="contact.html" target="_self" class="tp-caption flat-button-slider bg-orange"         
-
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
-                        data-x="['center','center','center','center']" data-hoffset="['-453','-353','0','0']" 
+                        data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
                         data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
                         data-hoffset="-75" 
                         data-voffset="83" 
                         data-width="['210']"
-                        data-height="['55']">CONTACT US<i class="fa fa-chevron-right"></i>
+                        data-height="['55']">Test Now 1<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['-140','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 2<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['170','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 3<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['480','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 4<i class="fa fa-chevron-right"></i>
                         </a><!-- END LAYER LINK -->
                     </li>
 
@@ -235,16 +267,48 @@
                             style="z-index: 17; white-space: nowrap;text-transform:left;">We remove your headaches....We support your growth
                         </div>
 
-                        <a href="#" target="_self" class="tp-caption flat-button-slider bg-orange"         
-
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
-                        data-x="['center','center','center','center']" data-hoffset="['-453','-353','0','0']" 
+                        data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
                         data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
                         data-hoffset="-75" 
                         data-voffset="83" 
                         data-width="['210']"
-                        data-height="['55']">OUR COMPANY <i class="fa fa-chevron-right"></i>
+                        data-height="['55']">Test Now 1<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['-140','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 2<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['170','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 3<i class="fa fa-chevron-right"></i>
+                        </a>
+
+                        <a href="contact" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                     
+                        data-x="['center','center','center','center']" data-hoffset="['480','-353','0','0']" 
+                        data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
+                        data-hoffset="-75" 
+                        data-voffset="83" 
+                        data-width="['210']"
+                        data-height="['55']">Test Now 4<i class="fa fa-chevron-right"></i>
                         </a><!-- END LAYER LINK -->
                     </li>
 
