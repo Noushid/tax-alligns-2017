@@ -863,7 +863,7 @@ input[type="color"],
 
 #mainnav ul.submenu li ul {
    position: absolute;
-   left: 200px;
+   left: -200px;
    top: 0 !important;
 }
 
@@ -2864,4 +2864,7 @@ article .comment.style1 {
 	font-size: 20px;
 	font-weight: 600;
 	margin-bottom: 20px;
+}
+.mr10{
+	margin-right: 10px;
 }

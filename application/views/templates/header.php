@@ -69,9 +69,14 @@
                                         <i class="fa fa-question-circle-o"></i><p class="text">Have any questions</p>
                                     </div>
                                 </div>
-                                <div class="box-text text-right">
-                                    <p>Register Now</p>
-                                </div>   
+                                <div type="button" data-toggle="dropdown" class="box-text text-right">
+                                    <p><i class="fa fa-user mr10"></i> Register Now</p>
+                                </div>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="fa fa-envelope-o mr10"></i>Message Box</a></li>
+                                    <li><a href="#"><i class="fa fa-cog mr10"></i>Settings</a></li>
+                                    <li><a href="#"><i class="fa fa-sign-out mr10"></i>Logout</a></li>
+                                </ul>
                             </div>
                         </div><!-- col-md-12 -->
                     </div><!-- row -->
