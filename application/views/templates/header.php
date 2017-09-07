@@ -69,14 +69,20 @@
                                         <i class="fa fa-question-circle-o"></i><p class="text">Have any questions</p>
                                     </div>
                                 </div>
-                                <div type="button" data-toggle="dropdown" class="box-text text-right">
-                                    <p><i class="fa fa-user mr10"></i> Register Now</p>
-                                </div>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#"><i class="fa fa-envelope-o mr10"></i>Message Box</a></li>
-                                    <li><a href="#"><i class="fa fa-cog mr10"></i>Settings</a></li>
-                                    <li><a href="#"><i class="fa fa-sign-out mr10"></i>Logout</a></li>
-                                </ul>
+                               <?php if ($this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
+                                   $user = $this->user->where('id', $this->session->userdata('user_id'))->get();
+                                   ?>
+                                   <div type="button" data-toggle="dropdown" class="box-text text-right">
+                                       <p><i class="fa fa-user mr10"></i> <?php echo $user->first_name . ' ' . $user->last_name;?></p>
+                                   </div>
+                                   <ul class="dropdown-menu">
+                                       <li><a href="<?php echo base_url('practice')?>"><i class="fa fa-envelope-o mr10"></i>Message Box</a></li>
+                                       <li><a href="#"><i class="fa fa-cog mr10"></i>Settings</a></li>
+                                       <li><a href="<?php echo base_url('logout')?>"><i class="fa fa-sign-out mr10"></i>Logout</a></li>
+                                   </ul>
+                               <?php
+                               }
+                                ?>
                             </div>
                         </div><!-- col-md-12 -->
                     </div><!-- row -->
@@ -133,6 +139,14 @@
                                     </li>
                                     <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">uae clients</a></li>
                                     <li class="<?php echo ($current == 'Contact Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Contact Us</a></li>
+                                    <?php
+                                    if ($this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
+                                        ?>
+                                        <li class="<?php echo($current == 'practice' ? 'home' : '') ?>"><a
+                                                href="<?php echo base_url(); ?>practice">Practice</a></li>
+                                    <?php
+                                    }
+                                    ?>
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->

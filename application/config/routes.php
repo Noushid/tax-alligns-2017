@@ -56,7 +56,7 @@ $route['home'] = 'Home/index';
 $route['about'] = 'Home/about';
 $route['services'] = 'Home/services';
 
-$route['login'] = 'Auth/login';
+$route['ad-login'] = 'Auth/login';
 $route['logout'] = 'Auth/logout';
 
 $route['GST'] = 'Home/gst';
@@ -74,10 +74,15 @@ $route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';
+
+/*------- session routes ----------*/
+
+$route['login'] = 'user/login';
+
 /*_______ public route End _______*/
 
 /*shammas designing testing routes*/
-$route['test'] = 'Home/test';
+$route['practice'] = 'Home/practice';
 /*shammas designing testing routes*/
 
 /*_______ admin route start _______*/

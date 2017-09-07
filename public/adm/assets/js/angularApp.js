@@ -1262,6 +1262,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.uploaded = [];
     $scope.fileValidation = {};
     $scope.mailData = {};
+    $scope.error = {};
 
 
     loadUser();
@@ -1288,6 +1289,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.errFiles = [];
         $scope.showform = true;
         $scope.item_files = false;
+        $scope.error.mail = false;
     };
 
     $scope.editUser = function (item) {
@@ -1348,8 +1350,11 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
 
                 }, function onError(response) {
                     console.log('addError :- Status :' + response.status + 'data : ' + response.data);
-                    console.log(response.data);
+                    console.log(response);
                     $rootScope.loading = false;
+                    if (response.statusText == 'Mail server error') {
+                        $scope.error.mail = true;
+                    }
                     $rootScope.showform = false;
                     $scope.files = [];
 

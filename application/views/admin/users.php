@@ -68,6 +68,12 @@
                                     </div>
                                 </div>
                             </form>
+                            <div class="alert alert-danger" ng-show="error.mail">
+                                <strong>Warning!</strong> User created. Doesn't Sent Mail to User.
+                                <div class="text-center">
+                                    <button class="btn btn-success" ng-click="hideForm()">Ok</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

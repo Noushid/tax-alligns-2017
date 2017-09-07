@@ -18,6 +18,7 @@ class Home extends CI_Controller
         parent::__construct();
         $this->load->model('Testimonial_model', 'testimonial');
         $this->load->model('Blog_model', 'blog');
+        $this->load->model('User_model', 'user');
         $this->load->library(['ion_auth']);
         $this->load->helper(['language']);
 
@@ -51,11 +52,15 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
 
-    public function test($page = 'test')
+    public function practice($page = 'user/dashboard')
     {
-        $this->load->view($this->header,['current' => 'About Us']);
-        $this->load->view($page);
-        $this->load->view($this->footer);
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+            redirect(base_url('login'));
+        } else {
+            $this->load->view($this->header,['current' => 'practice']);
+            $this->load->view($page);
+            $this->load->view($this->footer);
+        }
     }
 
     public function services($page = 'services')

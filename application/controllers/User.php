@@ -73,16 +73,16 @@ class User extends CI_Controller {
                 if ($this->ion_auth->login($this->input->post('email'), $this->input->post('password'), $remember))
                 {
                     if (!$this->ion_auth->is_admin()) {
-                        redirect('user_dash', 'refresh');
+                        redirect(base_url(), 'refresh');
                     } else {
                         $this->session->set_flashdata('message', 'Incorrect Login');
-                        redirect('user/login', 'refresh');
+                        redirect(base_url('login'), 'refresh');
                     }
                 }
                 else
                 {
                     $this->session->set_flashdata('message',$this->ion_auth->errors());
-                    redirect('user/login', 'refresh');
+                    redirect(base_url('login'), 'refresh');
                 }
             }
         }else{
