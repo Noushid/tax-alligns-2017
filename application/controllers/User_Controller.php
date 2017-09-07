@@ -41,7 +41,7 @@ class User_Controller extends CI_Controller
 
     function get_all()
     {
-        $data = $this->db->where('`company` IS NULL')->get('users')->result();
+        $data = $this->user->where('`company` IS NULL',FALSE,FALSE,FALSE,FALSE,TRUE)->with_message('where:received=0 AND type=\'received\'','fields:*count*')->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 

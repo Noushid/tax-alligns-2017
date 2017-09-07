@@ -15,6 +15,7 @@ class User_Model extends MY_Model
     function __construct()
     {
         $this->timestamps = FALSE;
+        $this->has_one['message'] = array('foreign_model' => 'Message_model', 'foreign_table' => 'messages', 'foreign_key' => 'user_id', 'local_key' => 'id');
         parent::__construct();
     }
 

@@ -20,7 +20,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"> <i class="fa fa-fw fa-user"></i> <strong>Users</strong></li>
                     <li class="list-group-item" dir-paginate="user in users | filter:search | limitTo:pageSize | itemsPerPage:6" pagination-id="user">
-                        <span class="badge">7 minutes ago</span>
+                        <span class="badge">{{user.message.counted_rows}} New</span>
                         <a ng-click="getMessages(user)" href="">{{user.first_name + '  ' + user.last_name}}</a>
                     </li>
                 </ul>
