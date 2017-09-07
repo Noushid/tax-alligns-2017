@@ -114,6 +114,7 @@ $route['dashboard/document/delete/(:num)']['delete'] = 'Document_Controller/dele
 
 
 $route['dashboard/user'] = 'Dashboard/users';
+$route['dashboard/user/get-all']['get'] = 'User_Controller';
 $route['dashboard/user/get']['get'] = 'User_Controller/get_all';
 $route['dashboard/user/activate/(:num)']['post'] = 'User_Controller/activate/$1';
 $route['dashboard/user/de-activate/(:num)']['post'] = 'User_Controller/de_activate/$1';

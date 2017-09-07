@@ -34,7 +34,7 @@ class User_Controller extends CI_Controller
 
     function index()
     {
-        $data = $this->user->get_all();
+        $data = $this->user->where('`company` IS NULL',FALSE,FALSE,FALSE,FALSE,TRUE)->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
 
     }

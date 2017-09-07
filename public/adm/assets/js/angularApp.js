@@ -1267,7 +1267,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     loadUser();
 
     function loadUser() {
-        $http.get($rootScope.base_url + 'dashboard/user/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/user/get-all').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.users = response.data;

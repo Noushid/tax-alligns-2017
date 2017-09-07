@@ -197,6 +197,10 @@
                                 <th>Phone</th>
                                 <td>{{items.phone}}</td>
                             </tr>
+                            <tr ng-show="items.temp_password != null">
+                                <th>temporary password</th>
+                                <td>{{items.temp_password}}</td>
+                            </tr>
                         </table>
                     </div>
                 </div>
