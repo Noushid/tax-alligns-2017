@@ -28,8 +28,8 @@ class User extends CI_Controller {
             $this->form_validation->set_rules('confirm_password', 'Confirm password', 'trim|matches[password]|required');
 
             if ($this->form_validation->run() === FALSE) {
-                var_dump(validation_errors());
-//            $this->view('register');
+//                var_dump(validation_errors());
+                $this->load->view('user/register');
             } else {
                 $first_name = $this->input->post('first_name');
                 $last_name = $this->input->post('last_name');
@@ -96,4 +96,6 @@ class User extends CI_Controller {
         $this->ion_auth->logout();
         redirect('user/login');
     }
+
+
 }

@@ -20,7 +20,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
     loadDocument();
 
     function loadDocument() {
-        $http.get($rootScope.base_url + 'admin/document/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/document/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.documents = response.data;
@@ -69,7 +69,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
         if ($scope.newdocument['id']) {
-            var url = $rootScope.base_url + 'admin/document/edit/' + $scope.newdocument.id;
+            var url = $rootScope.base_url + 'dashboard/document/edit/' + $scope.newdocument.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -86,7 +86,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/document/add';
+            var url = $rootScope.base_url + 'dashboard/document/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
@@ -115,7 +115,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
 
     $scope.deleteDocument = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/document/delete/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/document/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 var index = $scope.documents.indexOf(item);
@@ -138,7 +138,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/document/upload',
+                url: $rootScope.base_url + 'dashboard/document/upload',
                 data: {file: file}
             });
 
@@ -160,7 +160,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/document/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/document/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');

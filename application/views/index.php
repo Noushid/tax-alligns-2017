@@ -474,17 +474,9 @@
                                                 $date = date_create($value3->date);
                                                 ?>
                                                 <div class="item">
-                                                    <div class="thumb">
-                                                        <img src="<?php echo base_url() . 'uploads/' . $value3->file->file_name;?>" alt="image">
-
-                                                        <div class="overlay"></div>
-                                                    </div>
-                                                    <div class="post-v1">
-                                                        <div class="meta-post">
-                                                            <a href="#"><?php echo date_format($date,"d F Y")?></a>
-                                                        </div>
-                                                        <h4 class="title"><a href="#"><?php echo $value3->heading?></a></h4>
-                                                    </div>
+                                                    <?php
+                                                    echo $value3->content;
+                                                    ?>
                                                 </div>
                                             <?php
                                             }

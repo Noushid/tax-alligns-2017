@@ -25,6 +25,12 @@
                                         <input type="text" class="form-control" name="username" ng-model="newuser.username" placeholder="New Username" required="" tabindex="1"/>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="" class="control-label col-lg-2">Email</label>
+                                    <div class="col-lg-4">
+                                        <input type="text" class="form-control" name="email" ng-model="newuser.email" placeholder="New Email" tabindex="1"/>
+                                    </div>
+                                </div>
                                 <div class="form-group" ng-class="{'has-error' : validationError.curPassword == true}">
                                     <label for="" class="control-label col-lg-2">Current Password</label>
                                     <div class="col-lg-4">

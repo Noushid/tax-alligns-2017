@@ -20,7 +20,7 @@
                 <ul class="list-group">
                     <li class="list-group-item"> <i class="fa fa-fw fa-user"></i> <strong>Users</strong></li>
                     <li class="list-group-item" dir-paginate="user in users | filter:search | limitTo:pageSize | itemsPerPage:6" pagination-id="user">
-                        <span class="badge">{{user.message.counted_rows}} New</span>
+                        <span class="badge" ng-show="user.message">{{user.message[0].counted_rows}} New</span>
                         <a ng-click="getMessages(user)" href="">{{user.first_name + '  ' + user.last_name}}</a>
                     </li>
                 </ul>
@@ -52,15 +52,16 @@
                                     </div>
                                 </form>
                                 <li class="list-group-item" dir-paginate="message in receivedMessages | filter:search | limitTo:pageSize | itemsPerPage:receivedPerPage" ng-show="message.type == 'received'" style="padding: 0;" pagination-id="receivedItem">
-                                    <div uib-accordion-group>
+
+                                    <div uib-accordion-group ng-class="{'delivered':message.received == 0}">
                                         <uib-accordion-heading>
-                                            <div>
+                                            <div ng-click="delivered(message)">
                                                 <span style="font-weight: 600">{{message.subject}}</span>
                                                 <span class="badge badge-inverse pull-right"><time-ago from-time='{{ message.dateago}}'></time-ago></span>
                                                 <span class="badge badge-info" style="float: right"></span>
                                             </div>
                                         </uib-accordion-heading>
-                                        <span> {{message.message}}</span>
+                                        <span class="help-block"> {{message.message}}</span>
                                         <a href="{{file.url}}" ng-repeat="file in message.files" target="_blank">
                                             <img src="{{base_url + 'adm/assets/img/pdf_icon.png'}}" alt="" width="25"/>
                                         </a>
@@ -96,7 +97,11 @@
                                 <div uib-accordion-group>
                                     <uib-accordion-heading>
                                         <span style="font-weight: 600">{{message.subject}}</span>
-                                        <span class="badge badge-inverse pull-right"><time-ago from-time='{{ message.dateago}}' format='MM/dd/yyyy'></time-ago></span>
+                                        <span class="badge badge-inverse pull-right">
+                                            <!--For TIme ago -->
+                                            <time-ago from-time='{{ message.dateago}}' format='MM/dd/yyyy'></time-ago>
+                                            <i class="fa fa-check" aria-hidden="true" ng-show="message.received == 1"></i>
+                                        </span>
                                         <span class="badge badge-info" style="float: right">{{message.length}}</span>
                                     </uib-accordion-heading>
                                     <p>{{message.message}}</p>

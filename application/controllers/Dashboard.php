@@ -126,8 +126,7 @@ class Dashboard extends CI_Controller
 
         if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id)))
         {
-            var_dump('error 1');
-//            redirect('auth', 'refresh');
+            redirect(base_url('login'), 'refresh');
         }
 
         $user = $this->ion_auth->user($id)->row();
@@ -136,6 +135,7 @@ class Dashboard extends CI_Controller
 
         // validate form input
         $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'valid_email');
         $this->form_validation->set_rules('curpassword', 'Current password', 'required');
         $this->form_validation->set_rules('confirmpassword', 'Confirm password', 'required');
 
@@ -171,9 +171,11 @@ class Dashboard extends CI_Controller
                 }else {
 
                     $data = array(
-                        'email' => $this->input->post('username'),
                         'username' => $this->input->post('username'),
                     );
+                    if ($this->input->post('email')) {
+                        $data['email'] = $this->input->post('email');
+                    }
 
                     // update the password if it was posted
                     if ($this->input->post('password')) {

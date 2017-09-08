@@ -78,6 +78,8 @@ $route['send-comment'] = 'Home/send_comment';
 /*------- session routes ----------*/
 
 $route['login'] = 'user/login';
+$route['send'] = 'Home/compose';
+$route['delivered/(:num)'] = 'Home/delivered/$1';
 
 /*_______ public route End _______*/
 
@@ -134,6 +136,7 @@ $route['dashboard/message/send/(:num)']['post'] = 'Message_Controller/send/$1';
 //$route['dashboard/message/viewed/(:num)'] = 'Message_Controller/viewed/$1';
 $route['dashboard/message/sent-item/(:num)']['get'] = 'Message_Controller/get_where/$1/sent';
 $route['dashboard/message/inbox/(:num)']['get'] = 'Message_Controller/get_where/$1/received';
+$route['dashboard/message/delivered/(:num)']['put'] = 'Message_Controller/delivered/$1';
 
 /*_______ admin route end _______*/
 

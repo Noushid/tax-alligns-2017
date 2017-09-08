@@ -187,3 +187,6 @@
     font-weight: 600;
     cursor: default;
 }
+.delivered{
+    background-color:#eae6e6;
+}

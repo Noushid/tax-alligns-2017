@@ -35,10 +35,7 @@ class Message_Controller extends CI_Controller
     function index()
     {
         $data = $this->message->with_files()->with_user()->get_all();
-        var_dump($data);
-        exit;
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
-
     }
 
     function get($id)
@@ -67,7 +64,6 @@ class Message_Controller extends CI_Controller
             unset($post_data['uploaded']);
             $post_data['type'] = 'sent';
             $post_data['datetime'] = now();
-            $post_data['received_time'] = now();
             $post_data['user_id'] = $user_id;
             $message_id = $this->message->insert($post_data);
 
@@ -128,14 +124,16 @@ class Message_Controller extends CI_Controller
         }
     }
 
-    public function viewed($id)
+    public function delivered($id)
     {
-        if ($this->message->update(['received' => 1],$id)) {
+        $data['received'] = 1;
+        $data['received_time'] = now();
+
+        if ($this->message->update($data,$id)) {
             $this->output->set_content_type('application/json')->set_output(true);
         } else {
             $this->output->set_status_header(400, 'Server Down');
             $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Something Went wrong']));
         }
-
     }
 }

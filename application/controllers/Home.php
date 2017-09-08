@@ -19,7 +19,10 @@ class Home extends CI_Controller
         $this->load->model('Testimonial_model', 'testimonial');
         $this->load->model('Blog_model', 'blog');
         $this->load->model('User_model', 'user');
-        $this->load->library(['ion_auth']);
+        $this->load->model('Message_model', 'message');
+        $this->load->model('Message_file_model', 'message_file');
+        $this->load->model('File_model', 'file');
+        $this->load->library(['ion_auth','upload']);
         $this->load->helper(['language']);
 
         $this->lang->load('auth');
@@ -63,9 +66,72 @@ class Home extends CI_Controller
         }
     }
 
+    public function compose()
+    {
+        if ($this->input->post()) {
+            $user_id = $this->session->userdata('user_id');
+            $this->form_validation->set_rules('subject', 'Subject', 'required');
+            if ($this->form_validation->run() == FALSE) {
+                var_dump(validation_errors());
+            } else {
+                $error = 0;
+                $config['upload_path'] = getwdir() . 'uploads';
+                $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
+                $config['max_size'] = 4096;
+                $config['file_name'] = rand(100, 999) . 'FILE' . now();
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('file')) {
+                    $upload_data = $this->upload->data();
+                }else{
+                    var_dump($this->upload->display_errors());
+                    exit;
+                }
+                if ($upload_data) {
+                    $post_data = $this->input->post();
+                    unset($post_data['file']);
+                    $post_data['type'] = 'received';
+                    $post_data['datetime'] = now();
+                    $post_data['user_id'] = $user_id;
+                    $message_id = $this->message->insert($post_data);
+
+                    if ($message_id) {
+                        if (!empty($upload_data)) {
+                            $data = [];
+                            $data['file_name'] = $upload_data['file_name'];
+                            $data['file_type'] = $upload_data['file_type'];
+                            $data['size'] = $upload_data['file_size'];
+                            $data['path'] = $upload_data['full_path'];
+                            $data['date'] = date('Y-m-d');
+                            $data['url'] = base_url('uploads/') . $upload_data['file_name'];
+                            $file_id = $this->file->insert($data);
+                            if ($file_id) {
+                                $message_file['file_id'] = $file_id;
+                                $message_file['message_id'] = $message_id;
+                                if (!$this->message_file->insert($message_file)) {
+                                    $error = 1;
+                                    $this->file->delete($file_id);
+                                    $this->message->delete($message_id);
+                                }
+                            }
+                        }
+                    }
+                    if ($error == 0) {
+                        $this->session->set_flashdata('message', 'Message sent.');
+                        redirect(base_url('practice'));
+                    } else {
+                        $this->session->set_flashdata('message', 'Message sent.');
+                        redirect(base_url('practice'), 'refresh', 400);
+                    }
+                }
+            }
+        } else
+            show_error('something went wrong', 500);
+    }
+
     public function services($page = 'services')
     {
-        $this->load->view($this->header,['current' => 'Our Services']);
+        $this->load->view($this->header,['current' => 'services']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
@@ -73,43 +139,43 @@ class Home extends CI_Controller
     /*gst sub-menu start*/
     public function gst($page = 'gst')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function whatisgst($page = 'whatisgst')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function gstaccounting($page = 'gstaccounting')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function gstfiling($page = 'gstfiling')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function gstinvoice($page = 'gstinvoice')
     {
-        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function returns($page = 'returns')
     {
-        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
     public function tds($page = 'tds')
     {
-        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($this->header,['current' => 'taxation']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
@@ -224,6 +290,17 @@ class Home extends CI_Controller
                 $this->output->set_status_header(101, 'Mail server connect error');
                 $this->output->set_output('error');
             }
+        }
+    }
+
+    public function delivered($id)
+    {
+        $data['received'] = 1;
+        $data['received_time'] = now();
+        if ($this->message->update($data,$id)) {
+            $this->output->set_output(true);
+        } else {
+            log_message('error', 'Delivered function did not work.');
         }
     }
 }

@@ -19,7 +19,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     loadTestimonial();
 
     function loadTestimonial() {
-        $http.get($rootScope.base_url + 'admin/testimonial/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/testimonial/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.testimonials = response.data;
@@ -68,7 +68,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
         if ($scope.newtestimonial['id']) {
-            var url = $rootScope.base_url + 'admin/testimonial/edit/' + $scope.newtestimonial.id;
+            var url = $rootScope.base_url + 'dashboard/testimonial/edit/' + $scope.newtestimonial.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -85,7 +85,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/testimonial/add';
+            var url = $rootScope.base_url + 'dashboard/testimonial/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
@@ -114,7 +114,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
 
     $scope.deleteTestimonial = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/testimonial/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 var index = $scope.testimonials.indexOf(item);
@@ -137,7 +137,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/testimonial/upload',
+                url: $rootScope.base_url + 'dashboard/testimonial/upload',
                 data: {file: file}
             });
 
@@ -159,7 +159,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/testimonial/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');

@@ -177,7 +177,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
                 console.log('profile changed');
                 $scope.showmsg = true;
                 $scope.formdisable = true;
-                openModal('Username and Password changed.', 'sm');
+                openModal('Updated.', 'sm');
                 $scope.newuser = {};
                 load_user();
                 $scope.newuser.username = $scope.curuser;
@@ -566,7 +566,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
     loadDocument();
 
     function loadDocument() {
-        $http.get($rootScope.base_url + 'admin/document/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/document/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.documents = response.data;
@@ -615,7 +615,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
         if ($scope.newdocument['id']) {
-            var url = $rootScope.base_url + 'admin/document/edit/' + $scope.newdocument.id;
+            var url = $rootScope.base_url + 'dashboard/document/edit/' + $scope.newdocument.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -632,7 +632,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/document/add';
+            var url = $rootScope.base_url + 'dashboard/document/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
@@ -661,7 +661,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
 
     $scope.deleteDocument = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/document/delete/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/document/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 var index = $scope.documents.indexOf(item);
@@ -684,7 +684,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/document/upload',
+                url: $rootScope.base_url + 'dashboard/document/upload',
                 data: {file: file}
             });
 
@@ -706,7 +706,7 @@ app.controller('documentController', ['$scope', '$http', '$rootScope', '$locatio
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/document/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/document/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');
@@ -996,11 +996,27 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
                 angular.forEach($scope.receivedMessages, function (item, key) {
                     item.dateago = new Date(item.datetime * 1000).toISOString();
                 });
+                console.log($scope.receivedMessages);
             } else {
                 console.log('No data Found');
                 $scope.message = 'No data found';
             }
         });
+    };
+
+    $scope.delivered= function (item) {
+        console.log(item);
+        var url = $rootScope.base_url + 'dashboard/message/delivered/' + item['id'];
+        $http.put(url)
+            .then(function onSuccess(response) {
+                console.log('updated');
+                var index = $scope.receivedMessages.indexOf(item);
+                $scope.receivedMessages[index].received = 1;
+                loadUser();
+            },function onError(response) {
+                console.log('errorr');
+                console.log(response);
+            });
     };
 }]);
 
@@ -1047,7 +1063,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     loadTestimonial();
 
     function loadTestimonial() {
-        $http.get($rootScope.base_url + 'admin/testimonial/get').then(function (response) {
+        $http.get($rootScope.base_url + 'dashboard/testimonial/get').then(function (response) {
             console.log(response.data);
             if (response.data) {
                 $scope.testimonials = response.data;
@@ -1096,7 +1112,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         fd.append('uploaded', JSON.stringify($scope.uploaded));
 
         if ($scope.newtestimonial['id']) {
-            var url = $rootScope.base_url + 'admin/testimonial/edit/' + $scope.newtestimonial.id;
+            var url = $rootScope.base_url + 'dashboard/testimonial/edit/' + $scope.newtestimonial.id;
             $http.post(url, fd, {
                 transformRequest: angular.identity,
                 headers: {'Content-Type': undefined, 'Process-Data': false}
@@ -1113,7 +1129,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
                     $scope.files = '';
                 });
         } else {
-            var url = $rootScope.base_url + 'admin/testimonial/add';
+            var url = $rootScope.base_url + 'dashboard/testimonial/add';
 
             $http.post(url, fd, {
                 transformRequest: angular.identity,
@@ -1142,7 +1158,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
 
     $scope.deleteTestimonial = function (item) {
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/testimonial/delete/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 var index = $scope.testimonials.indexOf(item);
@@ -1165,7 +1181,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
         angular.forEach(files, function (file) {
             $scope.files.push(file);
             file.upload = Upload.upload({
-                url: $rootScope.base_url + 'admin/testimonial/upload',
+                url: $rootScope.base_url + 'dashboard/testimonial/upload',
                 data: {file: file}
             });
 
@@ -1187,7 +1203,7 @@ app.controller('testimonialController', ['$scope', '$http', '$rootScope', '$loca
     $scope.deleteImage =function(item) {
 
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'admin/testimonial/delete-image/' + item['id'];
+        var url = $rootScope.base_url + 'dashboard/testimonial/delete-image/' + item['id'];
         $http.delete(url)
             .then(function onSuccess(response) {
                 console.log('image deleted');

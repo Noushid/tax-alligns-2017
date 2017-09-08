@@ -1,12 +1,17 @@
 <?php
-$user = $this->user->where('id', $this->session->userdata('user_id'))->with_message('where:type=\'sent\'')->get();
+$user = $this->user->where('id', $this->session->userdata('user_id'))->with_message()->get();
 ?>
 <section class="main-content bg-sidebar sidebar-left pt0">
             <div class="container">
+                <?php
+                if (isset($_SESSION['message'])) {
+                    var_dump($_SESSION['message']);
+                }
+                ?>
                 <div class="case">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="flat-portfolio v1">                         
+                            <div class="flat-portfolio v1">
                                 <ul class="portfolio-filter">
                                     <li class="active v1"><a data-filter="*" href="#">All MESSAGES</a></li>
                                     <li><a data-filter=".inbox" href="#">INBOX (<span class="not">200</span>)</a></li>
@@ -28,7 +33,7 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                                                 if ($inbox->type == 'sent') {
                                                                     ?>
                                                                     <li>
-                                                                        <article class="comment v1">
+                                                                        <article class="comment v1" onclick="message(<?php echo $inbox->id?>)">
                                                                             <div class="comment-avatar">
                                                                                 <img src="images/user.jpg" alt="image">
                                                                             </div>
@@ -66,40 +71,38 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                             <div class="comment-post">
                                                 <div class="comment-list-wrap">
                                                     <ul class="comment-list">
-                                                        <li>
-                                                            <article class="comment v1">
-                                                                <div class="comment-avatar">
-                                                                    <img src="images/admin.png" alt="image">
-                                                                </div>                  
-                                                                <div class="comment-detail">
-                                                                    <div class="comment-meta">
-                                                                        <p class="comment-author"><a href="#">Daniel Shaw</a></p> 
-                                                                        <p class="comment-date"><a href="#">Dec 2 2016</a></p>
-                                                                        <span class="line"></span>
-                                                                        <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>
-                                                                    </div>
+                                                        <?php
+                                                        if (isset($user->message) and $user->message != false) {
+                                                            foreach ($user->message as $sent) {
+                                                                if ($sent->type == 'received') {
+                                                                    ?>
+                                                                    <li>
+                                                                        <article class="comment v1">
+                                                                            <div class="comment-avatar">
+                                                                                <img src="images/admin.png" alt="image">
+                                                                            </div>
+                                                                            <div class="comment-detail">
+                                                                                <div class="comment-meta">
+                                                                                    <p class="comment-author"><a
+                                                                                            href="#"><?php echo $sent->subject;?></a></p>
 
-                                                                    <p class="comment-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati </p>
-                                                                </div>
-                                                            </article>
-                                                        </li>
-                                                        <li>
-                                                            <article class="comment v1">
-                                                                <div class="comment-avatar">
-                                                                    <img src="images/admin.png" alt="image">
-                                                                </div>                  
-                                                                <div class="comment-detail">
-                                                                    <div class="comment-meta">
-                                                                        <p class="comment-author"><a href="#">Daniel Shaw</a></p> 
-                                                                        <p class="comment-date"><a href="#">Dec 2 2016</a></p>
-                                                                        <span class="line"></span>
-                                                                        <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>
-                                                                    </div>
-
-                                                                    <p class="comment-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati </p>
-                                                                </div>
-                                                            </article>
-                                                        </li>                                                
+                                                                                    <p class="comment-date"><a href="#"><?php echo date('M d Y', $inbox->datetime);?></a></p>
+                                                                                    <span class="line"></span>
+                                                                                    <a class="my-reply" href="#"
+                                                                                       data-toggle="modal"
+                                                                                       data-target="#msgView"
+                                                                                       class="comment-reply">View
+                                                                                        more</a>
+                                                                                </div>
+                                                                                <p class="comment-body"><?php echo $sent->message;?></p>
+                                                                            </div>
+                                                                        </article>
+                                                                    </li>
+                                                                <?php
+                                                                }
+                                                            }
+                                                        }
+                                                        ?>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -110,20 +113,21 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div id="respond" class="comment-respond">
-                                                    <form class="comment-form">
+                                                    <form class="comment-form" method="POST" action="<?php echo base_url('send')?>"  enctype="multipart/form-data">
                                                         <p class="comment-notes">Small Description</p>
-                                                        
+
                                                         <p class="comment-form-author">
                                                             <label>Your Subject *</label>
                                                             <input id="subject" name="subject" type="text" required="required">
                                                         </p>
-                                                        <p class="comment-form-url">
+                                                        <p class="comment-form-author">
                                                             <label>Upload Your File *</label>
-                                                            <input id="file" name="file" type="file" required="required">
+<!--                                                            <input id="file" name="file" type="file" required="required" multiple>-->
+                                                            <input name="file" type="file" required="required" multiple>
                                                         </p>
                                                         <p class="comment-form-comment">
-                                                            <label>Comment</label> 
-                                                            <textarea id="comment" name="comment"></textarea>
+                                                            <label>Comment</label>
+                                                            <textarea id="comment" name="message"></textarea>
                                                         </p>
                                                         <p class="form-submit text-right">
                                                             <button class="flat-button bg-orange" type="submit">Send Your Message</button>
@@ -133,17 +137,17 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                             </div>
                                         </article>
                                     </div>
-                                    
+
 
                                     <div class="item v1 settings">
                                         <h1>settings</h1>
-                                    </div>  
-                                </div> 
-                            </div> 
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </section>
 
 
@@ -198,6 +202,15 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                         <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-
             </div>
         </div>
+<script>
+    function message(item) {
+        $.ajax({
+            url: "delivered/" + item,
+            method: "PUT"
+        }).done(function (response) {
+            console.log('succes');
+        });
+    }
+</script>

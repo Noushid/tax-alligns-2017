@@ -9,9 +9,8 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 //
-require_once(APPPATH . 'core/Check_Logged.php');
 
-class Document_Controller extends Check_Logged
+class Document_Controller extends CI_Controller
 {
 
     //        public $delete_cache_on_save = TRUE;
@@ -21,10 +20,10 @@ class Document_Controller extends Check_Logged
         $this->load->model('Document_model', 'document');
         $this->load->model('File_model', 'file');
 
-        $this->load->library(['upload', 'image_lib']);
+        $this->load->library(['upload', 'image_lib','ion_auth']);
 
 
-        if (!$this->logged) {
+        if (!$this->ion_auth->logged_in()) {
             redirect(base_url('login'));
         }
     }

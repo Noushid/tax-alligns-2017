@@ -231,11 +231,27 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
                 angular.forEach($scope.receivedMessages, function (item, key) {
                     item.dateago = new Date(item.datetime * 1000).toISOString();
                 });
+                console.log($scope.receivedMessages);
             } else {
                 console.log('No data Found');
                 $scope.message = 'No data found';
             }
         });
+    };
+
+    $scope.delivered= function (item) {
+        console.log(item);
+        var url = $rootScope.base_url + 'dashboard/message/delivered/' + item['id'];
+        $http.put(url)
+            .then(function onSuccess(response) {
+                console.log('updated');
+                var index = $scope.receivedMessages.indexOf(item);
+                $scope.receivedMessages[index].received = 1;
+                loadUser();
+            },function onError(response) {
+                console.log('errorr');
+                console.log(response);
+            });
     };
 }]);
 

@@ -108,7 +108,7 @@ app.controller('adminController', ['$scope', '$location', '$http', '$rootScope',
                 console.log('profile changed');
                 $scope.showmsg = true;
                 $scope.formdisable = true;
-                openModal('Username and Password changed.', 'sm');
+                openModal('Updated.', 'sm');
                 $scope.newuser = {};
                 load_user();
                 $scope.newuser.username = $scope.curuser;
