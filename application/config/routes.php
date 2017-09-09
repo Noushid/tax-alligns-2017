@@ -74,6 +74,7 @@ $route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';
+$route['blog-view/(:num)'] = 'Home/blogView/$1';
 
 /*------- session routes ----------*/
 
@@ -128,6 +129,7 @@ $route['dashboard/user/de-activate/(:num)']['post'] = 'User_Controller/de_activa
 
 $route['dashboard/user/add']['post'] = 'User_Controller/store';
 $route['dashboard/user/delete/(:num)']['delete'] = 'User_Controller/delete/$1';
+$route['dashboard/user/check-email']['post'] = 'User_Controller/check_email';
 
 $route['dashboard/messages'] = 'Dashboard/message';
 $route['dashboard/message/get/(:num)']['get'] = 'Message_Controller/get/$1';

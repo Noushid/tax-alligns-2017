@@ -303,4 +303,15 @@ class Home extends CI_Controller
             log_message('error', 'Delivered function did not work.');
         }
     }
+
+    public function encodeid($id)
+    {
+        $key = $this->config->item('id_enc_key');
+        var_dump($key);
+        var_dump(strlen($key));
+        var_dump($key . '&' . $id);
+        exit;
+        var_dump($encode);
+
+    }
 }

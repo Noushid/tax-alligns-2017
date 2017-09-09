@@ -33,10 +33,11 @@
                                         <input type="text" name="last_name" class="form-control" ng-model="newuser.last_name" placeholder="Last Name" required/>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" ng-class="{'has-error' : validationError.email == true}">
                                     <label for="" class="control-label col-lg-2">Email</label>
                                     <div class="col-lg-6">
-                                        <input type="email" name="email" class="form-control" ng-model="newuser.email" placeholder="Email" required/>
+                                        <input type="email" name="email" class="form-control" ng-model="newuser.email" placeholder="Email" required ng-change="checkEmail(newuser.email)"/>
+                                        <span class="help-block" ng-show="validationError.email">The email already registered!</span>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -63,7 +64,7 @@
                                 </div>-->
                                 <div class="form-group">
                                     <div class="col-lg- text-center">
-                                        <button class="btn btn-primary" type="submit">Submit and send mail</button>
+                                        <button class="btn btn-primary" type="submit" ng-disabled="btnDisabled">Submit and send mail</button>
                                         <button class="btn btn-danger" type="button" ng-click="hideForm()">Cancel</button>
                                     </div>
                                 </div>
