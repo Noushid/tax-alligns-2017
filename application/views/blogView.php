@@ -11,7 +11,7 @@
                                             <div class="entry-post">
                                                 <?php echo $blog->content;?>
                                             </div>
-                                            <iframe src="<?php echo base_url('uploads/') . $blog[0]->document->file_name;?>" style="height: 600px; width: 100%;"></iframe>
+<!--                                            <iframe src="--><?php //echo base_url('uploads/') . $blog[0]->document->file_name;?><!--" style="height: 600px; width: 100%;"></iframe>-->
                                         </div>
                                     </div><!-- /.entry-border -->
                                 </article><!-- /.entry -->
@@ -31,7 +31,6 @@
                                                 ?>
                                                 <li>
                                                     <a href="<?php echo base_url('gst/' . $value->id);?>"><?php echo $value->heading; ?></a>
-                                                    <a href="<?php echo base_url('blogView/' . $value->id);?>" class="text"><?php echo strip_tags($value->content); ?></a>
                                                 </li>
                                             <?php
                                             }

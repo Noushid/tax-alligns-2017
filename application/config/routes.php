@@ -70,7 +70,7 @@ $route['TDS'] = 'Home/tds';
 
 $route['blog'] = 'Home/blog';
 $route['blog/(:num)'] = 'Home/blog/$1';
-$route['gst/(:num)'] = 'Home/blogView/$1';
+//$route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';

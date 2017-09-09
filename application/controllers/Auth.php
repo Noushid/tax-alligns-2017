@@ -215,6 +215,10 @@ class Auth extends CI_Controller {
 		else
 		{
 			$identity_column = $this->config->item('identity','ion_auth');
+            if ($identity_column != 'email') {
+                $identity_column = 'email';
+            }
+
 			$identity = $this->ion_auth->where($identity_column, $this->input->post('identity'))->users()->row();
 
 			if(empty($identity)) {
