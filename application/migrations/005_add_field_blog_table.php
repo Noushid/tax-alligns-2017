@@ -25,7 +25,7 @@ class Migration_add_field_blog_table extends CI_Migration
             ],
             'image_url' => [
                 'type' => 'VARCHAR',
-                'constraint' => '50',
+                'constraint' => '100',
                 'null' => TRUE
             ]
         ]);
@@ -33,6 +33,6 @@ class Migration_add_field_blog_table extends CI_Migration
 
     public function down()
     {
-        $this->dbforge->drop_column('blogs', 'introduction');
+        $this->dbforge->drop_column('blogs', ['introduction','image_url']);
     }
 }
