@@ -37,7 +37,7 @@
                             <div class="form-group">
                                 <label for="" class="control-label col-lg-2">Main Image URL</label>
                                 <div class="col-md-8">
-                                    <input type="text" name="image_url" id="image_url" ng-model="newblog.image_url" class="form-control" placeholder="Paste your Image URL" required=""/>
+                                    <input type="text" name="image_url" id="image_url" ng-model="newblog.image_url" class="form-control" placeholder="Paste your Image URL"/>
                                 </div>
                             </div>
 
@@ -193,6 +193,8 @@
                         <tr>
                             <th>#</th>
                             <th>Date</th>
+                            <th>Heading</th>
+                            <th>Introduction</th>
                             <th>Content</th>
                             <th>Photo</th>
                             <th>Action</th>
@@ -202,6 +204,8 @@
                         <tr dir-paginate="blog in blogs | filter:search | limitTo:pageSize | itemsPerPage:numPerPage">
                             <td>{{$index+1}}</td>
                             <td>{{blog.date |date:'dd-MMM-yyyy'}}</td>
+                            <td>{{blog.heading}}</td>
+                            <td>{{blog.introduction}}</td>
                             <td>{{blog.content}}</td>
                             <td>
                                 <a class="example-image-link" href="{{blog.image_url}}" data-lightbox="example-1" data-title="">
