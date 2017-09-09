@@ -269,7 +269,8 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
             headers: {'Content-Type': undefined, 'Process-Data': false}
         })
             .then(function onSuccess(response) {
-
+                $scope.validationError.email = false;
+                $scope.btnDisabled = false;
             }, function onError(response) {
                 $scope.validationError.email = true;
                 $scope.btnDisabled = true;
