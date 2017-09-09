@@ -474,13 +474,20 @@
                                                 $date = date_create($value3->date);
                                                 ?>
                                                 <div class="item">
-                                                    <?php
-                                                    echo $value3->content;
-                                                    ?>
+                                                    <div class="thumb">
+                                                        <img src="<?php echo($value3->image_url != NULL ? $value3->image_url : base_url('images/blog.jpg'));?>" alt="image">
+                                                        <div class="overlay"></div>
+                                                    </div>
+                                                    <div class="post-v1">
+                                                        <div class="meta-post">
+                                                            <a href="#"><?php echo date_format($date, 'd F Y');?></a>
+                                                        </div>
+                                                        <h4 class="title"><a href="#"><?php echo $value3->heading;?></a></h4>
+                                                    </div>
                                                 </div>
                                             <?php
                                             }
-                                        } ?>
+                                        }?>
 
 <!--                                        <div class="item">-->
 <!--                                            <div class="thumb">-->
