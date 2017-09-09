@@ -1,28 +1,3 @@
-<!-- <div class="row">
-    <h1>Login</h1>
-    <div class="col-lg-4 col-lg-offset-4">
-        <div class="login-message"></div>
-        <?php echo form_open('user/login',array('class'=>'login-form form-horizontal'));?>
-        <div id="infoMessage"><?php echo $message;?></div>
-        <div class="form-group">
-            <?php echo form_label('Email','Email');?>
-            <div class="username_error"></div>
-            <?php echo form_input('email','','class="form-control" id="email"');?>
-        </div>
-        <div class="form-group">
-            <?php echo form_label('Password','password');?>
-            <div class="password_error"></div>
-            <?php echo form_password('password','','class="form-control" id="password"');?>
-        </div>
-        <div class="form-group">
-            <label>
-                <?php echo form_checkbox('remember','1',FALSE);?> Remember me
-            </label>
-        </div>
-        <?php echo form_submit('submit', 'Log in', 'class="btn btn-primary btn-lg btn-block" id="login-button"');?>
-        <?php echo form_close();?>
-    </div>
-</div> -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
@@ -69,7 +44,7 @@
                             <div class="col-md-8">
                                 <div class="company-news v1">
                                     <div class="title-section">
-                                        <h4 class="title">Register Now</h4>
+                                        <h4 class="title">Login</h4>
                                     </div>
                                     <div class="post-list">
                                         <ul class="list-us">
@@ -109,15 +84,17 @@
                             <div class="col-md-4">
                                 <div class="box">
                                     <div class="form-box">
-                                        <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+<!--                                        <form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
+                                            <?php echo form_open('user/login',array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));?>
+                                            <?php echo $message;?>
                                             <fieldset class="style name-container">
                                                 <label>Email or user ID</label>
-                                                <input type="text" id="author-footer" class="tb-my-input" name="first_name" tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="email" id="author-footer" class="tb-my-input" name="email" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style name-container">
                                                 <label>Password</label>
-                                                <input type="password" id="author-footer" class="tb-my-input" name="last_name" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="password" id="author-footer" class="tb-my-input" name="password" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <div class="submit-wrap">
