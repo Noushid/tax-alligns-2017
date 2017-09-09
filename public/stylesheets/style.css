@@ -2872,3 +2872,21 @@ article .comment.style1 {
 	width: 370px;
 	height: 230px;
 }
+.thumb{
+	cursor: pointer;
+}
+.form-box label {
+    color: #c5c5c5;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.form-box label:after {
+    content: ':';
+    margin-left: 5px;
+}
+.form-box input[type="text"] {
+	color: #fff;
+}
+.form-box input[type="password"] {
+	color: #fff;
+}

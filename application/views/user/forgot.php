@@ -111,17 +111,12 @@
                                     <div class="form-box">
                                         <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
                                             <fieldset class="style name-container">
-                                                <label>Email or user ID</label>
+                                                <label>Your Email Address</label>
                                                 <input type="text" id="author-footer" class="tb-my-input" name="first_name" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
 
-                                            <fieldset class="style name-container">
-                                                <label>Password</label>
-                                                <input type="password" id="author-footer" class="tb-my-input" name="last_name" tabindex="2" value="" size="32" aria-required="true">
-                                            </fieldset>
-
                                             <div class="submit-wrap">
-                                                <button class="flat-button button-style ml-183"><i class="fa fa-lock" style="padding-right: 17px;"></i> Sign In</button>
+                                                <button class="flat-button button-style ml-183"><i class="fa fa-unlock" style="padding-right: 17px;"></i>Send Mail</button>
                                             </div>
                                         </form>
                                     </div>

@@ -65,8 +65,8 @@
                                     </li>
                                 </ul>
                                 <div onclick="document.location='home#call'" class="question">
-                                    <div>
-                                        <i class="fa fa-question-circle-o"></i><p class="text">Have any questions</p>
+                                    <div class="thumb">
+                                        <i class="fa fa-sign-in"></i><p class="text">Login Now</p>
                                     </div>
                                 </div>
                                <?php if ($this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
