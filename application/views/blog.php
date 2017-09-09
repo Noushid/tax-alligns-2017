@@ -16,7 +16,7 @@
                                     ?>
                                     <article class="entry clearfix">
                                         <div class="feature-post v2">
-                                            <a href="#"><img src="<?php echo($value->image_url != NULL ? $value->image_url : base_url('images/blog.jpg')) ?>" alt="image"></a>
+                                            <a href="#"><img class="blog-img" src="<?php echo($value->image_url != NULL ? $value->image_url : base_url('images/blog.jpg')) ?>" alt="image"></a>
                                         </div>
                                         <div class="content-post">
                                             <div class="entry-meta">
