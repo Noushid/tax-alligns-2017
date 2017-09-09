@@ -48,13 +48,19 @@ class User_Controller extends CI_Controller
     function store()
     {
         $this->form_validation->set_rules('first_name', 'First name', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required|is_unique[users.email]');
+        $this->form_validation->set_rules('email', 'Email', 'trim|valid_email|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|min_length[2]|max_length[20]|required');
 
         if ($this->form_validation->run() === FALSE) {
             $this->output->set_status_header(400, 'Validation Error');
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
+            if ($this->input->post('email')) {
+                if ($this->user->where('email',$this->input->post('email'))->get() != FALSE) {
+                    $this->output->set_status_header(500, 'email exist');
+                    exit;
+                }
+            }
             $first_name = $this->input->post('first_name', TRUE);
             $last_name = $this->input->post('last_name', TRUE);
             $username = $this->input->post('email', TRUE);
@@ -178,6 +184,14 @@ class User_Controller extends CI_Controller
         } else {
             $this->output->set_status_header(400, 'Server Down');
             $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'Something Went wrong']));
+        }
+    }
+
+    public function check_email()
+    {
+        if ($this->user->where('email', $this->input->post('email'))->get() != FALSE) {
+            $this->output->set_status_header(400, 'email exist');
+            exit;
         }
     }
 }

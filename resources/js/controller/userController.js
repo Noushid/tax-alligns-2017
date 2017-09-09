@@ -17,6 +17,8 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.fileValidation = {};
     $scope.mailData = {};
     $scope.error = {};
+    $scope.validationError = {};
+    $scope.btnDisabled = false;
 
 
     loadUser();
@@ -44,6 +46,7 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.showform = true;
         $scope.item_files = false;
         $scope.error.mail = false;
+        $scope.validationError = {};
     };
 
     $scope.editUser = function (item) {
@@ -108,6 +111,10 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
                     $rootScope.loading = false;
                     if (response.statusText == 'Mail server error') {
                         $scope.error.mail = true;
+                    }
+                    if (response.statusText == 'email exist') {
+                        console.log('email exist');
+                        $scope.validationError.email = true;
                     }
                     $rootScope.showform = false;
                     $scope.files = [];
@@ -252,6 +259,22 @@ app.controller('userController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.newuser.password = Math.random().toString(36).slice(-8);
     };
 
+    $scope.checkEmail= function (item) {
+        var fd = new FormData();
+        fd.append('email', item);
+        var url = $rootScope.base_url + 'dashboard/user/check-email';
+
+        $http.post(url, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined, 'Process-Data': false}
+        })
+            .then(function onSuccess(response) {
+
+            }, function onError(response) {
+                $scope.validationError.email = true;
+                $scope.btnDisabled = true;
+            });
+    };
 }]);
 
 
