@@ -1,5 +1,9 @@
+<?php
+$blog = $this->blog->get_all();
+//var_dump($blog);
+//exit;
 
-        
+?>
         <!-- Blog posts -->
         <section class="main-content blog bg-sidebar sidebar-left">
             <div class="container">

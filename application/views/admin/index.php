@@ -29,6 +29,12 @@
     <script src="<?php echo base_url();?>adm/assets/js/angular-bootstrap.js"></script>
     <script src="<?php echo base_url();?>adm/assets/js/angularApp.js"></script>
     <link rel="stylesheet" href="<?php echo base_url();?>ng-ckeditor.css">
+    <!-- Angular Module end -->
+
+    <!-- Light box start start-->
+    <link rel="stylesheet" href="<?php echo base_url();?>adm/assets/css/app.min.css">
+    <script src="<?php echo base_url();?>adm/assets/js/lightbox-plus-jquery.min.js"></script>
+    <!-- Light box start end-->
 
 
 </head>

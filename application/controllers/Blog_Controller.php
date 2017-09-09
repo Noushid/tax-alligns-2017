@@ -46,13 +46,14 @@ class Blog_Controller extends CI_Controller
 
     function store()
     {
+        $this->form_validation->set_rules('heading', 'Content', 'required');
         $this->form_validation->set_rules('content', 'Content', 'required');
         if ($this->form_validation->run() === FALSE) {
             $this->output->set_status_header(400, 'Validation Error');
             $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
         } else {
             $post_data = $this->input->post();
-            $post_data['content'] = str_replace("pre>", "p>", $post_data['content']);
+            $post_data['content'] = str_replace("pre>", "p>", $this->input->post('content',FALSE));
             if ($this->blog->insert($post_data)) {
                 $this->output->set_content_type('application/json')->set_output(json_encode($post_data));
             } else {

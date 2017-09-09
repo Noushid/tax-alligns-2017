@@ -157,17 +157,23 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
     };
     $scope.deleteImage =function(item) {
 
+        $scope.newblog.date = $filter('date')($scope.date, "yyyy-MM-dd");
+        var fd = new FormData();
+        $scope.newblog.image_url = '';
+        angular.forEach($scope.newblog, function (item, key) {
+            fd.append(key, item);
+        });
+
         $rootScope.loading = true;
-        var url = $rootScope.base_url + 'dashboard/blog/delete-image/' + item['id'];
-        $http.delete(url)
+        var url = $rootScope.base_url + 'dashboard/blog/edit/' + item.id;
+        $http.post(url, fd, {
+            transformRequest: angular.identity,
+            headers: {'Content-Type': undefined, 'Process-Data': false}
+        })
             .then(function onSuccess(response) {
                 console.log('image deleted');
-                $scope.item_files = '';
-                $rootScope.loading = false;
             },function onError(response) {
-                console.log('Delete Error :- Status :' + response.status + 'data : ' + response.data);
-                console.log(response.data);
-                $rootScope.loading = false;
+                console.log('edit Error :- Status :' + response.status + 'data : ' + response.data);
             });
     };
 

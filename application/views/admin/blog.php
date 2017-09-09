@@ -22,14 +22,26 @@
                     <div class="col-lg-10">
                         <form class="form-horizontal" method="POST" ng-submit="addBlog()">
                             <div class="form-group">
-<!--                                <label for="" class="control-label col-lg-2">Heading</label>-->
+                                <label for="" class="control-label col-lg-2">Heading</label>
                                 <div class="col-md-8">
-                                    <input type="text" name="heading" id="heading" ng-model="newblog.heading" class="form-control" placeholder="Type your heading"/>
+                                    <input type="text" name="heading" id="heading" ng-model="newblog.heading" class="form-control" placeholder="Type your heading here" required=""/>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea ckeditor="options" ng-model="newblog.content" class="form-control"></textarea>
+                                <label for="" class="control-label col-lg-2">Introduction</label>
+                                <div class="col-md-8">
+                                    <textarea ng-model="newblog.introduction" class="form-control" placeholder="Type yor introduction here" required=""></textarea>
+                                </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-lg-2">Main Image URL</label>
+                                <div class="col-md-8">
+                                    <input type="text" name="image_url" id="image_url" ng-model="newblog.image_url" class="form-control" placeholder="Paste your Image URL" required=""/>
+                                </div>
+                            </div>
+
+
                             <div class="form-group">
                                 <label for="" class="control-label col-lg-2">Date</label>
                                 <div class="col-lg-6">
@@ -54,7 +66,6 @@
                                     </button>
                                     <span class="alert alert-danger" ng-show="fileValidation.status == true">{{fileValidation.msg}}</span>
                                 </div>
-
                             </div>
                             <div class="clearfix"></div>
 
@@ -103,10 +114,9 @@
                                 </div>
                             </div>
 
-
                             <!----for existing image----->
                             <div class="clearfix"></div>
-                            <uib-accordion ng-show="item_files">
+                            <uib-accordion>
                                 <div uib-accordion-group class="panel-default" is-open="open" >
                                     <uib-accordion-heading>
                                         Images<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
@@ -116,19 +126,23 @@
                                             <div class="thumbnail cus-thumb" ng-mouseover="showcaption=true" ng-mouseleave="showcaption=false" style="max-height: 142px;">
                                                 <div class="caption" ng-show="showcaption">
                                                     <div id="content">
-                                                        <a href="" class="label label-warning" rel="tooltip" title="Show">Show</a>
-                                                        <a href="" class="label label-danger" rel="tooltip" title="Delete" confirmed-click="deleteImage(item_files)" ng-confirm-click="Would you like to delete this item?!">Delete</a>
+                                                        <a class="example-image-link label label-warning" rel="tooltip" title="Show" href="{{newblog.image_url}}" data-lightbox="example-1" data-title="">
+                                                            show
+                                                        </a>
+                                                        <a href="" class="label label-danger" rel="tooltip" title="Delete" confirmed-click="deleteImage(newblog)" ng-confirm-click="Would you like to delete this item?!">Delete</a>
                                                     </div>
                                                 </div>
-                                                <img src="{{base_url+'uploads/'+item_files.file_name}}" alt="thumbnails">
+
+                                                <img src="{{newblog.image_url}}" alt="thumbnails">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </uib-accordion>
 
-
-                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <textarea ckeditor="options" name="content" ng-model="newblog.content"></textarea>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-lg-8 text-center">
@@ -189,6 +203,11 @@
                             <td>{{$index+1}}</td>
                             <td>{{blog.date |date:'dd-MMM-yyyy'}}</td>
                             <td>{{blog.content}}</td>
+                            <td>
+                                <a class="example-image-link" href="{{blog.image_url}}" data-lightbox="example-1" data-title="">
+                                    <img ng-src="{{blog.image_url}}" alt=""  style="width: 25px; max-height: 25px" id="myImg"/>
+                                </a>
+                            </td>
                             <td>
                                 <div  class="btn-group btn-group-xs" role="group">
                                     <button type="button" class="btn btn-info" ng-click="editBlog(blog)">
