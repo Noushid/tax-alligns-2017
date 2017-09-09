@@ -97,6 +97,19 @@
                                                 <input type="password" id="author-footer" class="tb-my-input" name="password" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
 
+                                            <fieldset class="style name-container">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" id="" class="tb-my-input" value="" tabindex="2">Remember me
+                                                </label>
+                                            </fieldset>
+
+                                            <fieldset class="style name-container">
+                                                <p class="">
+                                                    <a href="#">I forgot my user ID or password</a><br />
+                                                    New to Intuit? <a href="#">Create an account.</a>
+                                                </p>
+                                            </fieldset>
+
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style ml-183"><i class="fa fa-lock" style="padding-right: 17px;"></i> Sign In</button>
                                             </div>
