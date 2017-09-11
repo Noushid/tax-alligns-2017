@@ -92,7 +92,7 @@
                                         </fieldset>
 
                                         <div class="submit-wrap">
-                                            <button class="flat-button button-style ml-183"><i class="fa fa-unlock" style="padding-right: 17px;"></i>Send Mail</button>
+                                            <button class="flat-button button-style ml-183">Send Mail <i class="fa fa-paper-plane"></i></button>
                                         </div>
                                     </form>
                                 </div>

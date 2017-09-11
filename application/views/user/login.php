@@ -82,9 +82,9 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="box">
+                                <div class="box bheight">
                                     <div class="form-box">
-<!--                                        <form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
+                                        <!--<form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
                                             <?php echo form_open('user/login',array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));?>
                                             <?php echo $message;?>
                                             <fieldset class="style name-container">
@@ -97,20 +97,20 @@
                                                 <input type="password" id="author-footer" class="tb-my-input" name="password" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
 
-                                            <fieldset class="style name-container">
+                                            <fieldset class="style name-container remember">
                                                 <label class="checkbox-inline">
                                                     <input type="checkbox" id="" class="tb-my-input" value="" >Remember me
                                                 </label>
                                             </fieldset>
 
                                             <fieldset class="style name-container">
-                                                <p class="">
+                                                <p class="logintxt">
                                                     <a href="<?php echo base_url('forgot-password');?>">I forgot my user ID or password</a><br />
                                                     New to Intuit? <a href="<?php echo base_url('forgot-password');?>">Create an account.</a>
                                                 </p>
                                             </fieldset>
 
-                                            <div class="submit-wrap">
+                                            <div class="submit-wrap pt20">
                                                 <button class="flat-button button-style ml-183"><i class="fa fa-lock" style="padding-right: 17px;"></i> Sign In</button>
                                             </div>
                                         </form>
