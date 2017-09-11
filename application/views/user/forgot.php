@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="box">
+                                <div class="box bheight">
                                     <div class="form-box">
                                         <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
                                             <fieldset class="style name-container">

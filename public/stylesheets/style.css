@@ -2884,9 +2884,29 @@ article .comment.style1 {
     content: ':';
     margin-left: 5px;
 }
+.remember label:after {
+    content: '';
+    margin-left: 0px;
+}
 .form-box input[type="text"] {
 	color: #fff;
 }
 .form-box input[type="password"] {
 	color: #fff;
+}
+.logintxt{
+	color: #fff;
+}
+.logintxt a{
+	color: #fff;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+.logintxt span a {
+	color: #18ba60;
+	font-weight: 600;
+	margin-left: 10px;
+}
+.bheight{
+	min-height: 430px;
 }
