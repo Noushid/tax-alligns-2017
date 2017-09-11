@@ -197,6 +197,10 @@
                                 <td>{{items.email}}</td>
                             </tr>
                             <tr>
+                                <th>Username</th>
+                                <td>{{items.username}}</td>
+                            </tr>
+                            <tr>
                                 <th>Last login</th>
                                 <td>{{items.last_login * 1000 | date:'dd-MM-yyyy'}}</td>
                             </tr>

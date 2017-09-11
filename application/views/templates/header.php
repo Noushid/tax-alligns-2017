@@ -64,11 +64,18 @@
                                         <a href="<?php echo base_url();?>#"><i class="fa fa-wifi"></i></a>
                                     </li>
                                 </ul>
-                                <div onclick="document.location='home#call'" class="question">
-                                    <div class="thumb">
-                                        <i class="fa fa-sign-in"></i><p class="text">Login Now</p>
+                                <?php if (!$this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
+                                    ?>
+                                    <div onclick="document.location='<?php echo base_url('login'); ?>'"
+                                         class="question">
+                                        <div class="thumb">
+                                            <i class="fa fa-sign-in"></i>
+
+                                            <p class="text">Login Now</p>
+                                        </div>
                                     </div>
-                                </div>
+                                <?php
+                                }?>
                                <?php if ($this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
                                    $user = $this->user->where('id', $this->session->userdata('user_id'))->get();
                                    ?>

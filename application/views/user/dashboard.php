@@ -113,7 +113,8 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div id="respond" class="comment-respond">
-                                                    <form class="comment-form" method="POST" action="<?php echo base_url('send')?>"  enctype="multipart/form-data">
+<!--                                                    <form class="comment-form" method="POST" action="--><?php //echo base_url('send')?><!--"  enctype="multipart/form-data">-->
+                                                        <?php echo form_open_multipart(base_url('send'), ['class' => 'comment-form']);?>                                                        ?>
                                                         <p class="comment-notes">Small Description</p>
 
                                                         <p class="comment-form-author">
