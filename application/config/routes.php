@@ -76,11 +76,15 @@ $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';
 $route['blog-view/(:num)'] = 'Home/blogView/$1';
 
+/*Create user*/
+$route['register'] = 'User/create_user';
+
 /*------- session routes ----------*/
 
 $route['login'] = 'user/login';
 $route['send'] = 'Home/compose';
 $route['delivered/(:num)'] = 'Home/delivered/$1';
+$route['forgot-password'] = 'auth/forgot_password';
 
 /*_______ public route End _______*/
 

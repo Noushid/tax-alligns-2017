@@ -99,13 +99,13 @@
 
                                             <fieldset class="style name-container">
                                                 <label class="checkbox-inline">
-                                                    <input type="checkbox" id="" class="tb-my-input" value="" tabindex="2">Remember me
+                                                    <input type="checkbox" id="" class="tb-my-input" value="" >Remember me
                                                 </label>
                                             </fieldset>
 
                                             <fieldset class="style name-container">
                                                 <p class="">
-                                                    <a href="#">I forgot my user ID or password</a><br />
+                                                    <a href="<?php echo base_url('forgot-password');?>">I forgot my user ID or password</a><br />
                                                     New to Intuit? <a href="#">Create an account.</a>
                                                 </p>
                                             </fieldset>

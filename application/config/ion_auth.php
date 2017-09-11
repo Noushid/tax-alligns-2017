@@ -83,11 +83,11 @@ $config['salt_prefix']    = version_compare(PHP_VERSION, '5.3.7', '<') ? '$2a$' 
  | appropriately. If this variable set to 0, there is no maximum.
  */
 $config['site_title']                 = "taxalligns.in";       // Site Title, example.com
-$config['admin_email']                = "admin@example.com"; // Admin Email, admin@example.com
+$config['admin_email']                = "noushid@psybotechnologies.com"; // Admin Email, admin@example.com
 $config['default_group']              = 'members';           // Default group, use name
 $config['admin_group']                = 'admin';             // Default administrators group, use name
 $config['identity']                   = 'username';             // You can use any unique column in your table as identity column. The values in this column, alongside password, will be used for login purposes
-$config['min_password_length']        = 8;                   // Minimum Required Length of Password
+$config['min_password_length']        = 6;                   // Minimum Required Length of Password
 $config['max_password_length']        = 20;                  // Maximum Allowed Length of Password
 $config['email_activation']           = FALSE;               // Email Activation for registration
 $config['manual_activation']          = TRUE;               // Manual Activation for registration
@@ -128,7 +128,7 @@ $config['email_config'] = array(
     'protocol' => 'smtp',
     'smtp_host' => 'ssl://md-in-15.webhostbox.net',
     'smtp_port' => 465,
-    'smtp_user' => 'noushid@psybotechnologes.com',
+    'smtp_user' => 'noushid@psybotechnologies.com',
     'smtp_pass' => 'noushid@psybo',
     'mailtype' => 'html',
     'charset' => 'iso-8859-1',

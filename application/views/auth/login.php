@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Quality builders -login</title>
+    <title>login - Accounts & TaxAlliance</title>
     <style>
 
         /* 'Open Sans' font from Google Fonts */

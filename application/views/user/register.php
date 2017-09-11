@@ -80,35 +80,41 @@
                             echo isset($_SESSION['auth_message']) ? $_SESSION['auth_message'] : FALSE;
                             ?>
                             <div class="form-box">
-                                <form action="#" method="post" id="commentform-footer" class="comment-form" novalidate="">
+                                <?php echo form_open(base_url('register'), ['id' => 'commentform-footer', 'class' => 'comment-form', 'nonvalidate' => '"']);?>
                                     <fieldset class="style name-container">
-                                        <input type="text" id="author-footer" required placeholder="First name*" class="tb-my-input" name="first_name" tabindex="1" value="" size="32" aria-required="true">
+                                        <input type="text" id="author-footer" required placeholder="First name*" class="tb-my-input" name="first_name" tabindex="1" size="32" aria-required="true" value="<?php echo set_value('first_name')?>">
+                                        <?php echo form_error('first_name');?>
                                     </fieldset>
 
                                     <fieldset class="style name-container">
-                                        <input type="text" id="author-footer" placeholder="Last name*" class="tb-my-input" name="last_name" tabindex="2" value="" size="32" aria-required="true">
+                                        <input type="text" id="author-footer" placeholder="Last name*" class="tb-my-input" name="last_name" tabindex="2" size="32" aria-required="true" value="<?php echo set_value('last_name')?>">
+                                        <?php echo form_error('last_name');?>
                                     </fieldset>
 
                                     <fieldset class="style email-container">
-                                        <input type="email" id="email-footer" required placeholder="Your Email" class="tb-my-input" name="email" tabindex="3" value="" size="32" aria-required="true">
+                                        <input type="email" id="email-footer" required placeholder="Your Email" class="tb-my-input" name="email" tabindex="3" size="32" aria-required="true" value="<?php echo set_value('email')?>">
+                                        <?php echo form_error('email');?>
                                     </fieldset>
 
                                     <fieldset class="style phone-container">
-                                        <input type="text" id="phone-footer" required placeholder="You phone number*" class="tb-my-input" name="phone" tabindex="4" value="" size="32" aria-required="true">
+                                        <input type="text" id="phone-footer" required placeholder="You phone number*" class="tb-my-input" name="phone" tabindex="4" size="32" aria-required="true" value="<?php echo set_value('phone')?>" pattern='^\+?\d{0,13}'>
+                                        <?php echo form_error('phone');?>
                                     </fieldset>
 
                                     <fieldset class="style phone-container">
-                                        <input type="password" id="phone-footer" required placeholder="Password*" class="tb-my-input" name="password" tabindex="5" value="" size="32" aria-required="true">
+                                        <input type="password" id="phone-footer" required placeholder="Password*" class="tb-my-input" name="password" tabindex="5" size="32" aria-required="true">
+                                        <?php echo form_error('password');?>
                                     </fieldset>
-
                                     <fieldset class="style phone-container">
-                                        <input type="password" id="phone-footer" required placeholder="Confirm Password*" class="tb-my-input" name="confirm_password" tabindex="6" value="" size="32" aria-required="true">
+                                        <input type="password" id="phone-footer" required placeholder="Confirm Password*" class="tb-my-input" name="confirm_password" tabindex="6" size="32" aria-required="true">
+                                        <?php echo form_error('confirm_password');?>
                                     </fieldset>
-
                                     <div class="submit-wrap">
-                                        <button class="flat-button button-style ml-183">Register <i class="fa fa-chevron-right"></i></button>
+                                        <button class="flat-button button-style ml-183" type="submit">Register <i class="fa fa-chevron-right"></i></button>
                                     </div>
-                                </form>
+                                <?php
+                                echo form_close();
+                                ?>
                             </div>
                         </div>
                     </div>

@@ -210,6 +210,7 @@ class Auth extends CI_Controller {
 
 			// set any errors and display the form
 			$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            $this->data['current'] = 'forgot password';
 			$this->_render_page('auth/forgot_password', $this->data);
 		}
 		else
@@ -233,7 +234,7 @@ class Auth extends CI_Controller {
 		            	}
 
 		                $this->session->set_flashdata('message', $this->ion_auth->errors());
-                		redirect("auth/forgot_password", 'refresh');
+                        redirect(base_url('forgot-password'), 'refresh');
             		}
 
 			// run the forgotten password method to email an activation code to the user
@@ -243,12 +244,12 @@ class Auth extends CI_Controller {
 			{
 				// if there were no errors
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
-				redirect("auth/login", 'refresh'); //we should display a confirmation page here instead of the login page
+				redirect(base_url('login'), 'refresh'); //we should display a confirmation page here instead of the login page
 			}
 			else
 			{
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
-				redirect("auth/forgot_password", 'refresh');
+                redirect(base_url('forgot-password'), 'refresh');
 			}
 		}
 	}
