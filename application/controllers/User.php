@@ -95,8 +95,10 @@ class User extends CI_Controller {
                 }
             }
         }else{
-//            $data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-            $data['message'] = (validation_errors() ? validation_errors() || ($this->session->flashdata('message') ? $this->session->flashdata('message') : '') : $this->session->flashdata('auth_message'));
+           $data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+            if ($this->session->flashdata('auth_message')) {
+                $data['message']=$this->session->flashdata('auth_message');
+            }
             $data['current'] = 'login';
             $this->load->view('user/login',$data);
         }

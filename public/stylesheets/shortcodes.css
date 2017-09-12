@@ -1443,7 +1443,7 @@ body.style-color {
 
 /* Hover */
 .flat-portfolio .item:hover {
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .flat-portfolio .portfolio-wrap {

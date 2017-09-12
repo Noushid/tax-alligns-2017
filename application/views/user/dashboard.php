@@ -26,7 +26,7 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div class="comment-list-wrap">
-                                                    <ul class="comment-list">
+                                                    <!-- <ul class="comment-list">
                                                         <?php
                                                         if (isset($user->message) and $user->message != false) {
                                                             foreach ($user->message as $inbox) {
@@ -60,7 +60,61 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                                             }
                                                         }
                                                         ?>
+                                                    </ul> -->
+
+
+                                                    <ul class="comment-list">
+                                                        <li>
+                                                            <article class="comment v1">
+                                                                <div class="comment-avatar">
+                                                                    <img src="images/user.jpg" alt="image">
+                                                                </div>
+                                                                <div class="comment-detail">
+                                                                    <div class="comment-meta">
+                                                                        <p class="comment-author"><a href="#">Daniel Shaw</a></p>
+                                                                        <p class="comment-date"><a href="#">Dec 2 2016</a></p>
+                                                                        <span class="line"></span>
+                                                                        <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>
+                                                                    </div>
+
+                                                                    <input type="checkbox" class="read-more-state" id="post-1" style="display: none;" />
+                                                                    <p class="comment-body read-more-wrap">
+                                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                                                                        <span class="read-more-target">Ut enim ad minim veniam,
+                                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                                        </span>
+                                                                        <input type="checkbox" class="read-more-state" id="post-1" style="display: none;" />
+                                                                        <div class="widget widget-brochures myul read-more-wrap">
+                                                                            <div class="title-link v6 read-more-target">
+                                                                                <h5 class="widget-title">Download Attached files</h5>
+                                                                            </div>
+                                                                            <ul class="dowload read-more-target">
+                                                                                <li class="dl-word"><a href="#">Brochures.doc</a></li>
+                                                                                <li class="dl-pdf"><a href="#">Brochures.pdf</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </p>
+                                                                    <label for="post-1" class="read-more-trigger"></label>
+                                                                    
+                                                                    <!-- <div class="modal-footer">
+                                                                        <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
+                                                                    </div> -->
+                                                                </div>
+                                                            
+
+                                                            </article>
+                                                        </li>
                                                     </ul>
+
+
                                                 </div>
                                             </div>
                                         </article>
@@ -151,60 +205,6 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
             </div>
         </section>
 
-
-
-        <!-- Modal -->
-        <div id="msgView" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Message Details</h4>
-                    </div>
-                    <div class="modal-body">
-                        <article class="entry clearfix">
-                            <div class="entry-border">
-                                <div class="content-post">
-                                    <div class="entry-meta">
-                                        <ul class="meta-post clearfix">
-                                            <li class="day">
-                                                <a href="#">15 November 2016 ...</a>
-                                            </li>
-                                            <li class="author">
-                                                <a href="#"> By admin</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <h4 class="title-post my-head">
-                                        <a href="#">Responsive layout</a>
-                                    </h4>
-
-                                    <div class="entry-post">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-
-                        <div class="widget widget-brochures">
-                            <div class="title-link v6">
-                                <h5 class="widget-title">Download Attached files</h5>
-                            </div>
-                            <ul class="dowload">
-                                <li class="dl-word"><a href="#">Brochures.doc</a></li>
-                                <li class="dl-pdf"><a href="#">Brochures.pdf</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 <script>
     function message(item) {
         $.ajax({

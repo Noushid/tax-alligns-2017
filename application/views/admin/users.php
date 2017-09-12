@@ -129,7 +129,11 @@
                                     <a ng-click="open(user)" href="">{{user.first_name + '  ' + user.last_name}}</a>
                                 </td>
                                 <td>{{user.email}}</td>
-                                <td>{{(user.active == 1 ? 'active' : 'Inactive')}}</td>
+                                <td>
+                                    {{(user.active == 1 ? 'active' : 'Inactive')}}
+                                    <i class="fa fa-check" aria-hidden="true" ng-show="user.active == 1" style="font-size: 17px;font-weight: 600;color: #179926;"></i>
+                                    <i class="fa fa-times" aria-hidden="true" ng-show="user.active == 0" style="font-size: 17px;font-weight: 600;color: #ff6161;"></i>
+                                </td>
 <!--                                <td>-->
 <!--                                    <div  class="btn-group btn-group-xs" role="group">-->
 <!--                                        <button type="button" class="btn btn-info" ng-click="editUser(user)">-->
