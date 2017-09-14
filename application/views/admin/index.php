@@ -23,8 +23,8 @@
 
     <link href="<?php echo base_url();?>adm/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 <!--    <script src="//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"></script>-->
-    <script src="//cdn.ckeditor.com/4.5.6/full-all/ckeditor.js"></script>
-<!--    <script src="--><?php //echo base_url();?><!--adm/assets/js/ckeditor.js"></script>-->
+<!--    <script src="//cdn.ckeditor.com/4.5.6/full-all/ckeditor.js"></script>-->
+    <script src="<?php echo base_url();?>adm/assets/js/ckeditor.js"></script>
     <!-- Angular Module-->
     <script src="<?php echo base_url();?>adm/assets/js/angular-bootstrap.js"></script>
     <script src="<?php echo base_url();?>adm/assets/js/angularApp.js"></script>

@@ -62,7 +62,7 @@
                                             </div>
                                         </uib-accordion-heading>
                                         <span class="help-block"> {{message.message}}</span>
-                                        <a href="{{file.url}}" ng-repeat="file in message.files" target="_blank" uib-popover="{{file.file_name}}" popover-trigger="'mouseenter'">
+                                        <a href="{{base_url + 'user-files/' + file.file_name}}" ng-repeat="file in message.files" target="_blank" uib-popover="{{file.file_name}}" popover-trigger="'mouseenter'">
                                             <img src="{{base_url + 'adm/assets/img/pdf_icon.png'}}" alt="" width="25"/>
                                         </a>
                                     </div>

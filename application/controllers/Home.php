@@ -92,7 +92,7 @@ class Home extends CI_Controller
                 redirect(base_url('practice#filter=.sent'));
             } else {
                 $error = 0;
-                $config['upload_path'] = getwdir() . 'uploads';
+                $config['upload_path'] = getwdir() . 'user-files';
                 $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
                 $config['max_size'] = 4096;
 //                $config['file_name'] = rand(100, 999) . 'FILE' . now();
