@@ -981,6 +981,7 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
     };
 
     $scope.loadSentItem = function (user_id) {
+        $rootScope.loading = true;
         $http.get($rootScope.base_url + 'dashboard/message/sent-item/' + user_id).then(function (response) {
             console.log(response.data);
             if (response.data) {
@@ -988,14 +989,17 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
                 angular.forEach($scope.sentItem, function (item, key) {
                     item.dateago = new Date(item.datetime * 1000).toISOString();
                 });
+                $rootScope.loading = false;
             } else {
                 console.log('No data Found');
                 $scope.message = 'No data found';
+                $rootScope.loading = false;
             }
         });
     };
 
     $scope.loadInbox = function (user_id) {
+        $rootScope.loading = true;
         $http.get($rootScope.base_url + 'dashboard/message/inbox/' + user_id).then(function (response) {
             if (response.data) {
                 $scope.receivedMessages = response.data;
@@ -1003,9 +1007,11 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
                     item.dateago = new Date(item.datetime * 1000).toISOString();
                 });
                 console.log($scope.receivedMessages);
+                $rootScope.loading = false;
             } else {
                 console.log('No data Found');
                 $scope.message = 'No data found';
+                $rootScope.loading = false;
             }
         });
     };
@@ -1025,8 +1031,10 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
             });
     };
 
-    $scope.refreshMessage= function () {
+    $scope.refreshMessage= function (item) {
         loadUser();
+        $scope.loadInbox(item.id);
+        $scope.loadSentItem(item.id);
     };
 }]);
 

@@ -196,7 +196,7 @@
                         <uib-tab-heading style="cursor: default">
                             <i class="glyphicon glyphicon-user"></i> <span style="cursor: default">{{user.first_name + '   ' + user.last_name}}</span>
                             <span style="margin-left: 21px; cursor: default"><i class="fa fa-envelope" aria-hidden="true"></i>   {{user.email}}</span>
-                            <a ng-click="refreshMessage()"><i class="fa fa-refresh" aria-hidden="true"></i>                            </a>
+                            <a ng-click="refreshMessage(user)"><i class="fa fa-refresh" aria-hidden="true"></i>                            </a>
                         </uib-tab-heading>
                     </uib-tab>
                 </uib-tabset>
