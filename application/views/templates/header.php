@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>stylesheets/animate.css">
     <!-- Favicon and touch icons  -->
     <link href="<?php echo base_url();?>images/icon/favicon.png" rel="shortcut icon">
+    <script type="text/javascript" src="<?php echo base_url();?>javascript/jquery.min.js"></script>
 
 </head>  
 

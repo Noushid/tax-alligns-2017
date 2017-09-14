@@ -158,19 +158,44 @@
             var $container = $('.portfolio-wrap');
             $container.imagesLoaded(function(){
                 $container.isotope({
-                    itemSelector: '.item',
+                    itemSelector: '',
                     transitionDuration: '1s'
                 });
             });
 
-            $('.portfolio-filter li').on('click',function() {                           
-                var selector = $(this).find("a").attr('data-filter');
+            $("document").ready(function () {
+
+                /*Get category from url */
+                 var selector = window.location.hash;
+
+                selector = selector.substr(selector.indexOf("=") + 1);
+                if (selector == '') {
+                    selector = '.inbox';
+                }
+
                 $('.portfolio-filter li').removeClass('active');
-                $(this).addClass('active');
-                $container.isotope({ filter: selector });
-                return false;
-            });            
-        };
+                var id = selector.substr(selector.indexOf(".") + 1);
+                $('#' + id).addClass('active');
+                console.log(selector);
+                $container.isotope({filter: selector});
+
+                $('.portfolio-filter li a').on('click',function() {
+
+                    //var selector = $(this).find("a").attr('data-filter');
+                    var selector = $(this).attr('href');
+                    window.location.hash = selector;
+                    selector = selector.substr(selector.indexOf("=") + 1);
+                    console.log(selector);
+
+                    $('.portfolio-filter li').removeClass('active');
+                    $(this).addClass('active');
+                    $container.isotope({ filter: selector });
+                    return false;
+                });
+            });
+
+
+        }
     };
 
     var flatchooseus = function() {

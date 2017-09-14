@@ -150,6 +150,7 @@ class MY_Model extends CI_Model
     public $all_pages;
     public $pagination_delimiters;
     public $pagination_arrows;
+    public $pagination_prefix = '';
 
     /* validation */
     private $validated = TRUE;
@@ -1879,9 +1880,9 @@ class MY_Model extends CI_Model
                 for ($i = 1; $i <= $number_of_pages; $i++) {
                     unset($uri_array[$segments]);
                     $uri_string = implode('/', $uri_array);
-                    $links .= ($page_number == $i ? $this->pagination_delimiters[2] : $this->pagination_delimiters[0]);
+                    $links .= (($page_number == $i && isset($this->pagination_delimiters[2])) ? $this->pagination_delimiters[2] : $this->pagination_delimiters[0]);
 //                    $links .= $this->pagination_delimiters[0];
-                    $links .= (($page_number == $i) ? anchor($uri_string.'/'.$i, $i) : anchor($uri_string . '/' . $i, $i));
+                    $links .= (($page_number == $i) ? anchor($uri_string . '/' . $i . $this->config->item('pagination_prefix'), $i) : anchor($uri_string . '/' . $i . $this->config->item('pagination_prefix'), $i));
                     $links .= $this->pagination_delimiters[1];
 
                 }

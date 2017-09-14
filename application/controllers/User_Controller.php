@@ -144,7 +144,6 @@ class User_Controller extends CI_Controller
         $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf';
         $config['max_size'] = 4096;
         $config['file_name'] = 'B_' . rand();
-        $config['multi'] = 'ignore';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {
             $data['url'] = base_url() . 'uploads/' . $this->upload->data('file_name');

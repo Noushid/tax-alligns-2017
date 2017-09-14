@@ -85,7 +85,7 @@
 
         <!-- Javascript -->
         <!-- Javascript -->
-        <script type="text/javascript" src="<?php echo base_url();?>javascript/jquery.min.js"></script>
+
         <script type="text/javascript" src="<?php echo base_url();?>javascript/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>javascript/jquery.easing.js"></script>
         <script type="text/javascript" src="<?php echo base_url();?>javascript/jquery.isotope.min.js"></script>
