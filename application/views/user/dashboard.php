@@ -65,7 +65,7 @@
                                                                                        id="post-<?php echo $inbox->id; ?>"
                                                                                        style="display: none;"/>
 
-                                                                            <div
+                                                                            <div style="display: flex;" 
                                                                                 class="widget widget-brochures myul read-more-wrap">
                                                                                 <div
                                                                                     class="title-link v6 read-more-target">
