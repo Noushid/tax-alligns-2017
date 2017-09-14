@@ -8,12 +8,20 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * {@inheritDoc}
+ */
 class Message_Model extends MY_Model
 {
 
 
     function __construct()
     {
+        /*Third array value is updated value for current page*/
+        $this->pagination_delimiters = array('<li>','</li>','<li class="active">');
+        $this->pagination_arrows = array('previous','next');
+        $this->pagination_prefix = '#filter=' . $this->session->userdata('filter_hash');
+
         $this->has_one['user'] = array('foreign_model' => 'User_model', 'foreign_table' => 'users', 'foreign_key' => 'id', 'local_key' => 'user_id');
 
         $this->has_many_pivot['files'] = [

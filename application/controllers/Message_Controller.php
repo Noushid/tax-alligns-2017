@@ -101,9 +101,9 @@ class Message_Controller extends CI_Controller
     function upload()
     {
         $config['upload_path'] = getwdir() . 'uploads';
-        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf';
+        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
         $config['max_size'] = 4096;
-        $config['file_name'] = rand(100, 999) . 'FILE' . now();
+//        $config['file_name'] = rand(100, 999) . 'FILE' . now();
         $config['multi'] = 'ignore';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {

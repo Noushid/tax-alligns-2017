@@ -55,37 +55,56 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
 
-    public function practice($page = 'user/dashboard')
+    public function practice()
     {
+        $page = 'user/dashboard';
         if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
             redirect(base_url('login'));
         } else {
+            $page = $page;
+            $this->config->set_item('pagination_prefix', '#filter=.inbox');
+            $total_post_received = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->count_rows();
+            $data['received'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->with_files()->order_by('id', 'desc')->paginate(5, $total_post_received);
+            $data['all_pages_received'] = $this->message->all_pages;
+
+            $this->config->set_item('pagination_prefix', '#filter=.sent');
+            $total_post_sentitem = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'received')->count_rows();
+            $data['sent_item'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'received')->with_files()->order_by('id', 'desc')->paginate(5, $total_post_sentitem);
+            $data['all_pages_sentitem'] = $this->message->all_pages;
+
             $this->load->view($this->header,['current' => 'practice']);
-            $this->load->view($page);
+            $this->load->view($page, $data);
             $this->load->view($this->footer);
         }
     }
 
     public function compose()
     {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+            redirect(base_url('login'), 'refresh');
+            exit;
+        }
         if ($this->input->post()) {
             $user_id = $this->session->userdata('user_id');
             $this->form_validation->set_rules('subject', 'Subject', 'required');
             if ($this->form_validation->run() == FALSE) {
-                var_dump(validation_errors());
+//                var_dump(validation_errors());
+                redirect(base_url('practice#filter=.sent'));
             } else {
                 $error = 0;
                 $config['upload_path'] = getwdir() . 'uploads';
                 $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
                 $config['max_size'] = 4096;
-                $config['file_name'] = rand(100, 999) . 'FILE' . now();
+//                $config['file_name'] = rand(100, 999) . 'FILE' . now();
                 $this->upload->initialize($config);
 
                 if ($this->upload->do_upload('file')) {
                     $upload_data = $this->upload->data();
                 }else{
-                    var_dump($this->upload->display_errors());
-                    exit;
+//                    var_dump($this->upload->display_errors());
+//                    exit;
+                    $this->session->set_flashdata('error', $this->upload->display_errors());
+                    redirect(base_url('practice#filter=.sent'));
                 }
                 if ($upload_data) {
                     $post_data = $this->input->post();
@@ -118,10 +137,10 @@ class Home extends CI_Controller
                     }
                     if ($error == 0) {
                         $this->session->set_flashdata('message', 'Message sent.');
-                        redirect(base_url('practice'));
+                        redirect(base_url('practice#filter=.sent'));
                     } else {
                         $this->session->set_flashdata('message', 'Message sent.');
-                        redirect(base_url('practice'), 'refresh', 400);
+                        redirect(base_url('practice#filter=.sent'), 'refresh', 400);
                     }
                 }
             }
@@ -185,9 +204,8 @@ class Home extends CI_Controller
     {
         $page = 'blog';
         $total_post = $this->blog->count_rows();
-        $data['blog'] = $this->blog->order_by('id','desc')->paginate(5, $total_post);
+        $data['blog'] = $this->blog->order_by('id', 'desc')->paginate(5, $total_post);
         $data['all_pages'] = $this->blog->all_pages;
-
         $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view($page, $data);
         $this->load->view($this->footer);
@@ -295,6 +313,10 @@ class Home extends CI_Controller
 
     public function delivered($id)
     {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+            show_error('something went wrong', 500);
+            log_message('error', 'Anonymous attack from.' . $this->input->ip_address());
+        }
         $data['received'] = 1;
         $data['received_time'] = now();
         if ($this->message->update($data,$id)) {
@@ -313,5 +335,20 @@ class Home extends CI_Controller
         exit;
         var_dump($encode);
 
+    }
+
+    public function session_write()
+    {
+        var_dump($this->ion_auth->logged_in());
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+
+            $request_data = 'Server protocol ->  ' . $this->input->server('SERVER_PROTOCOL').' : ';
+            $request_data .= 'Request URI ->  ' . $this->input->server('REQUEST_URI');
+            log_message('error', 'Anonymous attack from.' . $this->input->ip_address() . '  :  ' . $request_data);
+            show_error('something went wrong', 500);
+            exit;
+        }
+        $value = $this->input->get('filter_hash');
+        $this->session->set_userdata('filter_hash', $value);
     }
 }

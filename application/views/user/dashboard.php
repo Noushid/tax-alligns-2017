@@ -1,6 +1,3 @@
-<?php
-$user = $this->user->where('id', $this->session->userdata('user_id'))->with_message()->get();
-?>
 <section class="main-content bg-sidebar sidebar-left pt0">
             <div class="container">
                 <?php
@@ -13,11 +10,10 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                         <div class="col-md-12">
                             <div class="flat-portfolio v1">
                                 <ul class="portfolio-filter">
-                                    <li class="active v1"><a data-filter="*" href="#">All MESSAGES</a></li>
-                                    <li><a data-filter=".inbox" href="#">INBOX (<span class="not">200</span>)</a></li>
-                                    <li><a data-filter=".compose" href="#">COMPOSE MESSAGE</a></li>
-                                    <li><a data-filter=".sent" href="#">SENT MESSAGES</a></li>
-                                    <li><a data-filter=".settings" href="#">YOUR SETTINGS</a></li>
+<!--                                    <li class="active v1"><a data-filter="*" href="#">All MESSAGES</a></li>-->
+                                    <li class="active v1" id="inbox"><a  href="#filter=.inbox">INBOX<!-- (<span class="not">200</span>)--></a></li>
+                                    <li id="compose"><a href="#filter=.compose">COMPOSE MESSAGE</a></li>
+                                    <li id="sent"><a data-filter=".sent" href="#filter=.sent">SENT MESSAGES</a></li>
                                 </ul>
 
                                 <div class="portfolio-wrap case-v1 clearfix">
@@ -26,95 +22,91 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div class="comment-list-wrap">
-                                                    <!-- <ul class="comment-list">
+                                                     <ul class="comment-list">
                                                         <?php
-                                                        if (isset($user->message) and $user->message != false) {
-                                                            foreach ($user->message as $inbox) {
-                                                                if ($inbox->type == 'sent') {
-                                                                    ?>
-                                                                    <li>
-                                                                        <article class="comment v1" onclick="message(<?php echo $inbox->id?>)">
-                                                                            <div class="comment-avatar">
-                                                                                <img src="images/user.jpg" alt="image">
-                                                                            </div>
-                                                                            <div class="comment-detail">
-                                                                                <div class="comment-meta">
-                                                                                    <p class="comment-author"><a
-                                                                                            href="#"><?php echo $inbox->subject?></a></p>
+                                                        if (isset($received) and $received != false) {
+                                                            foreach ($received as $inbox) {
+                                                                ?>
+                                                                <li>
+                                                                    <article class="comment v1">
+                                                                        <div class="comment-avatar">
+                                                                            <img src="images/user.jpg" alt="image">
+                                                                        </div>
+                                                                        <div class="comment-detail">
+                                                                            <div class="comment-meta">
+                                                                                <p class="comment-author"><a
+                                                                                        href="#"><?php echo $inbox->subject; ?></a>
+                                                                                </p>
 
-                                                                                    <p class="comment-date"><a href="#"><?php echo date('M d Y',$inbox->datetime)?></a></p>
-                                                                                    <span class="line"></span>
-                                                                                    <a class="my-reply" href="#"
-                                                                                       data-toggle="modal"
-                                                                                       data-target="#msgView"
-                                                                                       class="comment-reply">View
-                                                                                        more</a>
+                                                                                <p class="comment-date"><a
+                                                                                        href="#"><?php echo date('M d Y', $inbox->datetime); ?></a>
+                                                                                </p>
+                                                                                <span class="line"></span>
+                                                                                <!--                                                                                    <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>-->
+                                                                            </div>
+
+                                                                            <input type="checkbox"
+                                                                                   class="read-more-state"
+                                                                                   id="post-<?php echo $inbox->id; ?>"
+                                                                                   style="display: none;"/>
+
+                                                                            <p class="comment-body read-more-wrap">
+                                                                                <?php
+                                                                                $message = str_split($inbox->message, 120);
+                                                                                echo $message[0];
+                                                                                ?>
+                                                                                <span class="read-more-target">
+                                                                                        <?php
+                                                                                        echo(isset($message[1]) ? $message[1] : '');
+                                                                                        ?>
+                                                                                    </span>
+                                                                                <input type="checkbox"
+                                                                                       class="read-more-state"
+                                                                                       id="post-<?php echo $inbox->id; ?>"
+                                                                                       style="display: none;"/>
+
+                                                                            <div
+                                                                                class="widget widget-brochures myul read-more-wrap">
+                                                                                <div
+                                                                                    class="title-link v6 read-more-target">
+                                                                                    <h5 class="widget-title">Download
+                                                                                        Attached files</h5>
                                                                                 </div>
-
-                                                                                <p class="comment-body"><?php echo $inbox->message;?></p>
+                                                                                <ul class="dowload read-more-target">
+                                                                                    <?php
+                                                                                    foreach ($inbox->files as $value) {
+                                                                                        ?>
+                                                                                        <li class="dl-word"><a
+                                                                                                href="#"><?php echo $value->file_name; ?></a>
+                                                                                        </li>
+                                                                                    <?php
+                                                                                    }
+                                                                                    ?>
+                                                                                </ul>
                                                                             </div>
-                                                                        </article>
-                                                                    </li>
-                                                                <?php
-                                                                }
+                                                                            </p>
+                                                                            <label for="post-<?php echo $inbox->id; ?>"
+                                                                                   class="read-more-trigger"></label>
+
+                                                                            <!-- <div class="modal-footer">
+                                                                                <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
+                                                                            </div> -->
+                                                                        </div>
+
+
+                                                                    </article>
+                                                                </li>
+                                                            <?php
                                                             }
                                                         }
                                                         ?>
-                                                    </ul> -->
-
-
-                                                    <ul class="comment-list">
-                                                        <li>
-                                                            <article class="comment v1">
-                                                                <div class="comment-avatar">
-                                                                    <img src="images/user.jpg" alt="image">
-                                                                </div>
-                                                                <div class="comment-detail">
-                                                                    <div class="comment-meta">
-                                                                        <p class="comment-author"><a href="#">Daniel Shaw</a></p>
-                                                                        <p class="comment-date"><a href="#">Dec 2 2016</a></p>
-                                                                        <span class="line"></span>
-                                                                        <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>
-                                                                    </div>
-
-                                                                    <input type="checkbox" class="read-more-state" id="post-1" style="display: none;" />
-                                                                    <p class="comment-body read-more-wrap">
-                                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                                                        <span class="read-more-target">Ut enim ad minim veniam,
-                                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                                        </span>
-                                                                        <input type="checkbox" class="read-more-state" id="post-1" style="display: none;" />
-                                                                        <div class="widget widget-brochures myul read-more-wrap">
-                                                                            <div class="title-link v6 read-more-target">
-                                                                                <h5 class="widget-title">Download Attached files</h5>
-                                                                            </div>
-                                                                            <ul class="dowload read-more-target">
-                                                                                <li class="dl-word"><a href="#">Brochures.doc</a></li>
-                                                                                <li class="dl-pdf"><a href="#">Brochures.pdf</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </p>
-                                                                    <label for="post-1" class="read-more-trigger"></label>
-                                                                    
-                                                                    <!-- <div class="modal-footer">
-                                                                        <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
-                                                                    </div> -->
-                                                                </div>
-                                                            
-
-                                                            </article>
-                                                        </li>
                                                     </ul>
-
-
+                                                </div>
+                                                <div class="blog-pagination">
+<!--                                                    --><?php //echo $previous_page;?>
+                                                    <ul class="flat-pagination">
+                                                        <?php echo $all_pages_received;?>
+                                                    </ul><!-- /.flat-pagination -->
                                                 </div>
                                             </div>
                                         </article>
@@ -126,38 +118,87 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                                 <div class="comment-list-wrap">
                                                     <ul class="comment-list">
                                                         <?php
-                                                        if (isset($user->message) and $user->message != false) {
-                                                            foreach ($user->message as $sent) {
-                                                                if ($sent->type == 'received') {
-                                                                    ?>
-                                                                    <li>
-                                                                        <article class="comment v1">
-                                                                            <div class="comment-avatar">
-                                                                                <img src="images/admin.png" alt="image">
-                                                                            </div>
-                                                                            <div class="comment-detail">
-                                                                                <div class="comment-meta">
-                                                                                    <p class="comment-author"><a
-                                                                                            href="#"><?php echo $sent->subject;?></a></p>
+                                                        if (isset($sent_item) and $sent_item != false) {
+                                                            foreach ($sent_item as $sent) {
+                                                                ?>
+                                                                <li>
+                                                                    <article class="comment v1">
+                                                                        <div class="comment-avatar">
+                                                                            <img src="images/admin.jpg" alt="image">
+                                                                        </div>
+                                                                        <div class="comment-detail">
+                                                                            <div class="comment-meta">
+                                                                                <p class="comment-author"><a
+                                                                                        href="#"><?php echo $sent->subject; ?></a>
+                                                                                </p>
 
-                                                                                    <p class="comment-date"><a href="#"><?php echo date('M d Y', $inbox->datetime);?></a></p>
-                                                                                    <span class="line"></span>
-                                                                                    <a class="my-reply" href="#"
-                                                                                       data-toggle="modal"
-                                                                                       data-target="#msgView"
-                                                                                       class="comment-reply">View
-                                                                                        more</a>
-                                                                                </div>
-                                                                                <p class="comment-body"><?php echo $sent->message;?></p>
+                                                                                <p class="comment-date"><a
+                                                                                        href="#"><?php echo date('M d Y', $sent->datetime); ?></a>
+                                                                                </p>
+                                                                                <span class="line"></span>
+                                                                                <!--                                                                                    <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>-->
                                                                             </div>
-                                                                        </article>
-                                                                    </li>
-                                                                <?php
-                                                                }
+
+                                                                            <input type="checkbox"
+                                                                                   class="read-more-state"
+                                                                                   id="post-<?php echo $sent->id; ?>"
+                                                                                   style="display: none;"/>
+
+                                                                            <p class="comment-body read-more-wrap">
+                                                                                <?php
+                                                                                $message = str_split($sent->message, 120);
+                                                                                echo $message[0];
+                                                                                ?>
+                                                                                <span class="read-more-target">
+                                                                                        <?php
+                                                                                        echo(isset($message[1]) ? $message[1] : '');
+                                                                                        ?>
+                                                                                    </span>
+                                                                                <input type="checkbox"
+                                                                                       class="read-more-state"
+                                                                                       id="post-<?php echo $sent->id; ?>"
+                                                                                       style="display: none;"/>
+
+                                                                            <div
+                                                                                class="widget widget-brochures myul read-more-wrap">
+                                                                                <div
+                                                                                    class="title-link v6 read-more-target">
+                                                                                    <h5 class="widget-title">Download
+                                                                                        Attached files</h5>
+                                                                                </div>
+                                                                                <ul class="dowload read-more-target">
+                                                                                    <?php
+                                                                                    foreach ($sent->files as $value) {
+                                                                                        ?>
+                                                                                        <li class="dl-word"><a
+                                                                                                href="#"><?php echo $value->file_name; ?></a>
+                                                                                        </li>
+                                                                                    <?php
+                                                                                    }
+                                                                                    ?>
+                                                                                </ul>
+                                                                            </div>
+                                                                            </p>
+                                                                            <label for="post-<?php echo $sent->id; ?>"
+                                                                                   class="read-more-trigger"></label>
+
+                                                                            <!-- <div class="modal-footer">
+                                                                                <button type="button" class="btn flat-button bg-orange" data-dismiss="modal">Close</button>
+                                                                            </div> -->
+                                                                        </div>
+                                                                    </article>
+                                                                </li>
+                                                            <?php
                                                             }
                                                         }
                                                         ?>
                                                     </ul>
+                                                </div>
+                                                <div class="blog-pagination">
+                                                    <!--                                                    --><?php //echo $previous_page;?>
+                                                    <ul class="flat-pagination">
+                                                        <?php echo $all_pages_sentitem;?>
+                                                    </ul><!-- /.flat-pagination -->
                                                 </div>
                                             </div>
                                         </article>
@@ -167,8 +208,7 @@ $user = $this->user->where('id', $this->session->userdata('user_id'))->with_mess
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div id="respond" class="comment-respond">
-<!--                                                    <form class="comment-form" method="POST" action="--><?php //echo base_url('send')?><!--"  enctype="multipart/form-data">-->
-                                                        <?php echo form_open_multipart(base_url('send'), ['class' => 'comment-form']);?>                                                        ?>
+                                                        <?php echo form_open_multipart(base_url('send'), ['class' => 'comment-form']);?>
                                                         <p class="comment-notes">Small Description</p>
 
                                                         <p class="comment-form-author">

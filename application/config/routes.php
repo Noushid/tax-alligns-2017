@@ -85,11 +85,14 @@ $route['login'] = 'user/login';
 $route['send'] = 'Home/compose';
 $route['delivered/(:num)'] = 'Home/delivered/$1';
 $route['forgot-password'] = 'auth/forgot_password';
+$route['session_write'] = 'Home/session_write';
+$route['practice/session_write'] = 'Home/session_write';
 
 /*_______ public route End _______*/
 
 /*shammas designing testing routes*/
 $route['practice'] = 'Home/practice';
+$route['practice/(:num)'] = 'Home/practice/$1';
 /*shammas designing testing routes*/
 
 /*_______ admin route start _______*/

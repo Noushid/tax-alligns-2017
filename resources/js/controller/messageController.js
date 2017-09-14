@@ -253,6 +253,10 @@ app.controller('messageController', ['$scope', '$http', '$rootScope', '$location
                 console.log(response);
             });
     };
+
+    $scope.refreshMessage= function () {
+        loadUser();
+    };
 }]);
 
 
