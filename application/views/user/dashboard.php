@@ -205,11 +205,22 @@
                                     </div>
 
                                     <div class="item v1 compose">
+
+                                        <div class="row">
+                                            <div class="col-md-8 col-md-offset-2 alert alert-success">
+                                              <strong>Success!</strong> Indicates a successful or positive action.
+                                            </div>
+                                            <div class="col-md-8 col-md-offset-2 alert alert-danger">
+                                              <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+                                            </div>
+                                        </div>
+
+
                                         <article class="entry clearfix">
                                             <div class="comment-post">
                                                 <div id="respond" class="comment-respond">
                                                         <?php echo form_open_multipart(base_url('send'), ['class' => 'comment-form']);?>
-                                                        <p class="comment-notes">Small Description</p>
+                                                        <p class="comment-notes">Compose Your message and send Now...</p>
 
                                                         <p class="comment-form-author">
                                                             <label>Your Subject *</label>
