@@ -78,6 +78,16 @@ class Dashboard extends CI_Controller
         $this->load->view('admin/messages');
     }
 
+    public function logout()
+    {
+        $this->data['title'] = "Logout";
+
+        // log the user out
+        $logout = $this->ion_auth->logout();
+
+        $this->session->set_flashdata('message', $this->ion_auth->messages());
+        redirect(base_url('ad-login'), 'refresh');
+    }
 
 
     public function verify()
@@ -107,12 +117,6 @@ class Dashboard extends CI_Controller
                 $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'invalid username or password']));
             }
         }
-    }
-    public function logout()
-    {
-        $this->session->unset_userdata('logged_in');
-        session_destroy();
-        redirect(base_url('login'), 'refresh');
     }
 
     public function change_profile()
