@@ -57,6 +57,7 @@ $route['about'] = 'Home/about';
 $route['services'] = 'Home/services';
 
 $route['ad-login'] = 'Auth/login';
+$route['dashboard/logout'] = 'Dashboard/logout';
 $route['logout'] = 'Auth/logout';
 
 $route['GST'] = 'Home/gst';
