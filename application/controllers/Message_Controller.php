@@ -34,19 +34,19 @@ class Message_Controller extends CI_Controller
 
     function index()
     {
-        $data = $this->message->with_files()->with_user()->get_all();
+        $data = $this->message->with_files()->with_user()->with_reference()->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
     function get($id)
     {
-        $data = $this->message->with_files()->with_user()->where('user_id', $id)->order_by('id','DESC')->get_all();
+        $data = $this->message->with_files()->with_user()->with_reference()->where('user_id', $id)->order_by('id','DESC')->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
     public function get_where($id,$param1)
     {
-        $data = $this->message->with_files()->with_user()->where('user_id', $id)->where('type', $param1)->order_by('id','DESC')->get_all();
+        $data = $this->message->with_files()->with_user()->with_reference()->where('user_id', $id)->where('type', $param1)->order_by('id','DESC')->get_all();
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
@@ -100,10 +100,9 @@ class Message_Controller extends CI_Controller
 
     function upload()
     {
-        $config['upload_path'] = getwdir() . 'user-files';
-        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
+        $config['upload_path'] = getwdir() . 'files';
+        $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods|xml';
         $config['max_size'] = 4096;
-//        $config['file_name'] = rand(100, 999) . 'FILE' . now();
         $config['multi'] = 'ignore';
         $this->upload->initialize($config);
         if ($this->upload->do_upload('file')) {

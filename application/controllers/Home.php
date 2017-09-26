@@ -58,19 +58,22 @@ class Home extends CI_Controller
     public function practice()
     {
         $page = 'user/dashboard';
-        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin($this->session->userdata('user_id'))) {
             redirect(base_url('login'));
         } else {
             $page = $page;
             $this->config->set_item('pagination_prefix', '#filter=.inbox');
             $total_post_received = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->count_rows();
-            $data['received'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->with_files()->order_by('id', 'desc')->paginate(5, $total_post_received);
+            $data['received'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->with_files()->with_reference()->order_by('id', 'desc')->paginate(5, $total_post_received);
+
             $data['all_pages_received'] = $this->message->all_pages;
 
             $this->config->set_item('pagination_prefix', '#filter=.sent');
             $total_post_sentitem = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'received')->count_rows();
-            $data['sent_item'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'received')->with_files()->order_by('id', 'desc')->paginate(5, $total_post_sentitem);
+            $data['sent_item'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'received')->with_files()->with_reference()->order_by('id', 'desc')->paginate(5, $total_post_sentitem);
             $data['all_pages_sentitem'] = $this->message->all_pages;
+
+            $data['all_inbox'] = $this->message->where('user_id', $this->session->userdata('user_id'))->where('type', 'sent')->with_files()->with_reference()->order_by('id', 'desc')->get_all();
 
             $this->load->view($this->header,['current' => 'practice']);
             $this->load->view($page, $data);
@@ -80,7 +83,7 @@ class Home extends CI_Controller
 
     public function compose()
     {
-        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin($this->session->userdata('user_id'))) {
             redirect(base_url('login'), 'refresh');
             exit;
         }
@@ -92,8 +95,8 @@ class Home extends CI_Controller
                 redirect(base_url('practice#filter=.sent'));
             } else {
                 $error = 0;
-                $config['upload_path'] = getwdir() . 'user-files';
-                $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods';
+                $config['upload_path'] = getwdir() . 'files';
+                $config['allowed_types'] = 'jpg|png|jpeg|JPG|JPEG|pdf|pdf|docx|doc|xlsx|word|csv|odt|odp|ods|xml';
                 $config['max_size'] = 4096;
 //                $config['file_name'] = rand(100, 999) . 'FILE' . now();
                 $this->upload->initialize($config);
@@ -101,8 +104,6 @@ class Home extends CI_Controller
                 if ($this->upload->do_upload('file')) {
                     $upload_data = $this->upload->data();
                 }else{
-//                    var_dump($this->upload->display_errors());
-//                    exit;
                     $this->session->set_flashdata('error', $this->upload->display_errors());
                     redirect(base_url('practice#filter=.sent'));
                 }
@@ -137,10 +138,10 @@ class Home extends CI_Controller
                     }
                     if ($error == 0) {
                         $this->session->set_flashdata('message', 'Message sent.');
-                        redirect(base_url('practice#filter=.sent'));
+                        redirect(base_url('practice#filter=.compose'));
                     } else {
-                        $this->session->set_flashdata('message', 'Message sent.');
-                        redirect(base_url('practice#filter=.sent'), 'refresh', 400);
+                        $this->session->set_flashdata('error', 'Message sent.');
+                        redirect(base_url('practice#filter=.compose'), 'refresh', 400);
                     }
                 }
             }
@@ -313,7 +314,7 @@ class Home extends CI_Controller
 
     public function delivered($id)
     {
-        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin($this->session->userdata('user_id'))) {
             show_error('something went wrong', 500);
             log_message('error', 'Anonymous attack from.' . $this->input->ip_address());
         }
@@ -340,7 +341,7 @@ class Home extends CI_Controller
     public function session_write()
     {
         var_dump($this->ion_auth->logged_in());
-        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin()) {
+        if (!$this->ion_auth->logged_in() or $this->ion_auth->is_admin($this->session->userdata('user_id'))) {
 
             $request_data = 'Server protocol ->  ' . $this->input->server('SERVER_PROTOCOL').' : ';
             $request_data .= 'Request URI ->  ' . $this->input->server('REQUEST_URI');

@@ -1,10 +1,6 @@
 <section class="main-content bg-sidebar sidebar-left pt0">
             <div class="container">
-                <?php
-                if (isset($_SESSION['message'])) {
-                    var_dump($_SESSION['message']);
-                }
-                ?>
+
                 <div class="case">
                     <div class="row">
                         <div class="col-md-12">
@@ -35,11 +31,15 @@
                                                                         <div class="comment-detail">
                                                                             <div class="comment-meta">
                                                                                 <p class="comment-author"><a
-                                                                                        href="#"><?php echo $inbox->subject; ?></a>
+                                                                                        href="#"><?php echo $inbox->subject;?></a>
                                                                                 </p>
 
-                                                                                <p class="comment-date"><a
-                                                                                        href="#"><?php echo date('M d Y', $inbox->datetime); ?></a>
+                                                                                <p class="comment-date">
+                                                                                    <?php
+                                                                                        echo(($inbox->reference_id != null and $inbox->reference_id != 0) ? 'Reply  ->  ' . $inbox->reference->subject . '<span class="line"></span>' : '');
+                                                                                    ?>
+
+                                                                                    <a href="#"><?php echo date('M d Y', $inbox->datetime); ?></a>
                                                                                 </p>
                                                                                 <span class="line"></span>
                                                                                 <!--                                                                                    <a class="my-reply" href="#" data-toggle="modal" data-target="#msgView" class="comment-reply">View more</a>-->
@@ -65,7 +65,7 @@
                                                                                        id="post-<?php echo $inbox->id; ?>"
                                                                                        style="display: none;"/>
 
-                                                                            <div style="display: flex;" 
+                                                                            <div style="display: flex;"
                                                                                 class="widget widget-brochures myul read-more-wrap">
                                                                                 <div
                                                                                     class="title-link v6 read-more-target">
@@ -77,7 +77,7 @@
                                                                                     foreach ($inbox->files as $value) {
                                                                                         ?>
                                                                                         <li class="dl-word"><a
-                                                                                                href="#"><?php echo $value->file_name; ?></a>
+                                                                                                href="<?php echo base_url('files/' . $value->file_name); ?>"><?php echo $value->file_name; ?></a>
                                                                                         </li>
                                                                                     <?php
                                                                                     }
@@ -207,12 +207,38 @@
                                     <div class="item v1 compose">
 
                                         <div class="row">
-                                            <div class="col-md-8 col-md-offset-2 alert alert-success">
-                                              <strong>Success!</strong> Indicates a successful or positive action.
-                                            </div>
-                                            <div class="col-md-8 col-md-offset-2 alert alert-danger">
-                                              <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-                                            </div>
+                                            <script type="text/javascript">
+                                                $(document).ready( function() {
+                                                    $('#alert').delay(10000).fadeOut();
+                                                });
+                                            </script>
+
+                                            <?php
+                                            if (isset($_SESSION['message'])) {
+                                                ?>
+                                                <script type="text/javascript">
+                                                    $(document).ready( function() {
+                                                        $( "#alert" ).show();
+                                                    });
+                                                </script>
+                                                <div class="col-md-4 col-md-offset-3 alert alert-success" id="alert">
+                                                    <strong>Success!</strong> Message Sent!.
+                                                </div>
+                                            <?php
+                                            }
+                                            if (isset($_SESSION['error'])) {
+                                                ?>
+                                                <script type="text/javascript">
+                                                    $(document).ready( function() {
+                                                        $( "#alert" ).show();
+                                                    });
+                                                </script>
+                                                <div class="col-md-4 col-md-offset-3 alert alert-danger" id="alert">
+                                                    <strong>Danger!</strong> Oops! Something went wrong! We will fix soon.
+                                                </div>
+                                            <?php
+                                            }
+                                            ?>
                                         </div>
 
 
@@ -222,6 +248,19 @@
                                                         <?php echo form_open_multipart(base_url('send'), ['class' => 'comment-form']);?>
                                                         <p class="comment-notes">Compose Your message and send Now...</p>
 
+                                                        <p class="comment-form-author">
+                                                            <label>Message</label>
+                                                            <select name="reference_id">
+                                                                <option value="" selected>Select</option>
+                                                                <?php
+                                                                foreach ($all_inbox as $val) {
+                                                                    ?>
+                                                                    <option value="<?php echo $val->id?>"><?php echo $val->subject;?></option>
+                                                                <?php
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                        </p>
                                                         <p class="comment-form-author">
                                                             <label>Your Subject *</label>
                                                             <input id="subject" name="subject" type="text" required="required">

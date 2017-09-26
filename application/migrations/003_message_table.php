@@ -52,6 +52,10 @@ class Migration_message_table extends CI_Migration
             'received_time'=>[
                 'type' => 'INT',
                 'constraint' => '10'
+            ],
+            'reference_id'=>[
+                'type' => 'INT',
+                'constraint' => '10'
             ]
         ]);
         $this->dbforge->add_key('id', TRUE);

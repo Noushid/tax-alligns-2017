@@ -23,6 +23,7 @@ class Message_Model extends MY_Model
         $this->pagination_prefix = '#filter=' . $this->session->userdata('filter_hash');
 
         $this->has_one['user'] = array('foreign_model' => 'User_model', 'foreign_table' => 'users', 'foreign_key' => 'id', 'local_key' => 'user_id');
+        $this->has_one['reference'] = array('foreign_model' => 'Message_model', 'foreign_table' => 'messages', 'foreign_key' => 'id', 'local_key' => 'reference_id');
 
         $this->has_many_pivot['files'] = [
             'foreign_model' => 'File_model',

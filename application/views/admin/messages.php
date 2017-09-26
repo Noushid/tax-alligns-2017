@@ -57,6 +57,7 @@
                                         <uib-accordion-heading>
                                             <div ng-click="delivered(message)">
                                                 <span style="font-weight: 600">{{message.subject}}</span>
+                                                <span ng-if="message.reference_id && message.reference_id != '0'">  |   reply from -> {{message.reference.subject}}</span>
                                                 <span class="badge badge-inverse pull-right"><time-ago from-time='{{ message.dateago}}'></time-ago></span>
                                                 <span class="badge badge-info" style="float: right"></span>
                                             </div>
@@ -97,6 +98,7 @@
                                 <div uib-accordion-group>
                                     <uib-accordion-heading>
                                         <span style="font-weight: 600">{{message.subject}}</span>
+                                        <span ng-if="message.reference_id && message.reference_id != '0'">  |   reply from -> {{message.reference.subject}}</span>
                                         <span class="badge badge-inverse pull-right">
                                             <!--For TIme ago -->
                                             <time-ago from-time='{{ message.dateago}}' format='MM/dd/yyyy'></time-ago>
@@ -120,6 +122,15 @@
                     </uib-tab>
                     <uib-tab index="2" heading="Compose">
                         <form method="POST" class="form-horizontal" ng-submit="sendMessage(user.id)">
+                            <div class="form-group">
+                                <label class="control-label col-lg-2">Reference Message</label>
+                                <div class="col-lg-8">
+                                    <select class="form-control" name="reference" ng-model="newmessage.reference_id">
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="{{reference.id}}" ng-repeat="reference in receivedMessages">{{reference.subject}}</option>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label class="control-label col-lg-2">Subject</label>
                                 <div class="col-lg-8">
