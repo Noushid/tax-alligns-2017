@@ -70,12 +70,12 @@ $route['ITreturns'] = 'Home/returns';
 $route['TDS'] = 'Home/tds';
 
 $route['blog'] = 'Home/blog';
-$route['blog/(:num)'] = 'Home/blog/$1';
+$route['blog/(:num)/(:any)'] = 'Home/blog/$1';
 //$route['gst/(:num)'] = 'Home/blogView/$1';
 $route['contact'] = 'Home/contact';
 $route['send-message'] = 'Home/send_message';
 $route['send-comment'] = 'Home/send_comment';
-$route['blog-view/(:num)'] = 'Home/blogView/$1';
+$route['blog-view/(:any)'] = 'Home/blogView/$1';
 
 /*Create user*/
 $route['register'] = 'User/create_user';

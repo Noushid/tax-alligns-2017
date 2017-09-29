@@ -30,7 +30,7 @@
                                             foreach ($recent as $value) {
                                                 ?>
                                                 <li>
-                                                    <a href="<?php echo base_url('gst/' . $value->id);?>"><?php echo $value->heading; ?></a>
+                                                    <a href="<?php echo base_url('blog/' . $value->id . '/') . rtrim(str_replace(['.', ',', ' ', '--'], '-', $value->heading), '-');?>"><?php echo substr($value->heading, 0, 30).'...' ?></a>
                                                 </li>
                                             <?php
                                             }

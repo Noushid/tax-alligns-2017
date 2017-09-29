@@ -37,7 +37,7 @@
                                                 <p id="tag"><?php echo $value->introduction;?> [...]</p>
                                             </div>
                                             <div class="submit-wrap" style="float: right;">
-                                                <button onclick="document.location='<?php echo base_url('blog-view/' . $value->id);?>'"
+                                                <button onclick="document.location='<?php echo base_url('blog/' . $value->id . '/') . rtrim(str_replace(['.', ',', ' ', '--'], '-', $value->heading), '-');?>'"
                                                         class="flat-button button-style">Read More <i
                                                         class="fa fa-chevron-right"></i></button>
                                             </div>
