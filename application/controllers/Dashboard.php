@@ -78,6 +78,10 @@ class Dashboard extends CI_Controller
     {
         $this->load->view('admin/messages');
     }
+    public function doctemplate()
+    {
+        $this->load->view('admin/docTemplate');
+    }
 
     public function logout()
     {
@@ -90,35 +94,6 @@ class Dashboard extends CI_Controller
         redirect(base_url('ad-login'), 'refresh');
     }
 
-
-    public function verify()
-    {
-        $this->form_validation->set_rules('username', 'Username', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        if ($this->form_validation->run() == FALSE) {
-            $this->output->set_status_header(400, 'Validation error');
-            $this->output->set_content_type('application/json')->set_output(json_encode(validation_errors()));
-        } else {
-            $username = $this->input->post('username');
-            $password = hash('sha256', $this->input->post('password'));
-            $where = [
-                'username' => $username,
-                'password' => $password
-            ];
-            $result = $this->user->where($where)->get_all();
-            if ($result) {
-                $login_data = [
-                    'username' => $result[0]->username,
-                    'logged' => true,
-                ];
-                $this->session->set_userdata('logged_in', $login_data);
-                $this->output->set_content_type('application/json')->set_output(json_encode($login_data));
-            } else {
-                $this->output->set_status_header(400, 'Unauthorised access');
-                $this->output->set_content_type('application/json')->set_output(json_encode(['error' => 'invalid username or password']));
-            }
-        }
-    }
 
     public function change_profile()
     {

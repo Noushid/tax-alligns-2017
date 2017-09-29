@@ -148,6 +148,16 @@ $route['dashboard/message/sent-item/(:num)']['get'] = 'Message_Controller/get_wh
 $route['dashboard/message/inbox/(:num)']['get'] = 'Message_Controller/get_where/$1/received';
 $route['dashboard/message/delivered/(:num)']['put'] = 'Message_Controller/delivered/$1';
 
+$route['dashboard/doc-template'] = 'Dashboard/doctemplate';
+$route['dashboard/doc-template/upload'] = 'Template_Doc_Controller/upload';
+$route['dashboard/doc-template/get']['get'] = 'Template_Doc_Controller/get_all';
+$route['dashboard/doc-template/add']['post'] = 'Template_Doc_Controller/store';
+$route['dashboard/doc-template/edit/(:num)']['post'] = 'Template_Doc_Controller/update/$1';
+$route['dashboard/doc-template/delete-image/(:num)']['delete'] = 'Template_Doc_Controller/delete_image/$1';
+$route['dashboard/doc-template/delete/(:num)']['delete'] = 'Template_Doc_Controller/delete/$1';
+$route['dashboard/doc-template/enable/(:num)']['put'] = 'Template_Doc_Controller/enable/$1';
+$route['dashboard/doc-template/disable/(:num)']['put'] = 'Template_Doc_Controller/disable/$1';
+
 /*_______ admin route end _______*/
 
 

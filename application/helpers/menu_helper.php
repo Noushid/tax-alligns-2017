@@ -21,7 +21,7 @@ function dashboard_menu()
         ],
         'testimonial' => [
             'title' => 'testimonial',
-            'icon' => 'fa-picture-o',
+            'icon' => 'fa-comments',
             'link' => 'testimonial'
         ],
         'blog' => [
@@ -31,13 +31,18 @@ function dashboard_menu()
         ],
         'documents' => [
             'title' => 'documents',
-            'icon' => 'fa-picture-o',
+            'icon' => 'fa-file',
             'link' => 'documents'
         ],
         'messages' => [
             'title' => 'messages',
             'icon' => 'fa-envelope',
             'link' => 'messages'
+        ],
+        'excel template' => [
+            'title' => 'excel template',
+            'icon' => 'fa-file-text',
+            'link' => 'doc-template'
         ]
     ];
 

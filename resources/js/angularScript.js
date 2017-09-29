@@ -33,6 +33,10 @@ app.config(['$routeProvider', '$locationProvider', 'timeAgoSettings', function (
             templateUrl: 'messages',
             controller: 'messageController'
         })
+        .when('/doc-template',{
+            templateUrl: 'doc-template',
+            controller: 'DocTemplateController'
+        })
         .when('/user-profile',{
             templateUrl: 'edit-profile'
         })
