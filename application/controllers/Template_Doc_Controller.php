@@ -154,17 +154,17 @@ class Template_Doc_Controller extends CI_Controller
                     if (file_exists(getwdir() . 'files/' . $template->file->file_name)) {
                         unlink(getwdir() . 'files/' . $template->file->file_name);
                         if ($this->template->delete($id)) {
-                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery Deleted']));
+                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Template doc Deleted']));
                         } else {
-                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery not deleted but some files are deleted']));
+                            $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Template doc not deleted but some files are deleted']));
                         }
                     } else {
-                        $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery file not exist in directory']));
+                        $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Template doc file not exist in directory']));
                     }
                 }
             } else {
                 $this->template->delete($id);
-                $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Gallery Deleted']));
+                $this->output->set_content_type('application/json')->set_output(json_encode(['msg' => 'Template doc Deleted']));
             }
         } else {
             $this->output->set_status_header(500, 'Validation error');
