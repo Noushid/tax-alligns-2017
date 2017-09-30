@@ -42,13 +42,13 @@
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">New Password</label>
                                     <div class="col-lg-4">
-                                        <input type="password" class="form-control" name="password" ng-model="newuser.password" placeholder="New Password" required="" autocomplete="off" tabindex="3"/>
+                                        <input type="password" class="form-control" name="password" ng-model="newuser.password" placeholder="New Password" autocomplete="off" tabindex="3"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="" class="control-label col-lg-2">Confirm Password</label>
                                     <div class="col-lg-4">
-                                        <input type="password" class="form-control" name="confirmPassword" ng-model="newuser.confirmpassword" ng-match="newuser.password" placeholder="Re-Type Password" required="" autocomplete="off" tabindex="4"/>
+                                        <input type="password" class="form-control" name="confirmPassword" ng-model="newuser.confirmpassword" ng-match="newuser.password" placeholder="Re-Type Password" autocomplete="off" tabindex="4"/>
                                     </div>
                                     <span ng-show="newuser.password != newuser.confirmpassword">Password do not match</span>
                                 </div>

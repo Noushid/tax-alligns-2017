@@ -117,7 +117,6 @@ class Dashboard extends CI_Controller
         $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('email', 'Email', 'valid_email');
         $this->form_validation->set_rules('curpassword', 'Current password', 'required');
-        $this->form_validation->set_rules('confirmpassword', 'Confirm password', 'required');
 
         if (isset($_POST) && !empty($_POST))
         {
