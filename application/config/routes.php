@@ -51,9 +51,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'Home';
 
+/*_______ new update public route start _______*/
+
+$route['about'] = 'Home/about';
+
+$route['gstbasics'] = 'Home/gst1';
+$route['invoiceBillofSupply'] = 'Home/gst2';
+$route['compositionScheme'] = 'Home/gst3';
+$route['reverseChargeMechanism'] = 'Home/gst4';
+$route['worksContract'] = 'Home/gst5';
+$route['exportUnderGst'] = 'Home/gst6';
+$route['eWayBill'] = 'Home/gst7';
+$route['gstReturnFiling'] = 'Home/gst8';
+
+$route['accountingOutsourcing'] = 'Home/accounting1';
+$route['runningAndStartupBusiness'] = 'Home/accounting2';
+$route['onsiteAndOnlineAccounting'] = 'Home/accounting3';
+$route['systemImplimentationInAccounting'] = 'Home/accounting4';
+$route['manualToComputerisedAccounting'] = 'Home/accounting5';
+$route['accountFromIncompleteData'] = 'Home/accounting6';
+
+$route['itBasics'] = 'Home/it1';
+$route['itRates'] = 'Home/it2';
+$route['compulsoryaudit'] = 'Home/it3';
+$route['presuptiveTaxation'] = 'Home/it4';
+$route['itReturnsFiling'] = 'Home/it5';
+$route['cashTransaction'] = 'Home/it6';
+$route['tdsFiling'] = 'Home/it7';
+$route['tcs'] = 'Home/it8';
+
+$route['propretorship'] = 'Home/business1';
+$route['partnership'] = 'Home/business2';
+$route['opc'] = 'Home/business3';
+$route['llp'] = 'Home/business4';
+$route['pvtLmtd'] = 'Home/business5';
+$route['ltd'] = 'Home/business6';
+$route['producerCompany'] = 'Home/business7';
+$route['indianSubsidiaryCo'] = 'Home/business8';
+
+$route['partnershipDeed'] = 'Home/documentation1';
+$route['firmRegistration'] = 'Home/documentation2';
+$route['trustRegistration'] = 'Home/documentation3';
+$route['wakfBoardRegistartion'] = 'Home/documentation4';
+$route['projectReport'] = 'Home/documentation5';
+$route['iso'] = 'Home/documentation6';
+$route['trademarkAndLogo'] = 'Home/documentation7';
+
+$route['motivationalProgram'] = 'Home/cunsolting1';
+$route['marketingstrategy'] = 'Home/cunsolting2';
+$route['hierarchyInManagement'] = 'Home/cunsolting3';
+$route['staffProgramms'] = 'Home/cunsolting4';
+
+$route['gstRegisration'] = 'Home/registration1';
+$route['tanRegisration'] = 'Home/registration2';
+$route['panCard'] = 'Home/registration3';
+$route['dsc'] = 'Home/registration4';
+$route['iec'] = 'Home/registration5';
+
+$route['uaeServices'] = 'Home/uae1';
+$route['erp'] = 'Home/uae2';
+$route['businessFormation'] = 'Home/uae3';
+$route['businessLicense'] = 'Home/uae4';
+$route['exciseTax'] = 'Home/uae5';
+$route['uaeVat'] = 'Home/uae6';
+$route['vatRegistration'] = 'Home/uae7';
+$route['vatExemption'] = 'Home/uae8';
+$route['vatFiling'] = 'Home/uae9';
+$route['vatDocumentation'] = 'Home/uae10';
+
+$route['ksaServices'] = 'Home/ksa';
+$route['ksaErp'] = 'Home/ksa';
+$route['ksaVat'] = 'Home/ksa';
+$route['ksaIncomeTax'] = 'Home/ksa';
+
+$route['gccAbout'] = 'Home/gcc1';
+$route['gccVat'] = 'Home/gcc2';
+
+/*_______ new update public route end _______*/
+
 /*_______ public route start _______*/
 $route['home'] = 'Home/index';
-$route['about'] = 'Home/about';
 $route['services'] = 'Home/services';
 
 $route['ad-login'] = 'Auth/login';

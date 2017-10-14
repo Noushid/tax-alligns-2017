@@ -7,8 +7,8 @@
                     <div class="col-md-12">
                         <div class="title-section style1">
                             <h3 class="title">GST India – Goods & Service Tax</h3>
-                            <p class="para">
-                                Goods and Service Tax is being glorified as a system of taxation by which economy will take an upward swing and further it will ease the trade and industry with respect to the indirect tax system of the country. “Only one” indirect tax has to be paid by the trade and industry and all the other indirect taxes will be subsumed in GST.
+                            <p>
+                                This is the time for GST in India; A&T is here to support you well. Accounting and tax experts in A&T are ready to care your company through a smooth transmission from current tax structure to new GST system. All over India, GST registration required firms are rush to pocket GST. GST enrolment and registration to firms are not a big job but total accounting task have to get more care due to the changes in traditional tax structure. For more accuracy, statutory compliance and proper accounting, the finance and accounting departments have to bridge with GST department. A&T ensure you proper guidance and professional service in the GST filing and accounting.
                             </p>
                         </div>
                     </div>

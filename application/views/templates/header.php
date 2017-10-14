@@ -124,14 +124,12 @@
                             <div class="btn-menu">
                                 <span></span>
                             </div><!-- //mobile menu button -->
-                            <nav id="mainnav" class="mainnav">
+                            <!-- <nav id="mainnav" class="mainnav">
                                 <ul class="menu"> 
                                     <li class="<?php echo ($current == 'Home' ? 'home' : '') ?>"><a href="<?php echo base_url();?>home">Home</a></li>
                                     <li class="<?php echo ($current == 'About Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>about">About Us</a></li>
-                                    <li class="<?php echo ($current == 'services' ? 'home' : '') ?>"><a href="<?php echo base_url();?>services">Services</a></li>
-
                                     <li class="<?php echo ($current == 'taxation' ? 'home' : '') ?>">
-                                        <a href="#">Taxation</a>
+                                        <a href="#">GST</a>
                                         <ul class="submenu">
                                             <li class="<?php echo ($current == 'GST' ? 'home' : '') ?>"><a href="<?php echo base_url();?>GST">GST</a>
                                                 <ul class="submenu">
@@ -142,21 +140,25 @@
                                                             <li><a href="<?php echo base_url();?>GSTaccounting#tally">In Tally ERP</a></li>
                                                             <li><a href="<?php echo base_url();?>GSTaccounting#mallu">In Malayalam</a></li>
                                                             <li><a href="<?php echo base_url();?>GSTaccounting#council">GST Council</a></li>
-                                                        </ul><!-- /.submenu -->
+                                                        </ul>
                                                     </li>
                                                     <li><a href="<?php echo base_url();?>GSTinvoice">GST Invoice</a></li>
-                                                </ul><!-- /.submenu -->
+                                                </ul>
                                             </li>
                                             <li class="<?php echo ($current == 'taxation' ? 'home' : '') ?>"><a href="<?php echo base_url();?>#">Income Tax</a>
                                                 <ul class="submenu">
                                                     <li><a href="<?php echo base_url();?>ITreturns">IT Returns</a></li>
                                                     <li><a href="<?php echo base_url();?>TDS">TDS</a></li>
-                                                </ul><!-- /.submenu -->
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">uae clients</a></li>
+                                    <li class="<?php echo ($current == 'Home' ? 'home' : '') ?>"><a href="<?php echo base_url();?>home">Accounting</a></li>
+                                    <li class="<?php echo ($current == 'Home' ? 'home' : '') ?>"><a href="<?php echo base_url();?>home">Income Tax</a></li>
+                                    <li class="<?php echo ($current == 'services' ? 'home' : '') ?>"><a href="<?php echo base_url();?>services">Services</a></li>
+                                    <li class="<?php echo ($current == 'Our Blog' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">Blog</a></li>
                                     <li class="<?php echo ($current == 'Contact Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Contact Us</a></li>
+                                    <li class="<?php echo ($current == 'Contact Us' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Gcc-clients</a></li>
                                     <?php
                                     if ($this->ion_auth->logged_in() and !$this->ion_auth->is_admin($this->session->userdata('user_id'))) {
                                         ?>
@@ -165,10 +167,142 @@
                                     <?php
                                     }
                                     ?>
-                                </ul><!-- /.menu -->
-                            </nav><!-- /.mainnav -->
-                        </div><!-- /.nav-wrap -->
-                    </div><!-- /.header-wrap --> 
+                                </ul>
+                            </nav> -->
+
+                            <nav id="mainnav" class="mainnav">
+                                <ul class="menu"> 
+                                    <li class="<?php echo ($current == 'ABOUT US' ? 'home' : '') ?>"><a href="<?php echo base_url();?>about">About Us</a></li>
+                                    <li class="<?php echo ($current == 'GST' ? 'home' : '') ?>"><a href="#">gst</a>
+                                        <ul class="submenu">
+                                            <li><a href="<?php echo base_url();?>gstbasics">GST BASICS</a></li>
+                                            <li><a href="<?php echo base_url();?>invoiceBillofSupply">INVOICE & BILL OF SUPPLY</a></li>
+                                            <li><a href="<?php echo base_url();?>compositionScheme">COMPOSITION SCHEME</a></li>
+                                            <li><a href="<?php echo base_url();?>reverseChargeMechanism">REVERSE CHARGE MECHANISM</a></li>
+                                            <li><a href="<?php echo base_url();?>worksContract">WORKS CONTRACT</a></li>
+                                            <li><a href="<?php echo base_url();?>exportUnderGst">EXPORT UNDER GST</a></li>
+                                            <li><a href="<?php echo base_url();?>eWayBill">E WAY BILL</a></li>
+                                            <li><a href="<?php echo base_url();?>gstReturnFiling">GST RETURN FILING</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="<?php echo ($current == 'ACCOUNTING' ? 'home' : '') ?>"><a href="#">ACCOUNTING</a>
+                                        <ul class="submenu">
+                                            <li><a href="<?php echo base_url();?>accountingOutsourcing">OUTSOURCING</a></li>
+                                            <li><a href="<?php echo base_url();?>#">ACCOUTING SERVICES</a>
+                                                <ul class="submenu">
+                                                    <li><a href="<?php echo base_url();?>runningAndStartupBusiness">RUNNING AND STARTUP BUSINESS</a></li>
+                                                    <li><a href="<?php echo base_url();?>onsiteAndOnlineAccounting">ON-SITE AND ONLINE ACCOUNTING</a></li>
+                                                    <li><a href="<?php echo base_url();?>systemImplimentationInAccounting">SYSTEM IMPLEMENTATION IN ACCOUNTING</a></li>
+                                                    <li><a href="<?php echo base_url();?>manualToComputerisedAccounting">MANUAL TO COMPUTERISED ACCOUNTING</a></li>
+                                                    <li><a href="<?php echo base_url();?>accountFromIncompleteData">ACCOUNTS FROM INCOMPLETE DATA</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>                                
+                                    <li class="<?php echo ($current == 'INCOME TAX' ? 'home' : '') ?>"><a href="#">income tax</a>
+                                        <ul class="submenu">
+                                            <li><a href="<?php echo base_url();?>itBasics">IT BASICS</a></li>
+                                            <li><a href="<?php echo base_url();?>itRates">INCOME TAX RATES</a></li>
+                                            <li><a href="<?php echo base_url();?>compulsoryaudit">COMPULSORY AUDIT</a></li>
+                                            <li><a href="<?php echo base_url();?>presuptiveTaxation">PRESUMPTIVE TAXATION</a></li>
+                                            <li><a href="<?php echo base_url();?>itReturnsFiling">IT RETURNS-FILING</a></li>
+                                            <li><a href="<?php echo base_url();?>cashTransaction">CASH TRANSACTION</a></li>
+                                            <li><a href="<?php echo base_url();?>tdsFiling">TDS-FILING</a></li>
+                                            <li><a href="<?php echo base_url();?>tcs">tcs</a></li>
+                                        </ul>
+                                    </li>  
+                                    <li class="<?php echo ($current == 'SERVICES' ? 'home' : '') ?>"><a href="#">SERVICES</a>
+                                        <ul class="submenu"> 
+                                            <li><a href="<?php echo base_url();?>#">START A BUSINESS</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>propretorship">PROPRIETORSHIP</a></li>
+                                                    <li><a href="<?php echo base_url();?>partnership">PARTNERSHIP</a></li>
+                                                    <li><a href="<?php echo base_url();?>opc">ONE PERSON COMPANY (OPC)</a></li>
+                                                    <li><a href="<?php echo base_url();?>llp">LIMITED LIABILITY PARTNERSHIP (LLP)</a></li>
+                                                    <li><a href="<?php echo base_url();?>pvtLmtd">PRIVATE LIMITED COMPANY (PVT LTD)</a></li>
+                                                    <li><a href="<?php echo base_url();?>ltd">PUBLIC LIMITED COMPANY (LTD)</a></li>
+                                                    <li><a href="<?php echo base_url();?>producerCompany">PRODUCER COMPANY</a></li>
+                                                    <li><a href="<?php echo base_url();?>indianSubsidiaryCo">INDIAN SUBSIDIARY COMPANY- BY FOREIGNER</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php echo base_url();?>#">DOCUMENTATION</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>partnershipDeed">PARTNERSHIP DEED</a></li>
+                                                    <li><a href="<?php echo base_url();?>firmRegistration">FIRM REGISTRATION</a></li>
+                                                    <li><a href="<?php echo base_url();?>trustRegistration">TRUST REGISTRATION</a></li>
+                                                    <li><a href="<?php echo base_url();?>wakfBoardRegistartion">WAKF BOARD REGISTRATION</a></li>
+                                                    <li><a href="<?php echo base_url();?>projectReport">PROJECT REPORT</a></li>
+                                                    <li><a href="<?php echo base_url();?>iso">iso</a></li>
+                                                    <li><a href="<?php echo base_url();?>trademarkAndLogo">TRADEMARK & LOGO</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php echo base_url();?>#">management CONSULTING</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>motivationalProgram">MOTIVATIONAL PROGRAMMS</a></li>
+                                                    <li><a href="<?php echo base_url();?>marketingstrategy">MARKETING STRATEGY</a></li>
+                                                    <li><a href="<?php echo base_url();?>hierarchyInManagement">HIERARCHY IN MANAGEMENT</a></li>
+                                                    <li><a href="<?php echo base_url();?>staffProgramms">STAFF PROGRAMMS</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php echo base_url();?>#">REGISTRATION</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>gstRegisration">GST REGISTRATION</a></li>
+                                                    <li><a href="<?php echo base_url();?>tanRegisration">TAN REGISTRATION</a></li>
+                                                    <li><a href="<?php echo base_url();?>panCard">PAN CARD</a></li>
+                                                    <li><a href="<?php echo base_url();?>dsc">DSC</a></li>
+                                                    <li><a href="<?php echo base_url();?>iec">IMPORT EXPORT LICENCE (IEC)</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="<?php echo ($current == 'BLOG' ? 'home' : '') ?>"><a href="<?php echo base_url();?>blog">Blog</a></li>
+                                    <li class="<?php echo ($current == 'CONTACT' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Contact</a></li>
+                                    <li class="<?php echo ($current == 'GCC CLIENTS' ? 'home' : '') ?>"><a href="#">GCC Clients</a>
+                                        <ul class="submenu"> 
+                                            <li><a href="<?php echo base_url();?>#">UAE</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>#">SERVICES</a>
+                                                        <ul class="submenu"> 
+                                                            <li><a href="<?php echo base_url();?>uaeServices">SERVICES</a></li>
+                                                            <li><a href="<?php echo base_url();?>erp">ERP</a></li>
+                                                            <li><a href="<?php echo base_url();?>businessFormation">Business Formation-UAE</a></li>
+                                                            <li><a href="<?php echo base_url();?>businessLicense">Business License-UAE</a></li>
+                                                            <li><a href="<?php echo base_url();?>exciseTax">UAE EXCISE TAX</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="<?php echo base_url();?>#">VAT UAE</a>
+                                                        <ul class="submenu"> 
+                                                            <li><a href="<?php echo base_url();?>uaeVat">WHAT IS VAT</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatRegistration">VAT REGISTRATION</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatExemption">VAT EXEMPTION & ZERO RATE</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatFiling">VAT FILING & INPUT VAT</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatDocumentation">VAT DOCUMENTATIONS</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php echo base_url();?>#">KSA</a>
+                                                <ul class="submenu"> 
+                                                    <li><a href="<?php echo base_url();?>#">SERVICES</a>
+                                                        <ul class="submenu"> 
+                                                            <li><a href="<?php echo base_url();?>ksaServices">SERVICES</a></li>
+                                                            <li><a href="<?php echo base_url();?>ksaErp">ERP</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="<?php echo base_url();?>ksaVat">KSA VAT</a></li>
+                                                    <li><a href="<?php echo base_url();?>ksaIncomeTax">KSA-Income Tax & Zakat</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="<?php echo base_url();?>gccAbout">about us</a></li>
+                                            <li><a href="<?php echo base_url();?>gccVat">WHY VAT IN GCC</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+
+
+                        </div>
+                    </div> 
                 </div>
-            </header><!-- /.header -->
-        </div> <!-- /.wrap-slider -->
+            </header>
+        </div>

@@ -360,4 +360,96 @@ class Home extends CI_Controller
         $value = $this->input->get('filter_hash');
         $this->session->set_userdata('filter_hash', $value);
     }
+
+
+    /*--------new update route start here-----*/
+
+    public function gst1($page = 'gst/gst1')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst2($page = 'gst/gst2')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst3($page = 'gst/gst3')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst4($page = 'gst/gst4')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst5($page = 'gst/gst5')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst6($page = 'gst/gst6')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst7($page = 'gst/gst7')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gst8($page = 'gst/gst8')
+    {
+        $this->load->view($this->header,['current' => 'GST']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    // Accounting
+    public function accounting1($page = 'accounting/accounting1')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function accounting2($page = 'accounting/accounting2')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function accounting3($page = 'accounting/accounting3')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function accounting4($page = 'accounting/accounting4')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function accounting5($page = 'accounting/accounting5')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function accounting6($page = 'accounting/accounting6')
+    {
+        $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+
+
+    /*--------new update route end here-----*/
 }

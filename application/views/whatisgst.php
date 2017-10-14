@@ -7,7 +7,7 @@
                     <div class="col-md-12">
                         <div class="title-section style1">
                             <h3 class="title">GST India – Goods & Service Tax</h3>
-                            <p class="para">
+                            <p>
                                 Goods and Service Tax is being glorified as a system of taxation by which economy will take an upward swing and further it will ease the trade and industry with respect to the indirect tax system of the country. “Only one” indirect tax has to be paid by the trade and industry and all the other indirect taxes will be subsumed in GST.
                             </p>
                         </div>

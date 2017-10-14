@@ -685,7 +685,7 @@ body.style-color {
 /* Flat-our-services
 ------------------------------------------------------------------- */
 .flat-our-services .our-services .post-services {
-    padding-right: 150px;
+    /*padding-right: 150px;*/
     margin-bottom: 20px;
 }
 
@@ -1287,13 +1287,13 @@ body.style-color {
 }
 
 .case-single .post-case-single.v1 {
-    padding-left: 30px;
+    /*padding-left: 30px;*/
 }
 
 .case-single .content-post {
-    border-bottom: 1px solid #dfdfdf;
+    /*border-bottom: 1px solid #dfdfdf;
     padding-bottom: 40px;
-    margin-bottom: 38px;
+    margin-bottom: 38px;*/
 }
 
 .case-single.v2 .content-post.v1 {
@@ -1312,7 +1312,7 @@ body.style-color {
 }
 
 .case-single .content-post .title-post {
-    margin-bottom: 32px;
+    /*margin-bottom: 32px;*/
 }
 
 .case-single.v2 .content-post .title-post {
@@ -1356,13 +1356,14 @@ body.style-color {
 .case-single .content-post .list-post .title {
     position: relative;
     font-size: 15px;
-    color: #222;
+    color: #5c5c5c;
     font-weight: 600;
-    margin-bottom: 13px;
+    margin-bottom: 9px;
+    line-height: 25px;
 }
 
 .case-single .content-post.v3 .list-post .title {
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .case-single.v2 .content-post.v3 .list-post .title {
@@ -1372,11 +1373,12 @@ body.style-color {
 .case-single .content-post .list-post .title:before {
     position: absolute;
     top: 2px;
-    left: -15px;
+    left: -18px;
     font-family: "FontAwesome";
-    content: "\f111";
-    font-size: 6px;
+    content: "\f005";
+    font-size: 10px;
     color: #18ba60;
+    line-height: 15px;
 }
 
 /* case-single 2 */
