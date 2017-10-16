@@ -863,7 +863,7 @@ input[type="color"],
 
 #mainnav ul.submenu li ul {
    position: absolute;
-   left: -200px;
+   left: -240px;
    top: 0 !important;
 }
 
@@ -2976,6 +2976,9 @@ article .comment.style1 {
 .f14{
 	font-size: 14px !important;
 }
+.pb70{
+	padding-bottom: 70px;
+}
 .pb30{
 	padding-bottom: 30px;
 }
@@ -3026,11 +3029,20 @@ article .comment.style1 {
 	padding-bottom: 15px;
 	font-weight: 600;
 }
+.headg{
+	font-size: 22px;
+	font-weight: 600;
+	color: #18ba60;
+	margin-bottom: 16px;
+}
 .pl25{
 	padding-left: 25px;
 }
 .pt100{
 	padding-top: 100px;
+}
+.pt50{
+	padding-top: 50px;
 }
 .p15{
 	padding-top: 15px;
@@ -3048,4 +3060,14 @@ article .comment.style1 {
   color: #18ba60;
   font-size: 7px;
   line-height: 28px;
+}
+.minw-img{
+	min-width: 100% !important;
+}
+.aclick{
+	font-size: 15px;
+	font-weight: 600;
+	font-style: italic;
+	text-decoration: underline;
+	margin-right: 5px;
 }

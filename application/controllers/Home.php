@@ -12,6 +12,7 @@ class Home extends CI_Controller
     protected $header = 'templates/header';
     protected $footer = 'templates/footer';
     protected $slider = 'templates/slider';
+    protected $allinaccounting = 'accounting/all';
     
     function __construct()
     {
@@ -423,29 +424,83 @@ class Home extends CI_Controller
     {
         $this->load->view($this->header,['current' => 'Accounting']);
         $this->load->view($page);
+        $this->load->view($this->allinaccounting);
         $this->load->view($this->footer);
     }
     public function accounting3($page = 'accounting/accounting3')
     {
         $this->load->view($this->header,['current' => 'Accounting']);
         $this->load->view($page);
+        $this->load->view($this->allinaccounting);
         $this->load->view($this->footer);
     }
     public function accounting4($page = 'accounting/accounting4')
     {
         $this->load->view($this->header,['current' => 'Accounting']);
         $this->load->view($page);
+        $this->load->view($this->allinaccounting);
         $this->load->view($this->footer);
     }
     public function accounting5($page = 'accounting/accounting5')
     {
         $this->load->view($this->header,['current' => 'Accounting']);
         $this->load->view($page);
+        $this->load->view($this->allinaccounting);
         $this->load->view($this->footer);
     }
     public function accounting6($page = 'accounting/accounting6')
     {
         $this->load->view($this->header,['current' => 'Accounting']);
+        $this->load->view($page);
+        $this->load->view($this->allinaccounting);
+        $this->load->view($this->footer);
+    }
+    //INCOME TAX
+    public function it1($page = 'incometax/it1')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it2($page = 'incometax/it2')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it3($page = 'incometax/it3')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it4($page = 'incometax/it4')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it5($page = 'incometax/it5')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it6($page = 'incometax/it6')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it7($page = 'incometax/it7')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function it8($page = 'incometax/it8')
+    {
+        $this->load->view($this->header,['current' => 'IT']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }

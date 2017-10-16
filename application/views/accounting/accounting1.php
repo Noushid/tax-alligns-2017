@@ -39,18 +39,16 @@
                         <div class="sidebar">
                             <div class="widget widget-categories">
                                 <div class="title-link">
-                                    <h5 class="widget-title">GST More</h5>
+                                    <h5 class="widget-title">Accounting More</h5>
                                 </div>
                                 <div class="widget widget-categories team">
                                     <ul class="categories">
-                                        <li><a href="<?php echo base_url();?>gstbasics">GST BASICS</a></li>
-                                        <li><a href="<?php echo base_url();?>invoiceBillofSupply">INVOICE & BILL OF SUPPLY</a></li>
-                                        <li><a href="<?php echo base_url();?>compositionScheme">COMPOSITION SCHEME</a></li>
-                                        <li><a href="<?php echo base_url();?>reverseChargeMechanism">REVERSE CHARGE MECHANISM</a></li>
-                                        <li><a href="<?php echo base_url();?>worksContract">WORKS CONTRACT</a></li>
-                                        <li><a href="<?php echo base_url();?>exportUnderGst">EXPORT UNDER GST</a></li>
-                                        <li><a href="<?php echo base_url();?>eWayBill">E WAY BILL</a></li>
-                                        <li><a href="<?php echo base_url();?>gstReturnFiling">GST RETURN FILING</a></li>
+                                        <li><a href="<?php echo base_url();?>accountingOutsourcing">ACCOUNTING OUTSOURCING</a></li>
+                                        <li><a href="<?php echo base_url();?>runningAndStartupBusiness">RUNNING AND STARTUP BUSINESS</a></li>
+                                        <li><a href="<?php echo base_url();?>onsiteAndOnlineAccounting">ON-SITE AND ONLINE ACCOUNTING</a></li>
+                                        <li><a href="<?php echo base_url();?>systemImplimentationInAccounting">SYSTEM IMPLEMENTATION</a></li>
+                                        <li><a href="<?php echo base_url();?>manualToComputerisedAccounting">MANUAL TO COMPUTERISED</a></li>
+                                        <li><a href="<?php echo base_url();?>accountFromIncompleteData">FROM INCOMPLETE DATA</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -105,7 +103,7 @@
                                         The government of every nation has the power to bring changes in the existing statutory requirements regarding accounting, reporting and taxation. Besides the changes in existing compliance, there will be a possibility of implication of new legal requirements also. There for the accounting staff should be flexible to adopt any changes and requirement.
                                     </p>
                                     <div class="title-post">
-                                        <h4 class="title">Advantages of Outsourcing</h4>
+                                        <h4 class="head4">Advantages of Outsourcing</h4>
                                     </div>
                                     <p class="pb20">
                                         Are you stressed to remember figures and numbers in your business? Are you struggling to compete in industry? Any changes cause to high cost? Do you want to reduce your company's overhead costs, increase profits, and meet regulatory compliance at the same time? If yes, why not think about the advantage of outsourcing. At A&T ALLIANCE, Our professionals in accounts and tax services could support you. By employing our professional accountants to handle your company's accounting task, you can work with your established business activities, customer satisfaction and thereby you can make a hike in net profit.
@@ -150,7 +148,7 @@
                                         At A&T ALLIANCE, we do your accounting work perfectly. While you concentrates on core business activities or value added services, we will get all your accounting work completed ahead of schedule and with zero errors. Our speedy services help put you ahead of your competitors. In case of emergencies, we can even process your financial data overnight. Since our finance and accounting services are scalable, you can easily scale your requirements up or down as necessary.
                                     </p>
                                     <div class="title-post">
-                                        <h4 class="title">Advantage of Latest Technology</h4>
+                                        <h4 class="head4">Advantage of Latest Technology</h4>
                                     </div>
                                     <p class="pb20">
                                         We are familiar with latest technologies, web-enabled software, real-time customer tracking and a secure network to ensure fast and accurate transfer of data. Our accounting services can give your business the competitive edge you are looking for. Our high-end workflow technology along with proven methodologies and time-tested processes enable us to provide quality accounting services that are accurate. As our partner, we can bring about a marked increase in your level of productivity and efficiency.

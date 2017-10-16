@@ -208,7 +208,7 @@
                                             <li><a href="<?php echo base_url();?>itReturnsFiling">IT RETURNS-FILING</a></li>
                                             <li><a href="<?php echo base_url();?>cashTransaction">CASH TRANSACTION</a></li>
                                             <li><a href="<?php echo base_url();?>tdsFiling">TDS-FILING</a></li>
-                                            <li><a href="<?php echo base_url();?>tcs">tcs</a></li>
+                                            <li><a href="<?php echo base_url();?>tcs">TCS</a></li>
                                         </ul>
                                     </li>  
                                     <li class="<?php echo ($current == 'SERVICES' ? 'home' : '') ?>"><a href="#">SERVICES</a>
