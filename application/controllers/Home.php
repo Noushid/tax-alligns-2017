@@ -13,6 +13,7 @@ class Home extends CI_Controller
     protected $footer = 'templates/footer';
     protected $slider = 'templates/slider';
     protected $allinaccounting = 'accounting/all';
+    protected $bsall = 'services/bsall';
     
     function __construct()
     {
@@ -504,7 +505,260 @@ class Home extends CI_Controller
         $this->load->view($page);
         $this->load->view($this->footer);
     }
-
-
+    // START A BUSINESS
+    public function business1($page = 'services/bs1')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business2($page = 'services/bs2')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business3($page = 'services/bs3')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business4($page = 'services/bs4')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business5($page = 'services/bs5')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business6($page = 'services/bs6')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business7($page = 'services/bs7')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    public function business8($page = 'services/bs8')
+    {
+        $this->load->view($this->header,['current' => 'StartUp']);
+        $this->load->view($page);
+        $this->load->view($this->bsall);
+        $this->load->view($this->footer);
+    }
+    //DOCUMENTATION
+    public function documentation1($page = 'services/doc1')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation2($page = 'services/doc2')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation3($page = 'services/doc3')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation4($page = 'services/doc4')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation5($page = 'services/doc5')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation6($page = 'services/doc6')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function documentation7($page = 'services/doc7')
+    {
+        $this->load->view($this->header,['current' => 'Documentation']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    // CUNSULTING
+    public function cunsolting1($page = 'services/con1')
+    {
+        $this->load->view($this->header,['current' => 'Cunsolting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function cunsolting2($page = 'services/con2')
+    {
+        $this->load->view($this->header,['current' => 'Cunsolting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function cunsolting3($page = 'services/con3')
+    {
+        $this->load->view($this->header,['current' => 'Cunsolting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function cunsolting4($page = 'services/con4')
+    {
+        $this->load->view($this->header,['current' => 'Cunsolting']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    //REGISTRATION
+    public function registration1($page = 'services/reg1')
+    {
+        $this->load->view($this->header,['current' => 'Registration']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function registration2($page = 'services/reg2')
+    {
+        $this->load->view($this->header,['current' => 'Registration']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function registration3($page = 'services/reg3')
+    {
+        $this->load->view($this->header,['current' => 'Registration']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function registration4($page = 'services/reg4')
+    {
+        $this->load->view($this->header,['current' => 'Registration']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function registration5($page = 'services/reg5')
+    {
+        $this->load->view($this->header,['current' => 'Registration']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    // UAE
+    public function uae1($page = 'uae/uae1')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae2($page = 'uae/uae2')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae3($page = 'uae/uae3')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae4($page = 'uae/uae4')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae5($page = 'uae/uae5')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae6($page = 'uae/uae6')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae7($page = 'uae/uae7')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae8($page = 'uae/uae8')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae9($page = 'uae/uae9')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uae10($page = 'uae/uae10')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    // KSA
+    public function ksa1($page = 'ksa/ksa1')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksa2($page = 'ksa/ksa2')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksa3($page = 'ksa/ksa3')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksa4($page = 'ksa/ksa4')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    // GCC
+    public function gcc1($page = 'gcc/gcc1')
+    {
+        $this->load->view($this->header,['current' => 'GCC']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function gcc2($page = 'gcc/gcc2')
+    {
+        $this->load->view($this->header,['current' => 'GCC']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
     /*--------new update route end here-----*/
 }

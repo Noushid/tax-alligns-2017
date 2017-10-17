@@ -3051,7 +3051,12 @@ article .comment.style1 {
 .mb0{
 	margin-bottom: 0px !important;
 }
-
+.mb15{
+	margin-bottom: 15px !important;
+}
+.mb30{
+	margin-bottom: 30px !important;
+}
 .listomy2 li:before {
   content: '\f111';
   font-family: 'FontAwesome';
@@ -3070,4 +3075,16 @@ article .comment.style1 {
 	font-style: italic;
 	text-decoration: underline;
 	margin-right: 5px;
+}
+.pointer{
+	cursor: pointer;
+}
+.white{
+	color: #fff;
+}
+.pl70{
+	padding-left: 70px;
+}
+.pl140{
+	padding-left: 140px;
 }

@@ -119,10 +119,10 @@ $route['vatExemption'] = 'Home/uae8';
 $route['vatFiling'] = 'Home/uae9';
 $route['vatDocumentation'] = 'Home/uae10';
 
-$route['ksaServices'] = 'Home/ksa';
-$route['ksaErp'] = 'Home/ksa';
-$route['ksaVat'] = 'Home/ksa';
-$route['ksaIncomeTax'] = 'Home/ksa';
+$route['ksaServices'] = 'Home/ksa1';
+$route['ksaErp'] = 'Home/ksa2';
+$route['ksaVat'] = 'Home/ksa3';
+$route['ksaIncomeTax'] = 'Home/ksa4';
 
 $route['gccAbout'] = 'Home/gcc1';
 $route['gccVat'] = 'Home/gcc2';

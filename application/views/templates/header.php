@@ -232,11 +232,11 @@
                                                     <li><a href="<?php echo base_url();?>trustRegistration">TRUST REGISTRATION</a></li>
                                                     <li><a href="<?php echo base_url();?>wakfBoardRegistartion">WAKF BOARD REGISTRATION</a></li>
                                                     <li><a href="<?php echo base_url();?>projectReport">PROJECT REPORT</a></li>
-                                                    <li><a href="<?php echo base_url();?>iso">iso</a></li>
+                                                    <li><a href="<?php echo base_url();?>iso">ISO</a></li>
                                                     <li><a href="<?php echo base_url();?>trademarkAndLogo">TRADEMARK & LOGO</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php echo base_url();?>#">management CONSULTING</a>
+                                            <li><a href="<?php echo base_url();?>#">MANAGEMENT CONSULTING</a>
                                                 <ul class="submenu"> 
                                                     <li><a href="<?php echo base_url();?>motivationalProgram">MOTIVATIONAL PROGRAMMS</a></li>
                                                     <li><a href="<?php echo base_url();?>marketingstrategy">MARKETING STRATEGY</a></li>
@@ -265,8 +265,8 @@
                                                         <ul class="submenu"> 
                                                             <li><a href="<?php echo base_url();?>uaeServices">SERVICES</a></li>
                                                             <li><a href="<?php echo base_url();?>erp">ERP</a></li>
-                                                            <li><a href="<?php echo base_url();?>businessFormation">Business Formation-UAE</a></li>
-                                                            <li><a href="<?php echo base_url();?>businessLicense">Business License-UAE</a></li>
+                                                            <li><a href="<?php echo base_url();?>businessFormation">BUSINESS FORMATI-UAE</a></li>
+                                                            <li><a href="<?php echo base_url();?>businessLicense">BUSINESS LICENSE-UAE</a></li>
                                                             <li><a href="<?php echo base_url();?>exciseTax">UAE EXCISE TAX</a></li>
                                                         </ul>
                                                     </li>
