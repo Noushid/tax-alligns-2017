@@ -1724,9 +1724,15 @@ body.style-color {
 .flat-services .services-post .item {
     display: inline-block;
     float: left;
-    width: 33.33%;
-    margin-bottom: 55px;
-    padding: 0 15px;
+    width: 32%;
+    padding: 15px;
+    margin: 15px 0px 15px 15px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+    min-height: 455px;
+}
+.itm2{
+    width: 48% !important;
+    min-height: 430px !important;
 }
 
 .flat-services .services-post .item .thumb-item {

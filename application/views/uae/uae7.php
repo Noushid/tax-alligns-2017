@@ -4,17 +4,28 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="title-section style1">
-                                <h3 class="title">WHAT IS VAT</h3>
+                                <h3 class="title">VAT REGISTRATION</h3>
+                                <div class="title-post">
+                                    <h4 class="headg">businesses ARE supposed to start registRATION for VAT</h4>
+                                </div>
                                 <p class="pb20">
-                                    Value Added Tax (or VAT) is an indirect tax. VAT is one of the most common types of consumption tax found around the world. Over 150 countries have implemented VAT or Goods and Services Tax. It is likely to be imposed on most supplies of goods and services that are bought and sold.
+                                    VAT will come into force on 1 January 2018. Any business that is required to be registered for VAT and charge VAT from 1 January 2018 must be registered prior to that date.
                                 </p>
                                 <p class="pb20">
-                                    Businesses registered in VAT will be the mediator between ultimate customer and government. VAT is charged at each step of the ‘supply chain’. Ultimate consumers generally bear the VAT cost while Businesses collect and account for the tax, in a way acting as a tax collector on behalf of the government.
+                                    To enable businesses to prepare for introduction of VAT and comply with this registration obligation in time, the electronic registrations will be open for VAT from the third quarter of 2017 on a voluntary basis and a compulsory basis from the final quarter of 2017 for those that choose not to register earlier. This will ensure that there is no last minute rush from businesses to register for VAT before the deadline.
+                                </p>
+                                <div class="title-post">
+                                    <h4 class="headg">Who can register for VAT?</h4>
+                                </div>
+                                <p class="pb20">
+                                    A business must register for VAT if their taxable supplies and imports exceed the mandatory registration threshold of AED 375,000.
                                 </p>
                                 <p class="pb20">
-                                    The Federal Tax Authority of UAE has been announced that VAT to be implemented in 01, January, 2017. The VAT rate will be 5% on taxable goods and services.
+                                    Furthermore, a business may choose to register for VAT voluntarily if their supplies and imports are less than the mandatory registration threshold, but exceed the voluntary registration threshold of AED 187,500.
                                 </p>
-                                <img src="images/bg/uae9.png" alt="image">
+                                <p class="pb20">
+                                    Similarly, a business may register voluntarily if their expenses exceed the voluntary registration threshold. This latter opportunity to register voluntarily is designed to enable start-up businesses with no turnover to register for VAT.
+                                </p>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -44,23 +55,37 @@
                 </div>
             </div>
         </section>
+
         <section class="main-content bg-sidebar sidebar-left padding-bot0">
             <div class="container">
                 <div class="case-single v1">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="title-section style1">
-                                <h3 class="title">PAYMENT OF VAT</h3>
+                                <div class="title-post">
+                                    <h4 class="headg">VAT registerATION OF non-residents</h4>
+                                </div>
+                                <p class="pb20">There are two points to be noted in the case of VAT registration of non-resident;</p>
+                                <ol class="listomy pl20">
+                                    <li>Non-residents that make taxable supplies in the UAE will be required to register for VAT, or</li>
+                                    <li>Any other UAE resident person who is responsible for accounting for VAT on these supplies</li>
+                                </ol>
                                 <p class="pb20">
-                                    There are two terms related to VAT. OUTPUT VAT and INPUT VAT. VAT collected from customer is Output VAT and VAT paid on bought of goods and services called Input VAT.
+                                    This exclusion may apply, for example, where a UAE business is required to account for VAT under a reverse charge mechanism in respect of a purchase from a non-resident.
+                                </p>
+                                <div class="title-post">
+                                    <h4 class="headg">BUSINESSES CAN TRANSIT TO VAT</h4>
+                                </div>
+                                <p class="pb20">
+                                    All businesses are required to transit to new VAT system within due date. The FTA has introduced the guidelines for converting to VAT system. There are certain points to be cleared on the transition regarding to running businesses.
                                 </p>
                                 <p class="pb20">
-                                    Businesses registered in VAT pay the tax collected to the government on a regular interval, proposed quarterly. Before paying the collected tax, the business can claim and set off the tax paid on the goods/services when it was bought. There is an option provided to claim the refund of VAT paid excess. The net result is that tax receipts to government reflect the ‘value add’ throughout the supply chain
+                                    Special rules will be provided to deal with various situations that may arise in respect of supplies that span the introduction of VAT. For example:
                                 </p>
-                                <p class="pb20">
-                                    Tax payable to the government = Output VAT – Input VAT<br />If the Input VAT exceeds the Output VAT, the business can claim the refund.
-                                </p>
-
+                                <ol class="listomy">
+                                    <li>Where a payment is received in respect of a supply of goods before the introduction of VAT but the goods are actually delivered after the introduction of VAT, this means that VAT will have to be charged on such supplies. Likewise, special rules will apply with regards to supplies of services spanning the introduction of VAT.</li>
+                                    <li>Where a contract is concluded prior to the introduction of VAT in respect of a supply which is wholly or partly made after the introduction of VAT, and the contract does not contain clauses relating to the VAT treatment of the supply, then consideration for the supply will be treated as inclusive of VAT. There will, however, be special provisions to allow suppliers to charge VAT in situations where their recipient is able to recover their VAT but where there is no VAT clause.</li>
+                                </ol>
                             </div>
                         </div>
                     </div>

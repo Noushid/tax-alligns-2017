@@ -4,24 +4,19 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="title-section style1">
-                                <h3 class="title">Types of Licenses issued in Dubai</h3>
-                                <div class="title-post">
-                                    <h4 class="head4">1. Trade License</h4>
-                                </div>
+                                <h3 class="title">THE EXCISE TAX LAW IN UAE</h3>
                                 <p class="pb20">
-                                    A Trading License can be a General Trading or Specific Trading. A specific trading license limits the scope of activities to trade in only closely related items. These licenses are issued for engaging wholesale or retail trade enterprises, contractors, hotels, transport and storing establishments etc., Trade license is issued to a natural or juridical person to practice any trading activity for the purpose of profit making through buying and selling of goods. 
+                                    In UAE, Excise Tax has come into effect on 1 October 2017. The Excise Tax is to be charged as and when the taxable goods are released for consumption. It is an indirect tax levied on certain good that are not good to human health or the environment. The main intention of the chargeability of Excise in UAE is to reduce the consumption of these goods with increasing revenues for the government that can be spent on beneficial public services.
                                 </p>
-                                <div class="title-post">
-                                    <h4 class="head4">2. Industrial License</h4>
-                                </div>
                                 <p class="pb20">
-                                    Industrial License is to discover natural resources or transform raw materials in terms of its structure or appearance into manufactured products or to transform the semi-manufactured products into fully manufactured products by using mechanical power and segregate the products, filling, assembling or packing them.
+                                    Excise Tax will be levied upon carbonated drinks, Tobacco and Energy Drinks. The Federal Tax Authority (FTA), the government entity is responsible for the collection and management of federal taxes. Producers, Importers, Stockpiles, Warehouse keepers of excise goods will need to register with the FTA, submit excise tax returns on a monthly basis and Pay the excise tax due on excise goods.
                                 </p>
-                                <div class="title-post">
-                                    <h4 class="head4">3. Professional License</h4>
-                                </div>
+                                <h3 class="title">EXCISE TAX RATE</h3>
                                 <p class="pb20">
-                                    This license is issued to practice certain professions such as engineering consultancy, other consultancy services and studies, auditing and accounting, business set up, company formation, medical and educational services and similar services company. A professional license is issued to a natural or juridical person to practice any profession in which he depends on his physical or mental efforts rather than depending on a cash capital.
+                                    In the UAE Carbonated drinks will be charged at the rate of 50%, Energy drinks and Tobacco will be subject to 100% excise tax. Excise tax will be applied to the retail-selling price of the goods, at the rate applicable to the excise good in question. A designated zone is the term used in the UAE to describe a specified area that is considered outside the UAE for excise tax purposes. Penalty will be imposed on noncompliance with law and regulation and in the case of tax evasion.
+                                </p>
+                                <p class="pb20">
+                                    A&T Alliance is ready to do your accounts and taxation work and get ready your business to comply with Excise Tax Rules. The experts at A&T will help you to operate your business without any hassles and make possible the filing of all records in time.
                                 </p>
                             </div>
                         </div>
@@ -52,3 +47,36 @@
                 </div>
             </div>
         </section>
+
+        <!-- NEED HELP START -->
+        <section class="flat-row padding-70">
+            <div class="flat-help">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="services-control">
+                                <div class="icon-top">
+                                    <img src="images/2.png" alt="image">
+                                </div>
+                                <div class="title-section">
+                                    <h4 class="title">Need Help?</h4>
+                                </div>
+                                <div class="post-services">
+                                    <p>Contact our customer support team if you have any further questions. We are heare to help you out</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-help">
+                                <div class="item phone-help">
+                                    <p>+91-9446 5000 44</p>
+                                </div>
+                                <div class="item email-help">
+                                    <p>info@accountsandtax.in</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- NEED HELP END -->

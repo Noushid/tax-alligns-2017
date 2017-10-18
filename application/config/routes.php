@@ -109,6 +109,12 @@ $route['dsc'] = 'Home/registration4';
 $route['iec'] = 'Home/registration5';
 
 $route['uaeServices'] = 'Home/uae1';
+$route['uaes1'] = 'Home/uaes1';
+$route['uaes2'] = 'Home/uaes2';
+$route['uaes3'] = 'Home/uaes3';
+$route['uaes4'] = 'Home/uaes4';
+$route['uaes5'] = 'Home/uaes5';
+$route['uaes6'] = 'Home/uaes6';
 $route['erp'] = 'Home/uae2';
 $route['businessFormation'] = 'Home/uae3';
 $route['businessLicense'] = 'Home/uae4';
@@ -120,6 +126,12 @@ $route['vatFiling'] = 'Home/uae9';
 $route['vatDocumentation'] = 'Home/uae10';
 
 $route['ksaServices'] = 'Home/ksa1';
+$route['ksas1'] = 'Home/ksas1';
+$route['ksas2'] = 'Home/ksas2';
+$route['ksas3'] = 'Home/ksas3';
+$route['ksas4'] = 'Home/ksas4';
+$route['ksas5'] = 'Home/ksas5';
+$route['ksas6'] = 'Home/ksas6';
 $route['ksaErp'] = 'Home/ksa2';
 $route['ksaVat'] = 'Home/ksa3';
 $route['ksaIncomeTax'] = 'Home/ksa4';

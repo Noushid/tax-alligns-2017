@@ -662,7 +662,43 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
     // UAE
-    public function uae1($page = 'uae/uae1')
+    public function uae1($page = 'uae/services')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes1($page = 'uae/uaes1')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes2($page = 'uae/uaes2')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes3($page = 'uae/uaes3')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes4($page = 'uae/uaes4')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes5($page = 'uae/uaes5')
+    {
+        $this->load->view($this->header,['current' => 'UAE']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function uaes6($page = 'uae/uaes6')
     {
         $this->load->view($this->header,['current' => 'UAE']);
         $this->load->view($page);
@@ -723,12 +759,69 @@ class Home extends CI_Controller
         $this->load->view($this->footer);
     }
     // KSA
-    public function ksa1($page = 'ksa/ksa1')
+    public function ksa1($page = 'ksa/services')
     {
         $this->load->view($this->header,['current' => 'KSA']);
         $this->load->view($page);
         $this->load->view($this->footer);
     }
+    public function ksas1($page = 'ksa/ksas1')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksas2($page = 'ksa/ksas2')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksas3($page = 'ksa/ksas3')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksas4($page = 'ksa/ksas4')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksas5($page = 'ksa/ksas5')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+    public function ksas6($page = 'ksa/ksas6')
+    {
+        $this->load->view($this->header,['current' => 'KSA']);
+        $this->load->view($page);
+        $this->load->view($this->footer);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function ksa2($page = 'ksa/ksa2')
     {
         $this->load->view($this->header,['current' => 'KSA']);

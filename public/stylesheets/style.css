@@ -3088,3 +3088,21 @@ article .comment.style1 {
 .pl140{
 	padding-left: 140px;
 }
+.fr{
+	float: right;
+}
+.bk{
+	text-align: center;
+	padding: 20px;
+}
+.bk button{
+	box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+	border-radius: 2px;
+	border: 1px solid #7b7575;
+	font-size: 15px;
+	padding: 0px 20px;
+	height: 50px;
+}
+.l970{
+	left: 970px !important;
+}

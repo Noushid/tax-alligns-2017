@@ -4,24 +4,47 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="title-section style1">
-                                <h3 class="title">Types of Licenses issued in Dubai</h3>
+                                <h3 class="title">VAT EXEMPTION AND ZERO RATE</h3>
                                 <div class="title-post">
-                                    <h4 class="headg">1. Trade License</h4>
+                                    <h4 class="headg">EXEMPTION UNDER VAT</h4>
                                 </div>
                                 <p class="pb20">
-                                    A Trading License can be a General Trading or Specific Trading. A specific trading license limits the scope of activities to trade in only closely related items. These licenses are issued for engaging wholesale or retail trade enterprises, contractors, hotels, transport and storing establishments etc., Trade license is issued to a natural or juridical person to practice any trading activity for the purpose of profit making through buying and selling of goods. 
+                                    VAT, as a general consumption tax, will apply to the majority of transactions of goods and services unless specifically exempted or excepted by law. Effectively exempted and zero rated goods and services are not liable to tax. When considering the businesses, the input VAT on exempted items are not eligible for claim and to be added to cost of items. In the case of zero rated items, input VAT is eligible for setoff.
                                 </p>
                                 <div class="title-post">
-                                    <h4 class="headg">2. Industrial License</h4>
+                                    <h4 class="headg">ZERO RATED SECTORS</h4>
                                 </div>
                                 <p class="pb20">
-                                    Industrial License is to discover natural resources or transform raw materials in terms of its structure or appearance into manufactured products or to transform the semi-manufactured products into fully manufactured products by using mechanical power and segregate the products, filling, assembling or packing them.
+                                    VAT will be charged at 0% in respect of the following main categories of supplies:
                                 </p>
+                                <ol class="listomy">
+                                    <li>Exports of goods and services to outside the GCC</li>
+                                    <li>International transportation, and related supplies</li>
+                                    <li>Supplies of certain sea, air and land means of transportation (such as aircrafts and ships)</li>
+                                    <li>Certain investment grade precious metals (e.g. gold, silver, of 99% purity)</li>
+                                    <li>Newly constructed residential properties, that are supplied for the first time within 3 years of their construction </li>
+                                    <li>Supply of certain education services, and supply of relevant goods and services</li>
+                                    <li>Supply of certain Healthcare services, and supply of relevant goods and services</li>
+                                </ol>
                                 <div class="title-post">
-                                    <h4 class="headg">3. Professional License</h4>
+                                    <h4 class="headg">EXEMPTED SECTORS</h4>
+                                </div>
+                                <p class="pb20">The following categories of supplies will be exempt from VAT:</p>
+                                <ol class="listomy">
+                                    <li>The supply of some financial services (clarified in VAT legislation)</li>
+                                    <li>Residential properties</li>
+                                    <li>Bare land; and</li>
+                                    <li>Local passenger transport</li>
+                                </ol>
+                                <div class="title-post">
+                                    <h4 class="headg">VAT ON INSURANCE</h4>
+                                </div>
+                                <p class="pb20">Generally, insurance (vehicle, medical, etc) will be taxable. Life insurance, however, will be treated as an exempt financial service.</p>
+                                <div class="title-post">
+                                    <h4 class="headg">VAT ON FINANCIAL SERVICES</h4>
                                 </div>
                                 <p class="pb20">
-                                    This license is issued to practice certain professions such as engineering consultancy, other consultancy services and studies, auditing and accounting, business set up, company formation, medical and educational services and similar services company. A professional license is issued to a natural or juridical person to practice any profession in which he depends on his physical or mental efforts rather than depending on a cash capital.
+                                    It is expected that fee based financial services will be taxed but margin based products are likely to be exempt.
                                 </p>
                             </div>
                         </div>
