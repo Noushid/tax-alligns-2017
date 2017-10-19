@@ -103,7 +103,7 @@
                                             <fieldset class="style name-container">
                                                 <p class="logintxt">
                                                     <a href="<?php echo base_url('forgot-password');?>">forgot password</a><br />
-                                                    New to Intuit ? <span><a href="<?php echo base_url('register');?>"">Create an account.</a></span>
+                                                    <span><a href="<?php echo base_url('register');?>"">Create an account.</a></span>
                                                 </p>
                                             </fieldset>
 

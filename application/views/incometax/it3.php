@@ -14,7 +14,7 @@
                             </div>
                             <p class="pb20">
                                 There are exemptions to the compulsory audit under Income Tax.  As per sections 44AA of the Income-tax Act, 1961, a person engaged in business is required to maintain regular books of account under certain circumstances. To give relief to small taxpayers from this tedious work, the Income-tax Act has framed the presumptive taxation scheme under sections 44AD, sections 44ADA and sections 44AE.A person adopting the presumptive taxation scheme can declare income at a prescribed rate and, in turn, is relieved from tedious job of maintenance of books of account.<br />
-                                <a class="aclick" href="#">CLICK HERE</a> to understand more about presumptive taxation scheme
+                                <a class="aclick" href="presuptiveTaxation">CLICK HERE</a> to understand more about presumptive taxation scheme
                             </p>
                             <div class="title-post mb0">
                                 <h4 class="head4">Income Tax Audit Limit</h4>

@@ -144,8 +144,8 @@
                                     <li class="<?php echo ($current == 'ACCOUNTING' ? 'home' : '') ?>"><a href="#">ACCOUNTING</a>
                                         <ul class="submenu">
                                             <li><a href="<?php echo base_url();?>accountingOutsourcing">OUTSOURCING</a></li>
-                                            <li><a href="<?php echo base_url();?>#">ACCOUTING SERVICES</a>
-                                                <ul class="submenu">
+                                            <li><a>ACCOUTING SERVICES</a>
+                                                <ul class="submenu mym">
                                                     <li><a href="<?php echo base_url();?>runningAndStartupBusiness">RUNNING AND STARTUP BUSINESS</a></li>
                                                     <li><a href="<?php echo base_url();?>onsiteAndOnlineAccounting">ON-SITE AND ONLINE ACCOUNTING</a></li>
                                                     <li><a href="<?php echo base_url();?>systemImplimentationInAccounting">SYSTEM IMPLEMENTATION IN ACCOUNTING</a></li>
@@ -169,19 +169,19 @@
                                     </li>  
                                     <li class="<?php echo ($current == 'SERVICES' ? 'home' : '') ?>"><a href="#">SERVICES</a>
                                         <ul class="submenu"> 
-                                            <li><a href="<?php echo base_url();?>#">START A BUSINESS</a>
+                                            <li><a>START A BUSINESS</a>
                                                 <ul class="submenu"> 
                                                     <li><a href="<?php echo base_url();?>propretorship">PROPRIETORSHIP</a></li>
                                                     <li><a href="<?php echo base_url();?>partnership">PARTNERSHIP</a></li>
-                                                    <li><a href="<?php echo base_url();?>opc">ONE PERSON COMPANY (OPC)</a></li>
-                                                    <li><a href="<?php echo base_url();?>llp">LIMITED LIABILITY PARTNERSHIP (LLP)</a></li>
-                                                    <li><a href="<?php echo base_url();?>pvtLmtd">PRIVATE LIMITED COMPANY (PVT LTD)</a></li>
-                                                    <li><a href="<?php echo base_url();?>ltd">PUBLIC LIMITED COMPANY (LTD)</a></li>
+                                                    <li><a href="<?php echo base_url();?>opc">ONE PERSON COMPANY</a></li>
+                                                    <li><a href="<?php echo base_url();?>llp">LIMITED LIABILITY PARTNERSHIP</a></li>
+                                                    <li><a href="<?php echo base_url();?>pvtLmtd">PRIVATE LIMITED COMPANY</a></li>
+                                                    <li><a href="<?php echo base_url();?>ltd">PUBLIC LIMITED COMPANY</a></li>
                                                     <li><a href="<?php echo base_url();?>producerCompany">PRODUCER COMPANY</a></li>
-                                                    <li><a href="<?php echo base_url();?>indianSubsidiaryCo">INDIAN SUBSIDIARY COMPANY- BY FOREIGNER</a></li>
+                                                    <li><a href="<?php echo base_url();?>indianSubsidiaryCo">INDIAN SUBSIDIARY COMPANY</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php echo base_url();?>#">DOCUMENTATION</a>
+                                            <li><a>DOCUMENTATION</a>
                                                 <ul class="submenu"> 
                                                     <li><a href="<?php echo base_url();?>partnershipDeed">PARTNERSHIP DEED</a></li>
                                                     <li><a href="<?php echo base_url();?>firmRegistration">FIRM REGISTRATION</a></li>
@@ -192,7 +192,7 @@
                                                     <li><a href="<?php echo base_url();?>trademarkAndLogo">TRADEMARK & LOGO</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php echo base_url();?>#">MANAGEMENT CONSULTING</a>
+                                            <li><a>MANAGEMENT CONSULTING</a>
                                                 <ul class="submenu"> 
                                                     <li><a href="<?php echo base_url();?>motivationalProgram">MOTIVATIONAL PROGRAMMS</a></li>
                                                     <li><a href="<?php echo base_url();?>marketingstrategy">MARKETING STRATEGY</a></li>
@@ -215,9 +215,9 @@
                                     <li class="<?php echo ($current == 'CONTACT' ? 'home' : '') ?>"><a href="<?php echo base_url();?>contact">Contact</a></li>
                                     <li class="<?php echo ($current == 'GCC CLIENTS' ? 'home' : '') ?>"><a href="#">GCC Clients</a>
                                         <ul class="submenu"> 
-                                            <li><a href="<?php echo base_url();?>#">UAE</a>
+                                            <li><a>UAE</a>
                                                 <ul class="submenu"> 
-                                                    <li><a href="<?php echo base_url();?>#">SERVICES</a>
+                                                    <li><a>SERVICES</a>
                                                         <ul class="submenu"> 
                                                             <li><a href="<?php echo base_url();?>uaeServices">SERVICES</a></li>
                                                             <li><a href="<?php echo base_url();?>erp">ERP</a></li>
@@ -226,7 +226,7 @@
                                                             <li><a href="<?php echo base_url();?>exciseTax">UAE Excise Tax</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li><a href="<?php echo base_url();?>#">VAT UAE</a>
+                                                    <li><a>VAT UAE</a>
                                                         <ul class="submenu"> 
                                                             <li><a href="<?php echo base_url();?>uaeVat">What is VAT</a></li>
                                                             <li><a href="<?php echo base_url();?>vatRegistration">VAT Registration</a></li>
@@ -237,9 +237,9 @@
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php echo base_url();?>#">KSA</a>
+                                            <li><a>KSA</a>
                                                 <ul class="submenu"> 
-                                                    <li><a href="<?php echo base_url();?>#">Services</a>
+                                                    <li><a>Services</a>
                                                         <ul class="submenu"> 
                                                             <li><a href="<?php echo base_url();?>ksaServices">Services</a></li>
                                                             <li><a href="<?php echo base_url();?>ksaErp">ERP</a></li>

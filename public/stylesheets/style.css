@@ -669,7 +669,7 @@ input[type="color"],
 }
 
 .header.upscrolled {	
-       opacity: 0.8;
+       opacity: 1;
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80);
         filter: alpha(opacity=80);
     visibility: visible;   
@@ -2026,7 +2026,7 @@ article .comment.style1 {
 -------------------------------------------------------------- */
 .footer {
 	background-color: #222;
-	padding: 85px 0 67px;
+	padding: 70px 0 20px;
 	color: #fff;
 }
 
@@ -2297,7 +2297,7 @@ article .comment.style1 {
 .bottom {
 	background: #1b1b1b;
 	color: #888;
-	padding: 32px 0 28px;
+	padding: 18px 0 18px;
 }
 
 .bottom .copyright {
@@ -3105,4 +3105,8 @@ article .comment.style1 {
 }
 .l970{
 	left: 970px !important;
+}
+.mym{
+	width: 315px !important;
+	left: -315px !important;
 }

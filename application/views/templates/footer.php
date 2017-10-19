@@ -2,15 +2,12 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="footer-logo">
                             <img src="images/logo-footer.png" alt="image">
                             <div class="im-map">
                                 <h5 class="title">We have over 15 years of experience</h5>
                                 <p>Our suppoer available to help you 24 hours a day, seven days week</p>
-                                <div class="map">
-                                    <!-- <a href="#"><i class="fa fa-map-marker"></i> Go to Google Maps</a> -->
-                                </div>
                             </div>
                         </div><!-- footer-logo -->
                     </div><!-- col-md-4 -->
@@ -21,11 +18,11 @@
                                 <h5 class="widget-title">Quick Links</h5>
                             </div>
                             <ul class="our_services">
-                                <li class="facebook"><a href="home#offer"> What We Offer</a></li>
-                                <li class="twitch"><a href="home#choos"> Why Choose Us</a></li>
-                                <li class="google"><a href="home#call"> Request Call Back</a></li>
-                                <li class="linkedIn"><a href="home#testimonial"> What Our Clients Say</a></li>
-                                <li class="youtube"><a href="home#blog"> Latest News</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>gstbasics">GST BASICS</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>exportUnderGst">EXPORT UNDER GST</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>gstReturnFiling">GST RETURN FILING</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>itBasics">IT BASICS</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>accountingOutsourcing">ACCOUNTING OUTSOURCING</a></li>
                             </ul>
                         </div>
                     </div><!-- col-md-3 -->
@@ -36,26 +33,26 @@
                                 <h5 class="widget-title">Our Services</h5>
                             </div>
                             <ul class="our_services">
-                                <li class="facebook"><a href="about"> About Us</a></li>
-                                <li class="twitch"><a href="services"> Our Services</a></li>
-                                <li class="google"><a href="blog"> Our Service News</a></li>
-                                <li class="linkedIn"><a href="home#appointment"> Get An Appointment</a></li>
-                                <li class="youtube"><a href="contact"> Contact Us</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>llp">LIMITED LIABILITY PARTNERSHIP</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>pvtLmtd">PRIVATE LIMITED COMPANY</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>partnershipDeed">PARTNERSHIP DEED</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>marketingstrategy">MARKETING STRATEGY</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>firmRegistration">FIRM REGISTRATION</a></li>
                             </ul>
                         </div>
                     </div><!-- col-md-3 -->
 
-                    <div class="col-md-2">
-                        <div class="widget widget-follow-us">
-                            <div class="title-link v3">
-                                <h5 class="widget-title">Follow Us</h5>
+                    <div class="col-md-3">
+                        <div class="widget widget-our-services">
+                            <div class="title-link v4">
+                                <h5 class="widget-title">GCC Clients</h5>
                             </div>
-                            <ul class="follow-us">
-                                <li class="facebook"><a href="#"> Facebook</a></li>
-                                <li class="twiter"><a href="#"> Twiiter</a></li>
-                                <li class="google"><a href="#"> Google Plus </a></li>
-                                <li class="linkedIn"><a href="#"> LinkedIn</a></li>
-                                <li class="youtube"><a href="#"> Youtube</a></li>
+                            <ul class="our_services">
+                                <li class="facebook"><a href="<?php echo base_url();?>uaeServices">UAE SERVICES</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>businessFormation">BUSINESS FORMATI-UAE</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>erp">UAE-ERP</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>ksaServices">KSA Services</a></li>
+                                <li class="facebook"><a href="<?php echo base_url();?>ksaErp">KSA-ERP</a></li>
                             </ul>
                         </div>
                     </div><!-- col-md-2 -->

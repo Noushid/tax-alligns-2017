@@ -16,8 +16,7 @@
                                             <p>1</p>
                                         </div>
                                         <div class="text-list">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                            <p>This login service is not intended for public use. Clients under running contract and Audit Executives of A&T Alliance and Regal Chartered are only allowed to enter. </p>
                                         </div>
                                     </li>
 
@@ -26,8 +25,7 @@
                                             <p>2</p>
                                         </div>
                                         <div class="text-list">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                            <p>Clients, those who, are missed their login credentials, advised to do not make any more wrong attempts and please contact the office.</p>
                                         </div>
                                     </li>
 
@@ -36,8 +34,7 @@
                                             <p>3</p>
                                         </div>
                                         <div class="text-list">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                                            <p>Users are informed that only allotted links are allowed to enter and keep the normal precautions to be taken while interacting with Internet Servers.</p>
                                         </div>
                                     </li>
                                 </ul>
