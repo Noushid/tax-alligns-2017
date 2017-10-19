@@ -10,6 +10,7 @@
                             <p>
                                 Reverse charge, where the recipient is liable to pay tax. Normally, the supplier pays the tax on supply. In certain cases, the receiver becomes liable to pay the tax, i.e., the chargeability gets reversed which is why it is called reverse charge. Reverse charge means the liability to pay tax is by the recipient of goods/services instead of the supplier. Reverse charge may be applicable for both services as well as goods.
                             </p>
+                            <p class="pt20 pb30">However, as per the decision of 22nd GST council held on 06/10/2017, the reverse charge mechanism has been suspended till March 2018</p>
                             <p class="pt20 pb30">
                                 Reverse charge means the liability to pay tax is by the recipient of goods/services instead of the supplier.Reverse charge may be applicable for both services as well as goods.
                             </p>

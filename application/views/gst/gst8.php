@@ -10,9 +10,9 @@
                                 GST implementation is set to go-live in 2017, completely overhauling India's indirect tax system. Under the new GST regime, GST registration would be required for all enterprises involved in the buying or selling or delivery of services exceeding Rs.10 lakhs a year in north-eastern and hill states, while the limit is Rs.20 lakhs for rest of India. All entities having GST registration would be required to file GST returns. GST return filing would be mandatory for all GST registered entities irrespective of if there was any activity / sale during the return filing period.
                             </p>
                             <p class="pb20">
-                                GST registration holder would have to file GSTR-1 (details of outward supplies) on the 10th of each month, GSTR-2 (details of inward supplies) on the 15th of each month and GSTR-3 (monthly return) on the 20th of each month. Compounding taxpayers would be required to file GSTR-4 every quarter, on 18th of the month next to the quarter. Finally, annual GST return must be filed by all GST registered entities on/before the 31st of December.
+                                In the beginning period of 3 months things were totally confused due to technical and practical issues. The dealers have been facing trouble to filing returns in GST. As a result of bad effects in Indian industries, on the 22nd council of GST, the Finance Minister told that, Good and Simple Tax (GST) becomes even simpler. The big takeaway is relief for small businesses and exporters. The council announced that the businesses with turnover below Rs 1.5 crore to file monthly returns in quarterly.
                             </p>
-                            <p>
+                            <p class="pb20">
                                 A&T ALLIANCE is the leading business services platform in India, offering a variety of services like GST return filing, GST registration, trademark registration, company registration and more. A&T ALLIANCE can help you file GST returns in India. The average time taken to file a GST return is about 5 - 10 working days, subject to government processing time and client document submission. Get a free consultation on GST return filing by scheduling an appointment with an A&T ALLIANCE Advisor.
                             </p>
                         </div>
@@ -50,6 +50,18 @@
                         <div class="col-md-12">
                             <div class="post-case-single v1">
                                 <div class="content-post v3">
+                                    <div class="title-post mb0">
+                                        <h4 class="headg">list of items on which GST rates have been reduced</h4>
+                                    </div>
+                                    <p class="pb20">
+                                        In all, rates have been revised for 26 items including sliced mango (12 to 5%), khakra chapati (12% to 5%), ICDS food packages (5% from 18%), unbranded namkeen (5%), unbranded ayurvedic medicine (12 to 5%), plastic waste (18 to 5%), rubber waste (18 to 5%), paper waste (5 from 12%), man-made yarn (12%).
+                                    </p>
+                                    <p class="pb20">
+                                        GST registration holder would have to file GSTR-1 (details of outward supplies) on the 10th of each month, GSTR-2 (details of inward supplies) on the 15th of each month and GSTR-3 (monthly return) on the 20th of each month. Compounding taxpayers would be required to file GSTR-4 every quarter, on 18th of the month next to the quarter. Finally, annual GST return must be filed by all GST registered entities on/before the 31st of December.
+                                    </p>
+                                    <p class="pb20">
+                                        A&T ALLIANCE is the leading business services platform in India, offering a variety of services like GST return filing, GST registration, trademark registration, company registration and more. A&T ALLIANCE can help you file GST returns in India. The average time taken to file a GST return is about 5 - 10 working days, subject to government processing time and client document submission. Get a free consultation on GST return filing by scheduling an appointment with an A&T ALLIANCE Advisor.
+                                    </p>
                                     <div class="title-post mb0">
                                         <h4 class="head3">Understanding the GST Returns</h4>
                                     </div>

@@ -8,7 +8,7 @@
                         <div class="title-section style1">
                             <h3 class="title">Composition Scheme under GST</h3>
                             <p>
-                               By considering Small and Medium enterprises, Goods and Services Tax has introduced Composition Scheme under GST, which is merely an extension o the current scheme under VAT law. When opting for the Composition Scheme under GST, a taxpayer will be required to file summarized returns on a quarterly basis, instead of three monthly returns (as applicable for normal businesses). In this article, we have addressed some of the basic queries around Composition Scheme under Goods and Services Tax Law.
+                               On the 22nd council of GST, to become the GST simpler and to help the small and medium businesses, certain big changes have been introduced in the core areas like composition scheme. Under GST, the composition scheme has been introduced by considering the Small and Medium enterprises, which is merely an extension to the current scheme under VAT law. When opting for the Composition Scheme under GST, a taxpayer will be required to file summarized returns on a quarterly basis, instead of three monthly returns (as applicable for normal businesses). In this article, we have addressed some of the basic queries around Composition Scheme under Goods and Services Tax Law.
                             </p>
                         </div>
                         <div class="content-post v3">
@@ -51,7 +51,7 @@
                                 </div>
                                 <div id="question0" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>Any dealer whose aggregate turnover in a financial year does not exceed Rs. 75 Lakh can opt for composition scheme </p>
+                                        <p>Any dealer whose aggregate turnover in a financial year does not exceed 1 crore can opt for composition scheme. (The threshold limit was revised on 22nd GST council held on 06/10/2017. On the first 3 months of GST roll out, the limit was 75 lakh)</p>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 </div>
                                 <div id="question2" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>No, Composition Scheme is available only for intra-state supplies. If a dealer is involved in inter-State supplies, then he cannot opt for the scheme. </p>
+                                        <p>No, Composition Scheme is available only for intra-state supplies. If a dealer is involved in inter-State supplies, then he cannot opt for the scheme.  </p>
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div id="question3" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>A registered taxpayer, who is registered under the Composite Scheme, will pay tax at a rate not more than 2% (CGST 1% + SGST 1%) for manufacturer, 5% (CGST 2.5% + SGST 2.5%) for restaurant sector and 1% (CGST 0.5% + SGST 0.5%) for other suppliers. </p>
+                                        <p>A registered taxpayer, who is registered under the Composite Scheme, will pay tax at following rate;<br />Traders 1% (CGST 0.5% + SGST 0.5%)<br />Manufacturer 2% (CGST 1% + SGST 1%)<br />Restaurant sector 5% (CGST 2.5% + SGST 2.5%)</p>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                 </div>
                                 <div id="question4" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>No, a dealer registered under composition scheme is not required to maintain detailed records as in the case of a normal taxpayer. </p>
+                                        <p>No, a dealer registered under composition scheme is not required to maintain detailed records as in the case of a normal taxpayer.  </p>
                                     </div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                                 </div>
                                 <div id="question5" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>No, a Composition Dealer is not allowed to avail input tax credit of GST paid to their supplier.</p>
+                                        <p>No, a Composition Dealer is not allowed to avail input tax credit of GST paid to their supplier. </p>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@
                                 </div>
                                 <div id="question6" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>No. Since a Composition Dealer is not allowed to avail input tax credit, such a dealer cannot issue a tax invoice as well. A buyer from composition dealer will not be able to claim input tax on such goods. </p>
+                                        <p>No. Since a Composition Dealer is not allowed to avail input tax credit, such a dealer cannot issue a tax invoice as well. A buyer from composition dealer will not be able to claim input tax on such goods.</p>
                                     </div>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                                 </div>
                                 <div id="question7" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>The taxable person is required to furnish only one return i.e. GSTR-4 on a quarterly basis and an annual return in FORM GSTR-9A.</p>
+                                        <p>The taxable person is required to furnish only one return i.e. GSTR-4 on a quarterly basis and an annual return in FORM GSTR-9A. </p>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                                 </div>
                                 <div id="question8" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>Any tax payable under Reverse Charge Mechanism will not be covered under the scheme. These taxes will be liable to be paid as a normal tax payer. </p>
+                                        <p>Any tax payable under Reverse Charge Mechanism will not be covered under the scheme. These taxes will be liable to be paid as a normal tax payer.  </p>
                                     </div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                                 </div>
                                 <div id="question11" class="panel-collapse collapse" style="height: 0px;">
                                     <div class="panel-body">
-                                        <p>Taxpayers registered under composition scheme under the current regime will be allowed to take credit of input held in stock, or in semi-finished goods or in finished goods on the day immediately preceding the date from which they opt to be taxed as a regular tax payer.</p>
+                                        <p>Taxpayers registered under composition scheme under the current regime will be allowed to take credit of input held in stock, or in semi-finished goods or in finished goods on the day immediately preceding the date from which they opt to be taxed as a regular tax payer. </p>
                                     </div>
                                 </div>
                             </div>

@@ -6,8 +6,11 @@
                     <div class="col-md-9">
                         <div class="title-section style1">
                             <h3 class="title">Works Contract Under GST</h3>
+                            <p class="pb20">
+                                Works contract is a mixture of goods and services but it is neither a composite supply nor a mixed supply as it has been defined as per Sec. 2(119) of CGST Act. As per the said   section  “ Works Contract” means a contract for building, construction, fabrication ,completion, erection, installation , fitting out, improvement , modification, repair ,maintenance, renovation, alteration, or commissioning of any immovable property wherein transfer of property in goods ( whether as goods or in some other form) is involved in the execution of such contract. Thus even when there is a transfer of property in goods during execution of any works contract, such supply will be included in Works Contract only.
+                            </p>
                             <p>
-                                Works contract is a mixture of goods and services but it is neither a composite supply nor a mixed supply as it has been defined as per Sec. 2(119) of CGST Act. As per the said   section  “ Works Contract” means a contract for building, construction, fabrication ,completion, erection, installation , fitting out, improvement , modification, repair ,maintenance, renovation, alteration, or commissioning of any immovable property wherein transfer of property in goods ( whether as goods or in some other form) is involved in the execution of such contract. Thus even when there is a transfer of property in goods during execution of any works contract , such supply will be included in Works Contract only.
+                                On 22nd council of GST held on 06/10/2017, to help the small and medium businesses and to support works contract dealers, GST rate on many job work items has been reduced to 5 percent from 12 percent.
                             </p>
                         </div>
 

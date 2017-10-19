@@ -14,8 +14,11 @@
                         <div class="case-single v1 pt20">
                             <div class="content-post v1 pt20">
                                 <div class="title-post">
-                                    <h4 class="head4">E-Way Bill System in GST to Come from OCTOBER, 2017</h4>
+                                    <h4 class="head4">E-WAY BILL SYSTEM IN GST TO COME FROM APRIL, 2018</h4>
                                 </div>
+                                <p class="pb20">
+                                    On the 22nd GST council of 06/10/2017, it is decided that the e-way bill will likely to be made fully applicable from April 1, 2018, as also rules on tax deducted at sources (TDS) and tax collected at source (TCS). Under GST rules, ferrying goods worth more than Rs 50,000 within or outside a state will require securing an e-way bill by prior online registration of the consignment. To generate an e-way bill, the supplier and transporter will have to upload details on the GSTN portal, after which a unique e-way bill number (EBN) will be made available to the supplier, the recipient and the transporter on the common portal.
+                                </p>
                                 <p class="pb20">
                                     Few of the state has been opened a link in VAT website state for the Online Declaration of goods movement. For Kerala dealers E-declaration (E-Way Bill) is available from ‘http://www.keralataxes.gov.in’ by sign in to E-declaration link using KVAT credentials. See the article to get clear idea of how to get GST E-way bill from Kerala VAT website.
                                 </p>

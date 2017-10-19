@@ -7,21 +7,20 @@
                         <div class="title-section style1">
                             <h3 class="title">Export Under GST</h3>
                             <p>
+                                After the 3 months (on 06/10/2017) of GST rollout, some important changes have been introduced on 22nd council of GST, to become GST simpler and to support small businesses and exporters.
+                            </p>
+                            <div class="title-post">
+                                <h4 class="headg">New Changes in Exporters Refund</h4>
+                            </div>
+                            <ul class="listomy pl20">
+                                <li>For July exports, refund cheques will be processed by October 10 and for August exports, refund cheques will be processed by October 18.</li>
+                                <li>The introduction of an e-wallet should become a reality by April 1 next year. The government will deposit a notional amount as advance refund in the e-wallets for exporters.</li>
+                                <li>Electronic refund mechanism for exporters will take some time.</li>
+                                <li>The council also extended exemption of advance authorisation, export promotion capital goods (EPCG) and export oriented undertakings (EOU) till March 31, 2018. For future exports till March 31, 2018, merchant exporters can export at nominal GST rate at 0.1 percent GST.</li>
+                            </ul>
+                            <p>
                                 Dealers want to know how GST will affect the products exported, and the amount of tax paid on the raw material/input used. To erase this confusion, the Indian government has shared a set of notifications and guidance note for the public on 28th June 2017 regarding the applicability of CGST, SGST, UTGST and cess and GST rates.
                             </p>
-                        </div>
-
-                        <div class="case-single v1 pt20">
-                            <div class="content-post v1 pt20">
-                                <div class="title-post">
-                                    <h4 class="head3">Treatment of Export Under GST</h4>
-                                </div>
-                                <p class="pb20">
-                                    The export of goods or services is considered as a zero-rated supply. GST will not be levied on export of any kind of goods or services.
-                                </p>
-                                <p class="pb20">A duty drawback was provided under the previous laws for the tax paid on inputs for the export of exempted goods. Claiming the duty drawback was a cumbersome process. Under GST, the duty drawback would only be available for the customs duty paid on imported inputs or central excise paid on certain petroleum or tobacco products used as inputs or fuel for captive power generation. There was some confusion surrounding the refund of the tax paid by exporters on the inputs.</p>
-                                <p class="pb20">A guidance note relating to the above issue was released by the Indian government which has helped in clearing doubts regarding the claim of input tax credit on zero-rated exports. An exporter dealing in zero-rated goods under GST can claim a refund for zero-rated supplies as per the following options:</p>
-                            </div>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -55,6 +54,18 @@
                 <div class="case-single v1">
                     <div class="row">
                         <div class="col-md-12">
+                            <div class="case-single v1 pt20">
+                                <div class="content-post v1 pt20">
+                                    <div class="title-post">
+                                        <h4 class="head3">Treatment of Export Under GST</h4>
+                                    </div>
+                                    <p class="pb20">
+                                        The export of goods or services is considered as a zero-rated supply. GST will not be levied on export of any kind of goods or services.
+                                    </p>
+                                    <p class="pb20">A duty drawback was provided under the previous laws for the tax paid on inputs for the export of exempted goods. Claiming the duty drawback was a cumbersome process. Under GST, the duty drawback would only be available for the customs duty paid on imported inputs or central excise paid on certain petroleum or tobacco products used as inputs or fuel for captive power generation. There was some confusion surrounding the refund of the tax paid by exporters on the inputs.</p>
+                                    <p class="pb20">A guidance note relating to the above issue was released by the Indian government which has helped in clearing doubts regarding the claim of input tax credit on zero-rated exports. An exporter dealing in zero-rated goods under GST can claim a refund for zero-rated supplies as per the following options:</p>
+                                </div>
+                            </div>
                             <div class="post-case-single v1">
                                 <div class="content-post v1">
                                     <div class="title-post">
