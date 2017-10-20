@@ -94,7 +94,7 @@
                                 <div class="box bheight">
                                     <div class="form-box">
                                         <!--<form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
-                                            <?php echo form_open('user/login',array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));?>
+                                            <?php echo form_open(base_url('user/login'),array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));?>
                                             <?php echo $message;?>
                                             <fieldset class="style name-container">
                                                 <label>Email or user ID</label>
