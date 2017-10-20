@@ -1636,6 +1636,7 @@ body.style-color {
 
 .flat-news .company-news .post-us.v3 .item img {
     margin-bottom: 22px;
+    min-height: 250px;
 }
 
 .flat-news .company-news .post-us.v3 .item .thumb {

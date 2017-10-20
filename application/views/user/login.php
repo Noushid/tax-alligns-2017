@@ -93,9 +93,13 @@
                             <div class="col-md-4">
                                 <div class="box bheight">
                                     <div class="form-box">
-                                        <!--<form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
-                                            <?php echo form_open(base_url('user/login'),array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));?>
-                                            <?php echo $message;?>
+                                            <?php echo form_open('user/login',array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));
+                                            if (isset($message)) {
+                                                ?>
+                                                <div class="incorect"><?php echo $message; ?></div>
+                                            <?php
+                                            }
+                                            ?>
                                             <fieldset class="style name-container">
                                                 <label>Email or user ID</label>
                                                 <input type="email" id="author-footer" class="tb-my-input" name="email" tabindex="1" value="" size="32" aria-required="true" autocomplete="off">
@@ -114,7 +118,7 @@
 
                                             <fieldset class="style name-container">
                                                 <p class="logintxt">
-                                                    <a href="<?php echo base_url('forgot-password');?>">forgot password</a><br />
+                                                    <a href="<?php echo base_url('forgot-password');?>">forgot password</a> &nbsp;&nbsp; |
                                                     <span><a href="<?php echo base_url('register');?>"">Create an account.</a></span>
                                                 </p>
                                             </fieldset>
