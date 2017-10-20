@@ -77,6 +77,18 @@
                                         </ul>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6 pwr">
+                                        <div class="thumb">
+                                            <img src="images/logo.png" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pwr" style="text-align: left;">
+                                        <div class="thumb">
+                                            <img src="images/bg/logo.png" alt="image">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="box bheight">
@@ -86,12 +98,12 @@
                                             <?php echo $message;?>
                                             <fieldset class="style name-container">
                                                 <label>Email or user ID</label>
-                                                <input type="email" id="author-footer" class="tb-my-input" name="email" tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="email" id="author-footer" class="tb-my-input" name="email" tabindex="1" value="" size="32" aria-required="true" autocomplete="off">
                                             </fieldset>
 
                                             <fieldset class="style name-container">
                                                 <label>Password</label>
-                                                <input type="password" id="author-footer" class="tb-my-input" name="password" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="password" id="author-footer" class="tb-my-input" name="password" tabindex="2" value="" size="32" aria-required="true" autocomplete="off">
                                             </fieldset>
 
                                             <fieldset class="style name-container remember">

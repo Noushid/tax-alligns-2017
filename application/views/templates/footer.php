@@ -7,7 +7,7 @@
                             <img src="images/logo-footer.png" alt="image">
                             <div class="im-map">
                                 <h5 class="title">We have over 15 years of experience</h5>
-                                <p>Our suppoer available to help you 24 hours a day, seven days week</p>
+                                <p>Our suppoert available to help you 24 hours a day, seven days week</p>
                             </div>
                         </div><!-- footer-logo -->
                     </div><!-- col-md-4 -->

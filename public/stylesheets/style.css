@@ -3110,3 +3110,10 @@ article .comment.style1 {
 	width: 315px !important;
 	left: -315px !important;
 }
+.pwr{
+	padding: 20px 0px;
+	text-align: center;
+}
+.cnt{
+	text-align: center !important;
+}

@@ -35,10 +35,10 @@
                             data-paddingbottom="[0,0,0,0"
                             data-paddingleft="[0,0,0,0]"
 
-                            style="z-index: 16; white-space: nowrap;text-transform:left;">Grow your Business<br />While we do your Accoounts
+                            style="z-index: 16; white-space: nowrap;text-transform:left;">Grow your Business<br />While we do your Accounts
                         </div>
 
-                        <a href="accountingOutsourcing" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="accountingOutsourcing" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
@@ -49,8 +49,8 @@
                         data-height="['55']">ACCOUNTING OUTSOURCING
                         </a>
 
-                        <a href="runningAndStartupBusiness" target="#" class="tp-caption flat-button-slider bg-orange"         
-                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
+                        <a href="runningAndStartupBusiness" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
+                        data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:center;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['20','-353','0','0']" 
                         data-y="['middle','middle','middle','middle']" data-voffset="['134','134','134','50']"  
@@ -60,7 +60,7 @@
                         data-height="['55']">RUNNING BUSINESS
                         </a>
 
-                        <a href="runningAndStartupBusiness" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="runningAndStartupBusiness" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['450','-253','0','0']" 
@@ -106,7 +106,7 @@
                             style="z-index: 16; white-space: nowrap;text-transform:left;">We do Your Accounting<br />at Your Office
                         </div>
 
-                        <a href="itBasics" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="itBasics" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
@@ -117,7 +117,7 @@
                         data-height="['55']">INCOME TAX
                         </a>
 
-                        <a href="cashTransaction" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="cashTransaction" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['20','-353','0','0']" 
@@ -128,7 +128,7 @@
                         data-height="['55']">CASH TRANSACTIONS
                         </a>
 
-                        <a href="tdsFiling" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="tdsFiling" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['450','-353','0','0']" 
@@ -170,10 +170,10 @@
                             data-paddingbottom="[0,0,0,0"
                             data-paddingleft="[0,0,0,0]"
 
-                            style="z-index: 16; white-space: nowrap;text-transform:left;">Left Professional Accountants<br />to Work For You
+                            style="z-index: 16; white-space: nowrap;text-transform:left;">Professional Accountants<br />to Work For You
                         </div>
 
-                        <a href="propretorship" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="propretorship" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['-444','-353','0','0']" 
@@ -184,7 +184,7 @@
                         data-height="['55']">START A BUSINESS
                         </a>
 
-                        <a href="partnershipDeed" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="partnershipDeed" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['20','-353','0','0']" 
@@ -195,7 +195,7 @@
                         data-height="['55']">DOCUMENTATION
                         </a>
 
-                        <a href="motivationalProgram" target="#" class="tp-caption flat-button-slider bg-orange"         
+                        <a href="motivationalProgram" target="#" class="tp-caption flat-button-slider bg-orange cnt"         
                         data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","speed":2000,"to":"o:1;","delay":2000,"ease":"Power4.easeInOut"},{"delay":"wait","speed":1000,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
                      
                         data-x="['center','center','center','center']" data-hoffset="['450','-353','0','0']" 

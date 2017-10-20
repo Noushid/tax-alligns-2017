@@ -54,16 +54,7 @@
                             <div class="style-box text-right">
                                 <ul class="flat-socials v1">
                                     <li class="facebook">
-                                        <a href="<?php echo base_url();?>#"><i class="fa fa-facebook-f"></i></a>
-                                    </li>
-                                    <li class="twitter">
-                                        <a href="<?php echo base_url();?>#"><i class="fa fa-twitter"></i></a>
-                                    </li>
-                                    <li class="instagram">
-                                        <a href="<?php echo base_url();?>#"><i class="fa fa-instagram"></i></a>
-                                    </li>
-                                    <li class="wifi">
-                                        <a href="<?php echo base_url();?>#"><i class="fa fa-wifi"></i></a>
+                                        <a href="https://www.facebook.com/AccountsAndTaxServices" target="_blank"><i class="fa fa-facebook-f"></i></a>
                                     </li>
                                 </ul>
                                 <?php 
@@ -219,38 +210,38 @@
                                                 <ul class="submenu"> 
                                                     <li><a>SERVICES</a>
                                                         <ul class="submenu"> 
-                                                            <li><a href="<?php echo base_url();?>uaeServices">SERVICES</a></li>
-                                                            <li><a href="<?php echo base_url();?>erp">ERP</a></li>
-                                                            <li><a href="<?php echo base_url();?>businessFormation">BUSINESS FORMATI-UAE</a></li>
+                                                            <li><a href="<?php echo base_url();?>uaeServices">ACCOUNTING SERVICES</a></li>
+                                                            <li><a href="<?php echo base_url();?>erp">ERP SERVICES</a></li>
+                                                            <li><a href="<?php echo base_url();?>businessFormation">BUSINESS FORMATION-UAE</a></li>
                                                             <li><a href="<?php echo base_url();?>businessLicense">BUSINESS LICENSE-UAE</a></li>
-                                                            <li><a href="<?php echo base_url();?>exciseTax">UAE Excise Tax</a></li>
+                                                            <li><a href="<?php echo base_url();?>exciseTax">UAE EXCISE TAX</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a>VAT UAE</a>
                                                         <ul class="submenu"> 
-                                                            <li><a href="<?php echo base_url();?>uaeVat">What is VAT</a></li>
+                                                            <li><a href="<?php echo base_url();?>uaeVat">WHAT IS VAT</a></li>
                                                             <li><a href="<?php echo base_url();?>vatRegistration">VAT Registration</a></li>
-                                                            <li><a href="<?php echo base_url();?>vatExemption">VAT Exemption & Zero Rate</a></li>
-                                                            <li><a href="<?php echo base_url();?>vatFiling">VAT Filing & Input VAT</a></li>
-                                                            <li><a href="<?php echo base_url();?>vatDocumentation">VAT Documentation</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatExemption">VAT EXEMPTION & ZERO RATE</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatFiling">VAT FILING & INPUT VAT</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatDocumentation">VAT DOCUMENTATION</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li><a>KSA</a>
                                                 <ul class="submenu"> 
-                                                    <li><a>Services</a>
+                                                    <li><a>SERVICES</a>
                                                         <ul class="submenu"> 
-                                                            <li><a href="<?php echo base_url();?>ksaServices">Services</a></li>
-                                                            <li><a href="<?php echo base_url();?>ksaErp">ERP</a></li>
+                                                            <li><a href="<?php echo base_url();?>ksaServices">ACCOUNTING SERVICES</a></li>
+                                                            <li><a href="<?php echo base_url();?>ksaErp">ERP SERVICES</a></li>
                                                         </ul>
                                                     </li>
                                                     <li><a href="<?php echo base_url();?>ksaVat">KSA VAT</a></li>
-                                                    <li><a href="<?php echo base_url();?>ksaIncomeTax">KSA-Income Tax & Zakat</a></li>
+                                                    <li><a href="<?php echo base_url();?>ksaIncomeTax">KSA-INCOME TAX & ZAKAT</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="<?php echo base_url();?>gccAbout">About Us</a></li>
-                                            <li><a href="<?php echo base_url();?>gccVat">Why VAT in GCC</a></li>
+                                            <li><a href="<?php echo base_url();?>gccAbout">ABOUT US</a></li>
+                                            <li><a href="<?php echo base_url();?>gccVat">WHY VAT IN GCC</a></li>
                                         </ul>
                                     </li>
                                      <?php

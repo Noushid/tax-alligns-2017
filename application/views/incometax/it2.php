@@ -9,18 +9,9 @@
                             <div class="title-post mb0">
                                 <h4 class="head4">IT Rates for Individuals</h4>
                             </div>
-                            <p class="pb20">
-                                PICK IT RATES FOR INDIVIDUALS FROM WEBSITE OF A&T
-                            </p>
-                            <div class="title-post mb0">
-                                <h4 class="head4">IT Rates for Businesses</h4>
-                            </div>
-                            <div class="title-post mb0">
-                                <h4 class="headg">PARTNERSHIP FIRMS AND LLP</h4>
-                            </div>
-                            <div class="thumb pb20">
-                                <img src="images/bg/it2.jpg" alt="image">
-                            </div>                            
+                            <div class="thumb pb20 pl25">
+                                <img src="images/bg/itr1.jpg" alt="image" class="minw-img">
+                            </div>                           
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -53,9 +44,28 @@
             <div class="container">
                 <div class="case-single v1">
                     <div class="row">
+                        <div class="col-md-6">
+                            <div class="thumb pb20 pl25">
+                                <img src="images/bg/itr2.jpg" alt="image" class="minw-img">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="thumb pb20 pl25">
+                                <img src="images/bg/itr3.jpg" alt="image" class="minw-img" style="height: 400px;">
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="post-case-single v1">
                                 <div class="content-post v1 pt20">
+                                    <div class="title-post mb0">
+                                        <h4 class="head4">IT Rates for Businesses</h4>
+                                    </div>
+                                    <div class="title-post mb0">
+                                        <h4 class="headg">PARTNERSHIP FIRMS AND LLP</h4>
+                                    </div>
+                                    <div class="thumb pb20 pl25">
+                                        <img src="images/bg/it2.jpg" alt="image" class="minw-img">
+                                    </div> 
                                     <div class="title-post">
                                         <h4 class="title">DOMESTIC COMPANY: AY 2018-2019</h4>
                                     </div>

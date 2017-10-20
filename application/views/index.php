@@ -292,7 +292,7 @@
                                                 </div>
                                                 <div class="icon-post">
                                                     <div class="box-title">
-                                                        <h4 class="title">7. GST & Income Tax Matters</h4>
+                                                        <h4 class="title">GST & Income Tax Matters</h4>
                                                         <div class="box-content">
                                                             <p>
                                                                 The major hindrance in accounts department is to keep the statutory due dates for taxation, whether GST or Income Tax, should be cleared within the due date. A little omission or mistake would be cause to cease the entire business. We do the same for you accurately. Besides we also help your tax consultants, if you already have one, to maintain a proper accounting in your company.
