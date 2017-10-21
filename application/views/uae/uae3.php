@@ -22,11 +22,7 @@
                                         <h4 class="title">Dubai Mainland Company, etc are the important forms of business. </h4>
                                     </div>                                   
                                 </div>
-                                <div class="content-post v3">
-                                    <div class="title-post">
-                                        <h4 class="title">FREE ZONE COMPANIES</h4>
-                                    </div>
-                                </div>
+                                <h3 class="title">FREE ZONE COMPANIES</h3>
                                 <p class="pb20">
                                     There are more than fifty Free Zone Authorities spread over all the emirates in UAE. As UAE is being the global village, the business man worldwide who wishes to setup a business in the emirates like Dubai can choose Free Zone Company formation. Each Free Zone Company is governed by regulations and byelaws of respective Free Zone Authority. They provides unique opportunity to prospective investor to set up the company with fully owned foreign ownership, repatriation of capital and profit, import and export tax exemptions, and more other merits.
                                 </p>
@@ -79,7 +75,7 @@
                                     There are two options to setup a mainland company in Dubai. In case of a foreign national, to setup a business in Dubai mainland, there should have been a local sponsor as a local agent. If the business is intended to be setup as a Limited Liability Company, the local sponsor should possess 51% of the share. But there is no need of share holding for the local sponsor in case of Civil Companies and Sole Proprietor businesses. Dubai mainland companies are being governed by the federal law and these companies are also governed by Ministry of Labor. These options can be utilized by the foreigners who are looking to start and operate businesses at Dubai.
                                 </p>
                                 <div class="title-post">
-                                    <h4 class="headg">GENERAL categories of business organization </h4>
+                                    <h4 class="headg">General Categories of Business Organization</h4>
                                 </div>
                                 <div class="content-post v3 col-md-6">
                                     <div class="list-post">

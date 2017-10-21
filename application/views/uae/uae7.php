@@ -6,7 +6,7 @@
                             <div class="title-section style1">
                                 <h3 class="title">VAT REGISTRATION</h3>
                                 <div class="title-post">
-                                    <h4 class="headg">businesses ARE supposed to start registRATION for VAT</h4>
+                                    <h4 class="headg">Businesses are supposed to start Registration for VAT</h4>
                                 </div>
                                 <p class="pb20">
                                     VAT will come into force on 1 January 2018. Any business that is required to be registered for VAT and charge VAT from 1 January 2018 must be registered prior to that date.
@@ -63,7 +63,7 @@
                         <div class="col-md-12">
                             <div class="title-section style1">
                                 <div class="title-post">
-                                    <h4 class="headg">VAT registerATION OF non-residents</h4>
+                                    <h4 class="headg">VAT Registration OF Non-Residents</h4>
                                 </div>
                                 <p class="pb20">There are two points to be noted in the case of VAT registration of non-resident;</p>
                                 <ol class="listomy pl20">

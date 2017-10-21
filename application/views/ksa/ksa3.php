@@ -28,12 +28,12 @@
                                 </div>
                                 <p class="pb20">Those which make an annual taxable supply of goods and services in excess of SAR 187,500 are eligible for voluntary Registration. Voluntary Registration provides significant benefits for the companies since it allows the deduction of input tax.</p>
                                 <div class="title-post">
-                                    <h4 class="head4">REGISTRATION OF NRIs VAT UNDER VAT</h4>
+                                    <h4 class="head4">Registration of NRIs under VAT</h4>
                                 </div>
                                 <p class="pb20">Non-Residents, who carry on economic activities but have no fixed place of business or fixed establishment in Saudi Arabia, will be required to register if they have the obligation to pay VAT in Saudi Arabia.</p>
                                 <p class="pb20">All Non-Resident taxable persons must have one Tax Representative established in Saudi Arabia and who is approved by GAZT.GAZT may request documentation from the taxable person to evidence that the above requirements are met.</p>
                                 <div class="title-post">
-                                    <h4 class="headg">VAT registRATION OF businesses</h4>
+                                    <h4 class="headg">VAT Registration of Businesses</h4>
                                 </div>
                                 <p class="pb20">In order to register for VAT, businesses must first be registered at GAZT for Zakat and Income Tax.</p>
                                 <p class="pb20">Some large companies, particularly those already registered for other forms of tax in Saudi Arabia, will be auto-registered for VAT by GAZT:</p>
@@ -71,7 +71,7 @@
                                 <p class="pb20">Taxpayers will be required to file their returns to provide details of transactions related to taxable supplies and purchases. Following the submission of VAT return form, taxpayers will be asked to either pay the VAT liability or may claim back VAT refund depending on their situation. This set of activities is commonly referred to as <b>VAT return filing</b>.</p>
                                 <p class="pb20">GAZT has the right to issue a new assessment which adjusts a prior assessment, providing formal notice to the taxable person.</p>
                                 <div class="title-post">
-                                    <h4 class="head4">Who and when files VAT returns?</h4>
+                                    <h4 class="head4">Who and when Files VAT Returns?</h4>
                                 </div>
                                 <p class="pb20">Taxable persons which make an annual taxable supply of goods and services in excess of SAR 40,000,000 will be required to file VAT returns monthly.</p>
                                 <p class="pb20">All other taxable persons will be required to file VAT returns quarterly. However, such persons may elect to file monthly returns subject to approval by GAZT. <br /> From the end of the tax period (as defined above) all taxable persons will have one month to file their VAT return. For example:</p>
@@ -84,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="title-post">
-                                    <h4 class="head4">How to file VAT returns ?</h4>
+                                    <h4 class="head4">How to File VAT Returns ?</h4>
                                 </div>
                                 <p class="pb20">Taxable persons will need to file the VAT Return through the GAZT e-portal once available.</p>
                                 <p >The VAT return form will require you to provide various details about your business during the tax period:</p>
@@ -108,7 +108,7 @@
                                 <p class="pb20">As a large business, you have been engaged with a VAT representative from the General Authority of Zakat and Tax (GAZT), to begin your VAT readiness process.</p>
                                 <p class="pb20">The following eight-step guide details the requirements for VAT readiness. It is recommended that every large business follows the below steps to ensure a smooth implementation of VAT by 1st January 2018 (H1439/4/14).</p>
                                 <div class="title-post">
-                                    <h4 class="headg">get ready FOR VAT</h4>
+                                    <h4 class="headg">Get Ready for VAT</h4>
                                 </div>
                                 <div class="content-post v3">
                                     <div class="list-post">
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
                                 <div class="title-post">
-                                    <h4 class="headg">VAT AND Accountants</h4>
+                                    <h4 class="headg">VAT and Accountants</h4>
                                 </div>
                                 <p class="pb20">
                                     To be compliant with VAT requirements, all businesses will need to make adjustments to their:
@@ -145,7 +145,7 @@
                                     In this process, businesses may seek the advice and support of professional accountants.The General Authority of Zakat and Tax (GAZT) has already taken actions to make sure that accountants will be prepared for VAT implementation, by organizing rounds of conferences on VAT with SOCPA (Saudi Organization for Certified Public Accountants) and workshops with accounting firms.
                                 </p>
                                 <div class="title-post">
-                                    <h4 class="headg">VAT gents AND representatives</h4>
+                                    <h4 class="headg">VAT Agents and Representatives</h4>
                                 </div>
                                 <p class="pb20">
                                     In coordination with the Ministry of Commerce and Investment or other relevant authorities, the General Authority of Zakat and Tax (GAZT) will publish a list of persons, Saudi Residents, who wish to act as ‘Tax Representatives’ or ‘Tax Agents’ for taxable persons in respect of their VAT obligations in Saudi Arabia after approving them.

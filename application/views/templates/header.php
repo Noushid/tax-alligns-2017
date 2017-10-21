@@ -220,7 +220,7 @@
                                                     <li><a>VAT UAE</a>
                                                         <ul class="submenu"> 
                                                             <li><a href="<?php echo base_url();?>uaeVat">WHAT IS VAT</a></li>
-                                                            <li><a href="<?php echo base_url();?>vatRegistration">VAT Registration</a></li>
+                                                            <li><a href="<?php echo base_url();?>vatRegistration">VAT REGISTRATION</a></li>
                                                             <li><a href="<?php echo base_url();?>vatExemption">VAT EXEMPTION & ZERO RATE</a></li>
                                                             <li><a href="<?php echo base_url();?>vatFiling">VAT FILING & INPUT VAT</a></li>
                                                             <li><a href="<?php echo base_url();?>vatDocumentation">VAT DOCUMENTATION</a></li>

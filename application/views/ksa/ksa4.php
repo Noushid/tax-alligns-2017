@@ -4,10 +4,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="title-section style1">
-                                <h3 class="title">NCOME TAX AND ZAKAT IN SAUDI ARABIA</h3>
-                                <div class="title-post">
-                                    <h4 class="headg">OTHER RATES OF INCOME TAX</h4>
-                                </div>
+                                <h3 class="title">INCOME TAX & ZAKAT IN SAUDI ARABIA</h3>
                                 <p class="pb20">
                                     The government of Saudi Arabia is collecting income tax and Zakat from the businesses. But there are few conditions to be charged under income tax and Zakat. Only non-Saudi investors are liable for income tax in KSA. The citizens of the GCC countries are normally considered to be Saudi citizens for income tax purposes in Saudi Arabia.
                                 </p>
