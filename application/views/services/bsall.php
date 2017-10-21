@@ -9,48 +9,51 @@
                                 <p class="pb20">
                                     At A&T Alliance, we have a professional team to support you in achieving the heights of your dream business. Our experts will suggest you which form of business you should choose. Whatever the form of business you choose, we can provide you professional accounting and taxation services with high-end responsibility. You could find more time to concentrate and develop your business activities while we are doing your accounting and tax works. As an entrepreneur, you will be able to free from headache to manage the accounting work and to cut-off your business cost, by resting on A&T Alliance’s professional services.
                                 </p>
+                                <h3 class="title ah">SERVICE PACKAGES</h3>
                             </div>
                             <div class="post-case-single v1">
                                 <div class="content-post v3">
-                                    <div class="list-post">
-                                        <h4 class="title">
-                                            A&T ALLIANCE HIGHLIGHTS ON THE BELOW OF BUSINESS FORMATION SERVICES
-                                        </h4>
-                                    </div>
-                                    <div class="list-post">
-                                        <h4 class="title">
-                                            SUITABLE IMAGES FOR EVERY PAGES
-                                        </h4>
-                                    </div>
-                                    <div class="list-post">
-                                        <h4 class="title">
-                                            BOTTOM OF ALL PAGES IN ACCOUNTING SERVICES PROVIDE ON THE BELOW OF “RUNNING AND STARTUP BUSINESSES” DETAILS TO BE OBTAINED FROM CLIENTS FOR PROVIDING ACCOUNTING SERVICES. THE SAME PROVIDE AS A LINK ON THE BELOW OF ALL OTHER ACCOUNTING SERVICES
-                                        </h4>
-                                    </div>
-                                    <div class="list-post">
-                                        <h4 class="title">
-                                            SERVICE PACKAGES
-                                        </h4>
-                                        <ol class="listomy">
-                                            <li>DIMOND – Rs.68,000 (FLEXIBLE)</li>
-                                            <p class="pl70">BILLING-ACCOUNTING-TAX FILING-MEETING REPORTS-INTERNAL AUDITING-PROFESSIONAL SERVICES<br />
-                                            BILLING STAFF<br />
-                                            ACCOUNTANT<br />
-                                            ACCOUNTS MANAGER<br />INTERNAL AUDITOR</p>
-                                            <p class="pl70">THIS PACKAGE IS INTENTED FOR STANDARD MANUFACTURING BUSINESSES HAVING MULTI-PROCESSES AND COMPLICATION IN INVENTORY AND ACCOUNTING. WHERE REQUIRED MORE THAN ONE ACCOUNTING STAFF.</p>
-                                            <li>GOLD – RS.42,000 (FLEXIBLE)</li>
-                                            <p class="pl70">
-                                                ACCOUNTING-TAX FILING- PROFESSIONAL SERVICES<br />ACCOUNTANT<br />ACCOUNTS MANAGER<br />VISITING BY EXPERTS<br />THIS PACKAGE IS INTENTED FOR STANDARD MSME/ MANUFACTURING/ TRADING BUSINESSES HAVING MULTIPLE NEEDS IN ACCOUNTING. WHERE REQUIRED TWO ACCOUNTING STAFF.
-                                            </p>
-                                            <li>SILVER – RS.26,000 (FLEXIBLE)</li>
-                                            <p class="pl70">
-                                                ACCOUNTING- ADDED SERVICES<br />BILLING AND ACCOUNTING STAFF<br />VISITING BY EXPERTS<br />THIS PACKAGE IS INTENTED FOR STANDARD TRADING/ WHOLESALE/ RETAIL/ CONSTRUCTION/ SERVICE BUSINESSES.
-                                            </p>
-                                            <li>INTERNAL AUDITING – 12,000</li>
-                                            <p class="pl70">
-                                                DTAILED INTERNAL AUDITING COVERING VOUCHING, VERIFICATION, GST AND INCOME TAX PROVISIONS, STOCK VERIFICATION, ACCOUNTING CORRECTIONS AND ADVICES
-                                            </p>
-                                        </ol>
+                                    <div class="row">
+                                        <div class="col-md-3 mony">
+                                            <h3>DIMOND – Rs.68,000 (FLEXIBLE)</h3>
+                                                <ol class="listomy">
+                                                <li>BILLING-ACCOUNTING-TAX FILING-MEETING REPORTS-INTERNAL AUDITING-PROFESSIONAL SERVICES</li>
+                                                <li>BILLING STAFF</li>
+                                                <li>ACCOUNTANT</li>
+                                                <li>ACCOUNTS MANAGER</li>
+                                                <li>INTERNAL AUDITOR</li>
+                                                <li>THIS PACKAGE IS INTENTED FOR STANDARD MANUFACTURING BUSINESSES HAVING MULTI-PROCESSES AND COMPLICATION IN INVENTORY AND ACCOUNTING. WHERE REQUIRED MORE THAN ONE ACCOUNTING STAFF.</li>
+                                            </ol>
+                                        </div>
+                                        <div class="col-md-3 mony" style="margin-top: 4%;">
+                                            <h3>GOLD – RS.42,000 (FLEXIBLE)</h3>
+                                            <ol class="listomy">
+                                                <li>ACCOUNTING-TAX FILING- PROFESSIONAL SERVICES</li>
+                                                <li>ACCOUNTANT</li>
+                                                <li>ACCOUNTS MANAGER</li>
+                                                <li>VISITING BY EXPERTS</li>
+                                                <li>THIS PACKAGE IS INTENTED FOR STANDARD MSME/ MANUFACTURING/ TRADING BUSINESSES HAVING MULTIPLE NEEDS IN ACCOUNTING. WHERE REQUIRED TWO ACCOUNTING STAFF.</li>
+                                            </ol>
+                                        </div>
+                                        <div class="col-md-3 mony" style="margin-top: 7%;">
+                                            <h3>SILVER – RS.26,000 (FLEXIBLE)</h3>
+                                            <ol class="listomy">
+                                                <li>ACCOUNTING- ADDED SERVICES</li>
+                                                <li>BILLING AND ACCOUNTING STAFF</li>
+                                                <li>VISITING BY EXPERTS</li>
+                                                <li>THIS PACKAGE IS INTENTED FOR STANDARD MSME/ MANUFACTURING/ TRADING BUSINESSES HAVING MULTIPLE NEEDS IN ACCOUNTING. WHERE REQUIRED TWO ACCOUNTING STAFF.</li>
+                                            </ol>
+                                        </div>
+                                        <div class="col-md-3 mony" style="margin-top: 8.5%;">
+                                            <h3>INTERNAL AUDITING – 12,000</h3>
+                                            <ol class="listomy">
+                                                <li>DTAILED INTERNAL AUDITING COVERING VOUCHING,</li>
+                                                <li>VERIFICATION</li>
+                                                <li>GST AND INCOME TAX PROVISIONS</li>
+                                                <li>STOCK VERIFICATION</li>
+                                                <li>ACCOUNTING CORRECTIONS AND ADVICES</li>
+                                            </ol>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

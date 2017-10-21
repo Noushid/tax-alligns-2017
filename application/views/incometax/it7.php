@@ -5,12 +5,12 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="title-section style1">
-                            <h3 class="title">Tax Seducted at Source (TDS)</h3>
+                            <h3 class="title">Tax Sesucted at Source (TDS)</h3>
                             <p class="pb20">
                                 The concept of TDS was introduced with an aim to collect tax from the very source of income. As per this concept, a person (deductor) who is liable to make payment of specified nature to any other person (deductee) shall deduct tax at source and remit the same into the account of the Central Government. The deductee from whose income tax has been deducted at source would be entitled to get credit of the amount so deducted on the basis of Form 26AS or TDS certificate issued by the deductor.
                             </p>
                             <div class="title-post">
-                                <h4 class="head4">Introducttion  to TDS</h4>
+                                <h4 class="head4">Introduction  to TDS</h4>
                             </div>
                             <p class="pb20">
                                 Tax Deducted at Source (TDS) is a system introduced by Income Tax Department, where person responsible for making specified payments such as salary, commission, professional fees, interest, rent, etc. is liable to deduct a certain percentage of tax before making payment in full to the receiver of the payment. As the name suggests, the concept of TDS is to deduct tax at its source. Let us take an example of TDS assuming the nature of payment is professional fees on which specified rate is 10%.

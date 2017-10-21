@@ -3128,3 +3128,35 @@ article .comment.style1 {
 	box-shadow: inset 0 0 10px #FF0000;
 	margin-bottom: 15px;
 }
+.mony{
+	border: 1px solid #18ba60;
+	margin-bottom: 10px;
+	background-color: #3a526a;
+	color: #fff;
+	border-radius: 5px;
+	width: 24%;
+	margin: 0px 5px 10px 5px;
+}
+.mony h3{
+	padding: 20px;
+	background-color: #18ba60;
+	margin: 0px -15px;
+	border-radius: 3px;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+}
+.mony .listomy li{
+	margin-left: 1em;
+	margin: 1em 0em;
+}
+.ah{
+	text-align: center;
+	margin-top: 51px;
+	border-bottom: 2px solid #5c5c5c;
+	width: 60%;
+	margin-left: 20%;
+}
+.mony .listomy{
+	margin: 2em 10px;
+}

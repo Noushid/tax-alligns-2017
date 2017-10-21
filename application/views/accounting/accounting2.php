@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="title-section style1">
-                            <h3 class="title">Running Business for Startup</h3>
+                            <h3 class="title">Accounting for Running/Startup Business </h3>
                             <div class="title-post mb0">
-                                <h4 class="head4">Accounting to Running or Startup Business</h4>
+                                <h4 class="headg">Running Business</h4>
                             </div>
                             <p class="pb20">
                                 Businesses started years ago and gradually developed today may have facing problems in accounting and taxation works. Different firms are facing different issues such as lack of accounting, maintaining billing only, incomplete accounting, weak accounting software, continues changes in accountant and so on. <b>The dangerous fact that, some traditionally developed businesses think that billing process is accounting. Accounting process covers the complete business transaction including cash, expenses, inventory, etc. The professionals at A&T ALLIANCE are well known for system implementation and setting-up a sound accounting and taxation process in companies.</b> To convert as a LLP, partnership firm or a company, the business would require a sound accounting system in the organization. We, A&T ALLIANCE ready to raise-up you with a professional accounting system in your company at very low cost. <b>There are some companies having a good accounting system but required an on-call support as part of their improvement planning. A&T ALLIANCE has a wing to support your any development program in accounting and taxation.</b> The work can include a detailed accounting and taxation of last three years business transactions. The accounting work with inventory management and taxation will be enough to meet your internal and legal accounting and taxation requirements.

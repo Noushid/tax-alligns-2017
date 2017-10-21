@@ -5,7 +5,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <div class="title-section style1">
-                                <h3 class="title">WaQf Board Registration</h3>
+                                <h3 class="title">Wakf Board Registration</h3>
                                 <div class="title-post">
                                     <h4 class="head4">What is Wakf ?</h4>
                                 </div>
