@@ -93,11 +93,10 @@
                             <div class="col-md-4">
                                 <div class="box bheight">
                                     <div class="form-box">
-                                        <!--<form action="" method="post" id="commentform-footer" class="comment-form" novalidate="">-->
                                             <?php echo form_open('user/login',array('class'=>'comment-form','id'=>'commentform-footer','novalidate' =>'""'));
                                             if (isset($message)) {
-                                            ?>
-                                                <div class="incorect"><?php echo $message;?></div>
+                                                ?>
+                                                <div class="incorect"><?php echo $message; ?></div>
                                             <?php
                                             }
                                             ?>

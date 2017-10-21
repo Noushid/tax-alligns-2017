@@ -805,23 +805,6 @@ class Home extends CI_Controller
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function ksa2($page = 'ksa/ksa2')
     {
         $this->load->view($this->header,['current' => 'KSA']);

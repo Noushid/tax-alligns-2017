@@ -482,7 +482,7 @@
                                                         <div class="meta-post">
                                                             <a href="#"><?php echo date_format($date, 'd F Y');?></a>
                                                         </div>
-                                                        <h4 class="title"><a href="#"><?php echo $value3->heading;?></a></h4>
+                                                        <h4 class="title"><a href="<?php echo base_url('blog/' . $value3->id . '/') . rtrim(str_replace(['.', ',', ' ', ';', '--'], '-', $value3->heading), '-');?>"><?php echo $value3->heading;?></a></h4>
                                                     </div>
                                                 </div>
                                             <?php
