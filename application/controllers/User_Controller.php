@@ -17,6 +17,7 @@ class User_Controller extends CI_Controller
         parent::__construct();
         $this->load->model('User_model', 'user');
         $this->load->model('File_model', 'file');
+        $this->load->model('Message_model', 'message');
         $this->config->load('ion_auth', TRUE);
 
         $this->load->library(['upload', 'image_lib','ion_auth']);
@@ -41,7 +42,13 @@ class User_Controller extends CI_Controller
 
     function get_all()
     {
-        $data = $this->user->where('`company` IS NULL',FALSE,FALSE,FALSE,FALSE,TRUE)->with_message('where:received=0 AND type=\'received\'','fields:*count*')->get_all();
+        $data = [];
+        $result = $this->user->where('`company` IS NULL',FALSE,FALSE,FALSE,FALSE,TRUE)->with_message('where:received=0 AND type=\'received\'','fields:*count*')->get_all();
+
+        $data1 = $this->message->get_all();
+        foreach ($result as $key => $value) {
+            $data[] = $value;
+        }
         $this->output->set_content_type('application/json')->set_output(json_encode($data));
     }
 
