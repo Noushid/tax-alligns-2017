@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="title-section style1">
-                            <h3 class="title">Preumpyive Taxation</h3>
+                            <h3 class="title">Presumptive Taxation</h3>
                             <div class="title-post mb0">
                                 <h4 class="headg">1. What is the meaning of presumptive taxation scheme ?</h4>
                             </div>

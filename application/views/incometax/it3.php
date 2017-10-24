@@ -20,7 +20,7 @@
                                 <h4 class="head4">Income Tax Audit Limit</h4>
                             </div>
                             <p class="pb20">
-                                Any person carrying on a business must get accounting records audited if turnover exceed Rs 2 Crore. [As per section 44AB of the income tax act]. Read in detail about audit and accounting rules for businesses <a class="aclick" href="https://cleartax.in/s/books-of-accounts-and-audit-requirements-for-freelancers" target="_blank"> here</a>. With the change in turnover limit for presumptive income, there has been some confusion about applicability of audit for businesses and professions. Let’s understand this in detail.
+                                Any person carrying on a business must get accounting records audited if turnover exceed Rs 2 Crore. [As per section 44AB of the income tax act]. Read in detail about audit and accounting rules for businesses. With the change in turnover limit for presumptive income, there has been some confusion about applicability of audit for businesses and professions. Let’s understand this in detail.
                             </p>
                         </div>
                     </div>
