@@ -48,7 +48,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="bk">
-                                <button onclick="location.href='uaeServices'" class="flat-button button-style"><i class="fa fa-home mr10"></i> BACK TO UAE SERVICES</button>
+                                <button onclick="location.href='ksaServices'" class="flat-button button-style"><i class="fa fa-home mr10"></i> BACK TO KSA SERVICES</button>
                             </div>
                         </div>
                     </div>

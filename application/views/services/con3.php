@@ -40,7 +40,7 @@
                             <div class="post-case-single v1">
                                 <div class="content-post v3">
                                     <div class="title-post">
-                                        <h4 class="headg">OrganizationAL Structure: Flat or hierarchical Flat Structure</h4>
+                                        <h4 class="headg">Organizational Structure: Flat or Hierarchical Structure</h4>
                                     </div>        
                                     <p class="pb20">
                                         A flat organization refers to an organization structure with few or no levels of management between management and staff level employees. The flat organization supervises employees less while promoting their increased involvement in the decision-making process.
