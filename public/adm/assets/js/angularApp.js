@@ -610,6 +610,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.curblog = item;
         $scope.newblog = angular.copy(item);
         $scope.files = [];
+        $scope.uploaded = [];
     };
 
     $scope.hideForm = function () {
