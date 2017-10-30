@@ -463,7 +463,6 @@
                             <div class="company-news">
                                 <div class="title-section style2">
                                     <h3 class="title">Our Company News</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco.</p>
                                 </div>
 
                                 <div class="post-us v3">

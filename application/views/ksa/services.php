@@ -16,7 +16,7 @@
                                     </div>
                                     <div class="post">
                                         <h4 class="title"><a href="ksas1">Internal Auditing (12,000 to 24,000+)</a></h4>
-                                        <p>As per the new VAT legislation by Ministry Of Finance of UAE to 'GAZT Government of KSA'...</p>
+                                        <p>As per the new VAT legislation by 'GAZT Government of KSA'...</p>
                                         <a href="ksas1" class="fr comment-reply">Read More<i class="fa fa-chevron-right"></i></a>
                                     </div>
                                 </div>
