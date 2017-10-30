@@ -190,3 +190,12 @@
 .delivered{
     background-color:#eae6e6;
 }
+
+.table a{
+    cursor: pointer;
+}
+.increase-popover-width {
+    max-width: 600px;
+    background-color: #4b4b4c;
+    color: #bfbfbf;
+}

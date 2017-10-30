@@ -2,7 +2,7 @@
  * Created by psybo-03 on 3/7/17.
  */
 
-app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document) {
+app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 'Upload', '$timeout', '$filter', '$uibModal', '$log', '$document', '$sce', function ($scope, $http, $rootScope, $location, Upload, $timeout, $filter, $uibModal, $log, $document,$sce) {
 
     $scope.blogs = [];
     $scope.newblog = {};
@@ -16,7 +16,25 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
     $scope.uploaded = [];
     $scope.uploaded1 = [];
     $scope.fileValidation = {};
+    $scope.content = '';
+    $scope.input = 'Line 1<br/>Line 2';
+    var trusted = {};
+    $scope.getPopoverContent=function(content) {
+        return trusted[content] || (trusted[content] = $sce.trustAsHtml(content));
+    };
 
+    $scope.popover = {
+        content: $scope.content,
+        templateUrl: 'myPopoverTemplate.html'
+    };
+
+    $scope.dacc = {
+        getSearchResultHTML: function (input) {
+
+            return output;
+        }
+    };
+    console.log($scope.popover);
     loadBlog();
 
     function loadBlog() {
@@ -39,6 +57,7 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
         $scope.errFiles = [];
         $scope.showform = true;
         $scope.item_files = false;
+        $scope.uploaded = [];
     };
 
     $scope.editBlog = function (item) {
@@ -171,8 +190,10 @@ app.controller('blogController', ['$scope', '$http', '$rootScope', '$location', 
             headers: {'Content-Type': undefined, 'Process-Data': false}
         })
             .then(function onSuccess(response) {
+                $rootScope.loading = false;
                 console.log('image deleted');
             },function onError(response) {
+                $rootScope.loading = false;
                 console.log('edit Error :- Status :' + response.status + 'data : ' + response.data);
             });
     };

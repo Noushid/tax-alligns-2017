@@ -116,7 +116,7 @@
 
                             <!----for existing image----->
                             <div class="clearfix"></div>
-                            <uib-accordion>
+                            <uib-accordion ng-show="newblog.id">
                                 <div uib-accordion-group class="panel-default" is-open="open" >
                                     <uib-accordion-heading>
                                         Images<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': open, 'glyphicon-chevron-right': !open}"></i>
@@ -158,6 +158,7 @@
     </div>
 </div>
 
+
 <!--View Blog-->
 <div class="row">
     <div class="panel panel-default">
@@ -188,10 +189,11 @@
                         </div>
                     </div>
 
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                    <table class="table table-striped table-bordered table-hover table-responsive" id="dataTables-example">
                         <thead>
                         <tr>
                             <th>#</th>
+                            <th>id</th>
                             <th>Date</th>
                             <th>Heading</th>
                             <th>Introduction</th>
@@ -203,10 +205,12 @@
                         <tbody>
                         <tr dir-paginate="blog in blogs | filter:search | limitTo:pageSize | itemsPerPage:numPerPage">
                             <td>{{$index+1}}</td>
+                            <td>{{blog.id}}</td>
                             <td>{{blog.date |date:'dd-MMM-yyyy'}}</td>
-                            <td>{{blog.heading}}</td>
-                            <td>{{blog.introduction}}</td>
-                            <td>{{blog.content}}</td>
+                            <td><a uib-popover="{{blog.heading}}">{{blog.heading | limitTo : 20}}{{blog.heading.length > 20 ? '...' : ''}}</a></td>
+                            <td> <a uib-popover="{{blog.introduction}}" popover-trigger="'click'">{{blog.introduction | limitTo : 20}}{{blog.introduction.length > 20 ? '...' : ''}}</a></td>
+                            <td><a  uib-popover="{{blog.content}}" popover-class="increase-popover-width">{{blog.content | limitTo : 20}}{{blog.content.length > 20 ? '...' : ''}}</a></td>
+<!--                            <td><a  uib-popover-html="getPopoverContent(blog.content)"">{{blog.content | limitTo : 20}}{{blog.content.length > 20 ? '...' : ''}}</a></td>-->
                             <td>
                                 <a class="example-image-link" href="{{blog.image_url}}" data-lightbox="example-1" data-title="">
                                     <img ng-src="{{blog.image_url}}" alt=""  style="width: 25px; max-height: 25px" id="myImg"/>
@@ -235,6 +239,7 @@
         </div>
     </div>
 </div>
+
 
 <div id="loading" ng-show="loading">
     <div id="loading-image">

@@ -45,7 +45,8 @@ gulp.task('mix', function () {
         config.bowerDir + 'ng-ckeditor/ng-ckeditor.js',
         config.bowerDir + 'ng-ckeditor/libs/ckeditor.js',
         config.bowerDir + 'angular-timeago/dist/angular-timeago.js',
-        config.bowerDir + 'lightbox2/dist/js/lightbox-plus-jquery.js'
+        config.bowerDir + 'lightbox2/dist/js/lightbox-plus-jquery.js',
+        config.nodeDir + 'angular-loading-bar/build/loading-bar.js'
     ])
         .pipe(concat('angular-bootstrap.js'))
         .pipe(gulp.dest(config.adminJsDir))
@@ -89,7 +90,8 @@ gulp.task('images', function() {
 /*Copy css to resources*/
 gulp.task('css', function() {
     return gulp.src([
-        config.nodeDir + 'lightbox2/dist/css/lightbox.css'
+        config.nodeDir + 'lightbox2/dist/css/lightbox.css',
+        config.nodeDir + 'angular-loading-bar/build/loading-bar.css'
     ])
         .pipe(gulp.dest(config.cssResource));
 });

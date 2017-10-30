@@ -67,6 +67,3 @@ app.directive('ngConfirmClick', [
         };
     }
 ]);
-
-
-

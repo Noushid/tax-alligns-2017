@@ -205,29 +205,33 @@ class Home extends CI_Controller
 
     public function blog($id="")
     {
-        if ($id != "") {
-            $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get();
-            $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->order_by('id','DESC')->get_all();
-            $page = 'blogView';
-        }else{
-            $page = 'blog';
-            $total_post = $this->blog->count_rows();
-            $data['blog'] = $this->blog->order_by('id', 'desc')->paginate(5, $total_post);
-            $data['all_pages'] = $this->blog->all_pages;
-        }
+        $page = 'blog';
+        $total_post = $this->blog->count_rows();
+        $data['blog'] = $this->blog->order_by('id', 'desc')->paginate(5, $total_post);
+        $data['all_pages'] = $this->blog->all_pages;
+//        if ($id != "") {
+//            $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get();
+//            $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->order_by('id','DESC')->get_all();
+//            $page = 'blogView';
+//        }else{
+//            $page = 'blog';
+//            $total_post = $this->blog->count_rows();
+//            $data['blog'] = $this->blog->order_by('id', 'desc')->paginate(5, $total_post);
+//            $data['all_pages'] = $this->blog->all_pages;
+//        }
 
         $this->load->view($this->header,['current' => 'Our Blog']);
         $this->load->view($page, $data);
         $this->load->view($this->footer);
     }
 
-    public function blogView($param)
+    public function blogView($id)
     {
-        $param = str_replace('-', ' ', $param);
-        $data['blog'] = $this->blog->where('heading', $param)->with_file()->with_document()->get();
+        $data['blog'] = $this->blog->where('id', $id)->with_file()->with_document()->get();
         $data['recent'] = $this->blog->with_file()->with_document()->limit(10)->order_by('id','DESC')->get_all();
+        $page = 'blogView';
         $this->load->view($this->header,['current' => 'Our Blog']);
-        $this->load->view("blogView", $data);
+        $this->load->view($page, $data);
         $this->load->view($this->footer);
     }
 
